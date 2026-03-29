@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(*)",
+      "Edit",
+      "Write"
+    ],
+    "deny": [
+      "Bash(git push*--force*)",
+      "Bash(git push* -f*)",
+      "Bash(git reset --hard*)",
+      "Bash(git clean*-f*)",
+      "Bash(git branch -D*)"
+    ]
+  },
+  "modelOverrides": {
+    "claude-opus-4-6": "anthropic.claude-opus-4-6-v1",
+    "claude-sonnet-4-6": "anthropic.claude-sonnet-4-6",
+    "claude-haiku-4-5-20251001": "anthropic.claude-haiku-4-5-20251001-v1:0"
+  }
+}

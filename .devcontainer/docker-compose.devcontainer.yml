@@ -1,0 +1,11 @@
+services:
+  app:
+    image: mcr.microsoft.com/devcontainers/typescript-node:1-20-bookworm
+    volumes:
+      - ..:/workspaces/anti-blunder-club:cached
+      - devcontainer-bashhistory:/commandhistory
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: sleep infinity
+
+volumes:
+  devcontainer-bashhistory:
