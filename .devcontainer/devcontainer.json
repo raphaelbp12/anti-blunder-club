@@ -2,16 +2,17 @@
   "name": "anti-blunder-club",
   "dockerComposeFile": "docker-compose.devcontainer.yml",
   "service": "app",
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
   "workspaceFolder": "/workspaces/anti-blunder-club",
   "containerEnv": {
     "DEVCONTAINER": "true",
-    "SSH_AUTH_SOCK": "/ssh-agent",
     "ANTHROPIC_AUTH_TOKEN": "${localEnv:ANTHROPIC_AUTH_TOKEN}",
     "ANTHROPIC_BASE_URL": "${localEnv:ANTHROPIC_BASE_URL}"
   },
   "mounts": [
     "source=${localEnv:HOME}/.gitconfig,target=/home/node/.gitconfig,type=bind,consistency=cached",
-    "source=${localEnv:SSH_AUTH_SOCK},target=/ssh-agent,type=bind",
     "source=devcontainer-bashhistory,target=/commandhistory,type=volume"
   ],
   "postCreateCommand": "mkdir -p ~/.claude && cp .devcontainer/claude-settings.json ~/.claude/settings.json && npm install -g @anthropic-ai/claude-code",
