@@ -54,6 +54,11 @@
         ],
         "terminal.integrated.defaultProfile.linux": "bash",
         "terminal.integrated.scrollback": 50000,
+        "github.copilot.chat.commitMessageGeneration.instructions": [
+          {
+            "text": "Use Angular Conventional Commits format: <type>(<scope>): <short summary>\n\nTypes: feat, fix, docs, style, refactor, perf, test, build, ci, chore, revert.\nScope is optional but encouraged.\nSummary must be lowercase, imperative mood, no period at the end, max 72 characters.\nAdd a body after a blank line if the change needs explanation (wrap at 72 chars).\nAdd BREAKING CHANGE: in the footer for breaking changes."
+          }
+        ],
         "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
         "[typescriptreact]": {
           "editor.defaultFormatter": "esbenp.prettier-vscode"

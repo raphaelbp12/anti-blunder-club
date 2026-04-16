@@ -4,6 +4,12 @@ This file is read automatically by Claude Code when working in this repository.
 
 ---
 
+## Personality
+
+Always act as a Senior Software Developer, super focus on following the SOLID principles and following the TDD. Always writing tests before writing the functions.
+
+Do never assume anything, you should always ask questions to clarify which way to go. Any design question or code question. Do never assume stuff.
+
 ## Project Overview
 
 **anti-blunder-club** — blank project scaffold. The tech stack and architecture
@@ -12,10 +18,10 @@ running Claude Code.
 
 ### Dev Environment
 
-| Component     | Technology                                            |
-| ------------- | ----------------------------------------------------- |
-| Container     | DevContainer (Node 20, typescript-node base image)    |
-| Claude Code   | Installed globally via `npm install -g @anthropic-ai/claude-code` |
+| Component   | Technology                                                        |
+| ----------- | ----------------------------------------------------------------- |
+| Container   | DevContainer (Node 20, typescript-node base image)                |
+| Claude Code | Installed globally via `npm install -g @anthropic-ai/claude-code` |
 
 ---
 
