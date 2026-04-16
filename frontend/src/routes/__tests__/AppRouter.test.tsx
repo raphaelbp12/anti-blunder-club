@@ -54,6 +54,17 @@ describe('AppRouter', () => {
     ).toBeInTheDocument()
   })
 
+  it('renders the analysis page for an analysis route', () => {
+    render(
+      <MemoryRouter initialEntries={['/player/hikaru/analysis']}>
+        <AppRouter />
+      </MemoryRouter>,
+    )
+    expect(
+      screen.getByRole('heading', { name: /accuracy analysis/i }),
+    ).toBeInTheDocument()
+  })
+
   it('renders the not-found page for unknown routes', () => {
     render(
       <MemoryRouter initialEntries={['/unknown-route']}>

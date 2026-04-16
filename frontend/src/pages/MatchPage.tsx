@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation, useParams } from 'react-router-dom'
+import { PlayerNavbar } from '../components/PlayerNavbar'
 import { fetchPlayerGame, type ChessGame } from '../services/chessComApi'
 
 export function MatchPage() {
@@ -49,12 +50,7 @@ export function MatchPage() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-start gap-6 p-8">
-      <Link
-        to={`/player/${username}`}
-        className="self-start text-blue-600 hover:underline"
-      >
-        Back
-      </Link>
+      <PlayerNavbar username={username ?? ''} />
       <h1 className="text-2xl font-bold">Match Details</h1>
       <div className="w-full max-w-lg space-y-4 rounded-lg border border-gray-200 p-6">
         <div className="flex justify-between">
