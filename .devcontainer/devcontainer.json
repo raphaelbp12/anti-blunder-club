@@ -5,11 +5,13 @@
   "workspaceFolder": "/workspaces/anti-blunder-club",
   "containerEnv": {
     "DEVCONTAINER": "true",
-    "ANTHROPIC_API_KEY": "${localEnv:ANTHROPIC_AUTH_TOKEN}",
+    "SSH_AUTH_SOCK": "/ssh-agent",
+    "ANTHROPIC_AUTH_TOKEN": "${localEnv:ANTHROPIC_AUTH_TOKEN}",
     "ANTHROPIC_BASE_URL": "${localEnv:ANTHROPIC_BASE_URL}"
   },
   "mounts": [
     "source=${localEnv:HOME}/.gitconfig,target=/home/node/.gitconfig,type=bind,consistency=cached",
+    "source=${localEnv:SSH_AUTH_SOCK},target=/ssh-agent,type=bind",
     "source=devcontainer-bashhistory,target=/commandhistory,type=volume"
   ],
   "postCreateCommand": "mkdir -p ~/.claude && cp .devcontainer/claude-settings.json ~/.claude/settings.json && npm install -g @anthropic-ai/claude-code",
@@ -38,10 +40,17 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnSave": true,
         "editor.tabSize": 2,
-        "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+        "eslint.validate": [
+          "javascript",
+          "javascriptreact",
+          "typescript",
+          "typescriptreact"
+        ],
         "typescript.tsdk": "node_modules/typescript/lib",
         "typescript.enablePromptUseWorkspaceTsdk": true,
-        "tailwindCSS.experimental.classRegex": [["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]],
+        "tailwindCSS.experimental.classRegex": [
+          ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+        ],
         "terminal.integrated.defaultProfile.linux": "bash",
         "terminal.integrated.scrollback": 50000,
         "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
