@@ -3,7 +3,7 @@ import { AppRouter } from './routes/AppRouter'
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/anti-blunder-club">
       <AppRouter />
     </BrowserRouter>
   )

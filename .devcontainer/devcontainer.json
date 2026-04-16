@@ -6,6 +6,7 @@
     "ghcr.io/devcontainers/features/github-cli:1": {}
   },
   "workspaceFolder": "/workspaces/anti-blunder-club",
+  "forwardPorts": [5173],
   "containerEnv": {
     "DEVCONTAINER": "true",
     "ANTHROPIC_AUTH_TOKEN": "${localEnv:ANTHROPIC_AUTH_TOKEN}",

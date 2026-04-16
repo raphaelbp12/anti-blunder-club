@@ -4,7 +4,9 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
+  base: '/anti-blunder-club/',
   plugins: [tailwindcss(), react()],
+  server: { host: true },
   test: {
     globals: true,
     environment: 'jsdom',
