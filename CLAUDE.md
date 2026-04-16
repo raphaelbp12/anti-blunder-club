@@ -45,6 +45,38 @@ Do never assume anything, you should always ask questions to clarify which way t
 
 ---
 
+## Application Architecture
+
+**What the app does:** Lets users search for a Chess.com player by username and browse their recent matches with accuracy data.
+
+### Route Structure
+
+```
+/                                → HomePage (search input only)
+/player/:username                → PlayerPage (game list, cached in Zustand)
+/player/:username/match/:gameId  → MatchPage (match detail view)
+*                                → NotFoundPage
+```
+
+### Data Flow
+
+```
+Chess.com API → chessComApi.ts (service) → usePlayerGamesStore (Zustand cache) → pages/components
+```
+
+- `chessComApi.ts` — fetch functions, type definitions, raw-to-domain mapping
+- `usePlayerGamesStore` — caches games by username (`Record<string, ChessGame[]>`), prevents re-fetching
+- Pages read from the store; MatchPage also accepts router state for zero-latency navigation
+
+### Key Conventions
+
+- Pages own data fetching (via store hooks or direct API calls)
+- Components are presentational — receive data via props
+- Router state is used for optimistic navigation (pass data through `<Link state={}>`)
+- All API types live in `chessComApi.ts`, not scattered across files
+
+---
+
 ## Repository Structure
 
 ```
@@ -54,12 +86,13 @@ Do never assume anything, you should always ask questions to clarify which way t
   claude-settings.json  Claude Code permissions and model overrides
 frontend/               React frontend application
   src/
-    components/         Reusable UI components
-    pages/              Route-level page components
-    routes/             Routing configuration
-    stores/             Zustand state stores
+    components/         Reusable UI components (MatchList, PlayerSearch)
+    pages/              Route-level page components (HomePage, PlayerPage, MatchPage, NotFoundPage)
+    routes/             Routing configuration (AppRouter)
+    services/           API clients and types (chessComApi)
+    stores/             Zustand state stores (usePlayerGamesStore)
     test/               Test setup and utilities
-  public/               Static assets
+  public/               Static assets (404.html for SPA routing)
 CLAUDE.md               This file — project instructions for Claude Code
 .gitignore              Git ignore rules
 ```
@@ -116,6 +149,15 @@ Use plan mode before starting any task that involves:
 - More than 3 files being created or modified
 - Adding a new dependency or framework
 - Architectural decisions
+
+### Chat Lifecycle (One Chat Per Plan)
+
+Each feature gets a fresh chat. To make this work:
+
+1. **Start of chat:** Read memory files and CLAUDE.md to rebuild context. Run `git log --oneline -10` to understand recent work.
+2. **Planning:** Enter plan mode. Write TDD steps. Get approval.
+3. **Implementation:** Follow the plan. TDD red-green cycle. Mark tasks as you go.
+4. **End of chat:** Run all checks (`test`, `lint`, `format:check`, `build`). Commit and push. Save any new decisions, corrections, or references to memory before the chat ends.
 
 ### What Claude Must Never Do
 

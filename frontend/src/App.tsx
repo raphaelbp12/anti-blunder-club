@@ -3,7 +3,7 @@ import { AppRouter } from './routes/AppRouter'
 
 export default function App() {
   return (
-    <BrowserRouter basename="/anti-blunder-club">
+    <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, '')}>
       <AppRouter />
     </BrowserRouter>
   )
