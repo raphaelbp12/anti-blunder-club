@@ -1,7 +1,8 @@
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { MemoryRouter } from 'react-router-dom'
+import { MemoryRouter, Route, Routes } from 'react-router-dom'
 import { HomePage } from '../HomePage'
+import { useSearchHistoryStore } from '../../stores/useSearchHistoryStore'
 
 describe('HomePage', () => {
   it('renders a heading with the app name', () => {
@@ -49,5 +50,85 @@ describe('HomePage', () => {
     // A pragmatic test: just ensure no game list or error is rendered.
     expect(screen.queryByRole('list')).not.toBeInTheDocument()
     expect(container.querySelector('[data-testid="error"]')).toBeNull()
+  })
+
+  describe('search history', () => {
+    beforeEach(() => {
+      useSearchHistoryStore.setState({ history: [] })
+    })
+
+    it('does not render "Recent Players" when history is empty', () => {
+      render(
+        <MemoryRouter>
+          <HomePage />
+        </MemoryRouter>,
+      )
+      expect(
+        screen.queryByRole('heading', { name: /recent players/i }),
+      ).not.toBeInTheDocument()
+    })
+
+    it('renders player cards when history has entries', () => {
+      useSearchHistoryStore.setState({
+        history: [
+          {
+            username: 'hikaru',
+            avatarUrl: 'https://example.com/avatar.png',
+            highestRating: 3200,
+          },
+          { username: 'magnus', highestRating: 2800 },
+        ],
+      })
+
+      render(
+        <MemoryRouter>
+          <HomePage />
+        </MemoryRouter>,
+      )
+
+      expect(
+        screen.getByRole('heading', { name: /recent players/i }),
+      ).toBeInTheDocument()
+      expect(screen.getByText('hikaru')).toBeInTheDocument()
+      expect(screen.getByText('magnus')).toBeInTheDocument()
+    })
+
+    it('removes a player from history when delete button is clicked', async () => {
+      const user = userEvent.setup()
+      useSearchHistoryStore.setState({
+        history: [{ username: 'hikaru', highestRating: 3200 }],
+      })
+
+      render(
+        <MemoryRouter>
+          <HomePage />
+        </MemoryRouter>,
+      )
+
+      await user.click(screen.getByRole('button', { name: /remove hikaru/i }))
+
+      expect(screen.queryByText('hikaru')).not.toBeInTheDocument()
+      expect(useSearchHistoryStore.getState().history).toEqual([])
+    })
+
+    it('navigates to player page when a card is clicked', async () => {
+      const user = userEvent.setup()
+      useSearchHistoryStore.setState({
+        history: [{ username: 'hikaru', highestRating: 3200 }],
+      })
+
+      render(
+        <MemoryRouter initialEntries={['/']}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/player/:username" element={<div>Player Page</div>} />
+          </Routes>
+        </MemoryRouter>,
+      )
+
+      await user.click(screen.getByText('hikaru'))
+
+      expect(screen.getByText('Player Page')).toBeInTheDocument()
+    })
   })
 })

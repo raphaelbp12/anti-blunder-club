@@ -2,7 +2,11 @@ import {
   fetchPlayerGames,
   fetchPlayerGame,
   extractGameId,
+  fetchPlayerProfile,
+  fetchPlayerStats,
+  getHighestRating,
   type ChessGame,
+  type PlayerStats,
 } from '../chessComApi'
 
 const ARCHIVES_URL = 'https://api.chess.com/pub/player/testuser/games/archives'
@@ -166,6 +170,153 @@ describe('fetchPlayerGame', () => {
 
     await expect(fetchPlayerGame('testuser', '999')).rejects.toThrow(
       'Game not found',
+    )
+  })
+})
+
+describe('getHighestRating', () => {
+  it('returns the highest rating across multiple time controls', () => {
+    const stats: PlayerStats = {
+      chess_rapid: { last: { rating: 1500 } },
+      chess_blitz: { last: { rating: 1650 } },
+      chess_bullet: { last: { rating: 1400 } },
+    }
+    expect(getHighestRating(stats)).toBe(1650)
+  })
+
+  it('returns the single rating when only one time control exists', () => {
+    const stats: PlayerStats = {
+      chess_blitz: { last: { rating: 1200 } },
+    }
+    expect(getHighestRating(stats)).toBe(1200)
+  })
+
+  it('returns null when no time controls have a last rating', () => {
+    const stats: PlayerStats = {
+      chess_rapid: {},
+      chess_blitz: {},
+    }
+    expect(getHighestRating(stats)).toBeNull()
+  })
+
+  it('returns null for an empty stats object', () => {
+    const stats: PlayerStats = {}
+    expect(getHighestRating(stats)).toBeNull()
+  })
+
+  it('handles time controls where last is undefined', () => {
+    const stats: PlayerStats = {
+      chess_rapid: { last: undefined },
+      chess_bullet: { last: { rating: 900 } },
+    }
+    expect(getHighestRating(stats)).toBe(900)
+  })
+
+  it('includes chess_daily in the computation', () => {
+    const stats: PlayerStats = {
+      chess_rapid: { last: { rating: 1000 } },
+      chess_daily: { last: { rating: 1800 } },
+    }
+    expect(getHighestRating(stats)).toBe(1800)
+  })
+})
+
+describe('fetchPlayerProfile', () => {
+  beforeEach(() => {
+    vi.restoreAllMocks()
+  })
+
+  it('returns profile with avatar when present', async () => {
+    vi.spyOn(globalThis, 'fetch').mockResolvedValue(
+      Response.json({
+        username: 'TestUser',
+        avatar: 'https://images.chesscomfiles.com/uploads/avatar.png',
+        player_id: 12345,
+      }),
+    )
+
+    const profile = await fetchPlayerProfile('testuser')
+
+    expect(profile).toEqual({
+      username: 'TestUser',
+      avatar: 'https://images.chesscomfiles.com/uploads/avatar.png',
+    })
+  })
+
+  it('returns profile with undefined avatar when avatar field is missing', async () => {
+    vi.spyOn(globalThis, 'fetch').mockResolvedValue(
+      Response.json({
+        username: 'TestUser',
+        player_id: 12345,
+      }),
+    )
+
+    const profile = await fetchPlayerProfile('testuser')
+
+    expect(profile).toEqual({
+      username: 'TestUser',
+      avatar: undefined,
+    })
+  })
+
+  it('throws when the player is not found', async () => {
+    vi.spyOn(globalThis, 'fetch').mockResolvedValue(
+      new Response('Not Found', { status: 404 }),
+    )
+
+    await expect(fetchPlayerProfile('nonexistent')).rejects.toThrow(
+      'Player "nonexistent" not found',
+    )
+  })
+
+  it('throws on network errors', async () => {
+    vi.spyOn(globalThis, 'fetch').mockRejectedValue(
+      new TypeError('Failed to fetch'),
+    )
+
+    await expect(fetchPlayerProfile('testuser')).rejects.toThrow(
+      'Failed to fetch',
+    )
+  })
+})
+
+describe('fetchPlayerStats', () => {
+  beforeEach(() => {
+    vi.restoreAllMocks()
+  })
+
+  it('returns stats with all time controls', async () => {
+    const mockStats = {
+      chess_rapid: { last: { rating: 1500 } },
+      chess_blitz: { last: { rating: 1600 } },
+      chess_bullet: { last: { rating: 1400 } },
+      chess_daily: { last: { rating: 1300 } },
+    }
+    vi.spyOn(globalThis, 'fetch').mockResolvedValue(Response.json(mockStats))
+
+    const stats = await fetchPlayerStats('testuser')
+
+    expect(stats).toEqual(mockStats)
+  })
+
+  it('returns stats with partial time controls', async () => {
+    const mockStats = {
+      chess_blitz: { last: { rating: 1600 } },
+    }
+    vi.spyOn(globalThis, 'fetch').mockResolvedValue(Response.json(mockStats))
+
+    const stats = await fetchPlayerStats('testuser')
+
+    expect(stats).toEqual(mockStats)
+  })
+
+  it('throws when stats are not found', async () => {
+    vi.spyOn(globalThis, 'fetch').mockResolvedValue(
+      new Response('Not Found', { status: 404 }),
+    )
+
+    await expect(fetchPlayerStats('nonexistent')).rejects.toThrow(
+      'Stats for "nonexistent" not found',
     )
   })
 })
