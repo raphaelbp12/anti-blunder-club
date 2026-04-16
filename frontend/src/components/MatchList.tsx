@@ -1,10 +1,13 @@
+import { Link } from 'react-router-dom'
 import type { ChessGame } from '../services/chessComApi'
+import { extractGameId } from '../services/chessComApi'
 
 interface MatchListProps {
   games: ChessGame[]
+  username: string
 }
 
-export function MatchList({ games }: MatchListProps) {
+export function MatchList({ games, username }: MatchListProps) {
   if (games.length === 0) {
     return <p className="text-gray-500">No matches found.</p>
   }
@@ -24,15 +27,18 @@ export function MatchList({ games }: MatchListProps) {
             <span className="text-sm capitalize text-gray-500">
               {game.timeClass}
             </span>
+            <span className="text-sm text-gray-400">
+              Accuracy: {game.accuracies?.white.toFixed(1) ?? '—'} /{' '}
+              {game.accuracies?.black.toFixed(1) ?? '—'}
+            </span>
           </div>
-          <a
-            href={game.url}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to={`/player/${username}/match/${extractGameId(game.url)}`}
+            state={game}
             className="text-blue-600 hover:underline"
           >
             View
-          </a>
+          </Link>
         </li>
       ))}
     </ul>
