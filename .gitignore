@@ -6,6 +6,9 @@ node_modules
 .env.local
 .env*.local
 
+# Build / cache
+frontend/.vite/
+
 # Misc
 .DS_Store
 *.pem
