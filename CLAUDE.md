@@ -12,9 +12,7 @@ Do never assume anything, you should always ask questions to clarify which way t
 
 ## Project Overview
 
-**anti-blunder-club** — blank project scaffold. The tech stack and architecture
-have not been decided yet. Currently contains only a DevContainer setup for
-running Claude Code.
+**anti-blunder-club** — a frontend-only React web application.
 
 ### Dev Environment
 
@@ -22,6 +20,20 @@ running Claude Code.
 | ----------- | ----------------------------------------------------------------- |
 | Container   | DevContainer (Node 20, typescript-node base image)                |
 | Claude Code | Installed globally via `npm install -g @anthropic-ai/claude-code` |
+
+### Tech Stack
+
+| Layer       | Technology                     |
+| ----------- | ------------------------------ |
+| Framework   | React 19 + TypeScript          |
+| Build Tool  | Vite 8                         |
+| Styling     | Tailwind CSS v4                |
+| Routing     | React Router DOM v7            |
+| State Mgmt  | Zustand v5                     |
+| Testing     | Vitest + React Testing Library |
+| Linting     | ESLint 9 (flat config)         |
+| Formatting  | Prettier 3                     |
+| Package Mgr | npm                            |
 
 ---
 
@@ -40,9 +52,43 @@ running Claude Code.
   devcontainer.json     Container settings, extensions, env vars
   docker-compose.devcontainer.yml   Compose file for the dev container
   claude-settings.json  Claude Code permissions and model overrides
+frontend/               React frontend application
+  src/
+    components/         Reusable UI components
+    pages/              Route-level page components
+    routes/             Routing configuration
+    stores/             Zustand state stores
+    test/               Test setup and utilities
+  public/               Static assets
 CLAUDE.md               This file — project instructions for Claude Code
 .gitignore              Git ignore rules
 ```
+
+---
+
+## Frontend Commands
+
+All commands run from the `frontend/` directory:
+
+| Command                | Purpose                             |
+| ---------------------- | ----------------------------------- |
+| `npm run dev`          | Start the Vite dev server           |
+| `npm run build`        | Type-check and build for production |
+| `npm run test`         | Run tests once                      |
+| `npm run test:watch`   | Run tests in watch mode             |
+| `npm run lint`         | Run ESLint                          |
+| `npm run lint:fix`     | Auto-fix ESLint issues              |
+| `npm run format`       | Format code with Prettier           |
+| `npm run format:check` | Check formatting without writing    |
+
+---
+
+## Testing Conventions
+
+- Write tests before implementation (TDD).
+- Tests live in `__tests__/` directories adjacent to source files.
+- Use React Testing Library. Query by role, label, or text — not by class name or test ID unless necessary.
+- Zustand stores can be tested outside React by using `getState()` and `setState()` directly.
 
 ---
 
