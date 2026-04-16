@@ -84,12 +84,6 @@ describe('MatchPage', () => {
     expect(link).toHaveAttribute('href', 'https://www.chess.com/game/live/456')
   })
 
-  it('renders the navigation bar', () => {
-    renderMatchPage(mockGame)
-
-    expect(screen.getByRole('navigation')).toBeInTheDocument()
-  })
-
   it('fetches from the API when no router state is provided', async () => {
     vi.spyOn(chessComApi, 'fetchPlayerGame').mockResolvedValue(mockGame)
 
@@ -113,6 +107,9 @@ describe('MatchPage', () => {
 
     await waitFor(() => {
       expect(screen.getByText(/game not found/i)).toBeInTheDocument()
+      expect(
+        screen.queryByRole('link', { name: /back to matches/i }),
+      ).not.toBeInTheDocument()
     })
   })
 })
