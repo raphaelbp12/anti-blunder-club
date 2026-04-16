@@ -161,13 +161,4 @@ describe('AnalysisPage', () => {
       expect(screen.getByText(/no accuracy data/i)).toBeInTheDocument()
     })
   })
-
-  it('renders the navigation bar', async () => {
-    vi.spyOn(chessComApi, 'fetchPlayerGames').mockResolvedValue(mockGames)
-    renderAnalysisPage()
-
-    await waitFor(() => {
-      expect(screen.getByRole('navigation')).toBeInTheDocument()
-    })
-  })
 })

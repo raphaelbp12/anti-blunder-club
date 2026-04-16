@@ -27,12 +27,12 @@ export function PlayerSearch({ onSearch, isLoading }: PlayerSearchProps) {
         value={username}
         onChange={(e) => setUsername(e.target.value)}
         placeholder="Chess.com username"
-        className="flex-1 rounded-lg border border-gray-300 px-4 py-2"
+        className="flex-1 rounded-lg border border-border bg-surface px-4 py-2 text-primary"
       />
       <button
         type="submit"
         disabled={isLoading}
-        className="rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 disabled:opacity-50"
+        className="rounded-lg bg-accent px-4 py-2 text-white hover:bg-accent-hover disabled:opacity-50"
       >
         {isLoading ? 'Searching...' : 'Search'}
       </button>

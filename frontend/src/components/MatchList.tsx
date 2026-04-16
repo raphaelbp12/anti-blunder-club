@@ -9,7 +9,7 @@ interface MatchListProps {
 
 export function MatchList({ games, username }: MatchListProps) {
   if (games.length === 0) {
-    return <p className="text-gray-500">No matches found.</p>
+    return <p className="text-secondary">No matches found.</p>
   }
 
   return (
@@ -17,17 +17,17 @@ export function MatchList({ games, username }: MatchListProps) {
       {games.map((game) => (
         <li
           key={game.url}
-          className="flex items-center justify-between rounded-lg border border-gray-200 p-4"
+          className="flex items-center justify-between rounded-lg border border-border p-4"
         >
           <div className="flex flex-col gap-1">
             <span>
               {game.white.username} ({game.white.rating}) vs{' '}
               {game.black.username} ({game.black.rating})
             </span>
-            <span className="text-sm capitalize text-gray-500">
+            <span className="text-sm capitalize text-secondary">
               {game.timeClass}
             </span>
-            <span className="text-sm text-gray-400">
+            <span className="text-sm text-muted">
               Accuracy: {game.accuracies?.white.toFixed(1) ?? '—'} /{' '}
               {game.accuracies?.black.toFixed(1) ?? '—'}
             </span>
@@ -35,7 +35,7 @@ export function MatchList({ games, username }: MatchListProps) {
           <Link
             to={`/player/${username}/match/${extractGameId(game.url)}`}
             state={game}
-            className="text-blue-600 hover:underline"
+            className="text-accent hover:underline"
           >
             View
           </Link>

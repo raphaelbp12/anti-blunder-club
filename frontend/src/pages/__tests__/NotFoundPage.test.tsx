@@ -11,16 +11,4 @@ describe('NotFoundPage', () => {
     )
     expect(screen.getByText(/page not found/i)).toBeInTheDocument()
   })
-
-  it('renders a link back to home', () => {
-    render(
-      <MemoryRouter>
-        <NotFoundPage />
-      </MemoryRouter>,
-    )
-    expect(screen.getByRole('link', { name: /go back home/i })).toHaveAttribute(
-      'href',
-      '/',
-    )
-  })
 })

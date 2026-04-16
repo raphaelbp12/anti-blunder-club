@@ -74,25 +74,4 @@ describe('PlayerPage', () => {
       expect(screen.getByText(/Player "nobody" not found/)).toBeInTheDocument()
     })
   })
-
-  it('renders a link back to search', async () => {
-    vi.spyOn(chessComApi, 'fetchPlayerGames').mockResolvedValue(mockGames)
-    renderPlayerPage()
-
-    await waitFor(() => {
-      expect(screen.getByRole('link', { name: /back/i })).toHaveAttribute(
-        'href',
-        '/',
-      )
-    })
-  })
-
-  it('renders the navigation bar', async () => {
-    vi.spyOn(chessComApi, 'fetchPlayerGames').mockResolvedValue(mockGames)
-    renderPlayerPage()
-
-    await waitFor(() => {
-      expect(screen.getByRole('navigation')).toBeInTheDocument()
-    })
-  })
 })

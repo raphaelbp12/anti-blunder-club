@@ -17,6 +17,7 @@ describe('usePlayerGamesStore', () => {
     vi.restoreAllMocks()
     usePlayerGamesStore.setState({
       gamesByUsername: {},
+      lastUsername: null,
       isLoading: false,
       error: null,
     })
@@ -64,6 +65,43 @@ describe('usePlayerGamesStore', () => {
     const state = usePlayerGamesStore.getState()
     expect(state.error).toBe('Player "nobody" not found')
     expect(state.isLoading).toBe(false)
+  })
+
+  it('sets lastUsername after a successful fetch', async () => {
+    vi.spyOn(chessComApi, 'fetchPlayerGames').mockResolvedValue(mockGames)
+
+    await usePlayerGamesStore.getState().fetchGames('hikaru')
+
+    expect(usePlayerGamesStore.getState().lastUsername).toBe('hikaru')
+  })
+
+  it('updates lastUsername when fetching a different player', async () => {
+    vi.spyOn(chessComApi, 'fetchPlayerGames').mockResolvedValue(mockGames)
+
+    await usePlayerGamesStore.getState().fetchGames('hikaru')
+    await usePlayerGamesStore.getState().fetchGames('magnus')
+
+    expect(usePlayerGamesStore.getState().lastUsername).toBe('magnus')
+  })
+
+  it('sets lastUsername even when using cached data', async () => {
+    vi.spyOn(chessComApi, 'fetchPlayerGames').mockResolvedValue(mockGames)
+
+    await usePlayerGamesStore.getState().fetchGames('hikaru')
+    usePlayerGamesStore.setState({ lastUsername: null })
+    await usePlayerGamesStore.getState().fetchGames('hikaru')
+
+    expect(usePlayerGamesStore.getState().lastUsername).toBe('hikaru')
+  })
+
+  it('does not set lastUsername on fetch failure', async () => {
+    vi.spyOn(chessComApi, 'fetchPlayerGames').mockRejectedValue(
+      new Error('Player not found'),
+    )
+
+    await usePlayerGamesStore.getState().fetchGames('nobody')
+
+    expect(usePlayerGamesStore.getState().lastUsername).toBeNull()
   })
 
   it('returns cached games without re-fetching', async () => {
