@@ -47,7 +47,7 @@
           "typescript",
           "typescriptreact"
         ],
-        "typescript.tsdk": "node_modules/typescript/lib",
+        "typescript.tsdk": "frontend/node_modules/typescript/lib",
         "typescript.enablePromptUseWorkspaceTsdk": true,
         "tailwindCSS.experimental.classRegex": [
           ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
