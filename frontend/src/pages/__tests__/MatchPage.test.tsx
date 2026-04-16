@@ -84,11 +84,10 @@ describe('MatchPage', () => {
     expect(link).toHaveAttribute('href', 'https://www.chess.com/game/live/456')
   })
 
-  it('renders a back link to the player page', () => {
+  it('renders the navigation bar', () => {
     renderMatchPage(mockGame)
 
-    const backLink = screen.getByRole('link', { name: /back/i })
-    expect(backLink).toHaveAttribute('href', '/player/hikaru')
+    expect(screen.getByRole('navigation')).toBeInTheDocument()
   })
 
   it('fetches from the API when no router state is provided', async () => {

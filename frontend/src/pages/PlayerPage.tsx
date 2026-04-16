@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { MatchList } from '../components/MatchList'
+import { PlayerNavbar } from '../components/PlayerNavbar'
 import { usePlayerGamesStore } from '../stores/usePlayerGamesStore'
 
 export function PlayerPage() {
@@ -26,6 +27,7 @@ export function PlayerPage() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-start gap-6 p-8">
+      <PlayerNavbar username={username ?? ''} />
       <Link to="/" className="self-start text-blue-600 hover:underline">
         Back
       </Link>

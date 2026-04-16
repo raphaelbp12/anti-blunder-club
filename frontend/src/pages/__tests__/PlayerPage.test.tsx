@@ -86,4 +86,13 @@ describe('PlayerPage', () => {
       )
     })
   })
+
+  it('renders the navigation bar', async () => {
+    vi.spyOn(chessComApi, 'fetchPlayerGames').mockResolvedValue(mockGames)
+    renderPlayerPage()
+
+    await waitFor(() => {
+      expect(screen.getByRole('navigation')).toBeInTheDocument()
+    })
+  })
 })
