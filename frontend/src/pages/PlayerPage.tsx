@@ -1,7 +1,13 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { useParams } from 'react-router-dom'
 import { MatchList } from '../components/MatchList'
+import {
+  fetchPlayerProfile,
+  fetchPlayerStats,
+  getHighestRating,
+} from '../services/chessComApi'
 import { usePlayerGamesStore } from '../stores/usePlayerGamesStore'
+import { useSearchHistoryStore } from '../stores/useSearchHistoryStore'
 
 export function PlayerPage() {
   const { username } = useParams<{ username: string }>()
@@ -15,6 +21,42 @@ export function PlayerPage() {
   }, [username, fetchGames])
 
   const games = username ? (gamesByUsername[username] ?? []) : []
+  const addPlayer = useSearchHistoryStore((s) => s.addPlayer)
+  const profileFetchedFor = useRef<string | null>(null)
+
+  useEffect(() => {
+    if (!username || !gamesByUsername[username] || error || isLoading) return
+    if (profileFetchedFor.current === username) return
+    profileFetchedFor.current = username
+
+    let cancelled = false
+
+    async function fetchProfile() {
+      try {
+        const [profile, stats] = await Promise.all([
+          fetchPlayerProfile(username!),
+          fetchPlayerStats(username!),
+        ])
+        if (!cancelled) {
+          addPlayer({
+            username: profile.username,
+            avatarUrl: profile.avatar,
+            highestRating: getHighestRating(stats),
+          })
+        }
+      } catch {
+        if (!cancelled) {
+          addPlayer({ username: username!, highestRating: null })
+        }
+      }
+    }
+
+    fetchProfile()
+    return () => {
+      cancelled = true
+      profileFetchedFor.current = null
+    }
+  }, [username, gamesByUsername, error, isLoading, addPlayer])
 
   if (isLoading) {
     return (

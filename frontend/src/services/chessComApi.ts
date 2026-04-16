@@ -13,6 +13,22 @@ export interface ChessGame {
   accuracies?: { white: number; black: number }
 }
 
+export interface PlayerProfile {
+  username: string
+  avatar?: string
+}
+
+export interface TimeControlStats {
+  last?: { rating: number }
+}
+
+export interface PlayerStats {
+  chess_rapid?: TimeControlStats
+  chess_blitz?: TimeControlStats
+  chess_bullet?: TimeControlStats
+  chess_daily?: TimeControlStats
+}
+
 interface ArchivesResponse {
   archives: string[]
 }
@@ -80,6 +96,44 @@ export async function fetchPlayerGame(
   }
 
   throw new Error('Game not found')
+}
+
+const TIME_CONTROLS = [
+  'chess_rapid',
+  'chess_blitz',
+  'chess_bullet',
+  'chess_daily',
+] as const
+
+export function getHighestRating(stats: PlayerStats): number | null {
+  const ratings = TIME_CONTROLS.map((tc) => stats[tc]?.last?.rating).filter(
+    (r): r is number => r !== undefined,
+  )
+
+  return ratings.length > 0 ? Math.max(...ratings) : null
+}
+
+export async function fetchPlayerProfile(
+  username: string,
+): Promise<PlayerProfile> {
+  const res = await fetch(`https://api.chess.com/pub/player/${username}`)
+
+  if (!res.ok) {
+    throw new Error(`Player "${username}" not found`)
+  }
+
+  const data = await res.json()
+  return { username: data.username, avatar: data.avatar }
+}
+
+export async function fetchPlayerStats(username: string): Promise<PlayerStats> {
+  const res = await fetch(`https://api.chess.com/pub/player/${username}/stats`)
+
+  if (!res.ok) {
+    throw new Error(`Stats for "${username}" not found`)
+  }
+
+  return (await res.json()) as PlayerStats
 }
 
 function mapRawGame(game: RawGame): ChessGame {
