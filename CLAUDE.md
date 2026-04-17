@@ -52,10 +52,11 @@ Do never assume anything, you should always ask questions to clarify which way t
 ### Route Structure
 
 ```
-/                                → HomePage (search input only)
-/player/:username                → PlayerPage (game list, cached in Zustand)
-/player/:username/match/:gameId  → MatchPage (match detail view)
-*                                → NotFoundPage
+/                                    → HomePage (search input + recent players)
+/player/:username                    → PlayerPage (game list, cached in Zustand)
+/player/:username/analysis           → AnalysisPage (accuracy analysis)
+/player/:username/match/:gameId      → MatchPage (match detail view)
+*                                    → NotFoundPage
 ```
 
 ### Data Flow
@@ -109,6 +110,21 @@ Chess.com API → chessComApi.ts (service) → usePlayerGamesStore (Zustand cach
 
 **Dashboard:** https://eu.posthog.com/project/161023/dashboard/627625
 
+### SEO
+
+**Hosting:** GitHub Pages at `https://raphaelbp12.github.io/anti-blunder-club/` — static hosting, no SSR.
+
+- **Static meta tags** in `index.html` — description, keywords, Open Graph, Twitter Card, canonical, JSON-LD (`WebApplication` schema). These are what crawlers see before JS runs.
+- **Per-page dynamic meta** via `react-helmet-async` — the `SEOHelmet` component in `src/components/SEOHelmet.tsx` sets `<title>`, description, and OG tags per page. Every page component should include `<SEOHelmet>`.
+- `HelmetProvider` wraps the app in `App.tsx`
+- **Static SEO files** in `public/`: `robots.txt`, `sitemap.xml`, `manifest.json`
+- **Sitemap** only lists static routes (homepage). Dynamic `/player/:username` routes aren't crawlable without SSR.
+- **NotFoundPage** uses `noindex` to prevent 404 pages from being indexed.
+
+When adding a new page:
+1. Add `<SEOHelmet title="..." description="..." path="..." />` to the page component
+2. If the page has a static URL, add it to `public/sitemap.xml`
+
 ### Measurability Checklist
 
 When implementing a new feature, always ask: **"How will we know if this feature is being used?"**
@@ -139,7 +155,7 @@ frontend/               React frontend application
     services/           API clients and types (chessComApi)
     stores/             Zustand state stores (usePlayerGamesStore)
     test/               Test setup and utilities
-  public/               Static assets (404.html for SPA routing)
+  public/               Static assets (404.html, robots.txt, sitemap.xml, manifest.json)
 CLAUDE.md               This file — project instructions for Claude Code
 .gitignore              Git ignore rules
 ```

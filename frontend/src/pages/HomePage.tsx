@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { PlayerCard } from '../components/PlayerCard'
 import { PlayerSearch } from '../components/PlayerSearch'
+import { SEOHelmet } from '../components/SEOHelmet'
 import { useSearchHistoryStore } from '../stores/useSearchHistoryStore'
 import { trackEvent } from '../utils/analytics'
 
@@ -26,6 +27,11 @@ export function HomePage() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center gap-6 p-8">
+      <SEOHelmet
+        title="Anti-Blunder Club — Free Chess Game Analysis"
+        description="Analyze your Chess.com games for free. Find blunders, review accuracy, and improve your chess skills with Anti-Blunder Club."
+        path="/"
+      />
       <h1 className="text-4xl font-bold">Anti-Blunder Club</h1>
       <p className="text-lg text-secondary">
         Search for a Chess.com player to see their recent matches.

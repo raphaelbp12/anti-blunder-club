@@ -4,25 +4,93 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Anti-Blunder Club</title>
+    <title>Anti-Blunder Club — Free Chess Game Analysis Tool</title>
+    <meta
+      name="description"
+      content="Analyze your Chess.com games for free. Find blunders, review accuracy, and improve your chess skills with Anti-Blunder Club."
+    />
+    <meta
+      name="keywords"
+      content="chess analysis, chess blunder, game review, chess.com analysis, chess improvement, chess accuracy, learn chess, anti blunder, chess game analyzer, lichess, chess accuracy"
+    />
+    <link
+      rel="canonical"
+      href="https://raphaelbp12.github.io/anti-blunder-club/"
+    />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#1a1a2e" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Anti-Blunder Club — Free Chess Game Analysis Tool"
+    />
+    <meta
+      property="og:description"
+      content="Analyze your Chess.com games for free. Find blunders, review accuracy, and improve your chess skills."
+    />
+    <meta
+      property="og:url"
+      content="https://raphaelbp12.github.io/anti-blunder-club/"
+    />
+    <meta property="og:site_name" content="Anti-Blunder Club" />
+    <meta
+      property="og:image"
+      content="https://raphaelbp12.github.io/anti-blunder-club/og-image.png"
+    />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Anti-Blunder Club — Free Chess Game Analysis Tool"
+    />
+    <meta
+      name="twitter:description"
+      content="Analyze your Chess.com games for free. Find blunders, review accuracy, and improve your chess skills."
+    />
+    <meta
+      name="twitter:image"
+      content="https://raphaelbp12.github.io/anti-blunder-club/og-image.png"
+    />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Anti-Blunder Club",
+        "url": "https://raphaelbp12.github.io/anti-blunder-club/",
+        "description": "Free chess game analysis tool. Analyze your Chess.com games, find blunders, review accuracy, and improve your chess skills.",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Web",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    </script>
+
     <!-- Restore SPA route from 404.html redirect on GitHub Pages -->
     <script>
-      (function (l) {
+      ;(function (l) {
         if (l.search[1] === '/') {
           var decoded = l.search
             .slice(1)
             .split('&')
             .map(function (s) {
-              return s.replace(/~and~/g, '&');
+              return s.replace(/~and~/g, '&')
             })
-            .join('?');
+            .join('?')
           window.history.replaceState(
             null,
             null,
-            l.pathname.slice(0, -1) + decoded + l.hash
-          );
+            l.pathname.slice(0, -1) + decoded + l.hash,
+          )
         }
-      })(window.location);
+      })(window.location)
     </script>
   </head>
   <body>
