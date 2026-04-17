@@ -1,12 +1,29 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import { AppRouter } from '../AppRouter'
 import { usePlayerGamesStore } from '../../stores/usePlayerGamesStore'
+import * as chessComApi from '../../services/chessComApi'
+
+vi.mock('../../utils/analytics', () => ({
+  trackEvent: vi.fn(),
+}))
+
+const mockGames: chessComApi.ChessGame[] = [
+  {
+    url: 'https://www.chess.com/game/live/111',
+    white: { username: 'hikaru', rating: 3200, result: 'win' },
+    black: { username: 'opponent', rating: 3100, result: 'loss' },
+    timeClass: 'bullet',
+    endTime: 1711900000,
+    accuracies: { white: 90.0, black: 75.0 },
+  },
+]
 
 describe('AppRouter', () => {
   beforeEach(() => {
+    vi.restoreAllMocks()
     usePlayerGamesStore.setState({
-      gamesByUsername: { hikaru: [] },
+      gamesByUsername: { hikaru: mockGames },
       isLoading: false,
       error: null,
     })
@@ -29,7 +46,7 @@ describe('AppRouter', () => {
         <AppRouter />
       </MemoryRouter>,
     )
-    expect(screen.getByRole('heading', { name: /hikaru/i })).toBeInTheDocument()
+    expect(screen.getByRole('tablist')).toBeInTheDocument()
   })
 
   it('renders the match page for a match route', () => {
@@ -54,15 +71,19 @@ describe('AppRouter', () => {
     ).toBeInTheDocument()
   })
 
-  it('renders the analysis page for an analysis route', () => {
+  it('redirects /player/:username/analysis to ?tab=accuracy', async () => {
     render(
       <MemoryRouter initialEntries={['/player/hikaru/analysis']}>
         <AppRouter />
       </MemoryRouter>,
     )
-    expect(
-      screen.getByRole('heading', { name: /accuracy analysis/i }),
-    ).toBeInTheDocument()
+
+    await waitFor(() => {
+      expect(screen.getByRole('tab', { name: 'Accuracy' })).toHaveAttribute(
+        'aria-selected',
+        'true',
+      )
+    })
   })
 
   it('renders the not-found page for unknown routes', () => {

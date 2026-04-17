@@ -1,0 +1,97 @@
+import { useEffect, useRef } from 'react'
+import type { ChessGame } from '../services/chessComApi'
+import { extractGameId } from '../services/chessComApi'
+import { analyzeAccuracy } from '../utils/accuracyAnalysis'
+import { trackEvent } from '../utils/analytics'
+import { TrackedLink } from './TrackedLink'
+
+interface AccuracyTabContentProps {
+  games: ChessGame[]
+  username: string
+}
+
+export function AccuracyTabContent({
+  games,
+  username,
+}: AccuracyTabContentProps) {
+  const analysis = analyzeAccuracy(games, username)
+
+  const trackedFor = useRef<string | null>(null)
+  useEffect(() => {
+    if (trackedFor.current === username) return
+    if (analysis.gamesAnalyzed === 0) return
+    trackedFor.current = username
+    trackEvent('analysis_viewed', {
+      username,
+      games_analyzed: analysis.gamesAnalyzed,
+      mean_accuracy: analysis.meanAccuracy,
+    })
+  }, [username, analysis])
+
+  if (analysis.gamesAnalyzed === 0) {
+    return <p className="text-secondary">No accuracy data available</p>
+  }
+
+  return (
+    <>
+      <div className="w-full max-w-2xl rounded-lg border border-border p-6 text-center">
+        <p className="text-3xl font-bold">
+          {analysis.meanAccuracy.toFixed(1)}%
+        </p>
+        <p className="text-sm text-secondary">
+          Mean Accuracy ({analysis.gamesAnalyzed} games analyzed)
+        </p>
+      </div>
+
+      {analysis.gamesBelowAverage.length === 0 ? (
+        <p className="text-secondary">No games below average</p>
+      ) : (
+        <>
+          <h2 className="self-start text-lg font-semibold">
+            Below Average ({analysis.gamesBelowAverage.length})
+          </h2>
+          <ul className="w-full max-w-2xl space-y-3">
+            {analysis.gamesBelowAverage.map(({ game, accuracy }) => {
+              const opponent =
+                game.white.username.toLowerCase() === username.toLowerCase()
+                  ? game.black
+                  : game.white
+              return (
+                <li
+                  key={game.url}
+                  className="flex items-center justify-between rounded-lg border border-border p-4"
+                >
+                  <div className="flex flex-col gap-1">
+                    <span className="font-semibold">
+                      vs {opponent.username} ({opponent.rating})
+                    </span>
+                    <span className="text-sm capitalize text-secondary">
+                      {game.timeClass}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <span className="text-lg font-bold text-danger">
+                      {accuracy.toFixed(1)}%
+                    </span>
+                    <TrackedLink
+                      to={`/player/${username}/match/${extractGameId(game.url)}`}
+                      state={game}
+                      eventName="match_view"
+                      eventParams={{
+                        username,
+                        game_id: extractGameId(game.url),
+                      }}
+                      className="text-accent hover:underline"
+                    >
+                      View
+                    </TrackedLink>
+                  </div>
+                </li>
+              )
+            })}
+          </ul>
+        </>
+      )}
+    </>
+  )
+}

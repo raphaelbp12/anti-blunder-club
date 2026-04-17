@@ -63,30 +63,17 @@ export function Navbar({ username }: NavbarProps) {
           Home
         </TrackedLink>
         {username && (
-          <>
-            <TrackedLink
-              to={`/player/${username}`}
-              eventName="nav_click"
-              eventParams={{
-                link_name: 'Matches',
-                destination: `/player/${username}`,
-              }}
-              className="text-accent hover:text-accent-hover font-medium"
-            >
-              Matches
-            </TrackedLink>
-            <TrackedLink
-              to={`/player/${username}/analysis`}
-              eventName="nav_click"
-              eventParams={{
-                link_name: 'Analysis',
-                destination: `/player/${username}/analysis`,
-              }}
-              className="text-accent hover:text-accent-hover font-medium"
-            >
-              Analysis
-            </TrackedLink>
-          </>
+          <TrackedLink
+            to={`/player/${username}`}
+            eventName="nav_click"
+            eventParams={{
+              link_name: 'Dashboard',
+              destination: `/player/${username}`,
+            }}
+            className="text-accent hover:text-accent-hover font-medium"
+          >
+            Dashboard
+          </TrackedLink>
         )}
       </div>
       <div className="ml-auto">

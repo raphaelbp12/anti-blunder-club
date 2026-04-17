@@ -34,29 +34,16 @@ describe('Navbar', () => {
     expect(link).toHaveAttribute('href', '/')
   })
 
-  it('renders Matches link when username is provided', () => {
+  it('renders Dashboard link when username is provided', () => {
     renderNavbar('hikaru')
-    const link = screen.getByRole('link', { name: /matches/i })
+    const link = screen.getByRole('link', { name: /dashboard/i })
     expect(link).toHaveAttribute('href', '/player/hikaru')
   })
 
-  it('renders Analysis link when username is provided', () => {
-    renderNavbar('hikaru')
-    const link = screen.getByRole('link', { name: /analysis/i })
-    expect(link).toHaveAttribute('href', '/player/hikaru/analysis')
-  })
-
-  it('does not render Matches link when no username', () => {
+  it('does not render Dashboard link when no username', () => {
     renderNavbar()
     expect(
-      screen.queryByRole('link', { name: /matches/i }),
-    ).not.toBeInTheDocument()
-  })
-
-  it('does not render Analysis link when no username', () => {
-    renderNavbar()
-    expect(
-      screen.queryByRole('link', { name: /analysis/i }),
+      screen.queryByRole('link', { name: /dashboard/i }),
     ).not.toBeInTheDocument()
   })
 
@@ -86,23 +73,13 @@ describe('Navbar', () => {
     })
   })
 
-  it('fires nav_click event when Matches link is clicked', async () => {
+  it('fires nav_click event when Dashboard link is clicked', async () => {
     renderNavbar('hikaru')
     const user = userEvent.setup()
-    await user.click(screen.getByRole('link', { name: /matches/i }))
+    await user.click(screen.getByRole('link', { name: /dashboard/i }))
     expect(trackEvent).toHaveBeenCalledWith('nav_click', {
-      link_name: 'Matches',
+      link_name: 'Dashboard',
       destination: '/player/hikaru',
-    })
-  })
-
-  it('fires nav_click event when Analysis link is clicked', async () => {
-    renderNavbar('hikaru')
-    const user = userEvent.setup()
-    await user.click(screen.getByRole('link', { name: /analysis/i }))
-    expect(trackEvent).toHaveBeenCalledWith('nav_click', {
-      link_name: 'Analysis',
-      destination: '/player/hikaru/analysis',
     })
   })
 

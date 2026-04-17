@@ -14,6 +14,9 @@ export type AnalyticsEvent =
   | 'match_view'
   | 'external_link_click'
   | 'theme_toggle'
+  | 'analysis_viewed'
+  | 'tab_switched'
+  | 'game_filter_applied'
 
 export function trackEvent(
   eventName: AnalyticsEvent,
