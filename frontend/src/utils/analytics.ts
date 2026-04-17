@@ -1,3 +1,9 @@
+import posthog from 'posthog-js'
+
+export interface EventParams {
+  [key: string]: string | number | boolean | undefined
+}
+
 export type AnalyticsEvent =
   | 'page_view'
   | 'nav_click'
@@ -11,16 +17,10 @@ export type AnalyticsEvent =
 
 export function trackEvent(
   eventName: AnalyticsEvent,
-  params?: GtagEventParams,
+  params?: EventParams,
 ): void {
   if (import.meta.env.DEV) {
-    console.log('[GA]', eventName, params)
+    console.log('[Analytics]', eventName, params)
   }
-  if (typeof window.gtag === 'function') {
-    window.gtag('event', eventName, params)
-  }
-}
-
-export function trackPageView(path: string): void {
-  trackEvent('page_view', { page_path: path })
+  posthog.capture(eventName, params)
 }

@@ -7,7 +7,6 @@ import { Navbar } from '../Navbar'
 
 vi.mock('../../utils/analytics', () => ({
   trackEvent: vi.fn(),
-  trackPageView: vi.fn(),
 }))
 
 function renderNavbar(username?: string) {

@@ -6,7 +6,6 @@ import { TrackedLink } from '../TrackedLink'
 
 vi.mock('../../utils/analytics', () => ({
   trackEvent: vi.fn(),
-  trackPageView: vi.fn(),
 }))
 
 describe('TrackedLink', () => {

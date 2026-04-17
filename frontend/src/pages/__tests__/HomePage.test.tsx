@@ -7,7 +7,6 @@ import { trackEvent } from '../../utils/analytics'
 
 vi.mock('../../utils/analytics', () => ({
   trackEvent: vi.fn(),
-  trackPageView: vi.fn(),
 }))
 
 describe('HomePage', () => {
