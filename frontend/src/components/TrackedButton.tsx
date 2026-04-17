@@ -1,9 +1,13 @@
 import { forwardRef, type ComponentPropsWithRef, type MouseEvent } from 'react'
-import { trackEvent, type AnalyticsEvent } from '../utils/analytics'
+import {
+  trackEvent,
+  type AnalyticsEvent,
+  type EventParams,
+} from '../utils/analytics'
 
 interface TrackedButtonProps extends ComponentPropsWithRef<'button'> {
   eventName: AnalyticsEvent
-  eventParams?: GtagEventParams
+  eventParams?: EventParams
 }
 
 export const TrackedButton = forwardRef<HTMLButtonElement, TrackedButtonProps>(

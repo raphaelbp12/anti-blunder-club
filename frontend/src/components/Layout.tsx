@@ -1,10 +1,7 @@
 import { useEffect, type ReactNode } from 'react'
 import { useMatch } from 'react-router-dom'
-import { usePageTracking } from '../hooks/usePageTracking'
 import { useThemeStore } from '../hooks/useThemeStore'
-import { useConsentStore } from '../stores/useConsentStore'
 import { usePlayerGamesStore } from '../stores/usePlayerGamesStore'
-import { CookieConsentBanner } from './CookieConsentBanner'
 import { Navbar } from './Navbar'
 
 interface LayoutProps {
@@ -13,26 +10,18 @@ interface LayoutProps {
 
 export function Layout({ children }: LayoutProps) {
   const initFromSystem = useThemeStore((s) => s.initFromSystem)
-  const initConsent = useConsentStore((s) => s.initConsent)
   const lastUsername = usePlayerGamesStore((s) => s.lastUsername)
   const playerMatch = useMatch('/player/:username/*')
   const username = playerMatch?.params.username ?? lastUsername ?? undefined
-
-  usePageTracking()
 
   useEffect(() => {
     initFromSystem()
   }, [initFromSystem])
 
-  useEffect(() => {
-    initConsent()
-  }, [initConsent])
-
   return (
     <>
       <Navbar username={username} />
       {children}
-      <CookieConsentBanner />
     </>
   )
 }

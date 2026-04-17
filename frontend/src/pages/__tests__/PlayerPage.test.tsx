@@ -8,7 +8,6 @@ import * as chessComApi from '../../services/chessComApi'
 
 vi.mock('../../utils/analytics', () => ({
   trackEvent: vi.fn(),
-  trackPageView: vi.fn(),
 }))
 
 const mockGames: chessComApi.ChessGame[] = [

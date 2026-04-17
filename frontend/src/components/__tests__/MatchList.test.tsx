@@ -7,7 +7,6 @@ import type { ChessGame } from '../../services/chessComApi'
 
 vi.mock('../../utils/analytics', () => ({
   trackEvent: vi.fn(),
-  trackPageView: vi.fn(),
 }))
 
 const mockGames: ChessGame[] = [

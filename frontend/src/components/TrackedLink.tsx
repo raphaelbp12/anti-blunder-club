@@ -1,10 +1,14 @@
 import { type MouseEvent } from 'react'
 import { Link, type LinkProps } from 'react-router-dom'
-import { trackEvent, type AnalyticsEvent } from '../utils/analytics'
+import {
+  trackEvent,
+  type AnalyticsEvent,
+  type EventParams,
+} from '../utils/analytics'
 
 interface TrackedLinkProps extends LinkProps {
   eventName: AnalyticsEvent
-  eventParams?: GtagEventParams
+  eventParams?: EventParams
 }
 
 export function TrackedLink({

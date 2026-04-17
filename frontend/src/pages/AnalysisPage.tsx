@@ -1,5 +1,6 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { useParams } from 'react-router-dom'
+import posthog from 'posthog-js'
 import { TrackedLink } from '../components/TrackedLink'
 import { usePlayerGamesStore } from '../stores/usePlayerGamesStore'
 import { analyzeAccuracy } from '../utils/accuracyAnalysis'
@@ -18,6 +19,19 @@ export function AnalysisPage() {
 
   const games = username ? (gamesByUsername[username] ?? []) : []
   const analysis = analyzeAccuracy(games, username ?? '')
+
+  const analysisTrackedFor = useRef<string | null>(null)
+  useEffect(() => {
+    if (!username || isLoading || error) return
+    if (analysisTrackedFor.current === username) return
+    if (!gamesByUsername[username]) return
+    analysisTrackedFor.current = username
+    posthog.capture('analysis_viewed', {
+      username,
+      games_analyzed: analysis.gamesAnalyzed,
+      mean_accuracy: analysis.meanAccuracy,
+    })
+  }, [username, isLoading, error, gamesByUsername, analysis])
 
   if (isLoading) {
     return (
