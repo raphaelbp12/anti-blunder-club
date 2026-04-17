@@ -3,6 +3,7 @@ import { MemoryRouter } from 'react-router-dom'
 import { useThemeStore } from '../../hooks/useThemeStore'
 import { trackPageView } from '../../utils/analytics'
 import { usePlayerGamesStore } from '../../stores/usePlayerGamesStore'
+import { useConsentStore } from '../../stores/useConsentStore'
 import { Layout } from '../Layout'
 
 vi.mock('../../utils/analytics', () => ({
@@ -23,12 +24,16 @@ function renderLayout(initialEntries: string[]) {
 describe('Layout', () => {
   const originalMatchMedia = window.matchMedia
 
+  const originalGtag = window.gtag
+
   beforeEach(() => {
     useThemeStore.setState({ isDark: true })
     usePlayerGamesStore.setState({ lastUsername: null })
+    useConsentStore.setState({ consent: 'pending' })
     document.documentElement.classList.remove('dark')
     localStorage.clear()
     window.matchMedia = vi.fn().mockReturnValue({ matches: false })
+    window.gtag = originalGtag
   })
 
   afterEach(() => {
@@ -96,5 +101,30 @@ describe('Layout', () => {
   it('fires trackPageView on mount', () => {
     renderLayout(['/player/hikaru'])
     expect(trackPageView).toHaveBeenCalledWith('/player/hikaru')
+  })
+
+  it('calls initConsent on mount with granted state', () => {
+    useConsentStore.setState({ consent: 'granted' })
+    window.gtag = vi.fn()
+    renderLayout(['/'])
+    expect(window.gtag).toHaveBeenCalledWith('consent', 'update', {
+      analytics_storage: 'granted',
+    })
+  })
+
+  it('renders cookie consent banner when consent is pending', () => {
+    useConsentStore.setState({ consent: 'pending' })
+    renderLayout(['/'])
+    expect(
+      screen.getByRole('region', { name: /cookie consent/i }),
+    ).toBeInTheDocument()
+  })
+
+  it('does not render cookie consent banner when consent is granted', () => {
+    useConsentStore.setState({ consent: 'granted' })
+    renderLayout(['/'])
+    expect(
+      screen.queryByRole('region', { name: /cookie consent/i }),
+    ).not.toBeInTheDocument()
   })
 })
