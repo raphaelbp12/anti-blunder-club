@@ -1,0 +1,16 @@
+{
+  "name": "Anti-Blunder Club",
+  "short_name": "Anti-Blunder",
+  "description": "Free chess game analysis tool. Analyze your Chess.com games, find blunders, and improve your chess skills.",
+  "start_url": "/anti-blunder-club/",
+  "display": "standalone",
+  "background_color": "#1a1a2e",
+  "theme_color": "#1a1a2e",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

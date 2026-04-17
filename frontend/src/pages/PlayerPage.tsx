@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { useParams } from 'react-router-dom'
 import { MatchList } from '../components/MatchList'
+import { SEOHelmet } from '../components/SEOHelmet'
 import {
   fetchPlayerProfile,
   fetchPlayerStats,
@@ -91,6 +92,11 @@ export function PlayerPage() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-start gap-6 p-8">
+      <SEOHelmet
+        title={`${username}'s Chess Games`}
+        description={`View recent Chess.com games and accuracy stats for ${username}. Analyze blunders and improve your chess.`}
+        path={`/player/${username}`}
+      />
       <h1 className="text-2xl font-bold">{username}'s Matches</h1>
       {error && <p className="text-danger">{error}</p>}
       {!error && <MatchList games={games} username={username ?? ''} />}

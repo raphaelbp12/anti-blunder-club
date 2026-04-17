@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useLocation, useParams } from 'react-router-dom'
+import { SEOHelmet } from '../components/SEOHelmet'
 import { TrackedExternalLink } from '../components/TrackedExternalLink'
 import { fetchPlayerGame, type ChessGame } from '../services/chessComApi'
 
@@ -44,6 +45,11 @@ export function MatchPage() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-start gap-6 p-8">
+      <SEOHelmet
+        title={`Game Analysis — ${game.white.username} vs ${game.black.username}`}
+        description={`Chess game analysis: ${game.white.username} (${game.white.rating}) vs ${game.black.username} (${game.black.rating}). ${game.timeClass} game review.`}
+        path={`/player/${username}/match/${gameId}`}
+      />
       <h1 className="text-2xl font-bold">Match Details</h1>
       <div className="w-full max-w-lg space-y-4 rounded-lg border border-border p-6">
         <div className="flex justify-between">

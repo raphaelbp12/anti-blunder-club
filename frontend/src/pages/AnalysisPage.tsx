@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { useParams } from 'react-router-dom'
 import posthog from 'posthog-js'
+import { SEOHelmet } from '../components/SEOHelmet'
 import { TrackedLink } from '../components/TrackedLink'
 import { usePlayerGamesStore } from '../stores/usePlayerGamesStore'
 import { analyzeAccuracy } from '../utils/accuracyAnalysis'
@@ -43,6 +44,11 @@ export function AnalysisPage() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-start gap-6 p-8">
+      <SEOHelmet
+        title={`${username}'s Accuracy Analysis`}
+        description={`Accuracy analysis for ${username}'s Chess.com games. Review game-by-game accuracy and identify areas for improvement.`}
+        path={`/player/${username}/analysis`}
+      />
       <h1 className="text-2xl font-bold">{username}'s Accuracy Analysis</h1>
       {error && <p className="text-danger">{error}</p>}
       {!error && analysis.gamesAnalyzed === 0 && (
