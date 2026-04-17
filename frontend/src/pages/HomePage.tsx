@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import { PlayerCard } from '../components/PlayerCard'
 import { PlayerSearch } from '../components/PlayerSearch'
 import { useSearchHistoryStore } from '../stores/useSearchHistoryStore'
+import { trackEvent } from '../utils/analytics'
 
 export function HomePage() {
   const navigate = useNavigate()
@@ -9,7 +10,18 @@ export function HomePage() {
   const removePlayer = useSearchHistoryStore((s) => s.removePlayer)
 
   function handleSearch(username: string) {
+    trackEvent('player_search', { username })
     navigate(`/player/${username}`)
+  }
+
+  function handleCardClick(username: string) {
+    trackEvent('player_card_click', { username })
+    navigate(`/player/${username}`)
+  }
+
+  function handleDelete(username: string) {
+    trackEvent('player_card_delete', { username })
+    removePlayer(username)
   }
 
   return (
@@ -29,8 +41,8 @@ export function HomePage() {
               username={entry.username}
               avatarUrl={entry.avatarUrl}
               highestRating={entry.highestRating}
-              onDelete={removePlayer}
-              onClick={(username) => navigate(`/player/${username}`)}
+              onDelete={handleDelete}
+              onClick={handleCardClick}
             />
           ))}
         </section>

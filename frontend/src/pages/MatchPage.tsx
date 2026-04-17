@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useLocation, useParams } from 'react-router-dom'
+import { TrackedExternalLink } from '../components/TrackedExternalLink'
 import { fetchPlayerGame, type ChessGame } from '../services/chessComApi'
 
 export function MatchPage() {
@@ -72,14 +73,20 @@ export function MatchPage() {
           {game.timeClass}
         </p>
         <div className="text-center">
-          <a
+          <TrackedExternalLink
             href={game.url}
             target="_blank"
             rel="noopener noreferrer"
+            eventName="external_link_click"
+            eventParams={{
+              username: username!,
+              game_id: gameId!,
+              url: game.url,
+            }}
             className="text-accent hover:underline"
           >
             View on Chess.com
-          </a>
+          </TrackedExternalLink>
         </div>
       </div>
     </main>

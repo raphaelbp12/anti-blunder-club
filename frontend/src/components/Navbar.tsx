@@ -1,5 +1,6 @@
-import { Link } from 'react-router-dom'
 import { useThemeStore } from '../hooks/useThemeStore'
+import { TrackedButton } from './TrackedButton'
+import { TrackedLink } from './TrackedLink'
 
 interface NavbarProps {
   username?: string
@@ -53,37 +54,51 @@ export function Navbar({ username }: NavbarProps) {
   return (
     <nav className="flex w-full items-center border-b border-border px-6 py-3">
       <div className="flex gap-4">
-        <Link
+        <TrackedLink
           to="/"
+          eventName="nav_click"
+          eventParams={{ link_name: 'Home', destination: '/' }}
           className="text-accent hover:text-accent-hover font-medium"
         >
           Home
-        </Link>
+        </TrackedLink>
         {username && (
           <>
-            <Link
+            <TrackedLink
               to={`/player/${username}`}
+              eventName="nav_click"
+              eventParams={{
+                link_name: 'Matches',
+                destination: `/player/${username}`,
+              }}
               className="text-accent hover:text-accent-hover font-medium"
             >
               Matches
-            </Link>
-            <Link
+            </TrackedLink>
+            <TrackedLink
               to={`/player/${username}/analysis`}
+              eventName="nav_click"
+              eventParams={{
+                link_name: 'Analysis',
+                destination: `/player/${username}/analysis`,
+              }}
               className="text-accent hover:text-accent-hover font-medium"
             >
               Analysis
-            </Link>
+            </TrackedLink>
           </>
         )}
       </div>
       <div className="ml-auto">
-        <button
+        <TrackedButton
+          eventName="theme_toggle"
+          eventParams={{ new_theme: isDark ? 'light' : 'dark' }}
           onClick={toggle}
           aria-label="Toggle theme"
           className="rounded-md p-2 text-secondary hover:text-primary"
         >
           {isDark ? <SunIcon /> : <MoonIcon />}
-        </button>
+        </TrackedButton>
       </div>
     </nav>
   )

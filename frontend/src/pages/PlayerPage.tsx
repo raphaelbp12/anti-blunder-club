@@ -8,6 +8,7 @@ import {
 } from '../services/chessComApi'
 import { usePlayerGamesStore } from '../stores/usePlayerGamesStore'
 import { useSearchHistoryStore } from '../stores/useSearchHistoryStore'
+import { trackEvent } from '../utils/analytics'
 
 export function PlayerPage() {
   const { username } = useParams<{ username: string }>()
@@ -23,6 +24,28 @@ export function PlayerPage() {
   const games = username ? (gamesByUsername[username] ?? []) : []
   const addPlayer = useSearchHistoryStore((s) => s.addPlayer)
   const profileFetchedFor = useRef<string | null>(null)
+  const resultTrackedFor = useRef<string | null>(null)
+
+  useEffect(() => {
+    if (!username || isLoading) return
+    if (resultTrackedFor.current === username) return
+
+    if (error) {
+      resultTrackedFor.current = username
+      trackEvent('player_search_result', {
+        username,
+        result: 'error',
+        game_count: 0,
+      })
+    } else if (gamesByUsername[username]) {
+      resultTrackedFor.current = username
+      trackEvent('player_search_result', {
+        username,
+        result: 'success',
+        game_count: gamesByUsername[username].length,
+      })
+    }
+  }, [username, gamesByUsername, isLoading, error])
 
   useEffect(() => {
     if (!username || !gamesByUsername[username] || error || isLoading) return

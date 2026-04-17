@@ -3,6 +3,12 @@ import userEvent from '@testing-library/user-event'
 import { MemoryRouter, Route, Routes } from 'react-router-dom'
 import { HomePage } from '../HomePage'
 import { useSearchHistoryStore } from '../../stores/useSearchHistoryStore'
+import { trackEvent } from '../../utils/analytics'
+
+vi.mock('../../utils/analytics', () => ({
+  trackEvent: vi.fn(),
+  trackPageView: vi.fn(),
+}))
 
 describe('HomePage', () => {
   it('renders a heading with the app name', () => {
@@ -129,6 +135,73 @@ describe('HomePage', () => {
       await user.click(screen.getByText('hikaru'))
 
       expect(screen.getByText('Player Page')).toBeInTheDocument()
+    })
+  })
+
+  describe('analytics tracking', () => {
+    beforeEach(() => {
+      vi.clearAllMocks()
+      useSearchHistoryStore.setState({ history: [] })
+    })
+
+    it('fires player_search event on search submit', async () => {
+      const user = userEvent.setup()
+      render(
+        <MemoryRouter>
+          <HomePage />
+        </MemoryRouter>,
+      )
+
+      await user.type(
+        screen.getByRole('textbox', { name: /username/i }),
+        'hikaru',
+      )
+      await user.click(screen.getByRole('button', { name: /search/i }))
+
+      expect(trackEvent).toHaveBeenCalledWith('player_search', {
+        username: 'hikaru',
+      })
+    })
+
+    it('fires player_card_click event when card is clicked', async () => {
+      const user = userEvent.setup()
+      useSearchHistoryStore.setState({
+        history: [{ username: 'hikaru', highestRating: 3200 }],
+      })
+
+      render(
+        <MemoryRouter initialEntries={['/']}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/player/:username" element={<div>Player Page</div>} />
+          </Routes>
+        </MemoryRouter>,
+      )
+
+      await user.click(screen.getByText('hikaru'))
+
+      expect(trackEvent).toHaveBeenCalledWith('player_card_click', {
+        username: 'hikaru',
+      })
+    })
+
+    it('fires player_card_delete event when delete is clicked', async () => {
+      const user = userEvent.setup()
+      useSearchHistoryStore.setState({
+        history: [{ username: 'hikaru', highestRating: 3200 }],
+      })
+
+      render(
+        <MemoryRouter>
+          <HomePage />
+        </MemoryRouter>,
+      )
+
+      await user.click(screen.getByRole('button', { name: /remove hikaru/i }))
+
+      expect(trackEvent).toHaveBeenCalledWith('player_card_delete', {
+        username: 'hikaru',
+      })
     })
   })
 })

@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
+import { TrackedLink } from '../components/TrackedLink'
 import { usePlayerGamesStore } from '../stores/usePlayerGamesStore'
 import { analyzeAccuracy } from '../utils/accuracyAnalysis'
 import { extractGameId } from '../services/chessComApi'
@@ -75,13 +76,18 @@ export function AnalysisPage() {
                         <span className="text-lg font-bold text-danger">
                           {accuracy.toFixed(1)}%
                         </span>
-                        <Link
+                        <TrackedLink
                           to={`/player/${username}/match/${extractGameId(game.url)}`}
                           state={game}
+                          eventName="match_view"
+                          eventParams={{
+                            username: username!,
+                            game_id: extractGameId(game.url),
+                          }}
                           className="text-accent hover:underline"
                         >
                           View
-                        </Link>
+                        </TrackedLink>
                       </div>
                     </li>
                   )

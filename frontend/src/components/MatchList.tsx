@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'
 import type { ChessGame } from '../services/chessComApi'
 import { extractGameId } from '../services/chessComApi'
+import { TrackedLink } from './TrackedLink'
 
 interface MatchListProps {
   games: ChessGame[]
@@ -32,13 +32,15 @@ export function MatchList({ games, username }: MatchListProps) {
               {game.accuracies?.black.toFixed(1) ?? '—'}
             </span>
           </div>
-          <Link
+          <TrackedLink
             to={`/player/${username}/match/${extractGameId(game.url)}`}
             state={game}
+            eventName="match_view"
+            eventParams={{ username, game_id: extractGameId(game.url) }}
             className="text-accent hover:underline"
           >
             View
-          </Link>
+          </TrackedLink>
         </li>
       ))}
     </ul>
