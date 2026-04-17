@@ -1,8 +1,14 @@
 import { render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import { useThemeStore } from '../../hooks/useThemeStore'
+import { trackPageView } from '../../utils/analytics'
 import { usePlayerGamesStore } from '../../stores/usePlayerGamesStore'
 import { Layout } from '../Layout'
+
+vi.mock('../../utils/analytics', () => ({
+  trackEvent: vi.fn(),
+  trackPageView: vi.fn(),
+}))
 
 function renderLayout(initialEntries: string[]) {
   return render(
@@ -85,5 +91,10 @@ describe('Layout', () => {
   it('renders children', () => {
     renderLayout(['/'])
     expect(screen.getByText('page content')).toBeInTheDocument()
+  })
+
+  it('fires trackPageView on mount', () => {
+    renderLayout(['/player/hikaru'])
+    expect(trackPageView).toHaveBeenCalledWith('/player/hikaru')
   })
 })

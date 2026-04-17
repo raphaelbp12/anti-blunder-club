@@ -2,7 +2,13 @@ import { render, screen } from '@testing-library/react'
 import { userEvent } from '@testing-library/user-event'
 import { MemoryRouter } from 'react-router-dom'
 import { useThemeStore } from '../../hooks/useThemeStore'
+import { trackEvent } from '../../utils/analytics'
 import { Navbar } from '../Navbar'
+
+vi.mock('../../utils/analytics', () => ({
+  trackEvent: vi.fn(),
+  trackPageView: vi.fn(),
+}))
 
 function renderNavbar(username?: string) {
   return render(
@@ -14,6 +20,7 @@ function renderNavbar(username?: string) {
 
 describe('Navbar', () => {
   beforeEach(() => {
+    vi.clearAllMocks()
     useThemeStore.setState({ isDark: true })
   })
 
@@ -68,5 +75,44 @@ describe('Navbar', () => {
     expect(useThemeStore.getState().isDark).toBe(true)
     await user.click(screen.getByRole('button', { name: /toggle theme/i }))
     expect(useThemeStore.getState().isDark).toBe(false)
+  })
+
+  it('fires nav_click event when Home link is clicked', async () => {
+    renderNavbar()
+    const user = userEvent.setup()
+    await user.click(screen.getByRole('link', { name: /home/i }))
+    expect(trackEvent).toHaveBeenCalledWith('nav_click', {
+      link_name: 'Home',
+      destination: '/',
+    })
+  })
+
+  it('fires nav_click event when Matches link is clicked', async () => {
+    renderNavbar('hikaru')
+    const user = userEvent.setup()
+    await user.click(screen.getByRole('link', { name: /matches/i }))
+    expect(trackEvent).toHaveBeenCalledWith('nav_click', {
+      link_name: 'Matches',
+      destination: '/player/hikaru',
+    })
+  })
+
+  it('fires nav_click event when Analysis link is clicked', async () => {
+    renderNavbar('hikaru')
+    const user = userEvent.setup()
+    await user.click(screen.getByRole('link', { name: /analysis/i }))
+    expect(trackEvent).toHaveBeenCalledWith('nav_click', {
+      link_name: 'Analysis',
+      destination: '/player/hikaru/analysis',
+    })
+  })
+
+  it('fires theme_toggle event with new_theme param', async () => {
+    renderNavbar()
+    const user = userEvent.setup()
+    await user.click(screen.getByRole('button', { name: /toggle theme/i }))
+    expect(trackEvent).toHaveBeenCalledWith('theme_toggle', {
+      new_theme: 'light',
+    })
   })
 })

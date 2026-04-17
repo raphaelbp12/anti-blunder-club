@@ -75,6 +75,17 @@ Chess.com API → chessComApi.ts (service) → usePlayerGamesStore (Zustand cach
 - Router state is used for optimistic navigation (pass data through `<Link state={}>`)
 - All API types live in `chessComApi.ts`, not scattered across files
 
+### Analytics Tracking
+
+- **Always use tracked wrapper components** instead of bare `<button>`, `<Link>`, or `<a>` elements for user-interactive elements:
+  - `TrackedButton` — wraps `<button>`, adds `eventName` and `eventParams` props
+  - `TrackedLink` — wraps react-router `<Link>`, adds `eventName` and `eventParams` props
+  - `TrackedExternalLink` — wraps `<a>`, adds `eventName` and `eventParams` props
+- For programmatic navigation (e.g., `navigate(...)` in event handlers), call `trackEvent()` directly from `utils/analytics.ts`
+- The `usePageTracking` hook in Layout.tsx handles SPA page_view tracking automatically — no per-page setup needed
+- All valid event names are typed in `AnalyticsEvent` (in `utils/analytics.ts`) — add new events to the union type
+- The `analytics.ts` utility safely no-ops when `window.gtag` is unavailable (tests, ad blockers)
+
 ---
 
 ## Repository Structure

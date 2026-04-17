@@ -3,7 +3,13 @@ import { MemoryRouter, Route, Routes } from 'react-router-dom'
 import { PlayerPage } from '../PlayerPage'
 import { usePlayerGamesStore } from '../../stores/usePlayerGamesStore'
 import { useSearchHistoryStore } from '../../stores/useSearchHistoryStore'
+import { trackEvent } from '../../utils/analytics'
 import * as chessComApi from '../../services/chessComApi'
+
+vi.mock('../../utils/analytics', () => ({
+  trackEvent: vi.fn(),
+  trackPageView: vi.fn(),
+}))
 
 const mockGames: chessComApi.ChessGame[] = [
   {
@@ -140,5 +146,39 @@ describe('PlayerPage', () => {
     })
 
     expect(useSearchHistoryStore.getState().history).toEqual([])
+  })
+
+  it('fires player_search_result with success after games load', async () => {
+    vi.spyOn(chessComApi, 'fetchPlayerGames').mockResolvedValue(mockGames)
+    vi.spyOn(chessComApi, 'fetchPlayerProfile').mockResolvedValue({
+      username: 'hikaru',
+    })
+    vi.spyOn(chessComApi, 'fetchPlayerStats').mockResolvedValue({})
+
+    renderPlayerPage('hikaru')
+
+    await waitFor(() => {
+      expect(trackEvent).toHaveBeenCalledWith('player_search_result', {
+        username: 'hikaru',
+        result: 'success',
+        game_count: 1,
+      })
+    })
+  })
+
+  it('fires player_search_result with error on fetch failure', async () => {
+    vi.spyOn(chessComApi, 'fetchPlayerGames').mockRejectedValue(
+      new Error('Player "nobody" not found'),
+    )
+
+    renderPlayerPage('nobody')
+
+    await waitFor(() => {
+      expect(trackEvent).toHaveBeenCalledWith('player_search_result', {
+        username: 'nobody',
+        result: 'error',
+        game_count: 0,
+      })
+    })
   })
 })

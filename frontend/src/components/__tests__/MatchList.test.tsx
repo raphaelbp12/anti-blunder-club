@@ -1,7 +1,14 @@
 import { render, screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import { MemoryRouter } from 'react-router-dom'
+import { trackEvent } from '../../utils/analytics'
 import { MatchList } from '../MatchList'
 import type { ChessGame } from '../../services/chessComApi'
+
+vi.mock('../../utils/analytics', () => ({
+  trackEvent: vi.fn(),
+  trackPageView: vi.fn(),
+}))
 
 const mockGames: ChessGame[] = [
   {
@@ -72,5 +79,16 @@ describe('MatchList', () => {
     expect(links).toHaveLength(2)
     expect(links[0]).toHaveAttribute('href', '/player/alice/match/111')
     expect(links[1]).toHaveAttribute('href', '/player/alice/match/222')
+  })
+
+  it('fires match_view event when View link is clicked', async () => {
+    const user = userEvent.setup()
+    renderWithRouter(<MatchList games={mockGames} username="alice" />)
+    const links = screen.getAllByRole('link', { name: /view/i })
+    await user.click(links[0])
+    expect(trackEvent).toHaveBeenCalledWith('match_view', {
+      username: 'alice',
+      game_id: '111',
+    })
   })
 })
