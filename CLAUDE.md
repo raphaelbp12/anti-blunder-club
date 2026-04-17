@@ -75,17 +75,52 @@ Chess.com API → chessComApi.ts (service) → usePlayerGamesStore (Zustand cach
 - Router state is used for optimistic navigation (pass data through `<Link state={}>`)
 - All API types live in `chessComApi.ts`, not scattered across files
 
-### Analytics Tracking (PostHog)
+### Analytics (PostHog)
 
-- **PostHog** is the sole analytics provider, running in cookieless mode (`persistence: 'memory'`) on EU cloud — no GDPR consent banner needed
-- PostHog auto-captures `$pageview` events via its React integration — no manual page tracking hook needed
-- **Always use tracked wrapper components** instead of bare `<button>`, `<Link>`, or `<a>` elements for user-interactive elements:
+**Setup:** PostHog is the sole analytics provider. It runs on EU cloud in cookieless mode (`persistence: 'memory'`) — no cookies, no localStorage, no GDPR consent banner needed.
+
+- Initialized in `src/main.tsx` with `PostHogProvider` and `PostHogErrorBoundary`
+- Config uses `defaults: '2026-01-30'` which enables `capture_pageview: 'history_change'` — auto-captures `$pageview` on every SPA navigation (History API)
+- PostHog also auto-captures clicks, inputs, and unhandled React errors — no manual setup needed for these
+
+**How to track custom events:**
+
+- **Always use tracked wrapper components** instead of bare `<button>`, `<Link>`, or `<a>`:
   - `TrackedButton` — wraps `<button>`, adds `eventName` and `eventParams` props
   - `TrackedLink` — wraps react-router `<Link>`, adds `eventName` and `eventParams` props
   - `TrackedExternalLink` — wraps `<a>`, adds `eventName` and `eventParams` props
 - For programmatic navigation (e.g., `navigate(...)` in event handlers), call `trackEvent()` directly from `utils/analytics.ts`
 - All valid event names are typed in `AnalyticsEvent` (in `utils/analytics.ts`) — add new events to the union type
 - Event params use `EventParams` type (exported from `utils/analytics.ts`)
+
+**Current custom events:**
+
+| Event | Trigger | Key params |
+|---|---|---|
+| `player_search` | User submits search form | `username` |
+| `player_search_result` | Games load or error | `username`, `result`, `game_count` |
+| `player_card_click` | Click recent player card | `username` |
+| `player_card_delete` | Remove player from history | `username` |
+| `match_view` | Navigate to match detail | `username`, `game_id` |
+| `external_link_click` | Click "View on Chess.com" | `url` |
+| `nav_click` | Click navbar link | `link_name`, `destination` |
+| `theme_toggle` | Toggle dark/light mode | `new_theme` |
+| `analysis_viewed` | View accuracy analysis | `username`, `games_analyzed`, `mean_accuracy` |
+
+**Dashboard:** https://eu.posthog.com/project/161023/dashboard/627625
+
+### Measurability Checklist
+
+When implementing a new feature, always ask: **"How will we know if this feature is being used?"**
+
+1. **Identify the key user action** — what does the user do that signals the feature is working? (e.g., clicks a button, submits a form, navigates to a page)
+2. **Choose the right tracking method:**
+   - If the action is a click on a `<button>`, `<Link>`, or `<a>` — use the corresponding tracked wrapper component
+   - If the action is programmatic (e.g., inside a `navigate()` or `useEffect`) — call `trackEvent()` directly
+   - If it's a page view — PostHog handles this automatically, no action needed
+3. **Add the event name** to the `AnalyticsEvent` union type in `utils/analytics.ts`
+4. **Include meaningful params** — what context makes this event useful in PostHog? (e.g., username, item count, success/error status)
+5. **Propose the event** during plan mode — include the event name and params in the plan for review
 
 ---
 
