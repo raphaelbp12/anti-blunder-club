@@ -13,6 +13,11 @@ declare function gtag(
   eventParams?: GtagEventParams,
 ): void
 declare function gtag(command: 'js', date: Date): void
+declare function gtag(
+  command: 'consent',
+  action: 'default' | 'update',
+  params: { analytics_storage: 'granted' | 'denied' },
+): void
 
 interface Window {
   gtag: typeof gtag

@@ -2,7 +2,7 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-:root {
+@theme {
   --color-surface: var(--color-white);
   --color-surface-alt: var(--color-gray-100);
   --color-primary: var(--color-gray-900);
