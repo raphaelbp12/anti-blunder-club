@@ -1,7 +1,10 @@
-import { useEffect, useRef } from 'react'
-import { useParams } from 'react-router-dom'
-import { MatchList } from '../components/MatchList'
+import { useEffect, useRef, useState } from 'react'
+import { useParams, useSearchParams } from 'react-router-dom'
+import { AccuracyTabContent } from '../components/AccuracyTabContent'
+import { FilterChips } from '../components/FilterChips'
+import { GamesTabContent } from '../components/GamesTabContent'
 import { SEOHelmet } from '../components/SEOHelmet'
+import { TabBar } from '../components/TabBar'
 import {
   fetchPlayerProfile,
   fetchPlayerStats,
@@ -11,8 +14,25 @@ import { usePlayerGamesStore } from '../stores/usePlayerGamesStore'
 import { useSearchHistoryStore } from '../stores/useSearchHistoryStore'
 import { trackEvent } from '../utils/analytics'
 
+const TABS = [
+  { key: 'accuracy', label: 'Accuracy' },
+  { key: 'games', label: 'Games' },
+]
+
+const TIME_CLASS_OPTIONS = [
+  { label: 'All', value: 'all' },
+  { label: 'Bullet', value: 'bullet' },
+  { label: 'Blitz', value: 'blitz' },
+  { label: 'Rapid', value: 'rapid' },
+  { label: 'Daily', value: 'daily' },
+]
+
 export function PlayerPage() {
   const { username } = useParams<{ username: string }>()
+  const [searchParams, setSearchParams] = useSearchParams()
+  const activeTab = searchParams.get('tab') ?? 'accuracy'
+  const [timeClassFilter, setTimeClassFilter] = useState('all')
+
   const { gamesByUsername, isLoading, error, fetchGames } =
     usePlayerGamesStore()
 
@@ -23,6 +43,11 @@ export function PlayerPage() {
   }, [username, fetchGames])
 
   const games = username ? (gamesByUsername[username] ?? []) : []
+  const filteredGames =
+    timeClassFilter === 'all'
+      ? games
+      : games.filter((g) => g.timeClass === timeClassFilter)
+
   const addPlayer = useSearchHistoryStore((s) => s.addPlayer)
   const profileFetchedFor = useRef<string | null>(null)
   const resultTrackedFor = useRef<string | null>(null)
@@ -82,6 +107,18 @@ export function PlayerPage() {
     }
   }, [username, gamesByUsername, error, isLoading, addPlayer])
 
+  function handleTabChange(tabKey: string) {
+    trackEvent('tab_switched', { tab_name: tabKey, from_tab: activeTab })
+    setSearchParams({ tab: tabKey })
+  }
+
+  function handleFilterChange(value: string) {
+    setTimeClassFilter(value)
+    if (value !== 'all') {
+      trackEvent('game_filter_applied', { filter_value: value })
+    }
+  }
+
   if (isLoading) {
     return (
       <main className="flex min-h-screen flex-col items-center justify-center">
@@ -93,13 +130,34 @@ export function PlayerPage() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-start gap-6 p-8">
       <SEOHelmet
-        title={`${username}'s Chess Games`}
+        title={`${username}'s Chess Dashboard`}
         description={`View recent Chess.com games and accuracy stats for ${username}. Analyze blunders and improve your chess.`}
         path={`/player/${username}`}
       />
-      <h1 className="text-2xl font-bold">{username}'s Matches</h1>
       {error && <p className="text-danger">{error}</p>}
-      {!error && <MatchList games={games} username={username ?? ''} />}
+      {!error && (
+        <>
+          <TabBar
+            tabs={TABS}
+            activeTab={activeTab}
+            onTabChange={handleTabChange}
+          />
+          <FilterChips
+            options={TIME_CLASS_OPTIONS}
+            activeValue={timeClassFilter}
+            onChange={handleFilterChange}
+          />
+          {activeTab === 'accuracy' && (
+            <AccuracyTabContent
+              games={filteredGames}
+              username={username ?? ''}
+            />
+          )}
+          {activeTab === 'games' && (
+            <GamesTabContent games={filteredGames} username={username ?? ''} />
+          )}
+        </>
+      )}
     </main>
   )
 }

@@ -11,6 +11,13 @@ export interface ChessGame {
   timeClass: string
   endTime: number
   accuracies?: { white: number; black: number }
+  eco?: string
+  openingUrl?: string
+  openingName?: string
+  termination?: string
+  rules?: string
+  rated?: boolean
+  timeControl?: string
 }
 
 export interface PlayerProfile {
@@ -40,6 +47,11 @@ interface RawGame {
   time_class: string
   end_time: number
   accuracies?: { white: number; black: number }
+  pgn?: string
+  eco?: string
+  rules?: string
+  rated?: boolean
+  time_control?: string
 }
 
 interface GamesResponse {
@@ -49,6 +61,8 @@ interface GamesResponse {
 export function extractGameId(url: string): string {
   return url.split('/').pop()!
 }
+
+const MAX_ARCHIVES = 3
 
 export async function fetchPlayerGames(username: string): Promise<ChessGame[]> {
   const archivesRes = await fetch(
@@ -65,11 +79,18 @@ export async function fetchPlayerGames(username: string): Promise<ChessGame[]> {
     throw new Error('No game archives found')
   }
 
-  const lastArchiveUrl = archives[archives.length - 1]
-  const gamesRes = await fetch(lastArchiveUrl)
-  const { games } = (await gamesRes.json()) as GamesResponse
+  const recentArchives = archives.slice(-MAX_ARCHIVES)
+  const archiveResponses = await Promise.all(
+    recentArchives.map((url) => fetch(url).then((res) => res.json())),
+  )
 
-  return games.map(mapRawGame)
+  const allGames = (archiveResponses as GamesResponse[])
+    .flatMap((response) => response.games)
+    .filter((game) => !game.rules || game.rules === 'chess')
+    .map(mapRawGame)
+    .sort((a, b) => b.endTime - a.endTime)
+
+  return allGames
 }
 
 export async function fetchPlayerGame(
@@ -136,6 +157,29 @@ export async function fetchPlayerStats(username: string): Promise<PlayerStats> {
   return (await res.json()) as PlayerStats
 }
 
+export function parseEcoCode(pgn: string | undefined): string | undefined {
+  if (!pgn) return undefined
+  const match = pgn.match(/\[ECO "([^"]+)"\]/)
+  return match?.[1]
+}
+
+export function parseTermination(pgn: string | undefined): string | undefined {
+  if (!pgn) return undefined
+  const match = pgn.match(/\[Termination "([^"]+)"\]/)
+  return match?.[1]
+}
+
+export function parseOpeningName(
+  ecoUrl: string | undefined,
+): string | undefined {
+  if (!ecoUrl) return undefined
+  const openingsIndex = ecoUrl.indexOf('/openings/')
+  if (openingsIndex === -1) return undefined
+  const slug = ecoUrl.slice(openingsIndex + '/openings/'.length)
+  const mainName = slug.split('...')[0]
+  return mainName.replace(/-/g, ' ')
+}
+
 function mapRawGame(game: RawGame): ChessGame {
   return {
     url: game.url,
@@ -144,5 +188,12 @@ function mapRawGame(game: RawGame): ChessGame {
     timeClass: game.time_class,
     endTime: game.end_time,
     accuracies: game.accuracies,
+    eco: parseEcoCode(game.pgn),
+    openingUrl: game.eco,
+    openingName: parseOpeningName(game.eco),
+    termination: parseTermination(game.pgn),
+    rules: game.rules,
+    rated: game.rated,
+    timeControl: game.time_control,
   }
 }

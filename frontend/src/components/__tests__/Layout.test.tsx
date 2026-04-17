@@ -42,42 +42,32 @@ describe('Layout', () => {
     renderLayout(['/'])
     expect(screen.getByRole('link', { name: /home/i })).toBeInTheDocument()
     expect(
-      screen.queryByRole('link', { name: /matches/i }),
-    ).not.toBeInTheDocument()
-    expect(
-      screen.queryByRole('link', { name: /analysis/i }),
+      screen.queryByRole('link', { name: /dashboard/i }),
     ).not.toBeInTheDocument()
   })
 
-  it('shows player tabs on a player route', () => {
+  it('shows Dashboard link on a player route', () => {
     renderLayout(['/player/hikaru'])
     expect(screen.getByRole('link', { name: /home/i })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: /matches/i })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: /analysis/i })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /dashboard/i })).toBeInTheDocument()
   })
 
-  it('shows player tabs on a match route', () => {
+  it('shows Dashboard link on a match route', () => {
     renderLayout(['/player/hikaru/match/123'])
-    expect(screen.getByRole('link', { name: /matches/i })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: /analysis/i })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /dashboard/i })).toBeInTheDocument()
   })
 
-  it('shows player tabs on the analysis route', () => {
+  it('shows Dashboard link on the analysis route', () => {
     renderLayout(['/player/hikaru/analysis'])
-    expect(screen.getByRole('link', { name: /matches/i })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: /analysis/i })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /dashboard/i })).toBeInTheDocument()
   })
 
-  it('shows player tabs on home page when lastUsername is set', () => {
+  it('shows Dashboard link on home page when lastUsername is set', () => {
     usePlayerGamesStore.setState({ lastUsername: 'hikaru' })
     renderLayout(['/'])
-    expect(screen.getByRole('link', { name: /matches/i })).toHaveAttribute(
+    expect(screen.getByRole('link', { name: /dashboard/i })).toHaveAttribute(
       'href',
       '/player/hikaru',
-    )
-    expect(screen.getByRole('link', { name: /analysis/i })).toHaveAttribute(
-      'href',
-      '/player/hikaru/analysis',
     )
   })
 
