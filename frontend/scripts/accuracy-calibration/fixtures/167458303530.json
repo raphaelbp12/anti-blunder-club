@@ -1,0 +1,32 @@
+{
+  "url": "https://www.chess.com/game/live/167458303530",
+  "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2026.04.17\"]\n[Round \"-\"]\n[White \"22manudt\"]\n[Black \"cowboy_777\"]\n[Result \"1/2-1/2\"]\n[CurrentPosition \"8/3p2pk/7p/p2p4/3Pq3/2P1B1Q1/P4PKP/8 w - - 14 35\"]\n[Timezone \"UTC\"]\n[ECO \"B22\"]\n[ECOUrl \"https://www.chess.com/openings/Alapin-Sicilian-Defense-2...e6-3.d4-cxd4-4.cxd4\"]\n[UTCDate \"2026.04.17\"]\n[UTCTime \"22:02:58\"]\n[WhiteElo \"1084\"]\n[BlackElo \"1105\"]\n[TimeControl \"600\"]\n[Termination \"Game drawn by repetition\"]\n[StartTime \"22:02:58\"]\n[EndDate \"2026.04.17\"]\n[EndTime \"22:15:32\"]\n[Link \"https://www.chess.com/game/live/167458303530\"]\n\n1. d4 {[%clk 0:09:58.3]} 1... e6 {[%clk 0:09:58.7]} 2. e4 {[%clk 0:09:55.3]} 2... c5 {[%clk 0:09:57.2]} 3. c3 {[%clk 0:09:52.7]} 3... cxd4 {[%clk 0:09:56]} 4. cxd4 {[%clk 0:09:51.8]} 4... Qf6 {[%clk 0:09:49.5]} 5. Nf3 {[%clk 0:09:45.6]} 5... Bb4+ {[%clk 0:09:45.3]} 6. Nc3 {[%clk 0:09:43.3]} 6... Bxc3+ {[%clk 0:09:43.5]} 7. bxc3 {[%clk 0:09:43.2]} 7... b6 {[%clk 0:09:40]} 8. Bg5 {[%clk 0:09:20.7]} 8... Qg6 {[%clk 0:09:38.6]} 9. Bd3 {[%clk 0:08:54.6]} 9... f6 {[%clk 0:09:35.7]} 10. e5 {[%clk 0:08:48.7]} 10... Qf7 {[%clk 0:09:30.5]} 11. Bf4 {[%clk 0:08:32.4]} 11... Bb7 {[%clk 0:09:23]} 12. O-O {[%clk 0:08:27.5]} 12... a5 {[%clk 0:09:02]} 13. Qd2 {[%clk 0:07:57.5]} 13... Bxf3 {[%clk 0:08:54.7]} 14. gxf3 {[%clk 0:07:55.4]} 14... Ne7 {[%clk 0:08:38.1]} 15. Be4 {[%clk 0:07:19.3]} 15... Nbc6 {[%clk 0:08:26.5]} 16. Rab1 {[%clk 0:07:08.9]} 16... Rb8 {[%clk 0:08:20.3]} 17. Rb2 {[%clk 0:06:40.6]} 17... h6 {[%clk 0:08:04.5]} 18. Rfb1 {[%clk 0:06:37.2]} 18... Nd5 {[%clk 0:07:22.4]} 19. Bxd5 {[%clk 0:06:22.6]} 19... exd5 {[%clk 0:07:18.8]} 20. Rxb6 {[%clk 0:06:16]} 20... Rxb6 {[%clk 0:07:16.2]} 21. Rxb6 {[%clk 0:06:15.9]} 21... Ke7 {[%clk 0:07:15.1]} 22. Qe2 {[%clk 0:06:06.3]} 22... Rb8 {[%clk 0:06:05.5]} 23. exf6+ {[%clk 0:05:46.8]} 23... Kxf6 {[%clk 0:06:04.6]} 24. Qe5+ {[%clk 0:05:34.9]} 24... Kg6 {[%clk 0:06:03.6]} 25. Rxb8 {[%clk 0:04:21.8]} 25... Nxb8 {[%clk 0:05:59.6]} 26. Qxb8 {[%clk 0:04:18.5]} 26... Kh7 {[%clk 0:05:52.7]} 27. Be3 {[%clk 0:03:38.7]} 27... Qxf3 {[%clk 0:05:40]} 28. Qd6 {[%clk 0:03:04.7]} 28... Qd1+ {[%clk 0:05:24.4]} 29. Kg2 {[%clk 0:03:01.7]} 29... Qg4+ {[%clk 0:05:22.5]} 30. Qg3 {[%clk 0:02:55]} 30... Qe4+ {[%clk 0:05:13]} 31. Kh3 {[%clk 0:02:51.4]} 31... Qf5+ {[%clk 0:05:11.5]} 32. Kg2 {[%clk 0:02:48.8]} 32... Qe4+ {[%clk 0:05:10]} 33. Kf1 {[%clk 0:02:46.6]} 33... Qb1+ {[%clk 0:05:08]} 34. Kg2 {[%clk 0:02:36.6]} 34... Qe4+ {[%clk 0:04:57.9]} 1/2-1/2\n",
+  "time_control": "600",
+  "end_time": 1776464132,
+  "rated": true,
+  "accuracies": {
+    "white": 56.14,
+    "black": 54.43
+  },
+  "tcn": "lB0SmCYIksIBsB7Tgv9zbszsjsXPcMTUft1TCKU1MD6XegWGdlXvov!0tC5Qab45bj3Vfb0JCJSJjP5PbP80lm?5KT0TmKTUP5Q5K5U3Du1v5RvdgodERwECoxCLxoLCofCbfobC",
+  "uuid": "319e0772-3aa9-11f1-8849-28ad8d01000f",
+  "initial_setup": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "fen": "8/3p2pk/7p/p2p4/3Pq3/2P1B1Q1/P4PKP/8 w - - 14 35",
+  "time_class": "rapid",
+  "rules": "chess",
+  "white": {
+    "rating": 1084,
+    "result": "repetition",
+    "@id": "https://api.chess.com/pub/player/22manudt",
+    "username": "22manudt",
+    "uuid": "b62b957e-66d1-11e9-bf59-df9a0af87289"
+  },
+  "black": {
+    "rating": 1105,
+    "result": "repetition",
+    "@id": "https://api.chess.com/pub/player/cowboy_777",
+    "username": "cowboy_777",
+    "uuid": "d2575e90-65b2-11f0-8433-a1cc5d34a70c"
+  },
+  "eco": "https://www.chess.com/openings/Alapin-Sicilian-Defense-2...e6-3.d4-cxd4-4.cxd4"
+}

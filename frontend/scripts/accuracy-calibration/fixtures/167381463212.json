@@ -1,0 +1,32 @@
+{
+  "url": "https://www.chess.com/game/live/167381463212",
+  "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2026.04.16\"]\n[Round \"-\"]\n[White \"Hikaru\"]\n[Black \"SuperPower2011\"]\n[Result \"1-0\"]\n[CurrentPosition \"8/r6p/3k2pP/p3R3/N4P2/3P2P1/3K4/8 b - - 0 46\"]\n[Timezone \"UTC\"]\n[ECO \"A01\"]\n[ECOUrl \"https://www.chess.com/openings/Nimzowitsch-Larsen-Attack-Classical-Variation-2.Bb2-Nf6\"]\n[UTCDate \"2026.04.16\"]\n[UTCTime \"08:44:41\"]\n[WhiteElo \"3411\"]\n[BlackElo \"3002\"]\n[TimeControl \"180\"]\n[Termination \"Hikaru won by resignation\"]\n[StartTime \"08:44:41\"]\n[EndDate \"2026.04.16\"]\n[EndTime \"08:49:43\"]\n[Link \"https://www.chess.com/game/live/167381463212\"]\n\n1. b3 {[%clk 0:03:00]} 1... d5 {[%clk 0:03:00]} 2. Bb2 {[%clk 0:02:59.9]} 2... Nf6 {[%clk 0:02:59.7]} 3. d3 {[%clk 0:02:58.8]} 3... e6 {[%clk 0:02:59]} 4. g3 {[%clk 0:02:57.8]} 4... c5 {[%clk 0:02:58.6]} 5. Bg2 {[%clk 0:02:57.5]} 5... Nc6 {[%clk 0:02:58.2]} 6. Nd2 {[%clk 0:02:57.3]} 6... Be7 {[%clk 0:02:57.8]} 7. Ngf3 {[%clk 0:02:57]} 7... O-O {[%clk 0:02:57.4]} 8. O-O {[%clk 0:02:56.8]} 8... b6 {[%clk 0:02:57]} 9. e4 {[%clk 0:02:55.5]} 9... Bb7 {[%clk 0:02:56.3]} 10. e5 {[%clk 0:02:54.9]} 10... Nd7 {[%clk 0:02:55.8]} 11. Re1 {[%clk 0:02:54.8]} 11... a5 {[%clk 0:02:54.9]} 12. a4 {[%clk 0:02:52.7]} 12... Qc7 {[%clk 0:02:52.4]} 13. h4 {[%clk 0:02:51.8]} 13... Rae8 {[%clk 0:02:51.7]} 14. Bh3 {[%clk 0:02:50.6]} 14... Ba6 {[%clk 0:02:36.3]} 15. Nf1 {[%clk 0:02:48]} 15... d4 {[%clk 0:02:35]} 16. Qe2 {[%clk 0:02:46.6]} 16... Nb4 {[%clk 0:02:33.6]} 17. h5 {[%clk 0:02:40.4]} 17... Kh8 {[%clk 0:02:17.2]} 18. h6 {[%clk 0:02:38.3]} 18... g6 {[%clk 0:02:14.9]} 19. N1h2 {[%clk 0:02:35.4]} 19... Bb7 {[%clk 0:01:57.8]} 20. Bc1 {[%clk 0:02:33]} 20... f5 {[%clk 0:01:48.3]} 21. exf6 {[%clk 0:02:29.6]} 21... Bxf6 {[%clk 0:01:47.6]} 22. Bg5 {[%clk 0:02:17.5]} 22... e5 {[%clk 0:01:31.2]} 23. Bxd7 {[%clk 0:02:08.4]} 23... Qxd7 {[%clk 0:01:08.4]} 24. Bxf6+ {[%clk 0:02:06.9]} 24... Rxf6 {[%clk 0:01:02.9]} 25. Nxe5 {[%clk 0:02:06.1]} 25... Rfe6 {[%clk 0:01:02.4]} 26. Nxd7 {[%clk 0:01:47]} 26... Rxe2 {[%clk 0:01:01.1]} 27. Rxe2 {[%clk 0:01:46.9]} 27... Rxe2 {[%clk 0:01:00.4]} 28. Kf1 {[%clk 0:01:46.5]} 28... Re7 {[%clk 0:00:40.5]} 29. Nxb6 {[%clk 0:01:45.5]} 29... Nxc2 {[%clk 0:00:40]} 30. Rd1 {[%clk 0:01:45.2]} 30... Rf7 {[%clk 0:00:25.4]} 31. Nc4 {[%clk 0:01:32]} 31... Ne3+ {[%clk 0:00:22.6]} 32. Nxe3 {[%clk 0:01:31.4]} 32... dxe3 {[%clk 0:00:22.5]} 33. f4 {[%clk 0:01:31.1]} 33... Bd5 {[%clk 0:00:18.5]} 34. Ke2 {[%clk 0:01:30.4]} 34... Re7 {[%clk 0:00:13]} 35. Rb1 {[%clk 0:01:27.5]} 35... Kg8 {[%clk 0:00:12]} 36. Ng4 {[%clk 0:01:26.4]} 36... Be6 {[%clk 0:00:10.3]} 37. Nxe3 {[%clk 0:01:23.3]} 37... Kf7 {[%clk 0:00:10.2]} 38. Kd2 {[%clk 0:01:18.8]} 38... Rd7 {[%clk 0:00:09.8]} 39. Rc1 {[%clk 0:01:15.8]} 39... Bxb3 {[%clk 0:00:08.8]} 40. Rxc5 {[%clk 0:01:15.2]} 40... Bxa4 {[%clk 0:00:08.5]} 41. Ng4 {[%clk 0:01:14.3]} 41... Ke6 {[%clk 0:00:07.3]} 42. Re5+ {[%clk 0:01:13.2]} 42... Kd6 {[%clk 0:00:06.6]} 43. Nf6 {[%clk 0:01:11]} 43... Ra7 {[%clk 0:00:05.3]} 44. Ne4+ {[%clk 0:01:08.4]} 44... Kd7 {[%clk 0:00:04.7]} 45. Nc5+ {[%clk 0:01:07.7]} 45... Kd6 {[%clk 0:00:04.2]} 46. Nxa4 {[%clk 0:01:07.6]} 1-0\n",
+  "time_control": "180",
+  "end_time": 1776329383,
+  "rated": true,
+  "accuracies": {
+    "white": 85.86,
+    "black": 80.77
+  },
+  "tcn": "jrZJcj!Tlt0SowYIfo5Qbl90gv8!egXPmC6XCKTZfeWGiy7YpF48oxXOlfJBdmQzFN!?NV2UfpOXjc1LKT0TcMSKxZYZMT9TvKTSKZSmem8mgfm0ZPzkad01PAkuAuBunDXJfm10db?!pEJSEu!1ml0ZbcSrcIryuE1SIKSRETZWTCRZCIZRIy",
+  "uuid": "829fb179-3970-11f1-a12c-0e740f01000f",
+  "initial_setup": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "fen": "8/r6p/3k2pP/p3R3/N4P2/3P2P1/3K4/8 b - - 0 46",
+  "time_class": "blitz",
+  "rules": "chess",
+  "white": {
+    "rating": 3411,
+    "result": "win",
+    "@id": "https://api.chess.com/pub/player/hikaru",
+    "username": "Hikaru",
+    "uuid": "6f4deb88-7718-11e3-8016-000000000000"
+  },
+  "black": {
+    "rating": 3002,
+    "result": "resigned",
+    "@id": "https://api.chess.com/pub/player/superpower2011",
+    "username": "SuperPower2011",
+    "uuid": "e0d3634c-133e-11ee-8870-49de8679f813"
+  },
+  "eco": "https://www.chess.com/openings/Nimzowitsch-Larsen-Attack-Classical-Variation-2.Bb2-Nf6"
+}

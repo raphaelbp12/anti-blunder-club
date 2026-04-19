@@ -1,0 +1,32 @@
+{
+  "url": "https://www.chess.com/game/live/167520997326",
+  "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2026.04.19\"]\n[Round \"-\"]\n[White \"gaguera\"]\n[Black \"Himanshu8236\"]\n[Result \"1-0\"]\n[CurrentPosition \"8/8/8/6p1/6Pp/4k2P/7K/8 b - - 3 51\"]\n[Timezone \"UTC\"]\n[ECO \"C50\"]\n[ECOUrl \"https://www.chess.com/openings/Giuoco-Piano-Game-4.Nc3\"]\n[UTCDate \"2026.04.19\"]\n[UTCTime \"10:16:40\"]\n[WhiteElo \"588\"]\n[BlackElo \"572\"]\n[TimeControl \"300\"]\n[Termination \"gaguera won on time\"]\n[StartTime \"10:16:40\"]\n[EndDate \"2026.04.19\"]\n[EndTime \"10:25:51\"]\n[Link \"https://www.chess.com/game/live/167520997326\"]\n\n1. e4 {[%clk 0:04:59.9]} 1... e5 {[%clk 0:04:59]} 2. Nf3 {[%clk 0:04:59.1]} 2... Bc5 {[%clk 0:04:57.5]} 3. Nc3 {[%clk 0:04:56]} 3... Nc6 {[%clk 0:04:55.9]} 4. Bc4 {[%clk 0:04:55.1]} 4... h6 {[%clk 0:04:54.2]} 5. O-O {[%clk 0:04:54]} 5... Nf6 {[%clk 0:04:51.8]} 6. Re1 {[%clk 0:04:52.4]} 6... d6 {[%clk 0:04:51.1]} 7. d3 {[%clk 0:04:42.1]} 7... a6 {[%clk 0:04:46.7]} 8. Be3 {[%clk 0:04:40.1]} 8... Bxe3 {[%clk 0:04:44.6]} 9. Rxe3 {[%clk 0:04:39.8]} 9... Bg4 {[%clk 0:04:41.4]} 10. h3 {[%clk 0:04:37.4]} 10... Bxf3 {[%clk 0:04:34.4]} 11. Qxf3 {[%clk 0:04:36.7]} 11... Nd4 {[%clk 0:04:30.1]} 12. Qd1 {[%clk 0:04:30.3]} 12... O-O {[%clk 0:04:26]} 13. Nd5 {[%clk 0:04:07.7]} 13... Nxd5 {[%clk 0:04:18.9]} 14. Bxd5 {[%clk 0:04:06.7]} 14... c6 {[%clk 0:04:16]} 15. Bc4 {[%clk 0:04:02.9]} 15... b5 {[%clk 0:04:12.3]} 16. Bb3 {[%clk 0:03:55.7]} 16... Nxb3 {[%clk 0:04:10.4]} 17. axb3 {[%clk 0:03:55.4]} 17... a5 {[%clk 0:04:04.6]} 18. Qd2 {[%clk 0:03:42]} 18... Re8 {[%clk 0:03:54.1]} 19. Rg3 {[%clk 0:03:38.2]} 19... Qf6 {[%clk 0:03:41.9]} 20. Rxa5 {[%clk 0:03:27]} 20... Rxa5 {[%clk 0:03:34.6]} 21. Qxa5 {[%clk 0:03:26.6]} 21... d5 {[%clk 0:03:29.8]} 22. exd5 {[%clk 0:03:21.5]} 22... cxd5 {[%clk 0:03:24.4]} 23. Qxb5 {[%clk 0:03:19.9]} 23... Rd8 {[%clk 0:03:16.1]} 24. Rf3 {[%clk 0:03:09.3]} 24... Qg5 {[%clk 0:03:02.6]} 25. Qb7 {[%clk 0:03:02.6]} 25... Qg6 {[%clk 0:02:11.6]} 26. b4 {[%clk 0:02:46.9]} 26... e4 {[%clk 0:02:10.2]} 27. dxe4 {[%clk 0:02:42.2]} 27... dxe4 {[%clk 0:02:09.2]} 28. Rg3 {[%clk 0:02:33]} 28... Qf6 {[%clk 0:02:00.1]} 29. Qxe4 {[%clk 0:02:29]} 29... Qxb2 {[%clk 0:01:42.7]} 30. Qg4 {[%clk 0:02:23.6]} 30... Rd2 {[%clk 0:01:07.9]} 31. Rd3 {[%clk 0:02:14.1]} 31... Qa1+ {[%clk 0:00:42.7]} 32. Kh2 {[%clk 0:02:12.3]} 32... Qe5+ {[%clk 0:00:40.6]} 33. Qg3 {[%clk 0:02:04.2]} 33... Qxg3+ {[%clk 0:00:22.2]} 34. Kxg3 {[%clk 0:02:01.1]} 34... Rxc2 {[%clk 0:00:19.4]} 35. Rd8+ {[%clk 0:01:58.5]} 35... Kh7 {[%clk 0:00:18.3]} 36. Kg4 {[%clk 0:01:57.7]} 36... Rc4+ {[%clk 0:00:16.3]} 37. Kf5 {[%clk 0:01:52.2]} 37... Rxb4 {[%clk 0:00:15.4]} 38. Rd7 {[%clk 0:01:45.4]} 38... Rb2 {[%clk 0:00:14.8]} 39. Rxf7 {[%clk 0:01:40]} 39... Rxf2+ {[%clk 0:00:14]} 40. Ke6 {[%clk 0:01:37.2]} 40... Rxf7 {[%clk 0:00:13.5]} 41. Kxf7 {[%clk 0:01:36.9]} 41... h5 {[%clk 0:00:11.7]} 42. Ke6 {[%clk 0:01:35]} 42... g6 {[%clk 0:00:10.9]} 43. Kf6 {[%clk 0:01:33.6]} 43... Kh6 {[%clk 0:00:10.2]} 44. Ke5 {[%clk 0:01:32.7]} 44... Kg5 {[%clk 0:00:08.6]} 45. Ke4 {[%clk 0:01:32]} 45... h4 {[%clk 0:00:06.9]} 46. Kf3 {[%clk 0:01:31.5]} 46... Kf5 {[%clk 0:00:05.7]} 47. g4+ {[%clk 0:01:28]} 47... Kg5 {[%clk 0:00:04.3]} 48. Kg2 {[%clk 0:01:24.8]} 48... Kf4 {[%clk 0:00:03.4]} 49. Kh2 {[%clk 0:01:22]} 49... g5 {[%clk 0:00:02.2]} 50. Kg2 {[%clk 0:01:20.4]} 50... Ke3 {[%clk 0:00:00.1]} 51. Kh2 {[%clk 0:01:19.6]} 1-0\n",
+  "time_control": "300",
+  "end_time": 1776594351,
+  "rated": true,
+  "accuracies": {
+    "white": 79.67,
+    "black": 82.22
+  },
+  "tcn": "mC0Kgv9Ibs5QfA3Veg!TfeZRltWOcuIueu6EpxEvdvQBvd8!sJTJAJYQJAXHArBrirOGdl98uw7TaG4GlGRJCJQJGH87wvTMHXMUrzKCtCJCvwUTXCTjCE7lwtjagpaKEwKwpwlkt7!3wEkAELAz7ZzjZ1jnLSn1S1VN1S2UST3VTKVMKCNFCvMLoELMvoMDopUMpoDuop",
+  "uuid": "db7ec9a0-3bd8-11f1-b47c-1d7a8701000f",
+  "initial_setup": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "fen": "8/8/8/6p1/6Pp/4k2P/7K/8 b - - 3 51",
+  "time_class": "blitz",
+  "rules": "chess",
+  "white": {
+    "rating": 588,
+    "result": "win",
+    "@id": "https://api.chess.com/pub/player/gaguera",
+    "username": "gaguera",
+    "uuid": "671a788c-90a6-11eb-85a9-a754781e281f"
+  },
+  "black": {
+    "rating": 572,
+    "result": "timeout",
+    "@id": "https://api.chess.com/pub/player/himanshu8236",
+    "username": "Himanshu8236",
+    "uuid": "0fa39cbe-8fb1-11f0-801d-ef1e8d41813f"
+  },
+  "eco": "https://www.chess.com/openings/Giuoco-Piano-Game-4.Nc3"
+}
