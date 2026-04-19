@@ -1,0 +1,203 @@
+{
+  // Workspace-scoped Copilot terminal auto-approve rules.
+  //
+  // This workspace is only opened inside the dev container, so these rules
+  // effectively apply to the dev container only.
+  //
+  // Evaluation rules (per VS Code docs):
+  //   - Keys are either literal command prefixes or /regex/ patterns.
+  //   - Values: true = auto-approve, false = require manual approval (deny).
+  //   - Deny rules override allow rules.
+  //   - The default deny list (rm, rmdir, del, kill, curl, wget, eval, chmod,
+  //     chown, Remove-Item) stays on because we leave
+  //     chat.tools.terminal.ignoreDefaultAutoApproveRules at its default (false).
+  //
+  // Strategy:
+  //   1. Allow common dev workflow commands outright.
+  //   2. Block anything that rewrites git history or is otherwise destructive,
+  //      even if it would match an allow rule above.
+  "chat.tools.terminal.autoApprove": {
+    // ---------- Allow: package managers & build tools ----------
+    "npm": true,
+    "npx": true,
+    "pnpm": true,
+    "yarn": true,
+    "node": true,
+    "tsc": true,
+    "vite": true,
+    "vitest": true,
+    "eslint": true,
+    "prettier": true,
+
+    // ---------- Allow: read-only / navigational shell ----------
+    "ls": true,
+    "cat": true,
+    "head": true,
+    "tail": true,
+    "grep": true,
+    "rg": true,
+    "find": true,
+    "file": true,
+    "wc": true,
+    "sort": true,
+    "uniq": true,
+    "cut": true,
+    "awk": true,
+    "sed": true,
+    "diff": true,
+    "tree": true,
+    "pwd": true,
+    "echo": true,
+    "printf": true,
+    "which": true,
+    "whoami": true,
+    "env": true,
+    "export": true,
+    "test": true,
+    "true": true,
+    "false": true,
+    "basename": true,
+    "dirname": true,
+    "realpath": true,
+    "stat": true,
+    "jq": true,
+
+    // ---------- Allow: GitHub CLI (read + safe write) ----------
+    "gh auth status": true,
+    "gh repo view": true,
+    "gh pr list": true,
+    "gh pr view": true,
+    "gh pr create": true,
+    "gh pr checkout": true,
+    "gh issue list": true,
+    "gh issue view": true,
+
+    // ---------- Allow: safe git subcommands ----------
+    "git status": true,
+    "git log": true,
+    "git diff": true,
+    "git show": true,
+    "git branch": true,
+    "git switch": true,
+    "git checkout": true,
+    "git add": true,
+    "git restore": true,
+    "git stash": true,
+    "git fetch": true,
+    "git pull": true,
+    "git merge": true,
+    "git rebase": true,
+    "git cherry-pick": true,
+    "git commit": true,
+    "git tag": true,
+    "git remote": true,
+    "git config": true,
+    "git clean": true,
+    "git blame": true,
+    "git reflog": true,
+    "git rev-parse": true,
+    "git ls-files": true,
+    "git ls-remote": true,
+    "git describe": true,
+
+    // Plain `git push` (without flags) is allowed; force variants are blocked below.
+    "git push": true,
+
+    // ---------- DENY: git history rewriting / dangerous force operations ----------
+
+    // Any use of --force or -f anywhere in a git push command (covers
+    //   git push --force
+    //   git push -f
+    //   git push --force-with-lease
+    //   git push --force-if-includes
+    //   git push origin main -f
+    // and variations with extra whitespace).
+    "/\\bgit\\s+push\\b.*(--force|--force-with-lease|--force-if-includes|\\s-f(\\s|$))/i": false,
+
+    // The `+` refspec prefix in git push rewrites remote history:
+    //   git push origin +main
+    //   git push origin +feat/x:main
+    "/\\bgit\\s+push\\b[^|&;]*\\s\\+[^\\s]+/": false,
+
+    // Destructive resets and history rewrites.
+    "/\\bgit\\s+reset\\b.*--hard\\b/i": false,
+    "/\\bgit\\s+reset\\b.*--keep\\b/i": false,
+    "/\\bgit\\s+clean\\s+-[a-z]*[dfx]/i": false,
+    "/\\bgit\\s+commit\\b.*--amend\\b/i": false,
+    "/\\bgit\\s+rebase\\b.*(-i|--interactive|--root|--onto)\\b/i": false,
+    "/\\bgit\\s+filter-branch\\b/i": false,
+    "/\\bgit\\s+filter-repo\\b/i": false,
+    "/\\bgit\\s+update-ref\\b/i": false,
+    "/\\bgit\\s+replace\\b/i": false,
+    "/\\bgit\\s+reflog\\s+expire\\b/i": false,
+    "/\\bgit\\s+gc\\b.*--prune\\b/i": false,
+    "/\\bgit\\s+prune\\b/i": false,
+    "/\\bgit\\s+symbolic-ref\\b/i": false,
+    "/\\bgit\\s+worktree\\s+(remove|prune)\\b/i": false,
+    "/\\bgit\\s+branch\\b.*\\s-[a-zA-Z]*D/": false,
+    "/\\bgit\\s+tag\\b.*\\s-[a-zA-Z]*d/": false,
+    "/\\bgit\\s+tag\\b.*--force\\b/i": false,
+    "/\\bgit\\s+branch\\b.*--force\\b/i": false,
+    "/\\bgit\\s+checkout\\b.*--force\\b/i": false,
+    "/\\bgit\\s+switch\\b.*--force\\b/i": false,
+    "/\\bgit\\s+commit\\b.*--no-verify\\b/i": false,
+    "/\\bgit\\s+push\\b.*--no-verify\\b/i": false,
+    "/\\bgit\\s+rebase\\b.*--no-verify\\b/i": false,
+
+    // Never push (or do anything) directly to the protected `main` branch.
+    "/\\bgit\\s+push\\b[^|&;]*\\bmain\\b/": false,
+
+    // ---------- DENY: dangerous shell patterns ----------
+
+    // Fork bomb / shell-injection style constructs.
+    "/:\\(\\)\\s*\\{.*\\|.*&\\s*\\}/": false,
+
+    // rm -rf targeting root, home, or workspace root.
+    "/\\brm\\s+-[a-z]*r[a-z]*f?\\s+(\\/|~|\\$HOME|\\*)/i": false,
+    "/\\brm\\s+-[a-z]*f[a-z]*r?\\s+(\\/|~|\\$HOME|\\*)/i": false,
+
+    // Low-level disk / filesystem destruction.
+    "/\\bdd\\s+.*of=\\/dev\\//i": false,
+    "mkfs": false,
+    "fdisk": false,
+    "parted": false,
+    "shred": false,
+
+    // Remote code execution via pipe-to-shell.
+    "/\\b(curl|wget)\\b[^|&;]*\\|\\s*(sh|bash|zsh|fish)\\b/i": false,
+
+    // Privilege escalation / shutdown.
+    "sudo": false,
+    "su ": false,
+    "shutdown": false,
+    "reboot": false,
+    "halt": false,
+    "poweroff": false,
+    "systemctl": false,
+    "service ": false,
+
+    // Process-wide kills.
+    "/\\bkill\\s+-9\\s+1\\b/": false,
+    "killall": false,
+    "pkill": false,
+
+    // Network listeners / tunnels the agent has no business starting.
+    "nc ": false,
+    "ncat": false,
+    "socat": false,
+
+    // Package manager operations that change the system globally.
+    "apt": false,
+    "apt-get": false,
+    "dpkg": false,
+    "brew": false,
+    "/\\bnpm\\s+install\\s+-g\\b/": false,
+    "/\\bnpm\\s+i\\s+-g\\b/": false,
+    "/\\bpnpm\\s+add\\s+-g\\b/": false,
+    "/\\byarn\\s+global\\b/": false
+  },
+
+  // Keep the built-in defaults (rm, rmdir, del, kill, curl, wget, eval, chmod,
+  // chown, Remove-Item) active as a safety net.
+  "chat.tools.terminal.ignoreDefaultAutoApproveRules": false
+}
