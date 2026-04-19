@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest'
 
 import { getMoveAccuracy, getGameAccuracy } from '../reporter/accuracy'
+import { LEGACY_ACCURACY_PARAMS } from '../reporter/AccuracyParams'
 import PieceColour from '../constants/PieceColour'
 import type { Evaluation } from '../types/Evaluation'
 import type { StateTreeNode } from '../types/StateTreeNode'
@@ -9,8 +10,8 @@ describe('getMoveAccuracy', () => {
   it('≈ 100 when no expected-points loss', () => {
     const ev: Evaluation = { type: 'centipawn', value: 0 }
     const acc = getMoveAccuracy(ev, ev, PieceColour.WHITE)
-    // 103.16 * e^0 - 3.17 = 99.99
-    expect(acc).toBeCloseTo(99.99, 2)
+    // 100 * e^0 - 1.5 = 98.5
+    expect(acc).toBeCloseTo(98.5, 2)
   })
 
   it('matches the formula for a known small loss (~0.05)', () => {
@@ -72,7 +73,10 @@ describe('getGameAccuracy', () => {
     b1.children = [w2]
     w2.children = [b2]
 
-    const result = getGameAccuracy(root)
+    // Explicitly use the legacy `mean` aggregator for this assertion so the
+    // test isolates the per-colour grouping logic from the default
+    // windowed-harmonic aggregator.
+    const result = getGameAccuracy(root, LEGACY_ACCURACY_PARAMS)
     expect(result.white).toBeCloseTo(70, 5)
     expect(result.black).toBeCloseTo(50, 5)
   })
@@ -84,7 +88,7 @@ describe('getGameAccuracy', () => {
     root.children = [w1]
     w1.children = [b1]
 
-    const result = getGameAccuracy(root)
+    const result = getGameAccuracy(root, LEGACY_ACCURACY_PARAMS)
     expect(result.white).toBeNaN()
     expect(result.black).toBe(50)
   })
