@@ -87,3 +87,21 @@ claude  # starts an interactive session
 | `chore/*`     | Tooling, deps, config |
 
 Always open a pull request and squash merge into `main`.
+
+## License
+
+Anti-Blunder Club is distributed under the [GNU General Public License v3.0 or later](./LICENSE) (GPL-3.0-or-later).
+
+### Credits
+
+- Heavily inspired by [WintrChess](https://github.com/WintrCat/wintrchess) (GPL-3.0). Its analysis pipeline and Stockfish integration patterns informed the design of this project; some modules are adapted from it.
+- Uses [Stockfish](https://stockfishchess.org/) (GPL-3.0) as its chess engine.
+
+### SPDX headers for adapted files
+
+Files adapted from WintrChess (or other GPL-3.0 sources) must carry an SPDX header at the top:
+
+```ts
+// SPDX-License-Identifier: GPL-3.0-or-later
+// Adapted from WintrChess (https://github.com/WintrCat/wintrchess), GPL-3.0.
+```
