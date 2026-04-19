@@ -50,16 +50,24 @@ interface EvalCacheFile {
   positions: CachedPosition[]
 }
 
-function cachePath(gameId: string): string {
+function cachePath(gameId: string, depth: number): string {
+  return resolve(FIXTURES_DIR, `${gameId}.d${depth}.evals.json`)
+}
+
+function legacyCachePath(gameId: string): string {
   return resolve(FIXTURES_DIR, `${gameId}.evals.json`)
 }
 
 function loadCache(gameId: string, depth: number): EvalCacheFile {
-  const path = cachePath(gameId)
+  const path = cachePath(gameId, depth)
   if (existsSync(path)) {
-    const raw: EvalCacheFile = JSON.parse(readFileSync(path, 'utf8'))
+    return JSON.parse(readFileSync(path, 'utf8')) as EvalCacheFile
+  }
+  // Legacy: single unnamed cache file. Reuse only if depth matches.
+  const legacy = legacyCachePath(gameId)
+  if (existsSync(legacy)) {
+    const raw: EvalCacheFile = JSON.parse(readFileSync(legacy, 'utf8'))
     if (raw.depth === depth) return raw
-    // Depth mismatch: discard and re-analyze at the target depth.
   }
   return {
     version: 1,
@@ -71,7 +79,10 @@ function loadCache(gameId: string, depth: number): EvalCacheFile {
 }
 
 function saveCache(cache: EvalCacheFile): void {
-  writeFileSync(cachePath(cache.gameId), JSON.stringify(cache, null, 2))
+  writeFileSync(
+    cachePath(cache.gameId, cache.depth),
+    JSON.stringify(cache, null, 2),
+  )
 }
 
 class StockfishStdio {
@@ -230,6 +241,24 @@ export async function analyzePgn(
 async function main(): Promise<void> {
   const depthArg = process.argv.find((a) => a.startsWith('--depth='))
   const depth = depthArg ? parseInt(depthArg.split('=')[1], 10) : DEFAULT_DEPTH
+  const shardArg = process.argv.find((a) => a.startsWith('--shard='))
+  let shardIdx = 0
+  let shardCount = 1
+  if (shardArg) {
+    const m = shardArg.split('=')[1].split('/')
+    shardIdx = parseInt(m[0], 10)
+    shardCount = parseInt(m[1], 10)
+    if (
+      Number.isNaN(shardIdx) ||
+      Number.isNaN(shardCount) ||
+      shardCount <= 0 ||
+      shardIdx < 0 ||
+      shardIdx >= shardCount
+    ) {
+      console.error(`Invalid --shard=${shardArg.split('=')[1]} (expected i/n)`)
+      process.exit(1)
+    }
+  }
 
   if (!existsSync(FIXTURES_DIR)) {
     console.error(
@@ -237,8 +266,23 @@ async function main(): Promise<void> {
     )
     process.exit(1)
   }
+  // Only analyze games that are in the current seed list; orphan fixtures
+  // from earlier picker iterations are ignored.
+  const gamesJsonPath = resolve(__dirname, 'games.json')
+  const seedIds: Set<string> | null = existsSync(gamesJsonPath)
+    ? new Set(
+        (
+          JSON.parse(readFileSync(gamesJsonPath, 'utf8')) as Array<{
+            gameId: string
+          }>
+        ).map((e) => e.gameId),
+      )
+    : null
   const fixtureFiles = readdirSync(FIXTURES_DIR)
     .filter((f) => f.endsWith('.json') && !f.endsWith('.evals.json'))
+    .filter((f) => !seedIds || seedIds.has(f.replace('.json', '')))
+    .sort()
+    .filter((_, i) => i % shardCount === shardIdx)
     .map((f) => resolve(FIXTURES_DIR, f))
 
   for (const file of fixtureFiles) {

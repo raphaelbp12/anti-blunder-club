@@ -42,10 +42,26 @@ interface EvalCacheFile {
 }
 
 function loadEvalCache(gameId: string): EvalCacheFile | null {
-  const path = resolve(FIXTURES_DIR, `${gameId}.evals.json`)
-  if (!existsSync(path)) return null
+  // Prefer the deepest available depth-keyed cache; fall back to the
+  // legacy unnamed file for backwards compat.
+  const candidates = readdirSync(FIXTURES_DIR).filter(
+    (f) =>
+      f.startsWith(`${gameId}.d`) && f.endsWith('.evals.json'),
+  )
+  let best: { path: string; depth: number } | null = null
+  for (const f of candidates) {
+    const m = f.match(/\.d(\d+)\.evals\.json$/)
+    if (!m) continue
+    const d = parseInt(m[1], 10)
+    if (!best || d > best.depth) best = { path: resolve(FIXTURES_DIR, f), depth: d }
+  }
+  if (!best) {
+    const legacy = resolve(FIXTURES_DIR, `${gameId}.evals.json`)
+    if (existsSync(legacy)) best = { path: legacy, depth: -1 }
+  }
+  if (!best) return null
   try {
-    return JSON.parse(readFileSync(path, 'utf8')) as EvalCacheFile
+    return JSON.parse(readFileSync(best.path, 'utf8')) as EvalCacheFile
   } catch {
     return null
   }
