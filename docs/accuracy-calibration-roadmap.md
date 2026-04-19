@@ -5,22 +5,44 @@ depth-18 grid sweep. Each phase below is a **self-contained prompt**:
 paste the phase heading + its "Prompt" block into a fresh chat to pick
 up that phase.
 
-Current state (as of commit on `feat/calibration-depth18-sweep`):
+## Status
 
-- 53-game balanced corpus, all positions evaluated at Stockfish depth 18
-- Grid-sweep winner: `g=0.003, A=100, k=6.5, C=1.5, agg=windowed-harmonic, w=6`
-  - MAE 3.97, bias +1.02, r 0.928
-- Shipped baseline (still the default): MAE 13.71, bias +13.68, r 0.944
+| Phase | Title                                         | Status     | Branch / PR                            |
+| ----- | --------------------------------------------- | ---------- | -------------------------------------- |
+| 1     | Cross-validate the grid winner (hold-out)     | ✅ done    | `feat/calibration-depth18-sweep` (#29) |
+| 2     | Refine the grid around the winner             | ⏭ skipped | — (no overfit signal; see note below)  |
+| 3     | Adopt the winner as the new shipped default   | ✅ done    | `feat/accuracy-new-default-params`     |
+| 4     | Expand corpus to stress-test the new default  | ⬜ todo    | —                                      |
+| 5     | Observability & regression guard              | ⬜ todo    | —                                      |
+| 6     | Clean up calibration artefacts (housekeeping) | ⬜ todo    | —                                      |
+
+Current defaults (shipped in Phase 3):
+`g=0.003, A=100, k=6.5, C=1.5, agg=windowed-harmonic, w=6` — MAE 3.97,
+bias +1.02, r 0.928 on the 53-game balanced corpus (legacy baseline:
+MAE 13.71, bias +13.01, r 0.944).
+
+**Phase 2 was skipped** because Phase 1 showed no overfit signal: the
+winner was rank #1 of the top-50 on the random 30 % hold-out and within
+1.0 MAE of the per-fold best on 8/14 LOUO folds (mean gap 1.02). A
+finer local grid was unlikely to improve things beyond the noise floor.
 
 ---
 
-## Phase 1 — Cross-validate the grid winner (hold-out)
+## Phase 1 — Cross-validate the grid winner (hold-out) ✅ DONE
 
-**Goal:** Confirm the top-ranked preset generalises before we ship it.
-Cheap (all evals are cached) and protects against overfitting to the
-53-game corpus.
+Shipped in `feat/calibration-depth18-sweep` (#29).
 
-### Prompt
+**Result:**
+
+- Random 70/30 split: winner ranks **#1 of the top-50** on the
+  held-out 30 %, with test MAE **2.79** (better than full-corpus
+  3.97). Spearman ρ between train and test rankings: **0.553**.
+- Leave-one-user-out (14 users, 2–7 games each): winner's MAE stays
+  within 1.0 of per-fold optimum on 8/14 folds, within 2.0 on 12/14.
+  Worst gap 3.04 on a 2-game fold (noise).
+- Artefacts: `frontend/scripts/accuracy-calibration/reports/holdout-*`.
+
+### Prompt (historical)
 
 > Add a `--holdout` mode to `sweep.ts` that splits the corpus into two
 > deterministic halves (e.g. by `gameId` hash or user-fold). Run two
@@ -45,13 +67,13 @@ windowed-harmonic`) finishes in the top-10 of the hold-out and of at
 
 ---
 
-## Phase 2 — Refine the grid around the winner (optional)
+## Phase 2 — Refine the grid around the winner (optional) ⏭ SKIPPED
 
-**Goal:** Try to squeeze another 0.3–0.5 MAE with a finer local
-search. Skip if Phase 1 shows the winner is already on a noisy
-plateau.
+Skipped after Phase 1 validation: no overfit signal, mean LOUO gap was
+near zero, and the top-50 neighbourhood was stable under resampling.
+Revisit only if Phase 4 (larger corpus) surfaces a different winner.
 
-### Prompt
+### Prompt (historical)
 
 > Extend `sweep.ts` (or add `sweep-refine.ts`) with a second, finer
 > grid focused on the top-cluster neighborhood:
@@ -76,12 +98,18 @@ plateau.
 
 ---
 
-## Phase 3 — Adopt the winner as the new shipped default
+## Phase 3 — Adopt the winner as the new shipped default ✅ DONE
 
-**Goal:** Make the winning preset the runtime default. This is the
-user-visible change.
+Shipped on `feat/accuracy-new-default-params`.
 
-### Prompt
+**Change:** `DEFAULT_ACCURACY_PARAMS` set to
+`{ g: 0.003, A: 100, k: 6.5, C: 1.5, aggregator: 'windowed-harmonic', w: 6 }`.
+Legacy values preserved as `LEGACY_ACCURACY_PARAMS` for regression use.
+Golden-value tests in `expectedPoints.test.ts` and `accuracy.test.ts`
+updated (not loosened). Before/after table added to
+`docs/accuracy-analysis.md`.
+
+### Prompt (historical)
 
 > On a new branch `feat/accuracy-new-default-params`, update the
 > shipped accuracy defaults to the validated winner from Phase 1 (or
