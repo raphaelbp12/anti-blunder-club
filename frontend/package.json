@@ -15,7 +15,9 @@
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "preview": "vite preview",
-    "prepare": "cd .. && husky"
+    "prepare": "cd .. && husky",
+    "calibrate:fetch": "tsx scripts/accuracy-calibration/fetchFixtures.ts",
+    "calibrate:run": "tsx scripts/accuracy-calibration/calibrate.ts"
   },
   "lint-staged": {
     "src/**/*.{ts,tsx}": [
@@ -58,6 +60,7 @@
     "lint-staged": "^16.4.0",
     "prettier": "^3.8.3",
     "tailwindcss": "^4.2.2",
+    "tsx": "^4.21.0",
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.58.0",
     "vite": "^8.0.4",

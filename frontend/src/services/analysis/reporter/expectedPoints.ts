@@ -3,6 +3,7 @@
 
 import type { Evaluation } from '../types/Evaluation'
 import { PieceColour, flipPieceColour } from '../constants/PieceColour'
+import { DEFAULT_ACCURACY_PARAMS, type AccuracyParams } from './AccuracyParams'
 
 interface ExpectedPointsOptions {
   moveColour: PieceColour
@@ -14,7 +15,7 @@ export function getExpectedPoints(
   options?: ExpectedPointsOptions,
 ) {
   const opts = {
-    centipawnGradient: 0.0035,
+    centipawnGradient: DEFAULT_ACCURACY_PARAMS.centipawnGradient,
     ...options,
   }
 
@@ -33,13 +34,18 @@ export function getExpectedPointsLoss(
   previousEvaluation: Evaluation,
   currentEvaluation: Evaluation,
   moveColour: PieceColour,
+  params: Pick<AccuracyParams, 'centipawnGradient'> = DEFAULT_ACCURACY_PARAMS,
 ) {
   return Math.max(
     0,
     (getExpectedPoints(previousEvaluation, {
       moveColour: flipPieceColour(moveColour),
+      centipawnGradient: params.centipawnGradient,
     }) -
-      getExpectedPoints(currentEvaluation, { moveColour })) *
+      getExpectedPoints(currentEvaluation, {
+        moveColour,
+        centipawnGradient: params.centipawnGradient,
+      })) *
       (moveColour == PieceColour.WHITE ? 1 : -1),
   )
 }
