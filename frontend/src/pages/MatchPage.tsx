@@ -1,8 +1,11 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useLocation, useParams } from 'react-router-dom'
 import { SEOHelmet } from '../components/SEOHelmet'
+import { TrackedButton } from '../components/TrackedButton'
 import { TrackedExternalLink } from '../components/TrackedExternalLink'
 import { fetchPlayerGame, type ChessGame } from '../services/chessComApi'
+import { useAnalysisStore } from '../stores/useAnalysisStore'
+import { trackEvent } from '../utils/analytics'
 
 export function MatchPage() {
   const { username, gameId } = useParams<{
@@ -15,6 +18,13 @@ export function MatchPage() {
   const [game, setGame] = useState<ChessGame | null>(stateGame)
   const [isLoading, setIsLoading] = useState(!stateGame)
   const [error, setError] = useState<string | null>(null)
+  const [showDetails, setShowDetails] = useState(false)
+
+  const entry = useAnalysisStore((s) =>
+    gameId ? s.byGameId[gameId] : undefined,
+  )
+  const startAnalysis = useAnalysisStore((s) => s.startAnalysis)
+  const resetAnalysis = useAnalysisStore((s) => s.reset)
 
   useEffect(() => {
     if (stateGame || !username || !gameId) return
@@ -26,6 +36,19 @@ export function MatchPage() {
       )
       .finally(() => setIsLoading(false))
   }, [stateGame, username, gameId])
+
+  const detailsJson = useMemo(() => {
+    if (entry?.status !== 'done') return null
+    return JSON.stringify(
+      entry.result.moves.map((m) => ({
+        san: m.san,
+        classification: m.classification,
+        accuracy: m.accuracy,
+      })),
+      null,
+      2,
+    )
+  }, [entry])
 
   if (isLoading) {
     return (
@@ -41,6 +64,28 @@ export function MatchPage() {
         <p className="text-danger">{error ?? 'Game not found'}</p>
       </main>
     )
+  }
+
+  const runAnalysis = () => {
+    if (!game.pgn || !gameId) return
+    const pgn = game.pgn
+    void startAnalysis(gameId, pgn).then(() => {
+      const latest = useAnalysisStore.getState().byGameId[gameId]
+      if (latest?.status === 'done') {
+        trackEvent('analysis_run_completed', {
+          durationMs: latest.durationMs,
+          moveCount: latest.result.moves.length,
+        })
+      } else if (latest?.status === 'error') {
+        trackEvent('analysis_run_failed', { reason: latest.error })
+      }
+    })
+  }
+
+  const handleRetry = () => {
+    if (!gameId) return
+    resetAnalysis(gameId)
+    runAnalysis()
   }
 
   return (
@@ -95,6 +140,73 @@ export function MatchPage() {
           </TrackedExternalLink>
         </div>
       </div>
+
+      {game.pgn && (
+        <section
+          className="w-full max-w-lg space-y-3 rounded-lg border border-border p-6"
+          aria-label="Engine analysis"
+        >
+          <h2 className="text-lg font-semibold">Engine analysis</h2>
+
+          {(!entry || entry.status === 'idle') && (
+            <TrackedButton
+              onClick={runAnalysis}
+              eventName="analysis_run_requested"
+              className="rounded bg-accent px-4 py-2 text-sm font-semibold text-background hover:opacity-90"
+            >
+              Analyze game
+            </TrackedButton>
+          )}
+
+          {entry?.status === 'running' && (
+            <p className="text-sm text-secondary">
+              Analyzing… {Math.round(entry.progress * 100)}%
+            </p>
+          )}
+
+          {entry?.status === 'done' && (
+            <div className="space-y-3">
+              <p className="text-sm">
+                White accuracy:{' '}
+                <span className="font-semibold">
+                  {entry.result.accuracy.white.toFixed(1)}
+                </span>{' '}
+                · Black accuracy:{' '}
+                <span className="font-semibold">
+                  {entry.result.accuracy.black.toFixed(1)}
+                </span>
+              </p>
+              <button
+                type="button"
+                onClick={() => setShowDetails((v) => !v)}
+                className="text-sm text-accent hover:underline"
+              >
+                {showDetails ? 'Hide details ▴' : 'Show details ▾'}
+              </button>
+              {showDetails && detailsJson && (
+                <pre className="max-h-96 overflow-auto rounded bg-surface p-3 text-xs">
+                  {detailsJson}
+                </pre>
+              )}
+            </div>
+          )}
+
+          {entry?.status === 'error' && (
+            <div className="space-y-2">
+              <p className="text-sm text-danger">
+                Analysis failed: {entry.error}
+              </p>
+              <button
+                type="button"
+                onClick={handleRetry}
+                className="rounded border border-border px-3 py-1 text-sm hover:bg-surface"
+              >
+                Retry
+              </button>
+            </div>
+          )}
+        </section>
+      )}
     </main>
   )
 }

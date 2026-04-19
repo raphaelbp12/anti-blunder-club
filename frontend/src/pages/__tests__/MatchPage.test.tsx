@@ -1,8 +1,13 @@
 import { render, screen, waitFor } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import { MemoryRouter, Route, Routes } from 'react-router-dom'
 import { MatchPage } from '../MatchPage'
 import * as chessComApi from '../../services/chessComApi'
 import type { ChessGame } from '../../services/chessComApi'
+import { useAnalysisStore } from '../../stores/useAnalysisStore'
+import type { AnalyzeGameResult } from '../../services/analysis/analyzeGame'
+import { Classification } from '../../services/analysis/constants/Classification'
+import { PieceColour } from '../../services/analysis/constants/PieceColour'
 
 const mockGame: ChessGame = {
   url: 'https://www.chess.com/game/live/456',
@@ -41,6 +46,7 @@ function renderMatchPage(state?: ChessGame) {
 describe('MatchPage', () => {
   beforeEach(() => {
     vi.restoreAllMocks()
+    useAnalysisStore.setState({ byGameId: {} })
   })
 
   it('renders match details from router state', () => {
@@ -110,6 +116,106 @@ describe('MatchPage', () => {
       expect(
         screen.queryByRole('link', { name: /back to matches/i }),
       ).not.toBeInTheDocument()
+    })
+  })
+
+  describe('engine analysis section', () => {
+    const gameWithPgn: ChessGame = {
+      ...mockGame,
+      pgn: '[Event "Test"]\n\n1. e4 e5 2. Nf3 *',
+    }
+
+    const doneResult: AnalyzeGameResult = {
+      moves: [
+        {
+          san: 'e4',
+          uci: 'e2e4',
+          fen: 'x',
+          moveColour: PieceColour.WHITE,
+          classification: Classification.BEST,
+          accuracy: 99,
+        },
+        {
+          san: 'e5',
+          uci: 'e7e5',
+          fen: 'y',
+          moveColour: PieceColour.BLACK,
+          classification: Classification.EXCELLENT,
+          accuracy: 92,
+        },
+      ],
+      accuracy: { white: 98.4, black: 91.2 },
+      analysis: {} as AnalyzeGameResult['analysis'],
+    }
+
+    it('does not render the analysis section when the game has no PGN', () => {
+      renderMatchPage(mockGame)
+      expect(
+        screen.queryByLabelText(/engine analysis/i),
+      ).not.toBeInTheDocument()
+    })
+
+    it('shows the Analyze button when idle', () => {
+      renderMatchPage(gameWithPgn)
+      expect(
+        screen.getByRole('button', { name: /analyze game/i }),
+      ).toBeInTheDocument()
+    })
+
+    it('shows progress text while running', () => {
+      useAnalysisStore.setState({
+        byGameId: { '456': { status: 'running', progress: 0.42 } },
+      })
+      renderMatchPage(gameWithPgn)
+      expect(screen.getByText(/analyzing… 42%/i)).toBeInTheDocument()
+    })
+
+    it('shows accuracies and a details toggle when done', async () => {
+      useAnalysisStore.setState({
+        byGameId: {
+          '456': { status: 'done', result: doneResult, durationMs: 1234 },
+        },
+      })
+      renderMatchPage(gameWithPgn)
+
+      expect(screen.getByText(/98\.4/)).toBeInTheDocument()
+      expect(screen.getByText(/91\.2/)).toBeInTheDocument()
+
+      const toggle = screen.getByRole('button', { name: /show details/i })
+      expect(screen.queryByText(/"classification"/)).not.toBeInTheDocument()
+
+      await userEvent.click(toggle)
+      expect(screen.getByText(/"classification"/)).toBeInTheDocument()
+      expect(
+        screen.getByRole('button', { name: /hide details/i }),
+      ).toBeInTheDocument()
+    })
+
+    it('shows an error and Retry button when failed', async () => {
+      useAnalysisStore.setState({
+        byGameId: { '456': { status: 'error', error: 'engine crashed' } },
+      })
+      renderMatchPage(gameWithPgn)
+
+      expect(
+        screen.getByText(/analysis failed: engine crashed/i),
+      ).toBeInTheDocument()
+      expect(screen.getByRole('button', { name: /retry/i })).toBeInTheDocument()
+    })
+
+    it('calls startAnalysis when Analyze is clicked', async () => {
+      const startSpy = vi
+        .spyOn(useAnalysisStore.getState(), 'startAnalysis')
+        .mockResolvedValue()
+      // Rebind the store's action so the component sees the spy.
+      useAnalysisStore.setState({ startAnalysis: startSpy })
+
+      renderMatchPage(gameWithPgn)
+      await userEvent.click(
+        screen.getByRole('button', { name: /analyze game/i }),
+      )
+
+      expect(startSpy).toHaveBeenCalledWith('456', gameWithPgn.pgn)
     })
   })
 })

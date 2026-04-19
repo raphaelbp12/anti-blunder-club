@@ -18,6 +18,7 @@ export interface ChessGame {
   rules?: string
   rated?: boolean
   timeControl?: string
+  pgn?: string
 }
 
 export interface PlayerProfile {
@@ -195,5 +196,6 @@ function mapRawGame(game: RawGame): ChessGame {
     rules: game.rules,
     rated: game.rated,
     timeControl: game.time_control,
+    pgn: game.pgn,
   }
 }
