@@ -27,6 +27,37 @@ import { getMoveAccuracy } from '../../src/services/analysis/reporter/accuracy'
 import { aggregateAccuraciesForCalibration } from './aggregateForCalibration'
 import { parseInlineEvals } from './parseInlineEvals'
 
+interface EvalCacheFile {
+  version: 1
+  gameId: string
+  depth: number
+  engine: string
+  positions: Array<{ ply: number; fen: string; evaluation: Evaluation }>
+}
+
+function loadEvalCache(gameId: string): EvalCacheFile | null {
+  const path = resolve(FIXTURES_DIR, `${gameId}.evals.json`)
+  if (!existsSync(path)) return null
+  try {
+    return JSON.parse(readFileSync(path, 'utf8')) as EvalCacheFile
+  } catch {
+    return null
+  }
+}
+
+function evalsFromCache(cache: EvalCacheFile, plyCount: number): Array<Evaluation | null> {
+  // Cache stores ply 0 = start of game, ply 1 = after move 1, ...
+  // Per-move accuracy compares position BEFORE move i (cache[i]) with position AFTER move i (cache[i+1]).
+  // So we need `plyCount + 1` entries (or at least one per move + the start).
+  const byPly = new Map<number, Evaluation>()
+  for (const p of cache.positions) byPly.set(p.ply, p.evaluation)
+  const out: Array<Evaluation | null> = []
+  for (let i = 0; i <= plyCount; i++) {
+    out.push(byPly.get(i) ?? null)
+  }
+  return out
+}
+
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = resolve(__dirname)
 const FIXTURES_DIR = resolve(ROOT, 'fixtures')
@@ -64,6 +95,7 @@ interface GameRow {
   chessComWhite: number
   chessComBlack: number
   oursByPreset: Record<string, { white: number; black: number }>
+  evalSource: 'stockfish' | 'inline'
 }
 
 interface AggregateStats {
@@ -147,7 +179,7 @@ function gitSha(): string {
 function listFixtureFiles(): string[] {
   if (!existsSync(FIXTURES_DIR)) return []
   return readdirSync(FIXTURES_DIR)
-    .filter((f) => f.endsWith('.json'))
+    .filter((f) => f.endsWith('.json') && !f.endsWith('.evals.json'))
     .map((f) => resolve(FIXTURES_DIR, f))
 }
 
@@ -210,42 +242,60 @@ function computeStats(rows: GameRow[], presetName: string): AggregateStats {
 }
 
 function runOneGame(
+  gameId: string,
   fixture: RawFixture,
   params: AccuracyParams,
-): { white: number; black: number } | null {
+): { white: number; black: number; source: 'stockfish' | 'inline' } | null {
   if (!fixture.pgn) return null
-  const { evaluationsByPly, pliesWithEval, totalPlies } = parseInlineEvals(
-    fixture.pgn,
-  )
-  if (totalPlies === 0) return null
-  if (pliesWithEval / totalPlies < MIN_EVAL_COVERAGE) return null
 
   const board = new Chess()
   board.loadPgn(fixture.pgn)
   const history = board.history({ verbose: true })
+  if (history.length === 0) return null
+
+  // Prefer Stockfish-cached evaluations. Fall back to inline [%eval ...]
+  // if the cache is missing (Chess.com public PGNs don't carry them, so
+  // this path is mostly a belt-and-braces fallback).
+  let evaluationsByPly: Array<Evaluation | null>
+  let source: 'stockfish' | 'inline'
+
+  const cache = loadEvalCache(gameId)
+  if (cache) {
+    evaluationsByPly = evalsFromCache(cache, history.length)
+    source = 'stockfish'
+  } else {
+    const parsed = parseInlineEvals(fixture.pgn)
+    if (
+      parsed.totalPlies === 0 ||
+      parsed.pliesWithEval / parsed.totalPlies < MIN_EVAL_COVERAGE
+    ) {
+      return null
+    }
+    // Inline parser is 0-indexed per ply (move); synthesize ply-0 as start.
+    evaluationsByPly = [STARTING_POSITION_EVAL, ...parsed.evaluationsByPly]
+    source = 'inline'
+  }
 
   const whiteAccuracies: number[] = []
   const blackAccuracies: number[] = []
 
-  let prevEval: Evaluation = STARTING_POSITION_EVAL
-
   for (let i = 0; i < history.length; i++) {
-    const currEval = evaluationsByPly[i]
-    if (!currEval) {
-      // Keep the chain contiguous if a single comment is missing.
-      continue
-    }
+    const prevEval = evaluationsByPly[i] ?? STARTING_POSITION_EVAL
+    const currEval = evaluationsByPly[i + 1]
+    if (!currEval) continue
     const colour =
       history[i].color === 'w' ? PieceColour.WHITE : PieceColour.BLACK
     const acc = getMoveAccuracy(prevEval, currEval, colour, params)
     if (colour === PieceColour.WHITE) whiteAccuracies.push(acc)
     else blackAccuracies.push(acc)
-    prevEval = currEval
   }
+
+  if (whiteAccuracies.length === 0 && blackAccuracies.length === 0) return null
 
   return {
     white: aggregateAccuraciesForCalibration(whiteAccuracies, params),
     black: aggregateAccuraciesForCalibration(blackAccuracies, params),
+    source,
   }
 }
 
@@ -349,15 +399,17 @@ function main() {
 
     const oursByPreset: Record<string, { white: number; black: number }> = {}
     let atLeastOne = false
+    let evalSource: 'stockfish' | 'inline' | null = null
     for (const preset of PRESETS) {
-      const ours = runOneGame(raw, preset.params)
+      const ours = runOneGame(gameId, raw, preset.params)
       if (ours) {
-        oursByPreset[preset.name] = ours
+        oursByPreset[preset.name] = { white: ours.white, black: ours.black }
         atLeastOne = true
+        evalSource = ours.source
       }
     }
     if (!atLeastOne) {
-      skipped.push(`${gameId} (insufficient inline-eval coverage)`)
+      skipped.push(`${gameId} (no eval source: run calibrate:analyze first)`)
       continue
     }
 
@@ -372,6 +424,7 @@ function main() {
       chessComWhite: raw.accuracies.white,
       chessComBlack: raw.accuracies.black,
       oursByPreset,
+      evalSource: evalSource ?? 'stockfish',
     })
   }
 

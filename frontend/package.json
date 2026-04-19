@@ -17,7 +17,8 @@
     "preview": "vite preview",
     "prepare": "cd .. && husky",
     "calibrate:fetch": "tsx scripts/accuracy-calibration/fetchFixtures.ts",
-    "calibrate:run": "tsx scripts/accuracy-calibration/calibrate.ts"
+    "calibrate:run": "tsx scripts/accuracy-calibration/calibrate.ts",
+    "calibrate:analyze": "tsx scripts/accuracy-calibration/stockfishEvalCache.ts"
   },
   "lint-staged": {
     "src/**/*.{ts,tsx}": [
@@ -59,6 +60,7 @@
     "jsdom": "^29.0.2",
     "lint-staged": "^16.4.0",
     "prettier": "^3.8.3",
+    "stockfish": "^18.0.7",
     "tailwindcss": "^4.2.2",
     "tsx": "^4.21.0",
     "typescript": "~6.0.2",
