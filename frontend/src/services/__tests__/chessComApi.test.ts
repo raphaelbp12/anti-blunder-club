@@ -137,6 +137,7 @@ describe('fetchPlayerGames', () => {
       rules: 'chess',
       rated: true,
       timeControl: '180',
+      pgn: mockPgn,
     })
   })
 
@@ -289,6 +290,7 @@ describe('fetchPlayerGame', () => {
       rules: 'chess',
       rated: true,
       timeControl: '180',
+      pgn: mockPgn,
     })
   })
 

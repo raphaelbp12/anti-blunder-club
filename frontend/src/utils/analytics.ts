@@ -22,6 +22,9 @@ export type AnalyticsEvent =
   | 'about_feedback_link_clicked'
   | 'about_source_clicked'
   | 'about_wintrchess_clicked'
+  | 'analysis_run_requested'
+  | 'analysis_run_completed'
+  | 'analysis_run_failed'
 
 export function trackEvent(
   eventName: AnalyticsEvent,
