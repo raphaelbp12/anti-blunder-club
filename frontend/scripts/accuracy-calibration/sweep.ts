@@ -51,8 +51,10 @@ interface EvalCacheFile {
   positions: Array<{ ply: number; fen: string; evaluation: Evaluation }>
 }
 
-interface GameData {
+export interface GameData {
   gameId: string
+  whiteUsername: string
+  blackUsername: string
   ccWhite: number
   ccBlack: number
   /** Colour per ply index (0-based, 0 = White's first move). */
@@ -62,7 +64,7 @@ interface GameData {
   cacheDepth: number
 }
 
-interface TrialResult {
+export interface TrialResult {
   params: AccuracyParams
   mae: number
   maeWhite: number
@@ -101,7 +103,8 @@ function loadDeepestCache(gameId: string): EvalCacheFile | null {
     const m = f.match(/\.d(\d+)\.evals\.json$/)
     if (!m) continue
     const d = parseInt(m[1], 10)
-    if (!best || d > best.depth) best = { path: resolve(FIXTURES_DIR, f), depth: d }
+    if (!best || d > best.depth)
+      best = { path: resolve(FIXTURES_DIR, f), depth: d }
   }
   if (!best) return null
   try {
@@ -111,7 +114,7 @@ function loadDeepestCache(gameId: string): EvalCacheFile | null {
   }
 }
 
-function loadGames(minDepth: number | null): GameData[] {
+export function loadGames(minDepth: number | null): GameData[] {
   const out: GameData[] = []
   if (!existsSync(FIXTURES_DIR)) return out
   const fixtureFiles = readdirSync(FIXTURES_DIR)
@@ -156,6 +159,8 @@ function loadGames(minDepth: number | null): GameData[] {
 
     out.push({
       gameId,
+      whiteUsername: raw.white.username,
+      blackUsername: raw.black.username,
       ccWhite: raw.accuracies.white,
       ccBlack: raw.accuracies.black,
       colours,
@@ -166,7 +171,7 @@ function loadGames(minDepth: number | null): GameData[] {
   return out
 }
 
-function pearson(xs: number[], ys: number[]): number {
+export function pearson(xs: number[], ys: number[]): number {
   const n = xs.length
   if (n < 2) return 0
   const mx = xs.reduce((a, b) => a + b, 0) / n
@@ -185,7 +190,7 @@ function pearson(xs: number[], ys: number[]): number {
   return denom === 0 ? 0 : num / denom
 }
 
-function evaluateTrial(games: GameData[], params: AccuracyParams): TrialResult {
+export function evaluateTrial(games: GameData[], params: AccuracyParams): TrialResult {
   const diffsWhite: number[] = []
   const diffsBlack: number[] = []
   const ccVals: number[] = []
@@ -226,7 +231,7 @@ function evaluateTrial(games: GameData[], params: AccuracyParams): TrialResult {
   return { params, mae, maeWhite, maeBlack, rmse, bias, pearson: r, score }
 }
 
-function* enumerateGrid(): Generator<AccuracyParams> {
+export function* enumerateGrid(): Generator<AccuracyParams> {
   for (const centipawnGradient of GRADIENTS) {
     for (const moveCoefK of K_VALUES) {
       for (const moveCoefA of A_VALUES) {
@@ -281,7 +286,7 @@ function gitSha(): string {
   }
 }
 
-function formatParams(p: AccuracyParams): string {
+export function formatParams(p: AccuracyParams): string {
   const parts = [
     `g=${p.centipawnGradient}`,
     `A=${p.moveCoefA}`,
@@ -335,9 +340,7 @@ function main() {
 
   // Also produce rankings by pure MAE and pure r for cross-validation.
   const byMae = [...results].sort((a, b) => a.mae - b.mae).slice(0, 10)
-  const byR = [...results]
-    .sort((a, b) => b.pearson - a.pearson)
-    .slice(0, 10)
+  const byR = [...results].sort((a, b) => b.pearson - a.pearson).slice(0, 10)
 
   const now = new Date()
   const stamp = now.toISOString().replace(/[:.]/g, '-').replace(/Z$/, 'Z')
@@ -355,9 +358,7 @@ function main() {
   md.push('')
   md.push(`## Baseline (shipped defaults)`)
   md.push('')
-  md.push(
-    `| MAE | MAE-W | MAE-B | RMSE | bias | r | score |`,
-  )
+  md.push(`| MAE | MAE-W | MAE-B | RMSE | bias | r | score |`)
   md.push(`|---:|---:|---:|---:|---:|---:|---:|`)
   md.push(
     `| ${baseline.mae.toFixed(2)} | ${baseline.maeWhite.toFixed(2)} | ${baseline.maeBlack.toFixed(2)} | ${baseline.rmse.toFixed(2)} | ${baseline.bias.toFixed(2)} | ${baseline.pearson.toFixed(3)} | ${baseline.score.toFixed(2)} |`,
@@ -365,9 +366,7 @@ function main() {
   md.push('')
   md.push(`## Top ${topN} (ranked by score)`)
   md.push('')
-  md.push(
-    `| rank | score | MAE | MAE-W | MAE-B | RMSE | bias | r | params |`,
-  )
+  md.push(`| rank | score | MAE | MAE-W | MAE-B | RMSE | bias | r | params |`)
   md.push(`|---:|---:|---:|---:|---:|---:|---:|---:|---|`)
   for (let i = 0; i < top.length; i++) {
     const t = top[i]
@@ -378,9 +377,7 @@ function main() {
   md.push('')
   md.push(`## Top 10 by pure MAE`)
   md.push('')
-  md.push(
-    `| rank | MAE | bias | r | params |`,
-  )
+  md.push(`| rank | MAE | bias | r | params |`)
   md.push(`|---:|---:|---:|---:|---|`)
   for (let i = 0; i < byMae.length; i++) {
     const t = byMae[i]
@@ -391,9 +388,7 @@ function main() {
   md.push('')
   md.push(`## Top 10 by Pearson r`)
   md.push('')
-  md.push(
-    `| rank | r | MAE | bias | params |`,
-  )
+  md.push(`| rank | r | MAE | bias | params |`)
   md.push(`|---:|---:|---:|---:|---|`)
   for (let i = 0; i < byR.length; i++) {
     const t = byR[i]
@@ -439,4 +434,6 @@ function main() {
   console.log(`  ${formatParams(best.params)}`)
 }
 
-main()
+if (import.meta.url === `file://${process.argv[1]}`) {
+  main()
+}

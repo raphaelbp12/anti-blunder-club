@@ -191,7 +191,8 @@ async function main() {
 
   const keptIds = new Set(kept.map((e) => e.gameId))
   const userCount = new Map<string, number>()
-  for (const e of kept) userCount.set(e.username, (userCount.get(e.username) ?? 0) + 1)
+  for (const e of kept)
+    userCount.set(e.username, (userCount.get(e.username) ?? 0) + 1)
 
   // Step 2: re-scan users round-robin for bucket deficits.
   // Pre-fetch archive indexes.
@@ -201,7 +202,10 @@ async function main() {
       const { archives } = await getJson<{ archives: string[] }>(
         `https://api.chess.com/pub/player/${user}/games/archives`,
       )
-      userArchives.set(user, archives.slice().reverse().slice(0, ARCHIVES_TO_SCAN))
+      userArchives.set(
+        user,
+        archives.slice().reverse().slice(0, ARCHIVES_TO_SCAN),
+      )
     } catch (err) {
       console.error(`[${user}] archive list failed:`, (err as Error).message)
     }

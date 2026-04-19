@@ -19,7 +19,8 @@
     "calibrate:fetch": "tsx scripts/accuracy-calibration/fetchFixtures.ts",
     "calibrate:run": "tsx scripts/accuracy-calibration/calibrate.ts",
     "calibrate:analyze": "tsx scripts/accuracy-calibration/stockfishEvalCache.ts",
-    "calibrate:sweep": "tsx scripts/accuracy-calibration/sweep.ts"
+    "calibrate:sweep": "tsx scripts/accuracy-calibration/sweep.ts",
+    "calibrate:holdout": "tsx scripts/accuracy-calibration/holdout.ts"
   },
   "lint-staged": {
     "src/**/*.{ts,tsx}": [
