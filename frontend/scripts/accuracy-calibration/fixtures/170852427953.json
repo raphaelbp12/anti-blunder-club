@@ -1,0 +1,33 @@
+{
+  "url": "https://www.chess.com/game/live/170852427953",
+  "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2026.04.18\"]\n[Round \"-\"]\n[White \"MuriloBBarbosa\"]\n[Black \"Artenio\"]\n[Result \"0-1\"]\n[Tournament \"https://www.chess.com/tournament/live/suio-de-sbado---vem-ganhar-rating-6389381\"]\n[CurrentPosition \"3r1rk1/p2q1ppp/4p3/2b1P3/P1N2Q2/2P3P1/1B3P1P/R4K2 b - - 0 25\"]\n[Timezone \"UTC\"]\n[ECO \"B22\"]\n[ECOUrl \"https://www.chess.com/openings/Alapin-Sicilian-Defense-Barmen-Defense-4.d4\"]\n[UTCDate \"2026.04.18\"]\n[UTCTime \"19:02:42\"]\n[WhiteElo \"1167\"]\n[BlackElo \"2016\"]\n[TimeControl \"600+2\"]\n[Termination \"Artenio won by resignation\"]\n[StartTime \"19:02:42\"]\n[EndDate \"2026.04.18\"]\n[EndTime \"19:13:51\"]\n[Link \"https://www.chess.com/game/live/170852427953\"]\n\n1. e4 {[%clk 0:10:01.9]} 1... c5 {[%clk 0:09:49.3]} 2. c3 {[%clk 0:10:01.8]} 2... d5 {[%clk 0:09:50]} 3. exd5 {[%clk 0:09:55.1]} 3... Qxd5 {[%clk 0:09:50.6]} 4. d4 {[%clk 0:09:55.3]} 4... c4 {[%clk 0:09:50.5]} 5. Na3 {[%clk 0:09:50.6]} 5... b5 {[%clk 0:09:50.2]} 6. Nf3 {[%clk 0:09:31.5]} 6... e6 {[%clk 0:09:45.8]} 7. Nc2 {[%clk 0:09:29.4]} 7... Nf6 {[%clk 0:09:41.3]} 8. Ne3 {[%clk 0:09:00.6]} 8... Qd8 {[%clk 0:09:28.9]} 9. b3 {[%clk 0:08:53.1]} 9... cxb3 {[%clk 0:09:20]} 10. Bxb5+ {[%clk 0:08:53]} 10... Nbd7 {[%clk 0:09:20.9]} 11. Qxb3 {[%clk 0:08:47.8]} 11... Be7 {[%clk 0:09:11.6]} 12. Bc6 {[%clk 0:08:34]} 12... Rb8 {[%clk 0:08:43.6]} 13. Qa4 {[%clk 0:08:25.4]} 13... O-O {[%clk 0:08:39.8]} 14. O-O {[%clk 0:08:11.9]} 14... Qc7 {[%clk 0:08:31.3]} 15. Ne5 {[%clk 0:07:33.8]} 15... Nxe5 {[%clk 0:08:27.4]} 16. dxe5 {[%clk 0:07:34.4]} 16... Nd7 {[%clk 0:08:20.7]} 17. Bxd7 {[%clk 0:06:47]} 17... Bxd7 {[%clk 0:08:18.9]} 18. Qd4 {[%clk 0:06:48.1]} 18... Bc5 {[%clk 0:08:14.1]} 19. Qc4 {[%clk 0:06:15.3]} 19... Bb5 {[%clk 0:08:12.3]} 20. Qf4 {[%clk 0:05:43.6]} 20... Bxf1 {[%clk 0:07:52.8]} 21. Kxf1 {[%clk 0:05:45.5]} 21... Rbd8 {[%clk 0:07:37.6]} 22. Bb2 {[%clk 0:05:22.4]} 22... Qb6 {[%clk 0:07:32.7]} 23. Nc4 {[%clk 0:05:05.7]} 23... Qb5 {[%clk 0:07:08]} 24. a4 {[%clk 0:04:52.9]} 24... Qd7 {[%clk 0:07:04.6]} 25. g3 {[%clk 0:04:02.2]} 0-1\n",
+  "time_control": "600+2",
+  "end_time": 1776539631,
+  "rated": true,
+  "accuracies": {
+    "white": 64.18,
+    "black": 71.29
+  },
+  "tcn": "mCYIksZJCJ7JlBIAbqXHgv0Sqk!TkuJ7jrArfH5Zdr90HQ45ry8!eg7YvKZKBKTZQZ6ZyB0IBAZHADHfgf57cjYPuAPHiyHZow",
+  "uuid": "2d6f1aba-3b59-11f1-9a2c-6cfe54652c60",
+  "initial_setup": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "fen": "3r1rk1/p2q1ppp/4p3/2b1P3/P1N2Q2/2P3P1/1B3P1P/R4K2 b - - 0 25",
+  "time_class": "rapid",
+  "rules": "chess",
+  "white": {
+    "rating": 1167,
+    "result": "resigned",
+    "@id": "https://api.chess.com/pub/player/murilobbarbosa",
+    "username": "MuriloBBarbosa",
+    "uuid": "dee1ae00-a588-11ed-8b4e-3fcebfbb580d"
+  },
+  "black": {
+    "rating": 2016,
+    "result": "win",
+    "@id": "https://api.chess.com/pub/player/artenio",
+    "username": "Artenio",
+    "uuid": "647e0cd0-8b0a-11ea-afc0-5758e4870619"
+  },
+  "eco": "https://www.chess.com/openings/Alapin-Sicilian-Defense-Barmen-Defense-4.d4",
+  "tournament": "https://api.chess.com/pub/tournament/suio-de-sbado---vem-ganhar-rating-6389381"
+}

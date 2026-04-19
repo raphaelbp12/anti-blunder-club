@@ -1,0 +1,32 @@
+{
+  "url": "https://www.chess.com/game/live/167516098900",
+  "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2026.04.19\"]\n[Round \"-\"]\n[White \"gaguera\"]\n[Black \"negans211\"]\n[Result \"1-0\"]\n[CurrentPosition \"r1b1kb1r/pp2qpp1/3p1n1p/3Np3/4P3/1P3N2/1PP2PPP/R1BQR1K1 b kq - 0 11\"]\n[Timezone \"UTC\"]\n[ECO \"C47\"]\n[ECOUrl \"https://www.chess.com/openings/Four-Knights-Game-Italian-Variation\"]\n[UTCDate \"2026.04.19\"]\n[UTCTime \"07:36:14\"]\n[WhiteElo \"580\"]\n[BlackElo \"552\"]\n[TimeControl \"300\"]\n[Termination \"gaguera won - game abandoned\"]\n[StartTime \"07:36:14\"]\n[EndDate \"2026.04.19\"]\n[EndTime \"07:38:27\"]\n[Link \"https://www.chess.com/game/live/167516098900\"]\n\n1. e4 {[%clk 0:04:59.9]} 1... e5 {[%clk 0:04:58.1]} 2. Nf3 {[%clk 0:04:58.3]} 2... Nc6 {[%clk 0:04:57.5]} 3. Nc3 {[%clk 0:04:57.4]} 3... Nf6 {[%clk 0:04:56.5]} 4. Bc4 {[%clk 0:04:55]} 4... h6 {[%clk 0:04:54]} 5. O-O {[%clk 0:04:53.9]} 5... d6 {[%clk 0:04:52.9]} 6. d4 {[%clk 0:04:45.7]} 6... Qe7 {[%clk 0:04:51.9]} 7. d5 {[%clk 0:04:37.8]} 7... Na5 {[%clk 0:04:37.5]} 8. Bb3 {[%clk 0:04:26.5]} 8... Nxb3 {[%clk 0:04:29.2]} 9. axb3 {[%clk 0:04:25.7]} 9... c6 {[%clk 0:04:27]} 10. Re1 {[%clk 0:04:20.1]} 10... cxd5 {[%clk 0:04:08.3]} 11. Nxd5 {[%clk 0:04:19.5]} 1-0\n",
+  "time_control": "300",
+  "end_time": 1776584307,
+  "rated": true,
+  "accuracies": {
+    "white": 77.92,
+    "black": 72.42
+  },
+  "tcn": "mC0Kgv5Qbs!TfA3VegZRlB70BJQGArGrirYQfeQJsJ",
+  "uuid": "7213f29d-3bc2-11f1-936c-2e0a7901000f",
+  "initial_setup": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "fen": "r1b1kb1r/pp2qpp1/3p1n1p/3Np3/4P3/1P3N2/1PP2PPP/R1BQR1K1 b kq - 0 11",
+  "time_class": "blitz",
+  "rules": "chess",
+  "white": {
+    "rating": 580,
+    "result": "win",
+    "@id": "https://api.chess.com/pub/player/gaguera",
+    "username": "gaguera",
+    "uuid": "671a788c-90a6-11eb-85a9-a754781e281f"
+  },
+  "black": {
+    "rating": 552,
+    "result": "abandoned",
+    "@id": "https://api.chess.com/pub/player/negans211",
+    "username": "negans211",
+    "uuid": "2ab0b598-eaa7-11ed-8036-5d4b78f4fe13"
+  },
+  "eco": "https://www.chess.com/openings/Four-Knights-Game-Italian-Variation"
+}

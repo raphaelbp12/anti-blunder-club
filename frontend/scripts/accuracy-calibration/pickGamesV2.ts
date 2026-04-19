@@ -75,9 +75,22 @@ function plyCount(pgn: string): number {
 
 function isDraw(g: RawGame): boolean {
   return (
-    ['agreed', 'repetition', 'stalemate', '50move', 'insufficient', 'timevsinsufficient'].includes(
-      g.white.result,
-    ) && ['agreed', 'repetition', 'stalemate', '50move', 'insufficient', 'timevsinsufficient'].includes(g.black.result)
+    [
+      'agreed',
+      'repetition',
+      'stalemate',
+      '50move',
+      'insufficient',
+      'timevsinsufficient',
+    ].includes(g.white.result) &&
+    [
+      'agreed',
+      'repetition',
+      'stalemate',
+      '50move',
+      'insufficient',
+      'timevsinsufficient',
+    ].includes(g.black.result)
   )
 }
 
@@ -162,9 +175,7 @@ async function main() {
           if (!id || byId.has(id)) continue
 
           // Only add this game if it fills a bucket that still needs more.
-          const bucket = buckets.find(
-            (b) => b.want > b.got && b.match(g),
-          )
+          const bucket = buckets.find((b) => b.want > b.got && b.match(g))
           if (!bucket) continue
 
           // Cap per-user contributions for the generic catch-all.
@@ -194,7 +205,9 @@ async function main() {
     }
     console.log(
       `[${user}] buckets: ` +
-        buckets.map((b) => `${b.name.split(' ')[0]}=${b.got}/${b.want}`).join(' '),
+        buckets
+          .map((b) => `${b.name.split(' ')[0]}=${b.got}/${b.want}`)
+          .join(' '),
     )
   }
 

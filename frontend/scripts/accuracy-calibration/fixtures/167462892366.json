@@ -1,0 +1,32 @@
+{
+  "url": "https://www.chess.com/game/live/167462892366",
+  "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2026.04.18\"]\n[Round \"-\"]\n[White \"gushiro\"]\n[Black \"32payne32\"]\n[Result \"0-1\"]\n[CurrentPosition \"6k1/pp3ppp/4p3/4q3/4p1Q1/1P5P/P4PP1/2r3K1 w - - 0 25\"]\n[Timezone \"UTC\"]\n[ECO \"B12\"]\n[ECOUrl \"https://www.chess.com/openings/Caro-Kann-Defense-Advance-Botvinnik-Carls-Defense-4.c3-Nc6-5.Nf3-Bg4\"]\n[UTCDate \"2026.04.18\"]\n[UTCTime \"01:15:53\"]\n[WhiteElo \"1286\"]\n[BlackElo \"1297\"]\n[TimeControl \"60\"]\n[Termination \"32payne32 won by resignation\"]\n[StartTime \"01:15:53\"]\n[EndDate \"2026.04.18\"]\n[EndTime \"01:17:03\"]\n[Link \"https://www.chess.com/game/live/167462892366\"]\n\n1. e4 {[%clk 0:00:58.7]} 1... c6 {[%clk 0:00:59.8]} 2. d4 {[%clk 0:00:57.2]} 2... d5 {[%clk 0:00:59.3]} 3. e5 {[%clk 0:00:56.7]} 3... c5 {[%clk 0:00:58.6]} 4. Nf3 {[%clk 0:00:55.7]} 4... Nc6 {[%clk 0:00:58.3]} 5. c3 {[%clk 0:00:55.1]} 5... Bg4 {[%clk 0:00:57.6]} 6. Nbd2 {[%clk 0:00:53.8]} 6... e6 {[%clk 0:00:57.2]} 7. h3 {[%clk 0:00:52.7]} 7... Bxf3 {[%clk 0:00:55.9]} 8. Nxf3 {[%clk 0:00:52.6]} 8... cxd4 {[%clk 0:00:55.3]} 9. cxd4 {[%clk 0:00:51.8]} 9... Qb6 {[%clk 0:00:54.8]} 10. b3 {[%clk 0:00:50.1]} 10... Bb4+ {[%clk 0:00:54.1]} 11. Bd2 {[%clk 0:00:48.8]} 11... Nxd4 {[%clk 0:00:50.9]} 12. Nxd4 {[%clk 0:00:47.5]} 12... Qxd4 {[%clk 0:00:50.1]} 13. Be2 {[%clk 0:00:44.8]} 13... Bxd2+ {[%clk 0:00:48.4]} 14. Qxd2 {[%clk 0:00:43.9]} 14... Qxa1+ {[%clk 0:00:47.5]} 15. Bd1 {[%clk 0:00:42.1]} 15... Qxe5+ {[%clk 0:00:46.6]} 16. Be2 {[%clk 0:00:40.7]} 16... Nf6 {[%clk 0:00:45.7]} 17. O-O {[%clk 0:00:39.8]} 17... O-O {[%clk 0:00:45]} 18. Re1 {[%clk 0:00:39.4]} 18... Ne4 {[%clk 0:00:43.6]} 19. Qd3 {[%clk 0:00:37.7]} 19... Rac8 {[%clk 0:00:41.9]} 20. Bf3 {[%clk 0:00:36.2]} 20... Rc3 {[%clk 0:00:39.5]} 21. Qd1 {[%clk 0:00:33.7]} 21... Rfc8 {[%clk 0:00:33.4]} 22. Bxe4 {[%clk 0:00:32.7]} 22... dxe4 {[%clk 0:00:32.9]} 23. Qg4 {[%clk 0:00:30.1]} 23... Rc1 {[%clk 0:00:30.6]} 24. Rxc1 {[%clk 0:00:28.9]} 24... Rxc1+ {[%clk 0:00:29.3]} 0-1\n",
+  "time_control": "60",
+  "end_time": 1776475023,
+  "rated": true,
+  "accuracies": {
+    "white": 74.37,
+    "black": 96.01
+  },
+  "tcn": "mCYQlBZJCKQIgv5Qks6Ebl0SpxEvlvIBsB7Pjr9zclQBvBPBfmzldlBamdaKdm!Teg8!feTClt46mv6std96vCJCdEscec6c",
+  "uuid": "24f9fd5b-3ac4-11f1-8849-28ad8d01000f",
+  "initial_setup": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "fen": "6k1/pp3ppp/4p3/4q3/4p1Q1/1P5P/P4PP1/2r3K1 w - - 0 25",
+  "time_class": "bullet",
+  "rules": "chess",
+  "white": {
+    "rating": 1286,
+    "result": "resigned",
+    "@id": "https://api.chess.com/pub/player/gushiro",
+    "username": "gushiro",
+    "uuid": "ba834f36-e954-11ed-8858-73d19fffdfe6"
+  },
+  "black": {
+    "rating": 1297,
+    "result": "win",
+    "@id": "https://api.chess.com/pub/player/32payne32",
+    "username": "32payne32",
+    "uuid": "88b1f8be-82cb-11eb-abc2-4d5e411a8f54"
+  },
+  "eco": "https://www.chess.com/openings/Caro-Kann-Defense-Advance-Botvinnik-Carls-Defense-4.c3-Nc6-5.Nf3-Bg4"
+}

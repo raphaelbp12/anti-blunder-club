@@ -1,0 +1,33 @@
+{
+  "url": "https://www.chess.com/game/live/170686248743",
+  "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2026.04.16\"]\n[Round \"-\"]\n[White \"GMKrikor\"]\n[Black \"karinachess1\"]\n[Result \"0-1\"]\n[Tournament \"https://www.chess.com/tournament/live/second-3-0-thursday-april-16-2026-6362197\"]\n[CurrentPosition \"7k/R6P/8/K5r1/P7/8/8/8 w - - 47 84\"]\n[Timezone \"UTC\"]\n[ECO \"D38\"]\n[ECOUrl \"https://www.chess.com/openings/Queens-Gambit-Declined-Ragozin-Defense-5.cxd5-exd5-6.Bf4\"]\n[UTCDate \"2026.04.16\"]\n[UTCTime \"20:54:04\"]\n[WhiteElo \"2935\"]\n[BlackElo \"2774\"]\n[TimeControl \"180\"]\n[Termination \"karinachess1 won on time\"]\n[StartTime \"20:54:04\"]\n[EndDate \"2026.04.16\"]\n[EndTime \"21:00:37\"]\n[Link \"https://www.chess.com/game/live/170686248743\"]\n\n1. Nf3 {[%clk 0:02:59.9]} 1... Nf6 {[%clk 0:02:59]} 2. c4 {[%clk 0:02:58.4]} 2... e6 {[%clk 0:02:58.3]} 3. Nc3 {[%clk 0:02:57.5]} 3... d5 {[%clk 0:02:58.2]} 4. d4 {[%clk 0:02:56.6]} 4... Bb4 {[%clk 0:02:56.8]} 5. cxd5 {[%clk 0:02:55.7]} 5... exd5 {[%clk 0:02:56.7]} 6. Bf4 {[%clk 0:02:54.6]} 6... O-O {[%clk 0:02:52.5]} 7. e3 {[%clk 0:02:53.9]} 7... Ne4 {[%clk 0:02:48.1]} 8. Rc1 {[%clk 0:02:52]} 8... c6 {[%clk 0:02:40.8]} 9. Bd3 {[%clk 0:02:50.9]} 9... Re8 {[%clk 0:02:36.6]} 10. O-O {[%clk 0:02:44.2]} 10... Nd7 {[%clk 0:02:28.6]} 11. Qc2 {[%clk 0:02:42.3]} 11... Ndf6 {[%clk 0:02:27.6]} 12. Ne5 {[%clk 0:02:40.5]} 12... Bf8 {[%clk 0:02:15.4]} 13. f3 {[%clk 0:02:32.5]} 13... Nd6 {[%clk 0:02:12]} 14. Bg5 {[%clk 0:02:18.6]} 14... h6 {[%clk 0:02:02.5]} 15. Bh4 {[%clk 0:02:17.3]} 15... Be7 {[%clk 0:01:57.5]} 16. Rce1 {[%clk 0:02:13.8]} 16... Nd7 {[%clk 0:01:45.9]} 17. Bxe7 {[%clk 0:02:00.4]} 17... Qxe7 {[%clk 0:01:44]} 18. f4 {[%clk 0:02:00.1]} 18... Nf6 {[%clk 0:01:34.8]} 19. h3 {[%clk 0:01:56.3]} 19... h5 {[%clk 0:01:33.8]} 20. Qf2 {[%clk 0:01:51.9]} 20... Bf5 {[%clk 0:01:26.6]} 21. Bxf5 {[%clk 0:01:43.9]} 21... Nxf5 {[%clk 0:01:26.5]} 22. g4 {[%clk 0:01:32.3]} 22... Nd6 {[%clk 0:01:25.6]} 23. gxh5 {[%clk 0:01:25.6]} 23... Nxh5 {[%clk 0:01:22.9]} 24. Kh2 {[%clk 0:01:22.7]} 24... Qf6 {[%clk 0:00:59.1]} 25. Rg1 {[%clk 0:01:17.5]} 25... Nf5 {[%clk 0:00:53.3]} 26. Qf3 {[%clk 0:01:07.5]} 26... Qh6 {[%clk 0:00:52.5]} 27. Rg5 {[%clk 0:01:03.8]} 27... g6 {[%clk 0:00:50.9]} 28. Reg1 {[%clk 0:00:57.9]} 28... Nhg7 {[%clk 0:00:46.4]} 29. Ng4 {[%clk 0:00:50.6]} 29... Qh4 {[%clk 0:00:42.3]} 30. Nf6+ {[%clk 0:00:48.6]} 30... Kf8 {[%clk 0:00:42]} 31. Nd7+ {[%clk 0:00:37.9]} 31... Kg8 {[%clk 0:00:39.6]} 32. Nf6+ {[%clk 0:00:36.5]} 32... Kf8 {[%clk 0:00:39]} 33. Nd7+ {[%clk 0:00:36.3]} 33... Kg8 {[%clk 0:00:38.6]} 34. Ne5 {[%clk 0:00:35.6]} 34... Re6 {[%clk 0:00:32.8]} 35. R5g4 {[%clk 0:00:33.1]} 35... Qh6 {[%clk 0:00:31.5]} 36. e4 {[%clk 0:00:32.6]} 36... dxe4 {[%clk 0:00:30.7]} 37. Nxe4 {[%clk 0:00:32.5]} 37... Rd8 {[%clk 0:00:29.6]} 38. Ng5 {[%clk 0:00:30.7]} 38... Rf6 {[%clk 0:00:28.6]} 39. Ngxf7 {[%clk 0:00:29.7]} 39... Rxf7 {[%clk 0:00:28.1]} 40. Rxg6 {[%clk 0:00:29.1]} 40... Nh4 {[%clk 0:00:24.7]} 41. Rxh6 {[%clk 0:00:23.8]} 41... Nxf3+ {[%clk 0:00:24.1]} 42. Nxf3 {[%clk 0:00:23.3]} 42... Rxf4 {[%clk 0:00:22.8]} 43. Rhg6 {[%clk 0:00:20]} 43... Rxf3 {[%clk 0:00:21.7]} 44. Rxg7+ {[%clk 0:00:19]} 44... Kf8 {[%clk 0:00:19.7]} 45. Rxb7 {[%clk 0:00:18.9]} 45... Rxd4 {[%clk 0:00:17.8]} 46. Rxa7 {[%clk 0:00:18.5]} 46... Rd2+ {[%clk 0:00:16.8]} 47. Rg2 {[%clk 0:00:18.2]} 47... Rff2 {[%clk 0:00:16.4]} 48. Rxf2+ {[%clk 0:00:17.5]} 48... Rxf2+ {[%clk 0:00:16.3]} 49. Kg3 {[%clk 0:00:17.4]} 49... Rxb2 {[%clk 0:00:16.2]} 50. a4 {[%clk 0:00:16.1]} 50... Ra2 {[%clk 0:00:15.5]} 51. Kf4 {[%clk 0:00:14.9]} 51... c5 {[%clk 0:00:15]} 52. h4 {[%clk 0:00:14.5]} 52... c4 {[%clk 0:00:14.4]} 53. Ke4 {[%clk 0:00:14]} 53... c3 {[%clk 0:00:13.9]} 54. Kd3 {[%clk 0:00:13.9]} 54... c2 {[%clk 0:00:13.7]} 55. Kd2 {[%clk 0:00:12.6]} 55... Kg8 {[%clk 0:00:13.3]} 56. h5 {[%clk 0:00:11.7]} 56... Kh8 {[%clk 0:00:13]} 57. h6 {[%clk 0:00:11.2]} 57... Kg8 {[%clk 0:00:12.7]} 58. h7+ {[%clk 0:00:10.4]} 58... Kh8 {[%clk 0:00:12.4]} 59. Kc1 {[%clk 0:00:10.3]} 59... Ra1+ {[%clk 0:00:10.2]} 60. Kxc2 {[%clk 0:00:09.9]} 60... Rh1 {[%clk 0:00:09.6]} 61. Kc3 {[%clk 0:00:09]} 61... Rh2 {[%clk 0:00:09.3]} 62. Kb4 {[%clk 0:00:08.5]} 62... Rh3 {[%clk 0:00:09]} 63. Ka5 {[%clk 0:00:08.1]} 63... Rh5+ {[%clk 0:00:08.6]} 64. Ka6 {[%clk 0:00:07.5]} 64... Rh6+ {[%clk 0:00:08.2]} 65. Ka5 {[%clk 0:00:07]} 65... Rh5+ {[%clk 0:00:07.8]} 66. Kb4 {[%clk 0:00:06.9]} 66... Rh4+ {[%clk 0:00:07.5]} 67. Kc5 {[%clk 0:00:06.5]} 67... Rh5+ {[%clk 0:00:06.9]} 68. Kd4 {[%clk 0:00:06.2]} 68... Rh6 {[%clk 0:00:06.3]} 69. Ke5 {[%clk 0:00:05.6]} 69... Rh5+ {[%clk 0:00:05.7]} 70. Kf4 {[%clk 0:00:05.2]} 70... Rh4+ {[%clk 0:00:04.7]} 71. Kg5 {[%clk 0:00:04.9]} 71... Rh1 {[%clk 0:00:04.4]} 72. Kg6 {[%clk 0:00:03.7]} 72... Rg1+ {[%clk 0:00:03.9]} 73. Kf6 {[%clk 0:00:03.6]} 73... Rf1+ {[%clk 0:00:03.5]} 74. Ke6 {[%clk 0:00:03.5]} 74... Re1+ {[%clk 0:00:03.2]} 75. Kd6 {[%clk 0:00:03.2]} 75... Rd1+ {[%clk 0:00:02.9]} 76. Kc5 {[%clk 0:00:03.1]} 76... Rc1+ {[%clk 0:00:02.8]} 77. Kb4 {[%clk 0:00:03]} 77... Rb1+ {[%clk 0:00:02.5]} 78. Ka3 {[%clk 0:00:02.5]} 78... Rg1 {[%clk 0:00:02.4]} 79. Kb3 {[%clk 0:00:02.4]} 79... Rg3+ {[%clk 0:00:01.9]} 80. Kb4 {[%clk 0:00:01.6]} 80... Rg4+ {[%clk 0:00:01.8]} 81. Kb5 {[%clk 0:00:01.5]} 81... Rg5+ {[%clk 0:00:01.7]} 82. Ka6 {[%clk 0:00:01.4]} 82... Rg6+ {[%clk 0:00:01.6]} 83. Ka5 {[%clk 0:00:00.1]} 83... Rg5+ {[%clk 0:00:01.4]} 0-1\n",
+  "time_control": "180",
+  "end_time": 1776373237,
+  "rated": true,
+  "accuracies": {
+    "white": 70.94,
+    "black": 72.47
+  },
+  "tcn": "gv!TkA0SbsZJlB9zAJSJcD8!muTCacYQft98eg5ZdkZTvKz9nvCRDM3VMF90ceTZF070vDZTpxVNkn6LtLRLoELRENTNgp0TfgRLnvTVgM2UegN2KEVFET!9TZ9!ZT!9TZ9!ZK8SMEFVuCJCsC47CMSTM1T1EULFUVFvKv1DVUDvU2!92X7BXWBlgovnonlnpwnjiyjiwDQIxFIADCAsCtsktl9!FN!?NV?!V3!?lciackahkshpszpxzGxNGONVOGVNGzNFzIFNIBNVBKVNKDNFDMFhMUhgUTgfTSfeSRedRIdcIzcbzqbgqrgwrzwEzHEMHOMUOGUM",
+  "uuid": "677213e9-39d6-11f1-8a7e-6cfe54652c60",
+  "initial_setup": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "fen": "7k/R6P/8/K5r1/P7/8/8/8 w - - 47 84",
+  "time_class": "blitz",
+  "rules": "chess",
+  "white": {
+    "rating": 2935,
+    "result": "timeout",
+    "@id": "https://api.chess.com/pub/player/gmkrikor",
+    "username": "GMKrikor",
+    "uuid": "34b06608-0857-11dd-8007-000000000000"
+  },
+  "black": {
+    "rating": 2774,
+    "result": "win",
+    "@id": "https://api.chess.com/pub/player/karinachess1",
+    "username": "karinachess1",
+    "uuid": "2dfc005a-3b6e-11e4-8000-000000000000"
+  },
+  "eco": "https://www.chess.com/openings/Queens-Gambit-Declined-Ragozin-Defense-5.cxd5-exd5-6.Bf4",
+  "tournament": "https://api.chess.com/pub/tournament/second-3-0-thursday-april-16-2026-6362197"
+}

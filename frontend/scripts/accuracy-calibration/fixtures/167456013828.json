@@ -1,0 +1,32 @@
+{
+  "url": "https://www.chess.com/game/live/167456013828",
+  "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2026.04.17\"]\n[Round \"-\"]\n[White \"gaguera\"]\n[Black \"bentencity\"]\n[Result \"1-0\"]\n[CurrentPosition \"2rq1rk1/pp2bppQ/8/2p5/1n6/3B3P/PPPP1PP1/R1B2RK1 b - - 0 14\"]\n[Timezone \"UTC\"]\n[ECO \"B11\"]\n[ECOUrl \"https://www.chess.com/openings/Caro-Kann-Defense-Two-Knights-Mindeno-Exchange-Line-5.Qxf3-e6\"]\n[UTCDate \"2026.04.17\"]\n[UTCTime \"20:50:42\"]\n[WhiteElo \"516\"]\n[BlackElo \"485\"]\n[TimeControl \"300\"]\n[Termination \"gaguera won by checkmate\"]\n[StartTime \"20:50:42\"]\n[EndDate \"2026.04.17\"]\n[EndTime \"20:53:24\"]\n[Link \"https://www.chess.com/game/live/167456013828\"]\n\n1. e4 {[%clk 0:04:59.3]} 1... c6 {[%clk 0:04:57.3]} 2. Nf3 {[%clk 0:04:57]} 2... d5 {[%clk 0:04:56.4]} 3. Nc3 {[%clk 0:04:54.5]} 3... Bg4 {[%clk 0:04:55]} 4. h3 {[%clk 0:04:52.2]} 4... Bxf3 {[%clk 0:04:53.9]} 5. Qxf3 {[%clk 0:04:51.8]} 5... e6 {[%clk 0:04:51.3]} 6. Bd3 {[%clk 0:04:42]} 6... c5 {[%clk 0:04:49.3]} 7. exd5 {[%clk 0:04:37.5]} 7... exd5 {[%clk 0:04:37.9]} 8. Nxd5 {[%clk 0:04:34.6]} 8... Nc6 {[%clk 0:04:36.9]} 9. Qe4+ {[%clk 0:04:04.8]} 9... Nge7 {[%clk 0:04:34.3]} 10. Nxe7 {[%clk 0:03:56.2]} 10... Bxe7 {[%clk 0:04:29.4]} 11. Bb5 {[%clk 0:03:41.9]} 11... Rc8 {[%clk 0:04:15.6]} 12. O-O {[%clk 0:03:36.3]} 12... O-O {[%clk 0:04:13.7]} 13. Bd3 {[%clk 0:03:25.3]} 13... Nb4 {[%clk 0:03:59.3]} 14. Qxh7# {[%clk 0:03:23.4]} 1-0\n",
+  "time_control": "300",
+  "end_time": 1776459204,
+  "rated": true,
+  "accuracies": {
+    "white": 86.89,
+    "black": 72.39
+  },
+  "tcn": "mCYQgvZJbs6EpxEvdv0SftQICJSJsJ5QvC!0J090tH46eg8!HtQzC3",
+  "uuid": "19820b8d-3a9f-11f1-b479-55d19e01000f",
+  "initial_setup": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "fen": "2rq1rk1/pp2bppQ/8/2p5/1n6/3B3P/PPPP1PP1/R1B2RK1 b - - 0 14",
+  "time_class": "blitz",
+  "rules": "chess",
+  "white": {
+    "rating": 516,
+    "result": "win",
+    "@id": "https://api.chess.com/pub/player/gaguera",
+    "username": "gaguera",
+    "uuid": "671a788c-90a6-11eb-85a9-a754781e281f"
+  },
+  "black": {
+    "rating": 485,
+    "result": "checkmated",
+    "@id": "https://api.chess.com/pub/player/bentencity",
+    "username": "bentencity",
+    "uuid": "339e1ef6-c602-11ef-b8ab-9d4e2d916249"
+  },
+  "eco": "https://www.chess.com/openings/Caro-Kann-Defense-Two-Knights-Mindeno-Exchange-Line-5.Qxf3-e6"
+}

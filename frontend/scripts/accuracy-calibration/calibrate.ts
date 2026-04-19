@@ -11,7 +11,13 @@
 // timestamped, plus a `reports/latest.json` pointer for quick diffing.
 
 import { execSync } from 'node:child_process'
-import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs'
+import {
+  existsSync,
+  mkdirSync,
+  readFileSync,
+  readdirSync,
+  writeFileSync,
+} from 'node:fs'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -45,7 +51,10 @@ function loadEvalCache(gameId: string): EvalCacheFile | null {
   }
 }
 
-function evalsFromCache(cache: EvalCacheFile, plyCount: number): Array<Evaluation | null> {
+function evalsFromCache(
+  cache: EvalCacheFile,
+  plyCount: number,
+): Array<Evaluation | null> {
   // Cache stores ply 0 = start of game, ply 1 = after move 1, ...
   // Per-move accuracy compares position BEFORE move i (cache[i]) with position AFTER move i (cache[i+1]).
   // So we need `plyCount + 1` entries (or at least one per move + the start).
@@ -223,9 +232,7 @@ function computeStats(rows: GameRow[], presetName: string): AggregateStats {
     diffsWhite.reduce((a, b) => a + Math.abs(b), 0) / (diffsWhite.length || 1)
   const maeBlack =
     diffsBlack.reduce((a, b) => a + Math.abs(b), 0) / (diffsBlack.length || 1)
-  const rmse = Math.sqrt(
-    all.reduce((a, b) => a + b * b, 0) / (all.length || 1),
-  )
+  const rmse = Math.sqrt(all.reduce((a, b) => a + b * b, 0) / (all.length || 1))
   const meanBias = all.reduce((a, b) => a + b, 0) / (all.length || 1)
   const maxAbs = all.reduce((m, b) => Math.max(m, Math.abs(b)), 0)
 
@@ -324,9 +331,7 @@ function formatReport(report: Report): string {
   lines.push(
     `| preset | n | MAE | MAE-W | MAE-B | RMSE | bias | max |Δ| | Pearson r |`,
   )
-  lines.push(
-    `|---|---:|---:|---:|---:|---:|---:|---:|---:|`,
-  )
+  lines.push(`|---|---:|---:|---:|---:|---:|---:|---:|---:|`)
   for (const p of report.presets) {
     const s = report.statsByPreset[p.name]
     if (!s) continue
@@ -359,14 +364,10 @@ function formatReport(report: Report): string {
       g.chessComWhite.toFixed(1),
       g.chessComBlack.toFixed(1),
       ...report.presets.map((p) =>
-        g.oursByPreset[p.name]
-          ? g.oursByPreset[p.name].white.toFixed(1)
-          : '—',
+        g.oursByPreset[p.name] ? g.oursByPreset[p.name].white.toFixed(1) : '—',
       ),
       ...report.presets.map((p) =>
-        g.oursByPreset[p.name]
-          ? g.oursByPreset[p.name].black.toFixed(1)
-          : '—',
+        g.oursByPreset[p.name] ? g.oursByPreset[p.name].black.toFixed(1) : '—',
       ),
     ]
     lines.push(`| ${row.join(' | ')} |`)
@@ -434,10 +435,7 @@ function main() {
   }
 
   const now = new Date()
-  const stamp = now
-    .toISOString()
-    .replace(/[:.]/g, '-')
-    .replace(/Z$/, 'Z')
+  const stamp = now.toISOString().replace(/[:.]/g, '-').replace(/Z$/, 'Z')
   const report: Report = {
     generatedAt: now.toISOString(),
     gitSha: gitSha(),

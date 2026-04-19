@@ -33,7 +33,7 @@ After tweaking presets in `calibrate.ts`, only step 4 needs to re-run.
 
 ## Why Stockfish, not inline PGN evals
 
-Chess.com's *public* REST API strips `[%eval ...]` comments from PGNs
+Chess.com's _public_ REST API strips `[%eval ...]` comments from PGNs
 (they only appear in the browser's own analysis endpoint, which requires
 auth). Running Stockfish locally gives us ground-truth evaluations we
 control, at a depth of our choosing, reproducible between machines.
@@ -67,6 +67,7 @@ Each report captures:
   bias, max |Δ|, Pearson r between ours and Chess.com
 
 `reports/latest.json` points at the newest run.
+
 # Accuracy Calibration Harness
 
 Tools for measuring how our per-game accuracy compares to Chess.com's own
@@ -86,7 +87,7 @@ CAPS number, so we can iterate on the formula without ever touching UI.
 ## Why inline evals
 
 Chess.com ships eval-annotated PGNs for most rated games. Parsing them
-lets us calibrate our *formula* (per-move accuracy + aggregator) without
+lets us calibrate our _formula_ (per-move accuracy + aggregator) without
 running Stockfish locally, isolating the variable we actually want to
 tune. If coverage is insufficient we'll add a Stockfish-in-Node step in a
 follow-up.

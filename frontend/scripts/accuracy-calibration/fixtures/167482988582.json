@@ -1,0 +1,32 @@
+{
+  "url": "https://www.chess.com/game/live/167482988582",
+  "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2026.04.18\"]\n[Round \"-\"]\n[White \"dalton6421\"]\n[Black \"gushiro\"]\n[Result \"0-1\"]\n[CurrentPosition \"5r1k/1rpQ3p/1p1p2n1/3P4/p3p3/R3P3/5PP1/2q3K1 w - - 6 36\"]\n[Timezone \"UTC\"]\n[ECO \"A48\"]\n[ECOUrl \"https://www.chess.com/openings/Indian-Game-East-Indian-London-System...4.e3-O-O-5.Be2-d6\"]\n[UTCDate \"2026.04.18\"]\n[UTCTime \"13:16:30\"]\n[WhiteElo \"1496\"]\n[BlackElo \"1500\"]\n[TimeControl \"600\"]\n[Termination \"gushiro won by resignation\"]\n[StartTime \"13:16:30\"]\n[EndDate \"2026.04.18\"]\n[EndTime \"13:28:40\"]\n[Link \"https://www.chess.com/game/live/167482988582\"]\n\n1. d4 {[%clk 0:09:59.1]} 1... Nf6 {[%clk 0:09:58.2]} 2. Bf4 {[%clk 0:09:58.1]} 2... g6 {[%clk 0:09:56.8]} 3. e3 {[%clk 0:09:57.2]} 3... Bg7 {[%clk 0:09:56.2]} 4. Nf3 {[%clk 0:09:56.1]} 4... d6 {[%clk 0:09:55.7]} 5. Be2 {[%clk 0:09:54.3]} 5... O-O {[%clk 0:09:55.1]} 6. h4 {[%clk 0:09:52]} 6... Re8 {[%clk 0:09:20.1]} 7. Ng5 {[%clk 0:09:31.9]} 7... Nbd7 {[%clk 0:08:47.3]} 8. h5 {[%clk 0:09:29.8]} 8... e5 {[%clk 0:08:40.2]} 9. Bg3 {[%clk 0:09:14.3]} 9... b6 {[%clk 0:08:17.8]} 10. hxg6 {[%clk 0:09:12.4]} 10... fxg6 {[%clk 0:08:15.2]} 11. Ne6 {[%clk 0:08:59]} 11... Rxe6 {[%clk 0:07:59.7]} 12. d5 {[%clk 0:08:43.6]} 12... Re8 {[%clk 0:07:53.3]} 13. Bd3 {[%clk 0:08:21.8]} 13... e4 {[%clk 0:07:42.3]} 14. Bb5 {[%clk 0:08:20]} 14... Qe7 {[%clk 0:07:32.5]} 15. Bh4 {[%clk 0:08:14.7]} 15... a6 {[%clk 0:07:23.1]} 16. Bc6 {[%clk 0:08:11.9]} 16... Rb8 {[%clk 0:07:17.3]} 17. Nc3 {[%clk 0:08:06.5]} 17... Bb7 {[%clk 0:07:10]} 18. Bxf6 {[%clk 0:08:03.3]} 18... Bxf6 {[%clk 0:07:03.3]} 19. Bxb7 {[%clk 0:07:57.4]} 19... Rxb7 {[%clk 0:07:03.2]} 20. Qg4 {[%clk 0:07:51.8]} 20... Nf8 {[%clk 0:06:51.2]} 21. O-O {[%clk 0:07:21.3]} 21... Bg7 {[%clk 0:05:50.7]} 22. Ne2 {[%clk 0:07:17.1]} 22... Qe5 {[%clk 0:05:35.8]} 23. Nf4 {[%clk 0:07:05.9]} 23... Qxb2 {[%clk 0:05:20.1]} 24. Rab1 {[%clk 0:06:58.7]} 24... Qxa2 {[%clk 0:05:11.1]} 25. Rfc1 {[%clk 0:06:51.6]} 25... Qc4 {[%clk 0:04:55.6]} 26. Rb3 {[%clk 0:06:40.9]} 26... a5 {[%clk 0:04:40.2]} 27. c3 {[%clk 0:06:18.3]} 27... Qa6 {[%clk 0:03:52]} 28. c4 {[%clk 0:06:10.5]} 28... a4 {[%clk 0:03:45.1]} 29. Ra3 {[%clk 0:06:06.3]} 29... Bb2 {[%clk 0:03:36.8]} 30. Rcc3 {[%clk 0:05:56.2]} 30... Bxa3 {[%clk 0:03:20.7]} 31. Rxa3 {[%clk 0:05:53.6]} 31... Qxc4 {[%clk 0:03:19.3]} 32. Nxg6 {[%clk 0:05:49.6]} 32... Nxg6 {[%clk 0:03:14.3]} 33. Qd7 {[%clk 0:05:47]} 33... Rf8 {[%clk 0:02:55.7]} 34. Qe6+ {[%clk 0:05:41.9]} 34... Kh8 {[%clk 0:02:46.7]} 35. Qd7 {[%clk 0:05:36.5]} 35... Qc1+ {[%clk 0:02:42.5]} 0-1\n",
+  "time_control": "600",
+  "end_time": 1776518920,
+  "rated": true,
+  "accuracies": {
+    "white": 78.51,
+    "black": 84.25
+  },
+  "tcn": "lB!TcD2Umu92gvZRfm8!pF98vM5ZFN0KDwXPNU1UMS8SBJS8mtKCtH70wFWOHQ45bs6XFT2TQX5XdEZ9egT2sm0KmDKjabjifciAbrOGksAOsAGyrq2jcsjqsqOADU9UEZ89ZS!?SZAc",
+  "uuid": "d003b2fe-3b28-11f1-b35e-ec76d501000f",
+  "initial_setup": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "fen": "5r1k/1rpQ3p/1p1p2n1/3P4/p3p3/R3P3/5PP1/2q3K1 w - - 6 36",
+  "time_class": "rapid",
+  "rules": "chess",
+  "white": {
+    "rating": 1496,
+    "result": "resigned",
+    "@id": "https://api.chess.com/pub/player/dalton6421",
+    "username": "dalton6421",
+    "uuid": "55fd321c-ba70-11e6-8004-000000000000"
+  },
+  "black": {
+    "rating": 1500,
+    "result": "win",
+    "@id": "https://api.chess.com/pub/player/gushiro",
+    "username": "gushiro",
+    "uuid": "ba834f36-e954-11ed-8858-73d19fffdfe6"
+  },
+  "eco": "https://www.chess.com/openings/Indian-Game-East-Indian-London-System...4.e3-O-O-5.Be2-d6"
+}

@@ -1,0 +1,33 @@
+{
+  "url": "https://www.chess.com/game/live/170853625709",
+  "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2026.04.18\"]\n[Round \"-\"]\n[White \"olivmaicon33\"]\n[Black \"Artenio\"]\n[Result \"1-0\"]\n[Tournament \"https://www.chess.com/tournament/live/suio-de-sbado---vem-ganhar-rating-6389381\"]\n[CurrentPosition \"r1bR1Qk1/1p3ppp/p1p1p3/4P3/4P3/P3PNP1/1P4BP/RN4K1 b - - 0 20\"]\n[Timezone \"UTC\"]\n[ECO \"D11\"]\n[ECOUrl \"https://www.chess.com/openings/Slav-Defense-Modern-Line...5.g3-Be7-6.Bg2-O-O-7.O-O\"]\n[UTCDate \"2026.04.18\"]\n[UTCTime \"19:20:01\"]\n[WhiteElo \"2315\"]\n[BlackElo \"2013\"]\n[TimeControl \"600+2\"]\n[Termination \"olivmaicon33 won by checkmate\"]\n[StartTime \"19:20:01\"]\n[EndDate \"2026.04.18\"]\n[EndTime \"19:26:29\"]\n[Link \"https://www.chess.com/game/live/170853625709\"]\n\n1. c4 {[%clk 0:10:00.4]} 1... Nf6 {[%clk 0:09:58.3]} 2. g3 {[%clk 0:10:01.3]} 2... d5 {[%clk 0:09:57.3]} 3. Bg2 {[%clk 0:10:01]} 3... c6 {[%clk 0:09:52.9]} 4. Qc2 {[%clk 0:09:49.3]} 4... e6 {[%clk 0:09:47.8]} 5. Nf3 {[%clk 0:09:41.9]} 5... Be7 {[%clk 0:09:11.3]} 6. O-O {[%clk 0:09:41.9]} 6... O-O {[%clk 0:09:11.7]} 7. d4 {[%clk 0:09:12.5]} 7... Na6 {[%clk 0:08:54.8]} 8. a3 {[%clk 0:09:09.4]} 8... Nc7 {[%clk 0:08:20.3]} 9. Bf4 {[%clk 0:08:37.5]} 9... dxc4 {[%clk 0:07:50.7]} 10. Qxc4 {[%clk 0:08:30.2]} 10... Ncd5 {[%clk 0:07:50.7]} 11. Be5 {[%clk 0:08:03.2]} 11... Nb6 {[%clk 0:07:29.6]} 12. Qc2 {[%clk 0:07:58]} 12... Nbd7 {[%clk 0:07:24.5]} 13. Rd1 {[%clk 0:07:50.2]} 13... Nxe5 {[%clk 0:07:21.4]} 14. dxe5 {[%clk 0:07:50.5]} 14... Nd5 {[%clk 0:07:22.8]} 15. e4 {[%clk 0:07:51.4]} 15... Ne3 {[%clk 0:07:15.4]} 16. fxe3 {[%clk 0:07:49.6]} 16... Qd2 {[%clk 0:07:15.2]} 17. Rxd2 {[%clk 0:07:50.1]} 17... Rd8 {[%clk 0:07:17.1]} 18. Rxd8+ {[%clk 0:07:50.4]} 18... Bf8 {[%clk 0:07:18.5]} 19. Qc5 {[%clk 0:07:47.1]} 19... a6 {[%clk 0:07:18.4]} 20. Qxf8# {[%clk 0:07:48.2]} 1-0\n",
+  "time_control": "600+2",
+  "end_time": 1776540389,
+  "rated": true,
+  "accuracies": {
+    "white": 93.16,
+    "black": 71.44
+  },
+  "tcn": "kA!TowZJfoYQdk0Sgv90eg8!lB5OiqOYcDJAkAYJDKJPAkPZfdZKBKTJmCJunu7ldl97l709kIWOI9",
+  "uuid": "9870ade4-3b5b-11f1-9a2c-6cfe54652c60",
+  "initial_setup": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "fen": "r1bR1Qk1/1p3ppp/p1p1p3/4P3/4P3/P3PNP1/1P4BP/RN4K1 b - - 0 20",
+  "time_class": "rapid",
+  "rules": "chess",
+  "white": {
+    "rating": 2315,
+    "result": "win",
+    "@id": "https://api.chess.com/pub/player/olivmaicon33",
+    "username": "olivmaicon33",
+    "uuid": "82ee5518-80dc-11e5-8026-000000000000"
+  },
+  "black": {
+    "rating": 2013,
+    "result": "checkmated",
+    "@id": "https://api.chess.com/pub/player/artenio",
+    "username": "Artenio",
+    "uuid": "647e0cd0-8b0a-11ea-afc0-5758e4870619"
+  },
+  "eco": "https://www.chess.com/openings/Slav-Defense-Modern-Line...5.g3-Be7-6.Bg2-O-O-7.O-O",
+  "tournament": "https://api.chess.com/pub/tournament/suio-de-sbado---vem-ganhar-rating-6389381"
+}

@@ -1,0 +1,32 @@
+{
+  "url": "https://www.chess.com/game/live/167347495704",
+  "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2026.04.15\"]\n[Round \"-\"]\n[White \"PatrickA1992\"]\n[Black \"igricart\"]\n[Result \"0-1\"]\n[CurrentPosition \"r1bq1rk1/1pp1bppp/p2p4/1B1P4/8/8/PPP2PPP/RNB2RK1 w - - 0 11\"]\n[Timezone \"UTC\"]\n[ECO \"C45\"]\n[ECOUrl \"https://www.chess.com/openings/Scotch-Game-3...exd4-4.Nxd4-Nxd4-5.Qxd4\"]\n[UTCDate \"2026.04.15\"]\n[UTCTime \"14:05:10\"]\n[WhiteElo \"198\"]\n[BlackElo \"224\"]\n[TimeControl \"300\"]\n[Termination \"igricart won by resignation\"]\n[StartTime \"14:05:10\"]\n[EndDate \"2026.04.15\"]\n[EndTime \"14:06:51\"]\n[Link \"https://www.chess.com/game/live/167347495704\"]\n\n1. e4 {[%clk 0:04:59.6]} 1... e5 {[%clk 0:04:59]} 2. Nf3 {[%clk 0:04:57.1]} 2... Nc6 {[%clk 0:04:58.5]} 3. d4 {[%clk 0:04:55.7]} 3... exd4 {[%clk 0:04:52.6]} 4. Nxd4 {[%clk 0:04:54.4]} 4... Nxd4 {[%clk 0:04:51.4]} 5. Qxd4 {[%clk 0:04:54]} 5... Nf6 {[%clk 0:04:38.9]} 6. Qe5+ {[%clk 0:04:51.7]} 6... Be7 {[%clk 0:04:36.6]} 7. Bb5 {[%clk 0:04:47.9]} 7... O-O {[%clk 0:04:23.4]} 8. O-O {[%clk 0:04:24.6]} 8... d6 {[%clk 0:04:13.6]} 9. Qd5 {[%clk 0:04:20.9]} 9... Nxd5 {[%clk 0:04:11.3]} 10. exd5 {[%clk 0:04:19.6]} 10... a6 {[%clk 0:04:05.6]} 0-1\n",
+  "time_control": "300",
+  "end_time": 1776262011,
+  "rated": true,
+  "accuracies": {
+    "white": 67.86,
+    "black": 86.47
+  },
+  "tcn": "mC0Kgv5QlBKBvBQBdB!TBK90fH8!egZRKJTJCJWO",
+  "uuid": "1dc3a883-38d4-11f1-b66b-cc2a8001000f",
+  "initial_setup": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "fen": "r1bq1rk1/1pp1bppp/p2p4/1B1P4/8/8/PPP2PPP/RNB2RK1 w - - 0 11",
+  "time_class": "blitz",
+  "rules": "chess",
+  "white": {
+    "rating": 198,
+    "result": "resigned",
+    "@id": "https://api.chess.com/pub/player/patricka1992",
+    "username": "PatrickA1992",
+    "uuid": "0c8a3014-b08f-11ed-90d0-7f1fd967d14f"
+  },
+  "black": {
+    "rating": 224,
+    "result": "win",
+    "@id": "https://api.chess.com/pub/player/igricart",
+    "username": "igricart",
+    "uuid": "fba8b178-676a-11ef-9045-937d737a2433"
+  },
+  "eco": "https://www.chess.com/openings/Scotch-Game-3...exd4-4.Nxd4-Nxd4-5.Qxd4"
+}

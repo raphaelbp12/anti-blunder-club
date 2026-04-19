@@ -207,9 +207,7 @@ export async function analyzePgn(
       if (options.verbose) {
         process.stderr.write(
           `  ply ${String(ply).padStart(3)}: ${
-            evaluation
-              ? `${evaluation.type} ${evaluation.value}`
-              : 'no eval'
+            evaluation ? `${evaluation.type} ${evaluation.value}` : 'no eval'
           }\n`,
         )
       }
@@ -234,7 +232,9 @@ async function main(): Promise<void> {
   const depth = depthArg ? parseInt(depthArg.split('=')[1], 10) : DEFAULT_DEPTH
 
   if (!existsSync(FIXTURES_DIR)) {
-    console.error(`No fixtures dir: ${FIXTURES_DIR}. Run calibrate:fetch first.`)
+    console.error(
+      `No fixtures dir: ${FIXTURES_DIR}. Run calibrate:fetch first.`,
+    )
     process.exit(1)
   }
   const fixtureFiles = readdirSync(FIXTURES_DIR)

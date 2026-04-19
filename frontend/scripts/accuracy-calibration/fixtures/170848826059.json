@@ -1,0 +1,33 @@
+{
+  "url": "https://www.chess.com/game/live/170848826059",
+  "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2026.04.18\"]\n[Round \"-\"]\n[White \"Artenio\"]\n[Black \"Nepo_Sp\"]\n[Result \"1-0\"]\n[Tournament \"https://www.chess.com/tournament/live/suio-de-sbado---vem-ganhar-rating-6389381\"]\n[CurrentPosition \"4r3/1p4p1/1pk1Pp2/3R1P1p/2P4P/8/PP4P1/2K5 b - c3 0 33\"]\n[Timezone \"UTC\"]\n[ECO \"B12\"]\n[ECOUrl \"https://www.chess.com/openings/Caro-Kann-Defense-Advance-Tal-Variation-4...h5\"]\n[UTCDate \"2026.04.18\"]\n[UTCTime \"18:00:01\"]\n[WhiteElo \"2039\"]\n[BlackElo \"1202\"]\n[TimeControl \"600+2\"]\n[Termination \"Artenio won by resignation\"]\n[StartTime \"18:00:01\"]\n[EndDate \"2026.04.18\"]\n[EndTime \"18:11:52\"]\n[Link \"https://www.chess.com/game/live/170848826059\"]\n\n1. e4 {[%clk 0:09:57.4]} 1... c6 {[%clk 0:09:56.5]} 2. d4 {[%clk 0:09:57.9]} 2... d5 {[%clk 0:09:54.2]} 3. e5 {[%clk 0:09:58.7]} 3... Bf5 {[%clk 0:09:47.1]} 4. h4 {[%clk 0:09:48.3]} 4... h5 {[%clk 0:09:42.7]} 5. Nf3 {[%clk 0:09:47.9]} 5... Bg4 {[%clk 0:09:26.8]} 6. Bd3 {[%clk 0:09:36.9]} 6... e6 {[%clk 0:09:23.3]} 7. Bg5 {[%clk 0:09:36.2]} 7... Be7 {[%clk 0:09:19.7]} 8. Bxe7 {[%clk 0:09:23.7]} 8... Nxe7 {[%clk 0:09:21.6]} 9. Nbd2 {[%clk 0:09:22.5]} 9... Nd7 {[%clk 0:09:18.8]} 10. Be2 {[%clk 0:09:14]} 10... Qb6 {[%clk 0:09:03.7]} 11. Nb3 {[%clk 0:09:07.4]} 11... O-O-O {[%clk 0:08:59.9]} 12. Ng5 {[%clk 0:09:03.9]} 12... Bxe2 {[%clk 0:08:35.9]} 13. Qxe2 {[%clk 0:09:05.8]} 13... Rdf8 {[%clk 0:08:31.9]} 14. O-O-O {[%clk 0:08:49.8]} 14... c5 {[%clk 0:08:21]} 15. dxc5 {[%clk 0:08:20.6]} 15... Nxc5 {[%clk 0:08:22.9]} 16. Nxc5 {[%clk 0:08:21.1]} 16... Qxc5 {[%clk 0:08:23]} 17. Rd3 {[%clk 0:08:15.6]} 17... Kb8 {[%clk 0:08:22.1]} 18. Rc3 {[%clk 0:07:58.5]} 18... Qa5 {[%clk 0:07:57.9]} 19. Rhh3 {[%clk 0:07:50.4]} 19... Nc6 {[%clk 0:07:33.6]} 20. Ra3 {[%clk 0:07:41.9]} 20... Qc7 {[%clk 0:07:30.6]} 21. f4 {[%clk 0:07:28.8]} 21... Nd4 {[%clk 0:07:25.2]} 22. Qf2 {[%clk 0:07:13.3]} 22... Rc8 {[%clk 0:07:15.5]} 23. Rhc3 {[%clk 0:06:57.5]} 23... Qb6 {[%clk 0:06:41.6]} 24. Qe3 {[%clk 0:06:30.1]} 24... Nb5 {[%clk 0:06:20.5]} 25. Rxc8+ {[%clk 0:06:25.9]} 25... Rxc8 {[%clk 0:06:19.8]} 26. Qxb6 {[%clk 0:06:23.3]} 26... axb6 {[%clk 0:06:20.9]} 27. Rd3 {[%clk 0:05:48]} 27... f6 {[%clk 0:06:15.9]} 28. Nxe6 {[%clk 0:05:45.1]} 28... Rg8 {[%clk 0:06:04.1]} 29. Rxd5 {[%clk 0:05:36]} 29... Nc7 {[%clk 0:05:58.5]} 30. Nxc7 {[%clk 0:05:36.3]} 30... Kxc7 {[%clk 0:06:00.4]} 31. e6 {[%clk 0:05:34.7]} 31... Re8 {[%clk 0:05:57.8]} 32. f5 {[%clk 0:05:27.2]} 32... Kc6 {[%clk 0:05:58.5]} 33. c4 {[%clk 0:04:50.2]} 1-0\n",
+  "time_control": "600+2",
+  "end_time": 1776535912,
+  "rated": true,
+  "accuracies": {
+    "white": 93.58,
+    "black": 86.6
+  },
+  "tcn": "mCYQlBZJCK6LpF3NgvLEft0ScM90M0!0bl5Ztm7Plr86vMEmdm79ecQIBIZIrIPIdt65tsIGhx0QsqGYnDQBmn96xsYPnuBHs6?6uPWPqt1TMS6!tJHYSY5YKS!8DLYQkA",
+  "uuid": "6ba0aaf0-3b50-11f1-9a2c-6cfe54652c60",
+  "initial_setup": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "fen": "4r3/1p4p1/1pk1Pp2/3R1P1p/2P4P/8/PP4P1/2K5 b - c3 0 33",
+  "time_class": "rapid",
+  "rules": "chess",
+  "white": {
+    "rating": 2039,
+    "result": "win",
+    "@id": "https://api.chess.com/pub/player/artenio",
+    "username": "Artenio",
+    "uuid": "647e0cd0-8b0a-11ea-afc0-5758e4870619"
+  },
+  "black": {
+    "rating": 1202,
+    "result": "resigned",
+    "@id": "https://api.chess.com/pub/player/nepo_sp",
+    "username": "Nepo_Sp",
+    "uuid": "c1cd3fc8-e5f8-11ec-a1b7-97cb75d171fd"
+  },
+  "eco": "https://www.chess.com/openings/Caro-Kann-Defense-Advance-Tal-Variation-4...h5",
+  "tournament": "https://api.chess.com/pub/tournament/suio-de-sbado---vem-ganhar-rating-6389381"
+}
