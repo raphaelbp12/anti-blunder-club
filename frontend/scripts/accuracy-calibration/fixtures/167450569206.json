@@ -1,0 +1,32 @@
+{
+  "url": "https://www.chess.com/game/live/167450569206",
+  "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2026.04.17\"]\n[Round \"-\"]\n[White \"igricart\"]\n[Black \"Mhoch3Ma\"]\n[Result \"1/2-1/2\"]\n[CurrentPosition \"4k3/5p2/1pn5/p1pP4/P3p1N1/2P5/5K1q/8 w - - 10 43\"]\n[Timezone \"UTC\"]\n[ECO \"C46\"]\n[ECOUrl \"https://www.chess.com/openings/Three-Knights-Opening-3...Bb4\"]\n[UTCDate \"2026.04.17\"]\n[UTCTime \"18:26:54\"]\n[WhiteElo \"217\"]\n[BlackElo \"229\"]\n[TimeControl \"300\"]\n[Termination \"Game drawn by repetition\"]\n[StartTime \"18:26:54\"]\n[EndDate \"2026.04.17\"]\n[EndTime \"18:36:31\"]\n[Link \"https://www.chess.com/game/live/167450569206\"]\n\n1. e4 {[%clk 0:04:58.3]} 1... Nc6 {[%clk 0:04:58.3]} 2. Nf3 {[%clk 0:04:56.3]} 2... e5 {[%clk 0:04:56.5]} 3. Nc3 {[%clk 0:04:54.6]} 3... Bb4 {[%clk 0:04:45.7]} 4. a3 {[%clk 0:04:50.9]} 4... Ba5 {[%clk 0:04:44.2]} 5. Bc4 {[%clk 0:04:39.4]} 5... Bxc3 {[%clk 0:04:38.2]} 6. bxc3 {[%clk 0:04:36.3]} 6... d6 {[%clk 0:04:36.6]} 7. O-O {[%clk 0:04:31.6]} 7... Bg4 {[%clk 0:04:32.9]} 8. h3 {[%clk 0:04:29]} 8... Be6 {[%clk 0:04:26.9]} 9. d3 {[%clk 0:04:25.2]} 9... Bxc4 {[%clk 0:04:25.1]} 10. dxc4 {[%clk 0:04:22.4]} 10... a5 {[%clk 0:04:22.8]} 11. Bg5 {[%clk 0:04:08.3]} 11... Nf6 {[%clk 0:04:20.4]} 12. Bh4 {[%clk 0:04:03]} 12... b6 {[%clk 0:04:07.7]} 13. Re1 {[%clk 0:03:52.8]} 13... h6 {[%clk 0:04:01.3]} 14. c5 {[%clk 0:03:47]} 14... bxc5 {[%clk 0:03:57.3]} 15. c4 {[%clk 0:03:42.2]} 15... Rb8 {[%clk 0:03:54]} 16. a4 {[%clk 0:03:33.8]} 16... g5 {[%clk 0:03:50.6]} 17. Bg3 {[%clk 0:03:28.4]} 17... Qd7 {[%clk 0:03:25.2]} 18. Qd2 {[%clk 0:02:58.8]} 18... Qe7 {[%clk 0:03:02.4]} 19. h4 {[%clk 0:02:38.8]} 19... g4 {[%clk 0:02:49.1]} 20. Nh2 {[%clk 0:02:26.4]} 20... Nb4 {[%clk 0:02:30.7]} 21. c3 {[%clk 0:01:43.3]} 21... Nc6 {[%clk 0:02:17.6]} 22. Rab1 {[%clk 0:01:40.1]} 22... Rxb1 {[%clk 0:02:15.1]} 23. Rxb1 {[%clk 0:01:38.4]} 23... Nxe4 {[%clk 0:02:03.8]} 24. Qe3 {[%clk 0:01:13.5]} 24... Nxg3 {[%clk 0:02:01.9]} 25. Qxg3 {[%clk 0:01:10]} 25... Rg8 {[%clk 0:01:56.5]} 26. Rb6 {[%clk 0:01:02.3]} 26... cxb6 {[%clk 0:01:54.9]} 27. h5 {[%clk 0:00:56.4]} 27... e4 {[%clk 0:01:36.4]} 28. Qf4 {[%clk 0:00:45.8]} 28... d5 {[%clk 0:01:21.1]} 29. cxd5 {[%clk 0:00:37.8]} 29... Ne5 {[%clk 0:01:13.9]} 30. Qxh6 {[%clk 0:00:30.1]} 30... g3 {[%clk 0:01:08.8]} 31. Qc6+ {[%clk 0:00:25.2]} 31... Nxc6 {[%clk 0:01:05.9]} 32. fxg3 {[%clk 0:00:23.1]} 32... Rxg3 {[%clk 0:01:03.8]} 33. h6 {[%clk 0:00:19.2]} 33... Qg5 {[%clk 0:00:58.6]} 34. h7 {[%clk 0:00:17.9]} 34... Rxg2+ {[%clk 0:00:55.7]} 35. Kf1 {[%clk 0:00:13.9]} 35... Rf2+ {[%clk 0:00:35.2]} 36. Kxf2 {[%clk 0:00:12.9]} 36... Qh5 {[%clk 0:00:34]} 37. h8=Q+ {[%clk 0:00:07.3]} 37... Qxh8 {[%clk 0:00:33.1]} 38. Ng4 {[%clk 0:00:06.2]} 38... Qh2+ {[%clk 0:00:31.8]} 39. Kf1 {[%clk 0:00:04.3]} 39... Qh1+ {[%clk 0:00:30.9]} 40. Kf2 {[%clk 0:00:03.2]} 40... Qh2+ {[%clk 0:00:29.8]} 41. Kf1 {[%clk 0:00:02.5]} 41... Qh1+ {[%clk 0:00:29]} 42. Kf2 {[%clk 0:00:02]} 42... Qh2+ {[%clk 0:00:28.9]} 1/2-1/2\n",
+  "time_control": "300",
+  "end_time": 1776450991,
+  "rated": true,
+  "accuracies": {
+    "white": 59.59,
+    "black": 62.54
+  },
+  "tcn": "mC5Qgv0Kbs9ziqzGfAGsjsZReg6EpxESltSAtAWGcM!TMFXPfe3VAIPIsA45qy2MFw7ZdlZ0xFMEvpQzkszQab5bebTCluCwuw?!bPYPFNKCwDRJAJQKDVEwVQKQnw!wNV0MV3wogfonfnMN3~N?pE?pnfphfnhpnfphfnhp",
+  "uuid": "02baaf5d-3a8b-11f1-b479-55d19e01000f",
+  "initial_setup": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "fen": "4k3/5p2/1pn5/p1pP4/P3p1N1/2P5/5K1q/8 w - - 10 43",
+  "time_class": "blitz",
+  "rules": "chess",
+  "white": {
+    "rating": 217,
+    "result": "repetition",
+    "@id": "https://api.chess.com/pub/player/igricart",
+    "username": "igricart",
+    "uuid": "fba8b178-676a-11ef-9045-937d737a2433"
+  },
+  "black": {
+    "rating": 229,
+    "result": "repetition",
+    "@id": "https://api.chess.com/pub/player/mhoch3ma",
+    "username": "Mhoch3Ma",
+    "uuid": "b8905eec-5c83-11ee-9016-fb8e1325a971"
+  },
+  "eco": "https://www.chess.com/openings/Three-Knights-Opening-3...Bb4"
+}

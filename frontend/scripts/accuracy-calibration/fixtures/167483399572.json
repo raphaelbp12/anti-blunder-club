@@ -1,0 +1,32 @@
+{
+  "url": "https://www.chess.com/game/live/167483399572",
+  "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2026.04.18\"]\n[Round \"-\"]\n[White \"Alexandre13011\"]\n[Black \"danilorogg1\"]\n[Result \"1-0\"]\n[CurrentPosition \"r1b2k1r/p2p1ppp/1pn1p3/4N3/4n3/P1N1P3/1PPQ2PP/1K1R1B1R b - - 0 15\"]\n[Timezone \"UTC\"]\n[ECO \"B45\"]\n[ECOUrl \"https://www.chess.com/openings/Sicilian-Defense-Taimanov-Variation-5.Nc3\"]\n[UTCDate \"2026.04.18\"]\n[UTCTime \"13:27:19\"]\n[WhiteElo \"953\"]\n[BlackElo \"933\"]\n[TimeControl \"600\"]\n[Termination \"Alexandre13011 won by resignation\"]\n[StartTime \"13:27:19\"]\n[EndDate \"2026.04.18\"]\n[EndTime \"13:33:50\"]\n[Link \"https://www.chess.com/game/live/167483399572\"]\n\n1. e4 {[%clk 0:09:55.1]} 1... c5 {[%clk 0:09:58.5]} 2. Nf3 {[%clk 0:09:52.4]} 2... e6 {[%clk 0:09:58.1]} 3. d4 {[%clk 0:09:50.8]} 3... cxd4 {[%clk 0:09:55.3]} 4. Nxd4 {[%clk 0:09:49.5]} 4... Nc6 {[%clk 0:09:53.7]} 5. Nc3 {[%clk 0:09:42.5]} 5... Qf6 {[%clk 0:09:47.9]} 6. Be3 {[%clk 0:09:28.9]} 6... Bc5 {[%clk 0:09:43.6]} 7. Ndb5 {[%clk 0:09:05.5]} 7... Bxe3 {[%clk 0:08:53.3]} 8. fxe3 {[%clk 0:08:41.2]} 8... Qe5 {[%clk 0:08:38.7]} 9. Nd6+ {[%clk 0:08:20.1]} 9... Kf8 {[%clk 0:08:19.9]} 10. Qd2 {[%clk 0:07:36.8]} 10... Nf6 {[%clk 0:08:08.3]} 11. O-O-O {[%clk 0:07:28]} 11... Nb4 {[%clk 0:08:02.7]} 12. Kb1 {[%clk 0:07:17.6]} 12... b6 {[%clk 0:07:55]} 13. a3 {[%clk 0:06:40.6]} 13... Nc6 {[%clk 0:07:43.6]} 14. Nc4 {[%clk 0:06:09.4]} 14... Nxe4 {[%clk 0:07:38.8]} 15. Nxe5 {[%clk 0:06:01.7]} 1-0\n",
+  "time_control": "600",
+  "end_time": 1776519230,
+  "rated": true,
+  "accuracies": {
+    "white": 69.9,
+    "black": 72.53
+  },
+  "tcn": "mCYIgv0SlBIBvB5Qbs7Tcu9IBHIunuTKHR89dl!TecQzcbXPiqzQRATCAK",
+  "uuid": "534c4aba-3b2a-11f1-a0f1-86ad2101000f",
+  "initial_setup": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "fen": "r1b2k1r/p2p1ppp/1pn1p3/4N3/4n3/P1N1P3/1PPQ2PP/1K1R1B1R b - - 0 15",
+  "time_class": "rapid",
+  "rules": "chess",
+  "white": {
+    "rating": 953,
+    "result": "win",
+    "@id": "https://api.chess.com/pub/player/alexandre13011",
+    "username": "Alexandre13011",
+    "uuid": "5d0a6a70-f12f-11f0-88d5-4b950e2e8477"
+  },
+  "black": {
+    "rating": 933,
+    "result": "resigned",
+    "@id": "https://api.chess.com/pub/player/danilorogg1",
+    "username": "danilorogg1",
+    "uuid": "8c7a0c34-9725-11f0-808c-f57625b960bd"
+  },
+  "eco": "https://www.chess.com/openings/Sicilian-Defense-Taimanov-Variation-5.Nc3"
+}

@@ -1,0 +1,32 @@
+{
+  "url": "https://www.chess.com/game/live/167517068016",
+  "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2026.04.19\"]\n[Round \"-\"]\n[White \"igricart\"]\n[Black \"rubadilip\"]\n[Result \"1-0\"]\n[CurrentPosition \"2rr2k1/p4pQp/8/2Pp4/2B1P3/8/PKP5/6R1 b - - 0 26\"]\n[Timezone \"UTC\"]\n[ECO \"C20\"]\n[ECOUrl \"https://www.chess.com/openings/Bishops-Opening-Boi-Variation-3.Nf3\"]\n[UTCDate \"2026.04.19\"]\n[UTCTime \"08:09:40\"]\n[WhiteElo \"249\"]\n[BlackElo \"234\"]\n[TimeControl \"300\"]\n[Termination \"igricart won by checkmate\"]\n[StartTime \"08:09:40\"]\n[EndDate \"2026.04.19\"]\n[EndTime \"08:17:09\"]\n[Link \"https://www.chess.com/game/live/167517068016\"]\n\n1. e4 {[%clk 0:04:59.8]} 1... e5 {[%clk 0:04:59.1]} 2. Nf3 {[%clk 0:04:59.3]} 2... Bc5 {[%clk 0:04:57.5]} 3. Bc4 {[%clk 0:04:55.2]} 3... Nf6 {[%clk 0:04:54.4]} 4. O-O {[%clk 0:04:51.9]} 4... Nxe4 {[%clk 0:04:45.8]} 5. d3 {[%clk 0:04:45.5]} 5... Nxf2 {[%clk 0:04:42.3]} 6. Rxf2 {[%clk 0:04:43.1]} 6... Bxf2+ {[%clk 0:04:40.2]} 7. Kxf2 {[%clk 0:04:42.3]} 7... b5 {[%clk 0:04:32.9]} 8. Bxb5 {[%clk 0:04:36.1]} 8... Bb7 {[%clk 0:04:29.2]} 9. Be3 {[%clk 0:04:15.1]} 9... Bxf3 {[%clk 0:04:21.4]} 10. gxf3 {[%clk 0:04:06.7]} 10... Qh4+ {[%clk 0:04:15.4]} 11. Ke2 {[%clk 0:03:54]} 11... Qxh2+ {[%clk 0:04:11.4]} 12. Bf2 {[%clk 0:03:49.1]} 12... Nc6 {[%clk 0:03:53.4]} 13. Nc3 {[%clk 0:03:38]} 13... Nd4+ {[%clk 0:03:48]} 14. Kd2 {[%clk 0:03:24.9]} 14... Qxf2+ {[%clk 0:03:44.9]} 15. Kc1 {[%clk 0:03:17.7]} 15... O-O {[%clk 0:03:18.5]} 16. b4 {[%clk 0:02:43.2]} 16... c6 {[%clk 0:03:08]} 17. Bc4 {[%clk 0:02:32.7]} 17... Nxf3 {[%clk 0:02:55.2]} 18. Ne4 {[%clk 0:01:51.1]} 18... Qd2+ {[%clk 0:02:09.3]} 19. Nxd2 {[%clk 0:01:46.5]} 19... Nxd2 {[%clk 0:02:06.2]} 20. Qxd2 {[%clk 0:01:43.2]} 20... e4 {[%clk 0:02:02.6]} 21. dxe4 {[%clk 0:01:33.4]} 21... Rfe8 {[%clk 0:02:00.8]} 22. Qd4 {[%clk 0:01:19.4]} 22... Rac8 {[%clk 0:01:56.6]} 23. Kb2 {[%clk 0:01:10.7]} 23... c5 {[%clk 0:01:54.2]} 24. bxc5 {[%clk 0:01:07.1]} 24... Red8 {[%clk 0:01:46.2]} 25. Rg1 {[%clk 0:01:04.9]} 25... d5 {[%clk 0:01:44.7]} 26. Qxg7# {[%clk 0:01:02.8]} 1-0\n",
+  "time_control": "300",
+  "end_time": 1776586629,
+  "rated": true,
+  "accuracies": {
+    "white": 68.49,
+    "black": 60.48
+  },
+  "tcn": "mC0Kgv9IfA!TegTCltCnfnIngnXHAH6XcuXvov7FnmFpun5QbsQBmlpnlc8!jzYQHABvsCnlClvldlKCtC98lB46cjQIzI87agZJB2",
+  "uuid": "1d8bd5df-3bc7-11f1-8849-28ad8d01000f",
+  "initial_setup": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "fen": "2rr2k1/p4pQp/8/2Pp4/2B1P3/8/PKP5/6R1 b - - 0 26",
+  "time_class": "blitz",
+  "rules": "chess",
+  "white": {
+    "rating": 249,
+    "result": "win",
+    "@id": "https://api.chess.com/pub/player/igricart",
+    "username": "igricart",
+    "uuid": "fba8b178-676a-11ef-9045-937d737a2433"
+  },
+  "black": {
+    "rating": 234,
+    "result": "checkmated",
+    "@id": "https://api.chess.com/pub/player/rubadilip",
+    "username": "rubadilip",
+    "uuid": "778238e2-54c7-11f0-b9fd-675b8ea3409a"
+  },
+  "eco": "https://www.chess.com/openings/Bishops-Opening-Boi-Variation-3.Nf3"
+}

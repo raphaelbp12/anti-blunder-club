@@ -1,0 +1,32 @@
+{
+  "url": "https://www.chess.com/game/live/167454505792",
+  "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2026.04.17\"]\n[Round \"-\"]\n[White \"GMKrikor\"]\n[Black \"Emilio_Profili\"]\n[Result \"1-0\"]\n[CurrentPosition \"8/3k4/8/8/3KP3/2R5/8/r7 b - - 40 81\"]\n[Timezone \"UTC\"]\n[ECO \"D37\"]\n[ECOUrl \"https://www.chess.com/openings/Queens-Gambit-Declined-Exchange-Samisch-Variation-6...c6\"]\n[UTCDate \"2026.04.17\"]\n[UTCTime \"20:08:04\"]\n[WhiteElo \"2939\"]\n[BlackElo \"2827\"]\n[TimeControl \"180\"]\n[Termination \"GMKrikor won on time\"]\n[StartTime \"20:08:04\"]\n[EndDate \"2026.04.17\"]\n[EndTime \"20:14:30\"]\n[Link \"https://www.chess.com/game/live/167454505792\"]\n\n1. Nf3 {[%clk 0:02:57.7]} 1... e6 {[%clk 0:02:59.9]} 2. c4 {[%clk 0:02:56.6]} 2... Nf6 {[%clk 0:02:59.2]} 3. Nc3 {[%clk 0:02:55.9]} 3... d5 {[%clk 0:02:56.6]} 4. d4 {[%clk 0:02:54.9]} 4... Nbd7 {[%clk 0:02:54.2]} 5. cxd5 {[%clk 0:02:52.8]} 5... exd5 {[%clk 0:02:53.2]} 6. Bf4 {[%clk 0:02:52.5]} 6... c6 {[%clk 0:02:52.1]} 7. h3 {[%clk 0:02:50.8]} 7... Bb4 {[%clk 0:02:51.1]} 8. e3 {[%clk 0:02:50.3]} 8... Qe7 {[%clk 0:02:50]} 9. Bd3 {[%clk 0:02:49.4]} 9... O-O {[%clk 0:02:48.9]} 10. O-O {[%clk 0:02:49.1]} 10... Re8 {[%clk 0:02:47.7]} 11. Qc2 {[%clk 0:02:47.9]} 11... h6 {[%clk 0:02:45.6]} 12. Rfb1 {[%clk 0:02:31.9]} 12... Ne4 {[%clk 0:02:42.1]} 13. a3 {[%clk 0:02:30.4]} 13... Bd6 {[%clk 0:02:34.8]} 14. Bxe4 {[%clk 0:02:07.5]} 14... dxe4 {[%clk 0:02:31.7]} 15. Bxd6 {[%clk 0:02:06.3]} 15... Qxd6 {[%clk 0:02:29.7]} 16. Nxe4 {[%clk 0:01:57.4]} 16... Qg6 {[%clk 0:02:27.3]} 17. Nfd2 {[%clk 0:01:57.1]} 17... Nf8 {[%clk 0:02:24.5]} 18. Rc1 {[%clk 0:01:32]} 18... Bxh3 {[%clk 0:02:19.8]} 19. Ng3 {[%clk 0:01:31.7]} 19... Qxc2 {[%clk 0:02:16.3]} 20. Rxc2 {[%clk 0:01:31.6]} 20... Be6 {[%clk 0:02:15.2]} 21. b4 {[%clk 0:01:29.3]} 21... Rad8 {[%clk 0:02:13.7]} 22. f3 {[%clk 0:01:24.9]} 22... Bc8 {[%clk 0:02:10.1]} 23. Kf2 {[%clk 0:01:24]} 23... g6 {[%clk 0:02:06.3]} 24. a4 {[%clk 0:01:23.4]} 24... Kg7 {[%clk 0:02:04.7]} 25. b5 {[%clk 0:01:21.7]} 25... cxb5 {[%clk 0:02:02.1]} 26. axb5 {[%clk 0:01:21.6]} 26... a6 {[%clk 0:02:01.6]} 27. bxa6 {[%clk 0:01:15.5]} 27... bxa6 {[%clk 0:02:01.5]} 28. Nb3 {[%clk 0:01:11]} 28... h5 {[%clk 0:01:57.2]} 29. e4 {[%clk 0:01:07.5]} 29... Ne6 {[%clk 0:01:50.5]} 30. Ne2 {[%clk 0:01:04.7]} 30... Bd7 {[%clk 0:01:41.7]} 31. d5 {[%clk 0:01:01.6]} 31... Ng5 {[%clk 0:01:35.5]} 32. Rxa6 {[%clk 0:01:00.2]} 32... Bb5 {[%clk 0:01:34.7]} 33. Rb6 {[%clk 0:00:59.2]} 33... Bd3 {[%clk 0:01:32.9]} 34. Rc7 {[%clk 0:00:53.5]} 34... Bxe2 {[%clk 0:01:26.9]} 35. Kxe2 {[%clk 0:00:52.9]} 35... Rxd5 {[%clk 0:01:26.3]} 36. Rbb7 {[%clk 0:00:52.5]} 36... Rde5 {[%clk 0:01:20.1]} 37. Nd2 {[%clk 0:00:45]} 37... R5e6 {[%clk 0:01:13.1]} 38. Nc4 {[%clk 0:00:43.5]} 38... Rf8 {[%clk 0:01:04.3]} 39. Kf2 {[%clk 0:00:41.6]} 39... Ra6 {[%clk 0:01:02.6]} 40. Rd7 {[%clk 0:00:37.2]} 40... Ne6 {[%clk 0:01:01.5]} 41. Nd6 {[%clk 0:00:34]} 41... Nc5 {[%clk 0:00:51.8]} 42. Rxf7+ {[%clk 0:00:32.9]} 42... Rxf7 {[%clk 0:00:51.2]} 43. Rxf7+ {[%clk 0:00:32.2]} 43... Kg8 {[%clk 0:00:50.5]} 44. Rf6 {[%clk 0:00:30.1]} 44... Ra2+ {[%clk 0:00:46.8]} 45. Kg3 {[%clk 0:00:28.6]} 45... Kg7 {[%clk 0:00:42.8]} 46. Ne8+ {[%clk 0:00:27.8]} 46... Kh7 {[%clk 0:00:42.4]} 47. Rc6 {[%clk 0:00:27.4]} 47... Nd3 {[%clk 0:00:38.8]} 48. Rc7+ {[%clk 0:00:27.1]} 48... Kh6 {[%clk 0:00:37.4]} 49. Nf6 {[%clk 0:00:26.6]} 49... g5 {[%clk 0:00:33.7]} 50. Rc6 {[%clk 0:00:24.4]} 50... h4+ {[%clk 0:00:30.9]} 51. Kh2 {[%clk 0:00:19.8]} 51... Kg7 {[%clk 0:00:26.7]} 52. Ng4 {[%clk 0:00:17.7]} 52... Ne1 {[%clk 0:00:24.2]} 53. Ne3 {[%clk 0:00:17.1]} 53... Nxf3+ {[%clk 0:00:23.3]} 54. Kh3 {[%clk 0:00:16.4]} 54... Ne5 {[%clk 0:00:19.8]} 55. Rc5 {[%clk 0:00:15.4]} 55... Kf6 {[%clk 0:00:17.5]} 56. Nd5+ {[%clk 0:00:14.2]} 56... Ke6 {[%clk 0:00:17.1]} 57. Nc7+ {[%clk 0:00:13.6]} 57... Kd6 {[%clk 0:00:16.1]} 58. Rd5+ {[%clk 0:00:12.8]} 58... Kxc7 {[%clk 0:00:14.3]} 59. Rxe5 {[%clk 0:00:12.7]} 59... g4+ {[%clk 0:00:13.2]} 60. Kxg4 {[%clk 0:00:12.2]} 60... Rxg2+ {[%clk 0:00:12.5]} 61. Kxh4 {[%clk 0:00:11.9]} 61... Re2 {[%clk 0:00:12.2]} 62. Kg4 {[%clk 0:00:11.4]} 62... Kd6 {[%clk 0:00:11.7]} 63. Rd5+ {[%clk 0:00:09.2]} 63... Ke6 {[%clk 0:00:11.2]} 64. Kf3 {[%clk 0:00:09.1]} 64... Re1 {[%clk 0:00:10.5]} 65. Kf4 {[%clk 0:00:08.6]} 65... Rf1+ {[%clk 0:00:09.7]} 66. Ke3 {[%clk 0:00:08.3]} 66... Re1+ {[%clk 0:00:09.6]} 67. Kf3 {[%clk 0:00:08]} 67... Ra1 {[%clk 0:00:08.9]} 68. Rd3 {[%clk 0:00:07.1]} 68... Rf1+ {[%clk 0:00:08.3]} 69. Ke3 {[%clk 0:00:07]} 69... Ra1 {[%clk 0:00:08.1]} 70. Kd4 {[%clk 0:00:06.1]} 70... Ra4+ {[%clk 0:00:07]} 71. Ke3 {[%clk 0:00:05.7]} 71... Ra1 {[%clk 0:00:06.9]} 72. Rd4 {[%clk 0:00:05.3]} 72... Rh1 {[%clk 0:00:06.5]} 73. Rd3 {[%clk 0:00:05.2]} 73... Ke5 {[%clk 0:00:05.5]} 74. Rd5+ {[%clk 0:00:04.5]} 74... Kf6 {[%clk 0:00:05.1]} 75. Rd3 {[%clk 0:00:04.4]} 75... Rh2 {[%clk 0:00:04.4]} 76. Kd4 {[%clk 0:00:04.3]} 76... Ke6 {[%clk 0:00:03.7]} 77. Rf3 {[%clk 0:00:04.2]} 77... Ra2 {[%clk 0:00:02.2]} 78. Rc3 {[%clk 0:00:04.1]} 78... Ra4+ {[%clk 0:00:01.6]} 79. Rc4 {[%clk 0:00:04]} 79... Ra1 {[%clk 0:00:01.5]} 80. Rc6+ {[%clk 0:00:03.3]} 80... Kd7 {[%clk 0:00:00.5]} 81. Rc3 {[%clk 0:00:03.2]} 1-0\n",
+  "time_control": "180",
+  "end_time": 1776456870,
+  "rated": true,
+  "accuracies": {
+    "white": 94.3,
+    "black": 94.31
+  },
+  "tcn": "gv0SkA!TbsZJlB5ZAJSJcDYQpx9zmu70ft8!eg98dk3VfbTCiqzRtCJCDR0RsCRUvlZ9bc6xCwUkckxSjz47nvS6gn2Uqy!2zHQHyHWOHOXOlrVNuC9Swm6ZBJSMaOZHOPHtkYtmnm7JPXJKrlKSlA89mnSOYZMSARSIZ191X12!1TOinw!2R823TQItQY3V8TUMYQNFwpV2TEteEuevpxvKQI2TuJTSJYSRIJRYJKMExEioEFomFEYRKJRSEvmevDefDufeuveaJtafvufauBayBuyatBahBtSKtJKTJthpuBTStvpivsiysAyaAQSZQs",
+  "uuid": "24c4cb00-3a99-11f1-936c-2e0a7901000f",
+  "initial_setup": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "fen": "8/3k4/8/8/3KP3/2R5/8/r7 b - - 40 81",
+  "time_class": "blitz",
+  "rules": "chess",
+  "white": {
+    "rating": 2939,
+    "result": "win",
+    "@id": "https://api.chess.com/pub/player/gmkrikor",
+    "username": "GMKrikor",
+    "uuid": "34b06608-0857-11dd-8007-000000000000"
+  },
+  "black": {
+    "rating": 2827,
+    "result": "timeout",
+    "@id": "https://api.chess.com/pub/player/emilio_profili",
+    "username": "Emilio_Profili",
+    "uuid": "f077edd8-5d64-11ea-8075-c71baf224ff9"
+  },
+  "eco": "https://www.chess.com/openings/Queens-Gambit-Declined-Exchange-Samisch-Variation-6...c6"
+}

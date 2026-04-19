@@ -1,0 +1,32 @@
+{
+  "url": "https://www.chess.com/game/live/167538573192",
+  "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2026.04.19\"]\n[Round \"-\"]\n[White \"pigor1\"]\n[Black \"urethera\"]\n[Result \"1-0\"]\n[CurrentPosition \"r1bR1bk1/pp3p2/6pn/6N1/8/4BR1P/PPP3P1/6K1 b - - 0 22\"]\n[Timezone \"UTC\"]\n[ECO \"B06\"]\n[ECOUrl \"https://www.chess.com/openings/Modern-Defense-Bishop-Attack-3...d6-4.Nf3\"]\n[UTCDate \"2026.04.19\"]\n[UTCTime \"17:56:33\"]\n[WhiteElo \"1724\"]\n[BlackElo \"1720\"]\n[TimeControl \"600\"]\n[Termination \"pigor1 won on time\"]\n[StartTime \"17:56:33\"]\n[EndDate \"2026.04.19\"]\n[EndTime \"18:10:52\"]\n[Link \"https://www.chess.com/game/live/167538573192\"]\n\n1. e4 {[%clk 0:09:59.9]} 1... g6 {[%clk 0:09:58.6]} 2. d4 {[%clk 0:09:57.5]} 2... Bg7 {[%clk 0:09:57.5]} 3. Nf3 {[%clk 0:09:56.4]} 3... d6 {[%clk 0:09:56.4]} 4. Bc4 {[%clk 0:09:53.4]} 4... Nc6 {[%clk 0:09:55.1]} 5. O-O {[%clk 0:09:24.2]} 5... e5 {[%clk 0:09:53.7]} 6. Ng5 {[%clk 0:09:12.3]} 6... Nh6 {[%clk 0:09:40.2]} 7. dxe5 {[%clk 0:08:51.6]} 7... Nxe5 {[%clk 0:09:38.3]} 8. Bb3 {[%clk 0:08:45]} 8... O-O {[%clk 0:09:35.3]} 9. f4 {[%clk 0:08:41.9]} 9... Neg4 {[%clk 0:09:04.9]} 10. f5 {[%clk 0:08:16.3]} 10... Nf6 {[%clk 0:08:38.1]} 11. fxg6 {[%clk 0:08:09.2]} 11... hxg6 {[%clk 0:08:34]} 12. h3 {[%clk 0:07:17.9]} 12... Qe7 {[%clk 0:08:28.5]} 13. Nc3 {[%clk 0:07:07.1]} 13... c6 {[%clk 0:08:19]} 14. Bf4 {[%clk 0:06:54]} 14... d5 {[%clk 0:07:47]} 15. exd5 {[%clk 0:06:26.7]} 15... cxd5 {[%clk 0:07:44.3]} 16. Nxd5 {[%clk 0:06:22.4]} 16... Nxd5 {[%clk 0:07:37.8]} 17. Bxd5 {[%clk 0:06:19.9]} 17... Rd8 {[%clk 0:07:35.6]} 18. Qf3 {[%clk 0:06:14.1]} 18... Qc5+ {[%clk 0:07:33.5]} 19. Be3 {[%clk 0:06:09.8]} 19... Qxd5 {[%clk 0:07:31.8]} 20. Rad1 {[%clk 0:05:58]} 20... Qxf3 {[%clk 0:07:29]} 21. Rxd8+ {[%clk 0:05:56.6]} 21... Bf8 {[%clk 0:06:34]} 22. Rxf3 {[%clk 0:05:52.5]} 1-0\n",
+  "time_control": "600",
+  "end_time": 1776622252,
+  "rated": true,
+  "accuracies": {
+    "white": 85.57,
+    "black": 73.81
+  },
+  "tcn": "mC2UlB92gvZRfA5Qeg0KvM!VBKQKAr8!nDKEDLETLU3Upx70bsYQcDRJCJQJsJTJrJ97dv0IDuIJadJvd729fv",
+  "uuid": "1a3d261e-3c19-11f1-936c-2e0a7901000f",
+  "initial_setup": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "fen": "r1bR1bk1/pp3p2/6pn/6N1/8/4BR1P/PPP3P1/6K1 b - - 0 22",
+  "time_class": "rapid",
+  "rules": "chess",
+  "white": {
+    "rating": 1724,
+    "result": "win",
+    "@id": "https://api.chess.com/pub/player/pigor1",
+    "username": "pigor1",
+    "uuid": "87e2e49a-accd-11ea-99fb-5318f231855e"
+  },
+  "black": {
+    "rating": 1720,
+    "result": "timeout",
+    "@id": "https://api.chess.com/pub/player/urethera",
+    "username": "urethera",
+    "uuid": "a96b9194-6287-11de-8000-000000000000"
+  },
+  "eco": "https://www.chess.com/openings/Modern-Defense-Bishop-Attack-3...d6-4.Nf3"
+}

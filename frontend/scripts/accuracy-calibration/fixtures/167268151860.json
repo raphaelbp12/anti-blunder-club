@@ -1,0 +1,32 @@
+{
+  "url": "https://www.chess.com/game/live/167268151860",
+  "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2026.04.13\"]\n[Round \"-\"]\n[White \"arjunpolai\"]\n[Black \"pigor1\"]\n[Result \"1/2-1/2\"]\n[CurrentPosition \"8/6k1/8/6p1/6B1/5RKP/3r1PP1/5r2 w - - 12 48\"]\n[Timezone \"UTC\"]\n[ECO \"A01\"]\n[ECOUrl \"https://www.chess.com/openings/Nimzowitsch-Larsen-Attack-Classical-Variation-2.Bb2-c5-3.e3-Nc6\"]\n[UTCDate \"2026.04.13\"]\n[UTCTime \"19:20:04\"]\n[WhiteElo \"1716\"]\n[BlackElo \"1735\"]\n[TimeControl \"600\"]\n[Termination \"Game drawn by repetition\"]\n[StartTime \"19:20:04\"]\n[EndDate \"2026.04.13\"]\n[EndTime \"19:35:24\"]\n[Link \"https://www.chess.com/game/live/167268151860\"]\n\n1. b3 {[%clk 0:09:56.2]} 1... c5 {[%clk 0:09:54.5]} 2. Bb2 {[%clk 0:09:55.4]} 2... Nc6 {[%clk 0:09:53.3]} 3. e3 {[%clk 0:09:53.7]} 3... d5 {[%clk 0:09:52.1]} 4. d3 {[%clk 0:09:53]} 4... e6 {[%clk 0:09:48.1]} 5. a3 {[%clk 0:09:52.1]} 5... Be7 {[%clk 0:09:36.7]} 6. Nd2 {[%clk 0:09:51.2]} 6... Bf6 {[%clk 0:09:35.4]} 7. Bxf6 {[%clk 0:09:42]} 7... Nxf6 {[%clk 0:09:35.3]} 8. h3 {[%clk 0:09:40.9]} 8... O-O {[%clk 0:09:32.8]} 9. Be2 {[%clk 0:09:39.9]} 9... b6 {[%clk 0:09:18.3]} 10. Ngf3 {[%clk 0:09:38.8]} 10... Bb7 {[%clk 0:09:15.5]} 11. O-O {[%clk 0:09:37.3]} 11... h6 {[%clk 0:09:01.4]} 12. c4 {[%clk 0:09:35.4]} 12... dxc4 {[%clk 0:08:54.9]} 13. dxc4 {[%clk 0:09:32.4]} 13... Qc7 {[%clk 0:08:45.4]} 14. Qc2 {[%clk 0:09:29.8]} 14... Rad8 {[%clk 0:08:38.3]} 15. Rad1 {[%clk 0:09:25.1]} 15... Ne7 {[%clk 0:08:27.1]} 16. Qc3 {[%clk 0:09:02]} 16... Qc6 {[%clk 0:08:04.9]} 17. b4 {[%clk 0:08:41.5]} 17... cxb4 {[%clk 0:07:44.6]} 18. axb4 {[%clk 0:08:39.3]} 18... a6 {[%clk 0:07:36.7]} 19. Qa3 {[%clk 0:08:20.1]} 19... Nf5 {[%clk 0:06:52.9]} 20. b5 {[%clk 0:08:06.3]} 20... axb5 {[%clk 0:06:49.8]} 21. cxb5 {[%clk 0:08:03.9]} 21... Qc5 {[%clk 0:06:20.4]} 22. Qxc5 {[%clk 0:07:56.3]} 22... bxc5 {[%clk 0:06:20.3]} 23. Ne5 {[%clk 0:07:46.3]} 23... Nd6 {[%clk 0:06:00.8]} 24. Nb3 {[%clk 0:07:34.8]} 24... Nfe4 {[%clk 0:05:41.6]} 25. Bf3 {[%clk 0:06:45.7]} 25... Nc3 {[%clk 0:05:20.6]} 26. Rxd6 {[%clk 0:06:18.1]} 26... Rxd6 {[%clk 0:04:51.7]} 27. Bxb7 {[%clk 0:06:14.7]} 27... Nxb5 {[%clk 0:04:37]} 28. Nxc5 {[%clk 0:06:11.2]} 28... Rb8 {[%clk 0:04:30.8]} 29. Bf3 {[%clk 0:05:56.8]} 29... f6 {[%clk 0:04:10]} 30. Ned3 {[%clk 0:05:15.2]} 30... e5 {[%clk 0:04:02.6]} 31. Rd1 {[%clk 0:04:55.4]} 31... Nc3 {[%clk 0:03:54.4]} 32. Rc1 {[%clk 0:04:47.3]} 32... e4 {[%clk 0:03:42.7]} 33. Rxc3 {[%clk 0:04:31.8]} 33... exd3 {[%clk 0:03:36.4]} 34. Nxd3 {[%clk 0:04:28.7]} 34... Rbd8 {[%clk 0:03:29.3]} 35. Nf4 {[%clk 0:04:22.3]} 35... g5 {[%clk 0:03:25.5]} 36. Ne2 {[%clk 0:04:15.9]} 36... Rd1+ {[%clk 0:03:21.1]} 37. Kh2 {[%clk 0:04:11.9]} 37... Rf1 {[%clk 0:03:12.1]} 38. Kg3 {[%clk 0:04:05.4]} 38... f5 {[%clk 0:03:03]} 39. Nd4 {[%clk 0:03:58.8]} 39... f4+ {[%clk 0:02:57.5]} 40. exf4 {[%clk 0:03:30.5]} 40... Rxd4 {[%clk 0:02:54.7]} 41. fxg5 {[%clk 0:03:23.9]} 41... hxg5 {[%clk 0:02:53.1]} 42. Bg4 {[%clk 0:03:19]} 42... Rd2 {[%clk 0:02:43.7]} 43. Rf3 {[%clk 0:03:12.1]} 43... Kg7 {[%clk 0:02:36]} 44. Bf5 {[%clk 0:03:04.2]} 44... Kh6 {[%clk 0:02:30.6]} 45. Bg4 {[%clk 0:02:58.6]} 45... Kg7 {[%clk 0:02:28]} 46. Rf5 {[%clk 0:02:55.1]} 46... Kg6 {[%clk 0:02:25.1]} 47. Rf3 {[%clk 0:02:53.2]} 47... Kg7 {[%clk 0:02:22.9]} 1/2-1/2\n",
+  "time_control": "600",
+  "end_time": 1776108924,
+  "rated": true,
+  "accuracies": {
+    "white": 81.85,
+    "black": 82.13
+  },
+  "tcn": "jrYIcj5QmuZJlt0Siq90bl0TjT!Tpx8!fmXPgv6Xeg3VkAJAtA7Ydk47adQ0ksYQrzIzqzWOsq0LzHOHAHQIqIPIvKLRlrTCmvCsdR7RvXsHrI95Xv1TKtSKfdHsdcKCcsCtIt57tD2MDmRdgpdfpwTLmBLDuD7BDMVMvEBlsv!2EL2VLEV2vL2ULvU2",
+  "uuid": "c6aa0493-376d-11f1-8f2d-0848f301000f",
+  "initial_setup": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "fen": "8/6k1/8/6p1/6B1/5RKP/3r1PP1/5r2 w - - 12 48",
+  "time_class": "rapid",
+  "rules": "chess",
+  "white": {
+    "rating": 1716,
+    "result": "repetition",
+    "@id": "https://api.chess.com/pub/player/arjunpolai",
+    "username": "arjunpolai",
+    "uuid": "33ccdefa-b7db-11eb-895b-05f8f5a37b17"
+  },
+  "black": {
+    "rating": 1735,
+    "result": "repetition",
+    "@id": "https://api.chess.com/pub/player/pigor1",
+    "username": "pigor1",
+    "uuid": "87e2e49a-accd-11ea-99fb-5318f231855e"
+  },
+  "eco": "https://www.chess.com/openings/Nimzowitsch-Larsen-Attack-Classical-Variation-2.Bb2-c5-3.e3-Nc6"
+}

@@ -1,0 +1,32 @@
+{
+  "url": "https://www.chess.com/game/live/167407241012",
+  "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2026.04.16\"]\n[Round \"-\"]\n[White \"Gyardian0\"]\n[Black \"Artenio\"]\n[Result \"0-1\"]\n[CurrentPosition \"8/5pk1/6p1/p2b3p/1p3P2/P3RN1P/1r4P1/6K1 w - - 0 39\"]\n[Timezone \"UTC\"]\n[ECO \"B86\"]\n[ECOUrl \"https://www.chess.com/openings/Sicilian-Defense-Open-Scheveningen-Sozin-Attack...8.Be3-Be7-9.f4-O-O-10.O-O\"]\n[UTCDate \"2026.04.16\"]\n[UTCTime \"19:45:30\"]\n[WhiteElo \"2067\"]\n[BlackElo \"2047\"]\n[TimeControl \"600\"]\n[Termination \"Artenio won on time\"]\n[StartTime \"19:45:30\"]\n[EndDate \"2026.04.16\"]\n[EndTime \"20:01:46\"]\n[Link \"https://www.chess.com/game/live/167407241012\"]\n\n1. e4 {[%clk 0:09:59.7]} 1... c5 {[%clk 0:09:58.5]} 2. Nf3 {[%clk 0:09:57]} 2... d6 {[%clk 0:09:57.1]} 3. Bc4 {[%clk 0:09:54.1]} 3... e6 {[%clk 0:09:53.8]} 4. d4 {[%clk 0:09:49.1]} 4... cxd4 {[%clk 0:09:50.2]} 5. Nxd4 {[%clk 0:09:43.8]} 5... Nf6 {[%clk 0:09:47.4]} 6. Nc3 {[%clk 0:09:37.6]} 6... a6 {[%clk 0:09:26]} 7. O-O {[%clk 0:09:16.1]} 7... Be7 {[%clk 0:09:23.2]} 8. Bb3 {[%clk 0:09:03.1]} 8... O-O {[%clk 0:09:21.2]} 9. Be3 {[%clk 0:08:53.3]} 9... Nc6 {[%clk 0:09:16]} 10. f4 {[%clk 0:08:10.3]} 10... d5 {[%clk 0:08:56.4]} 11. exd5 {[%clk 0:07:47.5]} 11... Nxd5 {[%clk 0:08:49.5]} 12. Nxd5 {[%clk 0:07:36.1]} 12... exd5 {[%clk 0:08:45.4]} 13. Nf3 {[%clk 0:07:18.4]} 13... Re8 {[%clk 0:08:42.5]} 14. Bxd5 {[%clk 0:06:56.3]} 14... Qc7 {[%clk 0:08:36.1]} 15. Bxc6 {[%clk 0:06:20]} 15... Qxc6 {[%clk 0:08:34.4]} 16. Ne5 {[%clk 0:06:12.5]} 16... Qc7 {[%clk 0:08:32.2]} 17. Qh5 {[%clk 0:05:55]} 17... g6 {[%clk 0:08:28.5]} 18. Qe2 {[%clk 0:05:20.1]} 18... b5 {[%clk 0:08:16.1]} 19. Rae1 {[%clk 0:05:07.9]} 19... Be6 {[%clk 0:08:07.6]} 20. a3 {[%clk 0:04:44.7]} 20... Bf6 {[%clk 0:07:40.7]} 21. Nd3 {[%clk 0:04:25.7]} 21... Rac8 {[%clk 0:07:38.7]} 22. c3 {[%clk 0:03:49.1]} 22... Bc4 {[%clk 0:07:36.4]} 23. Qc2 {[%clk 0:03:26.2]} 23... Rcd8 {[%clk 0:07:16.3]} 24. Bd4 {[%clk 0:02:33.8]} 24... Bxd4+ {[%clk 0:07:07]} 25. cxd4 {[%clk 0:02:27.2]} 25... Rxe1 {[%clk 0:07:03.5]} 26. Nxe1 {[%clk 0:02:15.2]} 26... Qd6 {[%clk 0:06:42.5]} 27. Rf3 {[%clk 0:01:50.6]} 27... Qxd4+ {[%clk 0:06:35.6]} 28. Kh1 {[%clk 0:01:44]} 28... Qd1 {[%clk 0:05:33.1]} 29. Re3 {[%clk 0:00:55.7]} 29... Qxc2 {[%clk 0:05:07.2]} 30. Nxc2 {[%clk 0:00:53]} 30... Rd2 {[%clk 0:05:05.9]} 31. Ne1 {[%clk 0:00:32.7]} 31... Rxb2 {[%clk 0:04:58.9]} 32. h3 {[%clk 0:00:31.1]} 32... h5 {[%clk 0:04:53.3]} 33. Nf3 {[%clk 0:00:27.3]} 33... Bf1 {[%clk 0:04:35.2]} 34. Ne1 {[%clk 0:00:09.2]} 34... a5 {[%clk 0:04:20.9]} 35. Kg1 {[%clk 0:00:08.3]} 35... Bc4 {[%clk 0:04:17.4]} 36. Nf3 {[%clk 0:00:06.8]} 36... Bd5 {[%clk 0:04:15.6]} 37. Re8+ {[%clk 0:00:02.4]} 37... Kg7 {[%clk 0:04:13.1]} 38. Re3 {[%clk 0:00:01.5]} 38... b4 {[%clk 0:04:07.5]} 0-1\n",
+  "time_control": "600",
+  "end_time": 1776369706,
+  "rated": true,
+  "accuracies": {
+    "white": 79.98,
+    "black": 84.62
+  },
+  "tcn": "mCYIgvZRfA0SlBIBvB!TbsWOeg90Ar8!cu5QnDRJCJTJsJSJBv98rJ7YJQYQvKQYdN2UNmXHae6Siq0TKt46ksSAmk67uBTBsB8eteYRfvRBghBdvudkek7lkeljpx3NevAfveOGhgfAevAJu8!28uHz",
+  "uuid": "d36b44c0-39cc-11f1-85c3-06d8cc01000f",
+  "initial_setup": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "fen": "8/5pk1/6p1/p2b3p/1p3P2/P3RN1P/1r4P1/6K1 w - - 0 39",
+  "time_class": "rapid",
+  "rules": "chess",
+  "white": {
+    "rating": 2067,
+    "result": "timeout",
+    "@id": "https://api.chess.com/pub/player/gyardian0",
+    "username": "Gyardian0",
+    "uuid": "731fd85e-b27d-11f0-ae31-ab6b0335d678"
+  },
+  "black": {
+    "rating": 2047,
+    "result": "win",
+    "@id": "https://api.chess.com/pub/player/artenio",
+    "username": "Artenio",
+    "uuid": "647e0cd0-8b0a-11ea-afc0-5758e4870619"
+  },
+  "eco": "https://www.chess.com/openings/Sicilian-Defense-Open-Scheveningen-Sozin-Attack...8.Be3-Be7-9.f4-O-O-10.O-O"
+}

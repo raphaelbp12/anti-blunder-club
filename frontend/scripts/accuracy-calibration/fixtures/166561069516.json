@@ -1,0 +1,32 @@
+{
+  "url": "https://www.chess.com/game/live/166561069516",
+  "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2026.03.28\"]\n[Round \"-\"]\n[White \"AMSin93\"]\n[Black \"pigor1\"]\n[Result \"1-0\"]\n[CurrentPosition \"rnbqkb1r/pp1ppppp/8/3nP3/8/2p2N2/PP3PPP/RNBQKB1R w KQkq - 0 6\"]\n[Timezone \"UTC\"]\n[ECO \"B22\"]\n[ECOUrl \"https://www.chess.com/openings/Alapin-Sicilian-Defense...3.e5-Nd5-4.d4-cxd4-5.Nf3\"]\n[UTCDate \"2026.03.28\"]\n[UTCTime \"20:46:04\"]\n[WhiteElo \"1789\"]\n[BlackElo \"1717\"]\n[TimeControl \"900+10\"]\n[Termination \"AMSin93 won by resignation\"]\n[StartTime \"20:46:04\"]\n[EndDate \"2026.03.28\"]\n[EndTime \"20:46:59\"]\n[Link \"https://www.chess.com/game/live/166561069516\"]\n\n1. e4 {[%clk 0:15:09.5]} 1... c5 {[%clk 0:15:08.8]} 2. c3 {[%clk 0:15:17.6]} 2... Nf6 {[%clk 0:15:04.3]} 3. e5 {[%clk 0:15:20.7]} 3... Nd5 {[%clk 0:15:13.7]} 4. d4 {[%clk 0:15:28.9]} 4... cxd4 {[%clk 0:15:11.2]} 5. Nf3 {[%clk 0:15:36.2]} 5... dxc3 {[%clk 0:15:17.1]} 1-0\n",
+  "time_control": "900+10",
+  "end_time": 1774730819,
+  "rated": true,
+  "accuracies": {
+    "white": 100,
+    "black": 69.66
+  },
+  "tcn": "mCYIks!TCKTJlBIBgvBs",
+  "uuid": "23489ff8-2ae7-11f1-a6bf-4abd5e01000f",
+  "initial_setup": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "fen": "rnbqkb1r/pp1ppppp/8/3nP3/8/2p2N2/PP3PPP/RNBQKB1R w KQkq - 0 6",
+  "time_class": "rapid",
+  "rules": "chess",
+  "white": {
+    "rating": 1789,
+    "result": "win",
+    "@id": "https://api.chess.com/pub/player/amsin93",
+    "username": "AMSin93",
+    "uuid": "901dbbc8-d52e-11eb-b3ee-19dad5e1e4e1"
+  },
+  "black": {
+    "rating": 1717,
+    "result": "resigned",
+    "@id": "https://api.chess.com/pub/player/pigor1",
+    "username": "pigor1",
+    "uuid": "87e2e49a-accd-11ea-99fb-5318f231855e"
+  },
+  "eco": "https://www.chess.com/openings/Alapin-Sicilian-Defense...3.e5-Nd5-4.d4-cxd4-5.Nf3"
+}

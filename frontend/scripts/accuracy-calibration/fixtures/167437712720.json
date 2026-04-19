@@ -1,0 +1,32 @@
+{
+  "url": "https://www.chess.com/game/live/167437712720",
+  "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2026.04.17\"]\n[Round \"-\"]\n[White \"diogomonte\"]\n[Black \"Santhosh_Kumar7\"]\n[Result \"1-0\"]\n[CurrentPosition \"rnb4r/p1p2p2/3p3p/1p1Nk1p1/3PP1BP/4Q3/PPP2Pq1/2KR1R2 b - - 0 19\"]\n[Timezone \"UTC\"]\n[ECO \"C40\"]\n[ECOUrl \"https://www.chess.com/openings/Kings-Pawn-Opening-Kings-Knight-Variation\"]\n[UTCDate \"2026.04.17\"]\n[UTCTime \"13:29:56\"]\n[WhiteElo \"216\"]\n[BlackElo \"200\"]\n[TimeControl \"180\"]\n[Termination \"diogomonte won by checkmate\"]\n[StartTime \"13:29:56\"]\n[EndDate \"2026.04.17\"]\n[EndTime \"13:32:56\"]\n[Link \"https://www.chess.com/game/live/167437712720\"]\n\n1. e4 {[%clk 0:02:59.8]} 1... e5 {[%clk 0:02:59.1]} 2. Nf3 {[%clk 0:02:57.6]} 2... Qf6 {[%clk 0:02:58]} 3. Nc3 {[%clk 0:02:53.7]} 3... Bc5 {[%clk 0:02:57.1]} 4. Qe2 {[%clk 0:02:50.8]} 4... Qd8 {[%clk 0:02:52.1]} 5. d3 {[%clk 0:02:48.6]} 5... Qf6 {[%clk 0:02:49.9]} 6. Bg5 {[%clk 0:02:45.4]} 6... Qg6 {[%clk 0:02:45.2]} 7. h4 {[%clk 0:02:41.8]} 7... h6 {[%clk 0:02:42.9]} 8. Be3 {[%clk 0:02:33]} 8... Bxe3 {[%clk 0:02:34.4]} 9. Qxe3 {[%clk 0:02:30.6]} 9... Nf6 {[%clk 0:02:33.1]} 10. Nxe5 {[%clk 0:02:22.5]} 10... Ng4 {[%clk 0:02:24.8]} 11. Nxg4 {[%clk 0:02:17.4]} 11... Qxg4 {[%clk 0:02:22.9]} 12. Be2 {[%clk 0:02:07.7]} 12... Qxg2 {[%clk 0:02:15.1]} 13. Rf1 {[%clk 0:02:04.9]} 13... d6 {[%clk 0:02:03.8]} 14. O-O-O {[%clk 0:02:02.6]} 14... g5 {[%clk 0:01:57.7]} 15. Nd5 {[%clk 0:02:01.4]} 15... Kd7 {[%clk 0:01:53.4]} 16. Nf6+ {[%clk 0:01:57.9]} 16... Ke6 {[%clk 0:01:46]} 17. Nd5 {[%clk 0:01:48]} 17... b5 {[%clk 0:01:38.9]} 18. Bg4+ {[%clk 0:01:46.3]} 18... Ke5 {[%clk 0:01:33.7]} 19. d4# {[%clk 0:01:39.6]} 1-0\n",
+  "time_control": "180",
+  "end_time": 1776432776,
+  "rated": true,
+  "accuracies": {
+    "white": 68.9,
+    "black": 44
+  },
+  "tcn": "mC0Kgv7Tbs9IdmT7lt7TcMTUpF3VMuIumu!TvKTEKEUEfmEohfZRec2MsJ8ZJTZSTJXHmESKtB",
+  "uuid": "86665cef-3a61-11f1-936c-2e0a7901000f",
+  "initial_setup": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "fen": "rnb4r/p1p2p2/3p3p/1p1Nk1p1/3PP1BP/4Q3/PPP2Pq1/2KR1R2 b - - 0 19",
+  "time_class": "blitz",
+  "rules": "chess",
+  "white": {
+    "rating": 216,
+    "result": "win",
+    "@id": "https://api.chess.com/pub/player/diogomonte",
+    "username": "diogomonte",
+    "uuid": "04bf296e-2d4c-11ed-95d8-fd5d1d9c8065"
+  },
+  "black": {
+    "rating": 200,
+    "result": "checkmated",
+    "@id": "https://api.chess.com/pub/player/santhosh_kumar7",
+    "username": "Santhosh_Kumar7",
+    "uuid": "b3f08dfa-811b-11ee-b7c8-855d5c1ad55f"
+  },
+  "eco": "https://www.chess.com/openings/Kings-Pawn-Opening-Kings-Knight-Variation"
+}

@@ -1,0 +1,124 @@
+{
+  "generatedAt": "2026-04-19T17:08:41.134Z",
+  "gitSha": "f91ed59f71f7447288df7bb5c89d2f47129d2d24",
+  "presets": [
+    {
+      "name": "baseline",
+      "description": "Current shipped formula: CAPS-v1 coefficients, arithmetic mean.",
+      "params": {
+        "centipawnGradient": 0.0035,
+        "moveCoefA": 103.16,
+        "moveCoefK": 4,
+        "moveCoefC": 3.17,
+        "aggregator": "mean",
+        "windowSize": 8,
+        "volatilityWeightExponent": 1
+      }
+    },
+    {
+      "name": "windowed-harmonic-8",
+      "description": "CAPS-v1 per-move, sliding-window harmonic mean (size 8) aggregator.",
+      "params": {
+        "centipawnGradient": 0.0035,
+        "moveCoefA": 103.16,
+        "moveCoefK": 4,
+        "moveCoefC": 3.17,
+        "aggregator": "windowed-harmonic",
+        "windowSize": 8,
+        "volatilityWeightExponent": 1
+      }
+    },
+    {
+      "name": "weighted-harmonic",
+      "description": "CAPS-v1 per-move, volatility-weighted harmonic aggregator.",
+      "params": {
+        "centipawnGradient": 0.0035,
+        "moveCoefA": 103.16,
+        "moveCoefK": 4,
+        "moveCoefC": 3.17,
+        "aggregator": "weighted-harmonic",
+        "windowSize": 8,
+        "volatilityWeightExponent": 1.5
+      }
+    },
+    {
+      "name": "steeper-gradient",
+      "description": "Steeper centipawn gradient (0.0045) with arithmetic mean: checks how much EP shape alone matters.",
+      "params": {
+        "centipawnGradient": 0.0045,
+        "moveCoefA": 103.16,
+        "moveCoefK": 4,
+        "moveCoefC": 3.17,
+        "aggregator": "mean",
+        "windowSize": 8,
+        "volatilityWeightExponent": 1
+      }
+    },
+    {
+      "name": "caps2-like",
+      "description": "Combined tweak: steeper gradient + sharper per-move decay + windowed harmonic aggregator.",
+      "params": {
+        "centipawnGradient": 0.0045,
+        "moveCoefA": 100,
+        "moveCoefK": 5.5,
+        "moveCoefC": 0,
+        "aggregator": "windowed-harmonic",
+        "windowSize": 8,
+        "volatilityWeightExponent": 1
+      }
+    }
+  ],
+  "games": [],
+  "statsByPreset": {
+    "baseline": {
+      "n": 0,
+      "maeWhite": 0,
+      "maeBlack": 0,
+      "mae": 0,
+      "rmse": 0,
+      "meanBias": 0,
+      "maxAbs": 0,
+      "pearson": 0
+    },
+    "windowed-harmonic-8": {
+      "n": 0,
+      "maeWhite": 0,
+      "maeBlack": 0,
+      "mae": 0,
+      "rmse": 0,
+      "meanBias": 0,
+      "maxAbs": 0,
+      "pearson": 0
+    },
+    "weighted-harmonic": {
+      "n": 0,
+      "maeWhite": 0,
+      "maeBlack": 0,
+      "mae": 0,
+      "rmse": 0,
+      "meanBias": 0,
+      "maxAbs": 0,
+      "pearson": 0
+    },
+    "steeper-gradient": {
+      "n": 0,
+      "maeWhite": 0,
+      "maeBlack": 0,
+      "mae": 0,
+      "rmse": 0,
+      "meanBias": 0,
+      "maxAbs": 0,
+      "pearson": 0
+    },
+    "caps2-like": {
+      "n": 0,
+      "maeWhite": 0,
+      "maeBlack": 0,
+      "mae": 0,
+      "rmse": 0,
+      "meanBias": 0,
+      "maxAbs": 0,
+      "pearson": 0
+    }
+  }
+}

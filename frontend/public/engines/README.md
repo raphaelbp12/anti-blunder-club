@@ -5,10 +5,10 @@ build, so the analysis engine can run entirely in the user's browser.
 
 ## Files
 
-| File                            | Purpose                                           |
-| ------------------------------- | ------------------------------------------------- |
-| `stockfish-17-lite-single.js`   | Web Worker entry point (UCI driver).              |
-| `stockfish-17-lite-single.wasm` | WebAssembly binary (the engine itself).           |
+| File                            | Purpose                                 |
+| ------------------------------- | --------------------------------------- |
+| `stockfish-17-lite-single.js`   | Web Worker entry point (UCI driver).    |
+| `stockfish-17-lite-single.wasm` | WebAssembly binary (the engine itself). |
 
 These are served verbatim from `public/`; the runtime loader at
 [frontend/src/services/engine/UciEngine.ts](../../src/services/engine/UciEngine.ts)

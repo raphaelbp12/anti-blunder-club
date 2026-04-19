@@ -1,0 +1,32 @@
+{
+  "url": "https://www.chess.com/game/live/167521348152",
+  "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2026.04.19\"]\n[Round \"-\"]\n[White \"HeatziHugz\"]\n[Black \"22manudt\"]\n[Result \"1-0\"]\n[CurrentPosition \"r1k3n1/1pp5/p2q1pr1/3N1Qp1/7p/7P/PPP2PP1/3R1RK1 b - - 3 20\"]\n[Timezone \"UTC\"]\n[ECO \"D00\"]\n[ECOUrl \"https://www.chess.com/openings/Queens-Pawn-Opening-Accelerated-London-System\"]\n[UTCDate \"2026.04.19\"]\n[UTCTime \"10:27:28\"]\n[WhiteElo \"1096\"]\n[BlackElo \"1058\"]\n[TimeControl \"600\"]\n[Termination \"HeatziHugz won by resignation\"]\n[StartTime \"10:27:28\"]\n[EndDate \"2026.04.19\"]\n[EndTime \"10:34:19\"]\n[Link \"https://www.chess.com/game/live/167521348152\"]\n\n1. d4 {[%clk 0:09:52.5]} 1... d5 {[%clk 0:09:55.5]} 2. Bf4 {[%clk 0:09:49]} 2... Nc6 {[%clk 0:09:41.6]} 3. e3 {[%clk 0:09:47.6]} 3... a6 {[%clk 0:09:35.4]} 4. Bd3 {[%clk 0:09:42.8]} 4... f6 {[%clk 0:09:26.4]} 5. Nf3 {[%clk 0:09:38.9]} 5... Bg4 {[%clk 0:09:15]} 6. O-O {[%clk 0:09:35.8]} 6... g5 {[%clk 0:08:59.4]} 7. Bg3 {[%clk 0:09:31.6]} 7... h5 {[%clk 0:08:52]} 8. h3 {[%clk 0:09:24]} 8... Bxf3 {[%clk 0:08:43.8]} 9. Qxf3 {[%clk 0:09:22.2]} 9... h4 {[%clk 0:08:42]} 10. Bh2 {[%clk 0:09:15]} 10... Qd7 {[%clk 0:08:20.6]} 11. Nc3 {[%clk 0:08:44.7]} 11... e6 {[%clk 0:08:05.1]} 12. Bg6+ {[%clk 0:08:41.2]} 12... Kd8 {[%clk 0:07:56.3]} 13. e4 {[%clk 0:08:27.4]} 13... Rh6 {[%clk 0:07:46.3]} 14. exd5 {[%clk 0:08:03.4]} 14... Rxg6 {[%clk 0:07:27.4]} 15. dxc6 {[%clk 0:08:02]} 15... Qxc6 {[%clk 0:07:18.1]} 16. d5 {[%clk 0:07:34.6]} 16... exd5 {[%clk 0:06:45.8]} 17. Nxd5 {[%clk 0:07:27.9]} 17... Bd6 {[%clk 0:06:41.9]} 18. Bxd6 {[%clk 0:07:23.9]} 18... Qxd6 {[%clk 0:06:37.2]} 19. Rad1 {[%clk 0:07:15.2]} 19... Kc8 {[%clk 0:06:25.8]} 20. Qf5+ {[%clk 0:06:58.3]} 1-0\n",
+  "time_control": "600",
+  "end_time": 1776594859,
+  "rated": true,
+  "accuracies": {
+    "white": 71.24,
+    "black": 58
+  },
+  "tcn": "lBZJcD5QmuWOft1Tgv6Eeg2MDw3NpxEvdvNFwp7Zbs0StU87uC?VCJVUJQZQBJSJsJ9RpRQRad76vL",
+  "uuid": "5d965ae8-3bda-11f1-a0f1-86ad2101000f",
+  "initial_setup": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "fen": "r1k3n1/1pp5/p2q1pr1/3N1Qp1/7p/7P/PPP2PP1/3R1RK1 b - - 3 20",
+  "time_class": "rapid",
+  "rules": "chess",
+  "white": {
+    "rating": 1096,
+    "result": "win",
+    "@id": "https://api.chess.com/pub/player/heatzihugz",
+    "username": "HeatziHugz",
+    "uuid": "0983315e-30e8-11ec-8865-47678dcb3d66"
+  },
+  "black": {
+    "rating": 1058,
+    "result": "resigned",
+    "@id": "https://api.chess.com/pub/player/22manudt",
+    "username": "22manudt",
+    "uuid": "b62b957e-66d1-11e9-bf59-df9a0af87289"
+  },
+  "eco": "https://www.chess.com/openings/Queens-Pawn-Opening-Accelerated-London-System"
+}

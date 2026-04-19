@@ -1,0 +1,32 @@
+{
+  "url": "https://www.chess.com/game/live/166698205444",
+  "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2026.04.01\"]\n[Round \"-\"]\n[White \"pigor1\"]\n[Black \"BethoFera\"]\n[Result \"1/2-1/2\"]\n[CurrentPosition \"8/8/8/6k1/8/4K3/8/8 w - - 0 55\"]\n[Timezone \"UTC\"]\n[ECO \"B22\"]\n[ECOUrl \"https://www.chess.com/openings/Alapin-Sicilian-Defense-2...e6-3.d4-cxd4-4.cxd4\"]\n[UTCDate \"2026.04.01\"]\n[UTCTime \"00:08:20\"]\n[WhiteElo \"1701\"]\n[BlackElo \"1683\"]\n[TimeControl \"600\"]\n[Termination \"Game drawn by insufficient material\"]\n[StartTime \"00:08:20\"]\n[EndDate \"2026.04.01\"]\n[EndTime \"00:24:20\"]\n[Link \"https://www.chess.com/game/live/166698205444\"]\n\n1. e4 {[%clk 0:09:59.9]} 1... c5 {[%clk 0:09:58.4]} 2. c3 {[%clk 0:09:58.6]} 2... e6 {[%clk 0:09:53.9]} 3. d4 {[%clk 0:09:57.2]} 3... cxd4 {[%clk 0:09:52.7]} 4. cxd4 {[%clk 0:09:55.5]} 4... Ne7 {[%clk 0:09:47.7]} 5. Nf3 {[%clk 0:09:53.3]} 5... g6 {[%clk 0:09:45.6]} 6. Nc3 {[%clk 0:09:45.1]} 6... Bg7 {[%clk 0:09:44.1]} 7. e5 {[%clk 0:09:44.5]} 7... d6 {[%clk 0:09:38.9]} 8. Qe2 {[%clk 0:09:38.7]} 8... Nbc6 {[%clk 0:09:28.4]} 9. Bg5 {[%clk 0:09:30.9]} 9... O-O {[%clk 0:09:16]} 10. Rd1 {[%clk 0:08:40.4]} 10... Qc7 {[%clk 0:09:11.6]} 11. Nb5 {[%clk 0:08:28.2]} 11... Qa5+ {[%clk 0:08:58.9]} 12. Nc3 {[%clk 0:08:26.6]} 12... dxe5 {[%clk 0:08:41.1]} 13. Bxe7 {[%clk 0:08:13]} 13... Nxe7 {[%clk 0:08:38.8]} 14. dxe5 {[%clk 0:08:07.2]} 14... Nf5 {[%clk 0:08:32.6]} 15. g3 {[%clk 0:07:57]} 15... b6 {[%clk 0:08:19.5]} 16. Bg2 {[%clk 0:07:53.2]} 16... Bb7 {[%clk 0:08:17.8]} 17. O-O {[%clk 0:07:50]} 17... Rab8 {[%clk 0:08:12.1]} 18. Ne4 {[%clk 0:07:19.9]} 18... Ba6 {[%clk 0:08:07.7]} 19. Qd2 {[%clk 0:06:39.6]} 19... Bxf1 {[%clk 0:08:04.5]} 20. Qxa5 {[%clk 0:06:37.7]} 20... bxa5 {[%clk 0:08:01.8]} 21. Bxf1 {[%clk 0:06:27.7]} 21... Rxb2 {[%clk 0:07:57.8]} 22. Nf6+ {[%clk 0:06:26.4]} 22... Bxf6 {[%clk 0:07:55.1]} 23. exf6 {[%clk 0:06:26.3]} 23... Rxa2 {[%clk 0:07:43.4]} 24. Rd7 {[%clk 0:06:24.9]} 24... h5 {[%clk 0:07:29]} 25. Rxa7 {[%clk 0:06:15.5]} 25... a4 {[%clk 0:07:27.6]} 26. Ng5 {[%clk 0:05:55.6]} 26... a3 {[%clk 0:07:08.4]} 27. h3 {[%clk 0:05:44.2]} 27... Ra1 {[%clk 0:07:05.1]} 28. g4 {[%clk 0:05:41.4]} 28... hxg4 {[%clk 0:07:01.6]} 29. hxg4 {[%clk 0:05:41.3]} 29... Nd6 {[%clk 0:06:55.8]} 30. Kg2 {[%clk 0:05:25]} 30... a2 {[%clk 0:06:53]} 31. Ra6 {[%clk 0:05:14.1]} 31... Rd8 {[%clk 0:06:32.1]} 32. Bd3 {[%clk 0:04:45.2]} 32... Rd1 {[%clk 0:06:13.5]} 33. Bxg6 {[%clk 0:04:31.9]} 33... fxg6 {[%clk 0:06:04.4]} 34. Rxa2 {[%clk 0:04:22.5]} 34... Nf7 {[%clk 0:05:43.7]} 35. Nxe6 {[%clk 0:04:14.9]} 35... Re8 {[%clk 0:05:06.1]} 36. Nf4 {[%clk 0:03:57.6]} 36... Kh7 {[%clk 0:04:39.1]} 37. Ra7 {[%clk 0:03:53.3]} 37... Rf8 {[%clk 0:04:12.7]} 38. Ne6 {[%clk 0:03:48]} 38... Kg8 {[%clk 0:03:54.6]} 39. Nxf8 {[%clk 0:03:41.1]} 39... Kxf8 {[%clk 0:03:53]} 40. Ra8+ {[%clk 0:03:36.4]} 40... Nd8 {[%clk 0:03:42.1]} 41. g5 {[%clk 0:03:31.2]} 41... Rd5 {[%clk 0:03:35.4]} 42. f4 {[%clk 0:03:27.9]} 42... Kf7 {[%clk 0:03:27.6]} 43. Ra7+ {[%clk 0:03:25.8]} 43... Ke6 {[%clk 0:03:26.3]} 44. Re7+ {[%clk 0:03:19.2]} 44... Kf5 {[%clk 0:03:22.7]} 45. f7 {[%clk 0:03:11.1]} 45... Nxf7 {[%clk 0:03:20.6]} 46. Rxf7+ {[%clk 0:03:11]} 46... Kg4 {[%clk 0:03:17.4]} 47. Kf2 {[%clk 0:02:46.3]} 47... Rd2+ {[%clk 0:03:02]} 48. Ke3 {[%clk 0:02:45.2]} 48... Rd1 {[%clk 0:02:57.2]} 49. Rf6 {[%clk 0:02:23.1]} 49... Re1+ {[%clk 0:02:50.6]} 50. Kf2 {[%clk 0:02:15.6]} 50... Re4 {[%clk 0:02:43.8]} 51. Rxg6 {[%clk 0:02:04.7]} 51... Rxf4+ {[%clk 0:02:42.3]} 52. Ke3 {[%clk 0:02:04.2]} 52... Rf5 {[%clk 0:02:40.4]} 53. Rg8 {[%clk 0:02:02.1]} 53... Rxg5 {[%clk 0:02:38.8]} 54. Rxg5+ {[%clk 0:02:02]} 54... Kxg5 {[%clk 0:02:36.5]} 1/2-1/2\n",
+  "time_control": "600",
+  "end_time": 1775003060,
+  "rated": true,
+  "accuracies": {
+    "white": 83.53,
+    "black": 83.89
+  },
+  "tcn": "mCYIks0SlBIBsB!0gv2Ubs92CKZRdm5QcM8!ad7YsHYGHsRKM0Q0BK0LowXPfo6Xeg45sCXOmlOflGPGof5jCT2TKTjidZ3NZWGyvMyqpxiawENExELRgoqiWO97ftadtU1UOiR1MS78SD!3iW89DS3!S9!9W417EMdJnD914W1SW0SLT17101LEonJlnuld1TdeuneCTUCDnuDLU!LM!MEM",
+  "uuid": "e475d88b-2d5e-11f1-8ab1-a0da9901000f",
+  "initial_setup": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "fen": "8/8/8/6k1/8/4K3/8/8 w - - 0 55",
+  "time_class": "rapid",
+  "rules": "chess",
+  "white": {
+    "rating": 1701,
+    "result": "insufficient",
+    "@id": "https://api.chess.com/pub/player/pigor1",
+    "username": "pigor1",
+    "uuid": "87e2e49a-accd-11ea-99fb-5318f231855e"
+  },
+  "black": {
+    "rating": 1683,
+    "result": "insufficient",
+    "@id": "https://api.chess.com/pub/player/bethofera",
+    "username": "BethoFera",
+    "uuid": "89062d10-1e40-11ec-a79e-d97be170c374"
+  },
+  "eco": "https://www.chess.com/openings/Alapin-Sicilian-Defense-2...e6-3.d4-cxd4-4.cxd4"
+}

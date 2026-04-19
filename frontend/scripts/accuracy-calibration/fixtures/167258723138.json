@@ -1,0 +1,32 @@
+{
+  "url": "https://www.chess.com/game/live/167258723138",
+  "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2026.04.13\"]\n[Round \"-\"]\n[White \"wonderfultime\"]\n[Black \"MagnusCarlsen\"]\n[Result \"0-1\"]\n[CurrentPosition \"3r2k1/1Q3p2/p1b2q2/1p4p1/2p2b1p/2P2N1P/PP2NPP1/3R2K1 w - - 5 28\"]\n[Timezone \"UTC\"]\n[ECO \"A46\"]\n[ECOUrl \"https://www.chess.com/openings/Torre-Attack-Classical-Defense-Nimzowitsch-Variation-4.Bxf6-Qxf6\"]\n[UTCDate \"2026.04.13\"]\n[UTCTime \"15:45:09\"]\n[WhiteElo \"3186\"]\n[BlackElo \"3373\"]\n[TimeControl \"180\"]\n[Termination \"MagnusCarlsen won by resignation\"]\n[StartTime \"15:45:09\"]\n[EndDate \"2026.04.13\"]\n[EndTime \"15:49:09\"]\n[Link \"https://www.chess.com/game/live/167258723138\"]\n\n1. d4 {[%clk 0:02:59.9]} 1... Nf6 {[%clk 0:02:58.3]} 2. Nf3 {[%clk 0:02:58.8]} 2... e6 {[%clk 0:02:57.7]} 3. Bg5 {[%clk 0:02:56.4]} 3... h6 {[%clk 0:02:56.1]} 4. Bxf6 {[%clk 0:02:55.2]} 4... Qxf6 {[%clk 0:02:54.9]} 5. c3 {[%clk 0:02:55.1]} 5... d5 {[%clk 0:02:53.3]} 6. Nbd2 {[%clk 0:02:54.1]} 6... c5 {[%clk 0:02:47.9]} 7. e4 {[%clk 0:02:53.4]} 7... Nc6 {[%clk 0:02:47.5]} 8. Bb5 {[%clk 0:02:51.5]} 8... cxd4 {[%clk 0:02:39.9]} 9. exd5 {[%clk 0:02:44.7]} 9... exd5 {[%clk 0:02:38.7]} 10. Nxd4 {[%clk 0:02:43.5]} 10... Bc5 {[%clk 0:02:34.5]} 11. N2b3 {[%clk 0:02:41.2]} 11... Bb6 {[%clk 0:02:33.7]} 12. O-O {[%clk 0:02:38.9]} 12... O-O {[%clk 0:02:32.5]} 13. Re1 {[%clk 0:02:32.4]} 13... Ne5 {[%clk 0:02:24.4]} 14. Qe2 {[%clk 0:02:26.7]} 14... Bc7 {[%clk 0:02:23.6]} 15. h3 {[%clk 0:02:24.5]} 15... a6 {[%clk 0:02:16.4]} 16. Bd3 {[%clk 0:02:23.8]} 16... Re8 {[%clk 0:02:15.9]} 17. Qd2 {[%clk 0:02:10.7]} 17... Bd7 {[%clk 0:02:13.4]} 18. Bf1 {[%clk 0:02:04.4]} 18... Nc4 {[%clk 0:02:08.3]} 19. Qc2 {[%clk 0:01:50.3]} 19... h5 {[%clk 0:02:06.8]} 20. Bxc4 {[%clk 0:01:46.8]} 20... dxc4 {[%clk 0:02:05.7]} 21. Nd2 {[%clk 0:01:46.6]} 21... h4 {[%clk 0:02:03.4]} 22. N2f3 {[%clk 0:01:41.1]} 22... b5 {[%clk 0:01:59.6]} 23. Rad1 {[%clk 0:01:35.1]} 23... g5 {[%clk 0:01:50.8]} 24. Re4 {[%clk 0:01:30.8]} 24... Rxe4 {[%clk 0:01:40.4]} 25. Qxe4 {[%clk 0:01:30.7]} 25... Rd8 {[%clk 0:01:39.1]} 26. Qb7 {[%clk 0:01:07.2]} 26... Bf4 {[%clk 0:01:27.2]} 27. Ne2 {[%clk 0:01:03.6]} 27... Bc6 {[%clk 0:01:25.1]} 0-1\n",
+  "time_control": "180",
+  "end_time": 1776095349,
+  "rated": true,
+  "accuracies": {
+    "white": 90.09,
+    "black": 96.68
+  },
+  "tcn": "lB!Tgv0ScM3VMT7TksZJblYImC5QfHIBCJSJvB9IlrIPeg8!feQKdmPYpxWOHt98ml6ZtfKAlkVNfAJArlNFlvXHad2MeC8CkC47CXYDBmZQ",
+  "uuid": "c0196680-374f-11f1-aa68-e459e801000f",
+  "initial_setup": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "fen": "3r2k1/1Q3p2/p1b2q2/1p4p1/2p2b1p/2P2N1P/PP2NPP1/3R2K1 w - - 5 28",
+  "time_class": "blitz",
+  "rules": "chess",
+  "white": {
+    "rating": 3186,
+    "result": "resigned",
+    "@id": "https://api.chess.com/pub/player/wonderfultime",
+    "username": "wonderfultime",
+    "uuid": "ca45ce90-c60d-11e3-8004-000000000000"
+  },
+  "black": {
+    "rating": 3373,
+    "result": "win",
+    "@id": "https://api.chess.com/pub/player/magnuscarlsen",
+    "username": "MagnusCarlsen",
+    "uuid": "a2761738-b155-11df-8018-000000000000"
+  },
+  "eco": "https://www.chess.com/openings/Torre-Attack-Classical-Defense-Nimzowitsch-Variation-4.Bxf6-Qxf6"
+}

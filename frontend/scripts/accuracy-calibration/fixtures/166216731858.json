@@ -1,0 +1,32 @@
+{
+  "url": "https://www.chess.com/game/live/166216731858",
+  "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2026.03.20\"]\n[Round \"-\"]\n[White \"serioshavazquez\"]\n[Black \"pigor1\"]\n[Result \"1-0\"]\n[CurrentPosition \"r2qkb1r/pp1bnppp/3Np3/3pn3/Q2P4/2P5/5PPP/R1B1KBNR b KQkq - 1 10\"]\n[Timezone \"UTC\"]\n[ECO \"B20\"]\n[ECOUrl \"https://www.chess.com/openings/Sicilian-Defense-Wing-Gambit-2...cxb4-3.d4-d5\"]\n[UTCDate \"2026.03.20\"]\n[UTCTime \"22:41:18\"]\n[WhiteElo \"1730\"]\n[BlackElo \"1722\"]\n[TimeControl \"600\"]\n[Termination \"serioshavazquez won by checkmate\"]\n[StartTime \"22:41:18\"]\n[EndDate \"2026.03.20\"]\n[EndTime \"22:42:39\"]\n[Link \"https://www.chess.com/game/live/166216731858\"]\n\n1. e4 {[%clk 0:09:59.8]} 1... c5 {[%clk 0:09:58.2]} 2. b4 {[%clk 0:09:58.1]} 2... cxb4 {[%clk 0:09:57]} 3. d4 {[%clk 0:09:57]} 3... d5 {[%clk 0:09:50.3]} 4. e5 {[%clk 0:09:55.7]} 4... e6 {[%clk 0:09:49.3]} 5. a3 {[%clk 0:09:54.2]} 5... bxa3 {[%clk 0:09:47]} 6. Nxa3 {[%clk 0:09:53.1]} 6... Nc6 {[%clk 0:09:38.8]} 7. c3 {[%clk 0:09:51.1]} 7... Nge7 {[%clk 0:09:33.7]} 8. Qa4 {[%clk 0:09:48.1]} 8... Bd7 {[%clk 0:09:26.2]} 9. Nb5 {[%clk 0:09:45.4]} 9... Nxe5 {[%clk 0:09:03.8]} 10. Nd6# {[%clk 0:09:42.5]} 1-0\n",
+  "time_control": "600",
+  "end_time": 1774046559,
+  "rated": true,
+  "accuracies": {
+    "white": 84.34,
+    "black": 68.79
+  },
+  "tcn": "mCYIjzIzlBZJCK0Siqzqbq5Qks!0dy6ZqHQKHR",
+  "uuid": "e94dfae1-24ad-11f1-a6bf-4abd5e01000f",
+  "initial_setup": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "fen": "r2qkb1r/pp1bnppp/3Np3/3pn3/Q2P4/2P5/5PPP/R1B1KBNR b KQkq - 1 10",
+  "time_class": "rapid",
+  "rules": "chess",
+  "white": {
+    "rating": 1730,
+    "result": "win",
+    "@id": "https://api.chess.com/pub/player/serioshavazquez",
+    "username": "serioshavazquez",
+    "uuid": "2d786880-93dc-11f0-bd3d-edd668442d8b"
+  },
+  "black": {
+    "rating": 1722,
+    "result": "checkmated",
+    "@id": "https://api.chess.com/pub/player/pigor1",
+    "username": "pigor1",
+    "uuid": "87e2e49a-accd-11ea-99fb-5318f231855e"
+  },
+  "eco": "https://www.chess.com/openings/Sicilian-Defense-Wing-Gambit-2...cxb4-3.d4-d5"
+}

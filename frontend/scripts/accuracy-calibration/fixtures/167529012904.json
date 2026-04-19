@@ -1,0 +1,32 @@
+{
+  "url": "https://www.chess.com/game/live/167529012904",
+  "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2026.04.19\"]\n[Round \"-\"]\n[White \"pigor1\"]\n[Black \"hhghjgfujhfyjh\"]\n[Result \"1-0\"]\n[CurrentPosition \"r4rk1/2q1ppbp/p1P3pB/2R5/N7/1P1b1N1P/P4PP1/2Q2RK1 w - - 1 21\"]\n[Timezone \"UTC\"]\n[ECO \"B22\"]\n[ECOUrl \"https://www.chess.com/openings/Alapin-Sicilian-Defense-Barmen-Defense-4.d4-cxd4-5.cxd4-Nc6-6.Nf3\"]\n[UTCDate \"2026.04.19\"]\n[UTCTime \"14:00:24\"]\n[WhiteElo \"1724\"]\n[BlackElo \"1706\"]\n[TimeControl \"600\"]\n[Termination \"pigor1 won by resignation\"]\n[StartTime \"14:00:24\"]\n[EndDate \"2026.04.19\"]\n[EndTime \"14:07:48\"]\n[Link \"https://www.chess.com/game/live/167529012904\"]\n\n1. e4 {[%clk 0:09:59.9]} 1... c5 {[%clk 0:09:57.9]} 2. c3 {[%clk 0:09:58.2]} 2... d5 {[%clk 0:09:56.4]} 3. exd5 {[%clk 0:09:56.9]} 3... Qxd5 {[%clk 0:09:56.3]} 4. d4 {[%clk 0:09:56.3]} 4... cxd4 {[%clk 0:09:55.6]} 5. cxd4 {[%clk 0:09:55.1]} 5... Nc6 {[%clk 0:09:54]} 6. Nf3 {[%clk 0:09:53.3]} 6... g6 {[%clk 0:09:50.3]} 7. Nc3 {[%clk 0:09:51.5]} 7... Qd8 {[%clk 0:09:46.5]} 8. Bb5 {[%clk 0:09:41.8]} 8... Bg7 {[%clk 0:09:38.4]} 9. d5 {[%clk 0:09:11.4]} 9... a6 {[%clk 0:09:28.6]} 10. Bxc6+ {[%clk 0:09:08.2]} 10... bxc6 {[%clk 0:09:27.4]} 11. dxc6 {[%clk 0:09:07.4]} 11... Qa5 {[%clk 0:09:21.3]} 12. Bd2 {[%clk 0:08:24.2]} 12... Nh6 {[%clk 0:09:04.8]} 13. O-O {[%clk 0:08:14.4]} 13... O-O {[%clk 0:08:51.8]} 14. Rc1 {[%clk 0:07:58]} 14... Qb6 {[%clk 0:08:46.1]} 15. Na4 {[%clk 0:07:27.5]} 15... Qb5 {[%clk 0:07:57]} 16. b3 {[%clk 0:07:18.5]} 16... Bg4 {[%clk 0:07:44]} 17. h3 {[%clk 0:06:50]} 17... Bf5 {[%clk 0:07:36.3]} 18. Rc5 {[%clk 0:05:57.7]} 18... Qb8 {[%clk 0:07:17.7]} 19. Qc1 {[%clk 0:05:46.3]} 19... Qc7 {[%clk 0:07:11.7]} 20. Bxh6 {[%clk 0:05:43.6]} 20... Bd3 {[%clk 0:07:02.8]} 1-0\n",
+  "time_control": "600",
+  "end_time": 1776607668,
+  "rated": true,
+  "accuracies": {
+    "white": 80.24,
+    "black": 66.9
+  },
+  "tcn": "mCYIksZJCJ7JlBIBsB5Qgv2UbsJ7fH92BJWOHQXQJQ7Gcl!Veg8!acGPsyPHjr6EpxELcIH5dc5YlVLt",
+  "uuid": "1c70364a-3bf8-11f1-936c-2e0a7901000f",
+  "initial_setup": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "fen": "r4rk1/2q1ppbp/p1P3pB/2R5/N7/1P1b1N1P/P4PP1/2Q2RK1 w - - 1 21",
+  "time_class": "rapid",
+  "rules": "chess",
+  "white": {
+    "rating": 1724,
+    "result": "win",
+    "@id": "https://api.chess.com/pub/player/pigor1",
+    "username": "pigor1",
+    "uuid": "87e2e49a-accd-11ea-99fb-5318f231855e"
+  },
+  "black": {
+    "rating": 1706,
+    "result": "resigned",
+    "@id": "https://api.chess.com/pub/player/hhghjgfujhfyjh",
+    "username": "hhghjgfujhfyjh",
+    "uuid": "48b48494-8bf3-11f0-b6c5-87d74b35ed8e"
+  },
+  "eco": "https://www.chess.com/openings/Alapin-Sicilian-Defense-Barmen-Defense-4.d4-cxd4-5.cxd4-Nc6-6.Nf3"
+}

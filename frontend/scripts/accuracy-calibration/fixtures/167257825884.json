@@ -1,0 +1,32 @@
+{
+  "url": "https://www.chess.com/game/live/167257825884",
+  "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2026.04.13\"]\n[Round \"-\"]\n[White \"wonderfultime\"]\n[Black \"MagnusCarlsen\"]\n[Result \"1/2-1/2\"]\n[CurrentPosition \"8/8/1pr2pk1/p7/5RPK/P1B4p/1P4bP/8 w - - 15 45\"]\n[Timezone \"UTC\"]\n[ECO \"D32\"]\n[ECOUrl \"https://www.chess.com/openings/Tarrasch-Defense-Two-Knights-Variation...8.Nxc5-Qa5-9.Bd2-Qxc5\"]\n[UTCDate \"2026.04.13\"]\n[UTCTime \"15:24:49\"]\n[WhiteElo \"3186\"]\n[BlackElo \"3373\"]\n[TimeControl \"180\"]\n[Termination \"Game drawn by repetition\"]\n[StartTime \"15:24:49\"]\n[EndDate \"2026.04.13\"]\n[EndTime \"15:29:00\"]\n[Link \"https://www.chess.com/game/live/167257825884\"]\n\n1. d4 {[%clk 0:02:58.6]} 1... d5 {[%clk 0:02:55.7]} 2. Nf3 {[%clk 0:02:57.5]} 2... c5 {[%clk 0:02:53.6]} 3. c4 {[%clk 0:02:54.4]} 3... e6 {[%clk 0:02:52.1]} 4. cxd5 {[%clk 0:02:51.9]} 4... exd5 {[%clk 0:02:51]} 5. Nc3 {[%clk 0:02:51.5]} 5... Nc6 {[%clk 0:02:47.6]} 6. dxc5 {[%clk 0:02:34.9]} 6... d4 {[%clk 0:02:44]} 7. Ne4 {[%clk 0:02:34.3]} 7... Bxc5 {[%clk 0:02:43.5]} 8. Nxc5 {[%clk 0:02:31.8]} 8... Qa5+ {[%clk 0:02:43]} 9. Bd2 {[%clk 0:02:20.7]} 9... Qxc5 {[%clk 0:02:42.2]} 10. e3 {[%clk 0:02:20.6]} 10... dxe3 {[%clk 0:02:40.4]} 11. Bxe3 {[%clk 0:02:19.5]} 11... Qb4+ {[%clk 0:02:40]} 12. Qd2 {[%clk 0:02:18.8]} 12... Qxd2+ {[%clk 0:02:37.4]} 13. Bxd2 {[%clk 0:02:14.4]} 13... Nge7 {[%clk 0:02:35.6]} 14. Bc3 {[%clk 0:02:01]} 14... f6 {[%clk 0:02:34.4]} 15. Bc4 {[%clk 0:01:59.4]} 15... Bg4 {[%clk 0:02:27.1]} 16. Nd2 {[%clk 0:01:53.7]} 16... Rd8 {[%clk 0:02:24.9]} 17. O-O {[%clk 0:01:50.9]} 17... Nd5 {[%clk 0:02:23]} 18. Rfe1+ {[%clk 0:01:49]} 18... Kf7 {[%clk 0:02:21.6]} 19. Nb3 {[%clk 0:01:35.7]} 19... b6 {[%clk 0:02:18.7]} 20. Nd4 {[%clk 0:01:26.2]} 20... Nxd4 {[%clk 0:02:06.3]} 21. Bxd4 {[%clk 0:01:26.1]} 21... Be6 {[%clk 0:02:04.5]} 22. Bxd5 {[%clk 0:01:24.8]} 22... Bxd5 {[%clk 0:02:04]} 23. Bc3 {[%clk 0:01:24.7]} 23... g5 {[%clk 0:02:02.2]} 24. a3 {[%clk 0:01:20.2]} 24... h5 {[%clk 0:02:01.1]} 25. Rad1 {[%clk 0:01:19.5]} 25... Bb3 {[%clk 0:01:56.7]} 26. Rxd8 {[%clk 0:01:16.4]} 26... Rxd8 {[%clk 0:01:56.6]} 27. f3 {[%clk 0:01:16.2]} 27... a5 {[%clk 0:01:50.7]} 28. Kf2 {[%clk 0:01:15.6]} 28... h4 {[%clk 0:01:48.4]} 29. Re4 {[%clk 0:01:11.8]} 29... Rd6 {[%clk 0:01:39.5]} 30. Rd4 {[%clk 0:01:10.8]} 30... Re6 {[%clk 0:01:37.7]} 31. Re4 {[%clk 0:01:09.8]} 31... Rc6 {[%clk 0:01:36.8]} 32. Rd4 {[%clk 0:01:07.4]} 32... Kg6 {[%clk 0:01:36]} 33. g3 {[%clk 0:01:06.6]} 33... h3 {[%clk 0:01:34.8]} 34. g4 {[%clk 0:01:05]} 34... Bc4 {[%clk 0:01:33.8]} 35. Kg3 {[%clk 0:00:59]} 35... Bf1 {[%clk 0:01:32.6]} 36. f4 {[%clk 0:00:58.6]} 36... gxf4+ {[%clk 0:01:31.5]} 37. Rxf4 {[%clk 0:00:58.5]} 37... Bg2 {[%clk 0:01:30.7]} 38. Kh4 {[%clk 0:00:58]} 38... Re6 {[%clk 0:01:28.3]} 39. Kg3 {[%clk 0:00:57.7]} 39... Rd6 {[%clk 0:01:21.8]} 40. Kh4 {[%clk 0:00:57.2]} 40... Rc6 {[%clk 0:01:18.2]} 41. Kg3 {[%clk 0:00:56.6]} 41... Re6 {[%clk 0:01:17.7]} 42. Kh4 {[%clk 0:00:56.1]} 42... Rc6 {[%clk 0:01:16.9]} 43. Kg3 {[%clk 0:00:55.6]} 43... Re6 {[%clk 0:01:16.5]} 44. Kh4 {[%clk 0:00:55.3]} 44... Rc6 {[%clk 0:01:15.1]} 1/2-1/2\n",
+  "time_control": "180",
+  "end_time": 1776094140,
+  "rated": true,
+  "accuracies": {
+    "white": 97.83,
+    "black": 97.81
+  },
+  "tcn": "lBZJgvYIkA0SAJSJbs5QBIJBsC9ICI7GclGImuBuluIzdlzlul!0ls1TfA6Evl47eg0Jfe81lrXPrBQBsBESAJSJBs2Miq3NadJrd7?7nvWGgnNFeC7RCBRSBCSQCB1UowFxwErAnwAfvDMDBDfowFQSFwSRwFRQFwQSwFSQFwQSwFSQ",
+  "uuid": "e918e190-374c-11f1-9657-bf2de601000f",
+  "initial_setup": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "fen": "8/8/1pr2pk1/p7/5RPK/P1B4p/1P4bP/8 w - - 15 45",
+  "time_class": "blitz",
+  "rules": "chess",
+  "white": {
+    "rating": 3186,
+    "result": "repetition",
+    "@id": "https://api.chess.com/pub/player/wonderfultime",
+    "username": "wonderfultime",
+    "uuid": "ca45ce90-c60d-11e3-8004-000000000000"
+  },
+  "black": {
+    "rating": 3373,
+    "result": "repetition",
+    "@id": "https://api.chess.com/pub/player/magnuscarlsen",
+    "username": "MagnusCarlsen",
+    "uuid": "a2761738-b155-11df-8018-000000000000"
+  },
+  "eco": "https://www.chess.com/openings/Tarrasch-Defense-Two-Knights-Variation...8.Nxc5-Qa5-9.Bd2-Qxc5"
+}

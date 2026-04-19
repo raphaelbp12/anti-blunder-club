@@ -1,0 +1,32 @@
+{
+  "url": "https://www.chess.com/game/live/167440533178",
+  "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2026.04.17\"]\n[Round \"-\"]\n[White \"Antokaber\"]\n[Black \"pigor1\"]\n[Result \"0-1\"]\n[CurrentPosition \"r1b2r2/p4p1k/8/3p1P2/B1p3n1/P1N5/1PP2q2/1R1QRK2 w - - 9 31\"]\n[Timezone \"UTC\"]\n[ECO \"B20\"]\n[ECOUrl \"https://www.chess.com/openings/Sicilian-Defense-Bowdler-Attack-2...e6\"]\n[UTCDate \"2026.04.17\"]\n[UTCTime \"14:35:43\"]\n[WhiteElo \"1678\"]\n[BlackElo \"1716\"]\n[TimeControl \"600\"]\n[Termination \"pigor1 won by checkmate\"]\n[StartTime \"14:35:43\"]\n[EndDate \"2026.04.17\"]\n[EndTime \"14:47:52\"]\n[Link \"https://www.chess.com/game/live/167440533178\"]\n\n1. e4 {[%clk 0:09:59.1]} 1... c5 {[%clk 0:09:59]} 2. Bc4 {[%clk 0:09:57.2]} 2... e6 {[%clk 0:09:57.2]} 3. d3 {[%clk 0:09:56.5]} 3... d5 {[%clk 0:09:56.2]} 4. exd5 {[%clk 0:09:55.2]} 4... exd5 {[%clk 0:09:56.1]} 5. Bb3 {[%clk 0:09:54.4]} 5... Nc6 {[%clk 0:09:51.6]} 6. a3 {[%clk 0:09:53.9]} 6... Nf6 {[%clk 0:09:49.1]} 7. Nf3 {[%clk 0:09:51.7]} 7... Bd6 {[%clk 0:09:47.2]} 8. h3 {[%clk 0:09:50.4]} 8... O-O {[%clk 0:09:46.1]} 9. O-O {[%clk 0:09:48.9]} 9... b5 {[%clk 0:09:36.6]} 10. Bg5 {[%clk 0:09:46.8]} 10... h6 {[%clk 0:09:29.2]} 11. Bh4 {[%clk 0:09:45.4]} 11... Bc7 {[%clk 0:09:20.9]} 12. Nc3 {[%clk 0:09:39.7]} 12... g5 {[%clk 0:09:01.7]} 13. Bg3 {[%clk 0:09:30.4]} 13... Bxg3 {[%clk 0:08:51.3]} 14. fxg3 {[%clk 0:09:28.5]} 14... c4 {[%clk 0:08:43.2]} 15. dxc4 {[%clk 0:09:17.3]} 15... bxc4 {[%clk 0:08:42]} 16. Ba4 {[%clk 0:09:16]} 16... Qb6+ {[%clk 0:08:35.7]} 17. Kh2 {[%clk 0:09:04.1]} 17... Ne7 {[%clk 0:08:01.7]} 18. Rb1 {[%clk 0:08:19.7]} 18... g4 {[%clk 0:07:35]} 19. Nh4 {[%clk 0:08:10]} 19... gxh3 {[%clk 0:07:20.8]} 20. gxh3 {[%clk 0:08:07.7]} 20... Qe6 {[%clk 0:07:11.7]} 21. g4 {[%clk 0:07:44.2]} 21... h5 {[%clk 0:06:30.1]} 22. Re1 {[%clk 0:07:17.7]} 22... Qd6+ {[%clk 0:06:27.1]} 23. Kh1 {[%clk 0:07:08]} 23... hxg4 {[%clk 0:06:24]} 24. hxg4 {[%clk 0:07:04.2]} 24... Qg3 {[%clk 0:04:48.7]} 25. Nf5 {[%clk 0:06:21.5]} 25... Nxf5 {[%clk 0:03:52.1]} 26. gxf5 {[%clk 0:06:12]} 26... Qh3+ {[%clk 0:03:25.4]} 27. Kg1 {[%clk 0:06:04.5]} 27... Kh7 {[%clk 0:03:01.8]} 28. Kf2 {[%clk 0:05:57.4]} 28... Ng4+ {[%clk 0:02:55.8]} 29. Ke2 {[%clk 0:05:27.2]} 29... Qe3+ {[%clk 0:02:48.4]} 30. Kf1 {[%clk 0:05:22.7]} 30... Qf2# {[%clk 0:02:46.5]} 0-1\n",
+  "time_control": "600",
+  "end_time": 1776437272,
+  "rated": true,
+  "accuracies": {
+    "white": 63.51,
+    "black": 72.13
+  },
+  "tcn": "mCYIfA0SltZJCJSJAr5Qiq!Tgv9Rpx8!egXHcM3VMFRYbs2MFwYwnwIAtAHAry7PgpQ0abMEvFExoxPSwEVNfeSRphNExERwFL0LELwxhg!3gnTEnmxumfun",
+  "uuid": "b6a4bd18-3a6a-11f1-9257-ab560d01000f",
+  "initial_setup": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "fen": "r1b2r2/p4p1k/8/3p1P2/B1p3n1/P1N5/1PP2q2/1R1QRK2 w - - 9 31",
+  "time_class": "rapid",
+  "rules": "chess",
+  "white": {
+    "rating": 1678,
+    "result": "checkmated",
+    "@id": "https://api.chess.com/pub/player/antokaber",
+    "username": "Antokaber",
+    "uuid": "6bba1a40-a2f6-11ee-a598-3dc3ae3e0821"
+  },
+  "black": {
+    "rating": 1716,
+    "result": "win",
+    "@id": "https://api.chess.com/pub/player/pigor1",
+    "username": "pigor1",
+    "uuid": "87e2e49a-accd-11ea-99fb-5318f231855e"
+  },
+  "eco": "https://www.chess.com/openings/Sicilian-Defense-Bowdler-Attack-2...e6"
+}

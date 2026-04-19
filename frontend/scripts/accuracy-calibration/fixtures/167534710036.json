@@ -1,0 +1,32 @@
+{
+  "url": "https://www.chess.com/game/live/167534710036",
+  "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2026.04.19\"]\n[Round \"-\"]\n[White \"GMKrikor\"]\n[Black \"Formidable_1207\"]\n[Result \"1-0\"]\n[CurrentPosition \"2r1n1k1/1br4p/pB1q1p2/2PPpP2/4B1P1/P6P/5Q1K/2R2R2 b - - 0 33\"]\n[Timezone \"UTC\"]\n[ECO \"A35\"]\n[ECOUrl \"https://www.chess.com/openings/English-Opening-Symmetrical-Two-Knights-Variation...4.e3-f5-5.d4-e4\"]\n[UTCDate \"2026.04.19\"]\n[UTCTime \"16:21:38\"]\n[WhiteElo \"2964\"]\n[BlackElo \"2816\"]\n[TimeControl \"180\"]\n[Termination \"GMKrikor won by resignation\"]\n[StartTime \"16:21:38\"]\n[EndDate \"2026.04.19\"]\n[EndTime \"16:25:38\"]\n[Link \"https://www.chess.com/game/live/167534710036\"]\n\n1. Nf3 {[%clk 0:02:59.9]} 1... c5 {[%clk 0:02:58.9]} 2. c4 {[%clk 0:02:59.4]} 2... Nc6 {[%clk 0:02:58.5]} 3. Nc3 {[%clk 0:02:59]} 3... e5 {[%clk 0:02:57.8]} 4. e3 {[%clk 0:02:58.3]} 4... f5 {[%clk 0:02:56.5]} 5. d4 {[%clk 0:02:57.9]} 5... e4 {[%clk 0:02:56]} 6. d5 {[%clk 0:02:57.4]} 6... Nb8 {[%clk 0:02:55.1]} 7. Nd2 {[%clk 0:02:55.7]} 7... d6 {[%clk 0:02:54.5]} 8. f3 {[%clk 0:02:55.4]} 8... exf3 {[%clk 0:02:51.2]} 9. Nxf3 {[%clk 0:02:55.3]} 9... Nf6 {[%clk 0:02:50.7]} 10. Bd3 {[%clk 0:02:55]} 10... Be7 {[%clk 0:02:49.4]} 11. e4 {[%clk 0:02:54.6]} 11... O-O {[%clk 0:02:48]} 12. exf5 {[%clk 0:02:52.8]} 12... Ng4 {[%clk 0:02:46]} 13. Qc2 {[%clk 0:02:29]} 13... Na6 {[%clk 0:02:36.4]} 14. a3 {[%clk 0:02:27.9]} 14... Bh4+ {[%clk 0:02:30.4]} 15. g3 {[%clk 0:02:18.2]} 15... Bf6 {[%clk 0:02:28.5]} 16. O-O {[%clk 0:02:16.5]} 16... Nc7 {[%clk 0:02:13.9]} 17. Bf4 {[%clk 0:02:14.2]} 17... a6 {[%clk 0:02:10.9]} 18. h3 {[%clk 0:02:10.8]} 18... Nh6 {[%clk 0:02:10]} 19. g4 {[%clk 0:02:06.8]} 19... Nf7 {[%clk 0:02:08.6]} 20. Ne4 {[%clk 0:01:59.3]} 20... b5 {[%clk 0:02:04.6]} 21. Nxf6+ {[%clk 0:01:58]} 21... gxf6 {[%clk 0:01:58.2]} 22. b3 {[%clk 0:01:56]} 22... Rb8 {[%clk 0:01:54.3]} 23. Rae1 {[%clk 0:01:54.3]} 23... Ne5 {[%clk 0:01:53.2]} 24. Nxe5 {[%clk 0:01:49.3]} 24... dxe5 {[%clk 0:01:53.1]} 25. Be3 {[%clk 0:01:47.8]} 25... bxc4 {[%clk 0:01:41]} 26. bxc4 {[%clk 0:01:47.7]} 26... Rf7 {[%clk 0:01:34.6]} 27. Bxc5 {[%clk 0:01:42.9]} 27... Bb7 {[%clk 0:01:33.6]} 28. Be4 {[%clk 0:01:37.6]} 28... Rc8 {[%clk 0:01:31.8]} 29. Qf2 {[%clk 0:01:28.9]} 29... Ne8 {[%clk 0:01:25.4]} 30. Rc1 {[%clk 0:01:20.2]} 30... Rg7 {[%clk 0:01:24.3]} 31. Kh2 {[%clk 0:01:14.5]} 31... Rgc7 {[%clk 0:01:19.3]} 32. Bb6 {[%clk 0:01:12.2]} 32... Qd6 {[%clk 0:01:15.8]} 33. c5 {[%clk 0:01:09.7]} 1-0\n",
+  "time_control": "180",
+  "end_time": 1776615938,
+  "rated": true,
+  "accuracies": {
+    "white": 92.65,
+    "black": 84.74
+  },
+  "tcn": "gvYIkA5Qbs0Kmu1LlBKCBJQ5vlZRnvCvlv!Tft90uC8!CLTEdk5Oiq0FowFTegOYcDWOpxEVwEV1sCXHCT2Tjr45ae1KvKRKDuHArA91uI6XtC56knY8ec12gp2YIP7RAI",
+  "uuid": "d7da98ca-3c0b-11f1-8849-28ad8d01000f",
+  "initial_setup": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "fen": "2r1n1k1/1br4p/pB1q1p2/2PPpP2/4B1P1/P6P/5Q1K/2R2R2 b - - 0 33",
+  "time_class": "blitz",
+  "rules": "chess",
+  "white": {
+    "rating": 2964,
+    "result": "win",
+    "@id": "https://api.chess.com/pub/player/gmkrikor",
+    "username": "GMKrikor",
+    "uuid": "34b06608-0857-11dd-8007-000000000000"
+  },
+  "black": {
+    "rating": 2816,
+    "result": "resigned",
+    "@id": "https://api.chess.com/pub/player/formidable_1207",
+    "username": "Formidable_1207",
+    "uuid": "e3c07110-e521-11ef-b012-9bd6118225f1"
+  },
+  "eco": "https://www.chess.com/openings/English-Opening-Symmetrical-Two-Knights-Variation...4.e3-f5-5.d4-e4"
+}

@@ -1,0 +1,32 @@
+{
+  "url": "https://www.chess.com/game/live/167381612470",
+  "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2026.04.16\"]\n[Round \"-\"]\n[White \"SuperPower2011\"]\n[Black \"Hikaru\"]\n[Result \"0-1\"]\n[CurrentPosition \"8/5ppk/4p1b1/PRn5/8/8/1K6/1r5B w - - 2 49\"]\n[Timezone \"UTC\"]\n[ECO \"B28\"]\n[ECOUrl \"https://www.chess.com/openings/Sicilian-Defense-OKelly-Venice-System...4.exd5-Qxd5-5.d4-e6\"]\n[UTCDate \"2026.04.16\"]\n[UTCTime \"08:49:46\"]\n[WhiteElo \"3001\"]\n[BlackElo \"3412\"]\n[TimeControl \"180\"]\n[Termination \"Hikaru won by resignation\"]\n[StartTime \"08:49:46\"]\n[EndDate \"2026.04.16\"]\n[EndTime \"08:54:59\"]\n[Link \"https://www.chess.com/game/live/167381612470\"]\n\n1. e4 {[%clk 0:03:00]} 1... c5 {[%clk 0:03:00]} 2. Nf3 {[%clk 0:02:59.6]} 2... a6 {[%clk 0:02:58.1]} 3. c3 {[%clk 0:02:58.1]} 3... d5 {[%clk 0:02:56.8]} 4. exd5 {[%clk 0:02:56.7]} 4... Qxd5 {[%clk 0:02:56.7]} 5. d4 {[%clk 0:02:56.2]} 5... e6 {[%clk 0:02:56.3]} 6. Na3 {[%clk 0:02:54.4]} 6... cxd4 {[%clk 0:02:55.1]} 7. Nc4 {[%clk 0:02:54]} 7... Qd8 {[%clk 0:02:54.4]} 8. Qxd4 {[%clk 0:02:49.2]} 8... Qxd4 {[%clk 0:02:44.2]} 9. Nxd4 {[%clk 0:02:49]} 9... Nd7 {[%clk 0:02:43.8]} 10. Bf4 {[%clk 0:02:47.9]} 10... Ngf6 {[%clk 0:02:41.2]} 11. O-O-O {[%clk 0:02:38.8]} 11... Ne4 {[%clk 0:02:37.8]} 12. Be3 {[%clk 0:02:36.4]} 12... Bc5 {[%clk 0:02:33.5]} 13. Bd3 {[%clk 0:02:24.8]} 13... Nef6 {[%clk 0:02:32.6]} 14. Rhe1 {[%clk 0:02:22.3]} 14... Nd5 {[%clk 0:02:26.2]} 15. Bd2 {[%clk 0:02:10.1]} 15... b5 {[%clk 0:02:22.6]} 16. Na5 {[%clk 0:02:08.2]} 16... Bxd4 {[%clk 0:02:22.1]} 17. cxd4 {[%clk 0:02:07.6]} 17... N7b6 {[%clk 0:02:15.5]} 18. b3 {[%clk 0:02:01.6]} 18... O-O {[%clk 0:02:12.8]} 19. Kb2 {[%clk 0:02:00.7]} 19... Rd8 {[%clk 0:02:11.1]} 20. Rc1 {[%clk 0:01:58.9]} 20... h6 {[%clk 0:02:02.4]} 21. Be4 {[%clk 0:01:54.5]} 21... Bd7 {[%clk 0:01:59.9]} 22. Nb7 {[%clk 0:01:53.3]} 22... Rdb8 {[%clk 0:01:59.1]} 23. Nc5 {[%clk 0:01:52.1]} 23... Be8 {[%clk 0:01:58.5]} 24. Ba5 {[%clk 0:01:47.9]} 24... Ra7 {[%clk 0:01:58.1]} 25. Nd3 {[%clk 0:01:03.7]} 25... Nc4+ {[%clk 0:01:47.5]} 26. bxc4 {[%clk 0:01:03.1]} 26... bxc4+ {[%clk 0:01:47.4]} 27. Ka1 {[%clk 0:01:02.7]} 27... cxd3 {[%clk 0:01:46.9]} 28. Bxd3 {[%clk 0:01:02.4]} 28... Bb5 {[%clk 0:01:45.5]} 29. Be4 {[%clk 0:01:01.9]} 29... Rd7 {[%clk 0:01:44.3]} 30. Rc5 {[%clk 0:01:00.1]} 30... Nf6 {[%clk 0:01:43]} 31. Bf3 {[%clk 0:00:39.5]} 31... Rxd4 {[%clk 0:01:40.3]} 32. Bc3 {[%clk 0:00:39.2]} 32... Rd7 {[%clk 0:01:34.3]} 33. g4 {[%clk 0:00:37.5]} 33... Bd3 {[%clk 0:01:30.9]} 34. g5 {[%clk 0:00:34.4]} 34... hxg5 {[%clk 0:01:23.3]} 35. Rxg5 {[%clk 0:00:34.3]} 35... Bg6 {[%clk 0:01:22.5]} 36. Be5 {[%clk 0:00:29]} 36... Rb4 {[%clk 0:01:17.6]} 37. Bc3 {[%clk 0:00:19.2]} 37... Rc4 {[%clk 0:01:14.9]} 38. Bb2 {[%clk 0:00:17.8]} 38... Rf4 {[%clk 0:01:12.5]} 39. Be2 {[%clk 0:00:16.9]} 39... Rxf2 {[%clk 0:01:11]} 40. Bxa6 {[%clk 0:00:16.2]} 40... Rdd2 {[%clk 0:01:08.9]} 41. Rb5 {[%clk 0:00:15.5]} 41... Rxh2 {[%clk 0:01:06.9]} 42. a4 {[%clk 0:00:14.9]} 42... Kh7 {[%clk 0:01:04.7]} 43. Bb7 {[%clk 0:00:13]} 43... Nd7 {[%clk 0:01:01.6]} 44. a5 {[%clk 0:00:11.9]} 44... Nc5 {[%clk 0:01:00.6]} 45. Rh1 {[%clk 0:00:06]} 45... Rxh1+ {[%clk 0:00:57.8]} 46. Bxh1 {[%clk 0:00:05.8]} 46... Rd1+ {[%clk 0:00:57.6]} 47. Bc1 {[%clk 0:00:05.6]} 47... Rxc1+ {[%clk 0:00:56.6]} 48. Kb2 {[%clk 0:00:05.2]} 48... Rb1+ {[%clk 0:00:55.8]} 0-1\n",
+  "time_control": "180",
+  "end_time": 1776329699,
+  "rated": true,
+  "accuracies": {
+    "white": 82.18,
+    "black": 88.57
+  },
+  "tcn": "mCYIgvWOksZJCJ7JlB0SbqIBqAJ7dB7BvB5ZcD!TecTCDu9IftCTheTJulXHAGIBsBZPjr8!cj97dc3VtC6ZGX75XIZ8lG4WItPArAHAjaAtCt8HtCWZcIJTCvZBGsBZoEHtEMVMIMtUsK5zKszAsjADvmDnmOZlMHnpiy!3OXTZyGZIehphXhldjcdcajcb",
+  "uuid": "38100f1b-3971-11f1-85c3-fb769201000f",
+  "initial_setup": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "fen": "8/5ppk/4p1b1/PRn5/8/8/1K6/1r5B w - - 2 49",
+  "time_class": "blitz",
+  "rules": "chess",
+  "white": {
+    "rating": 3001,
+    "result": "resigned",
+    "@id": "https://api.chess.com/pub/player/superpower2011",
+    "username": "SuperPower2011",
+    "uuid": "e0d3634c-133e-11ee-8870-49de8679f813"
+  },
+  "black": {
+    "rating": 3412,
+    "result": "win",
+    "@id": "https://api.chess.com/pub/player/hikaru",
+    "username": "Hikaru",
+    "uuid": "6f4deb88-7718-11e3-8016-000000000000"
+  },
+  "eco": "https://www.chess.com/openings/Sicilian-Defense-OKelly-Venice-System...4.exd5-Qxd5-5.d4-e6"
+}

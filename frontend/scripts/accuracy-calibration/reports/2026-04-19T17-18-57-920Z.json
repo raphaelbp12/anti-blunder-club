@@ -1,0 +1,159 @@
+{
+  "generatedAt": "2026-04-19T17:18:57.920Z",
+  "gitSha": "d711b7ad73e071c22e0f7882839def13a8696c80",
+  "presets": [
+    {
+      "name": "baseline",
+      "description": "Current shipped formula: CAPS-v1 coefficients, arithmetic mean.",
+      "params": {
+        "centipawnGradient": 0.0035,
+        "moveCoefA": 103.16,
+        "moveCoefK": 4,
+        "moveCoefC": 3.17,
+        "aggregator": "mean",
+        "windowSize": 8,
+        "volatilityWeightExponent": 1
+      }
+    },
+    {
+      "name": "windowed-harmonic-8",
+      "description": "CAPS-v1 per-move, sliding-window harmonic mean (size 8) aggregator.",
+      "params": {
+        "centipawnGradient": 0.0035,
+        "moveCoefA": 103.16,
+        "moveCoefK": 4,
+        "moveCoefC": 3.17,
+        "aggregator": "windowed-harmonic",
+        "windowSize": 8,
+        "volatilityWeightExponent": 1
+      }
+    },
+    {
+      "name": "weighted-harmonic",
+      "description": "CAPS-v1 per-move, volatility-weighted harmonic aggregator.",
+      "params": {
+        "centipawnGradient": 0.0035,
+        "moveCoefA": 103.16,
+        "moveCoefK": 4,
+        "moveCoefC": 3.17,
+        "aggregator": "weighted-harmonic",
+        "windowSize": 8,
+        "volatilityWeightExponent": 1.5
+      }
+    },
+    {
+      "name": "steeper-gradient",
+      "description": "Steeper centipawn gradient (0.0045) with arithmetic mean: checks how much EP shape alone matters.",
+      "params": {
+        "centipawnGradient": 0.0045,
+        "moveCoefA": 103.16,
+        "moveCoefK": 4,
+        "moveCoefC": 3.17,
+        "aggregator": "mean",
+        "windowSize": 8,
+        "volatilityWeightExponent": 1
+      }
+    },
+    {
+      "name": "caps2-like",
+      "description": "Combined tweak: steeper gradient + sharper per-move decay + windowed harmonic aggregator.",
+      "params": {
+        "centipawnGradient": 0.0045,
+        "moveCoefA": 100,
+        "moveCoefK": 5.5,
+        "moveCoefC": 0,
+        "aggregator": "windowed-harmonic",
+        "windowSize": 8,
+        "volatilityWeightExponent": 1
+      }
+    }
+  ],
+  "games": [
+    {
+      "gameId": "166894794230",
+      "timeClass": "blitz",
+      "whitePlayer": "mrdsims",
+      "blackPlayer": "gaguera",
+      "whiteRating": 429,
+      "blackRating": 393,
+      "result": "win/checkmated",
+      "chessComWhite": 39.63,
+      "chessComBlack": 31.52,
+      "oursByPreset": {
+        "baseline": {
+          "white": 74.43718521421503,
+          "black": 71.78556036570485
+        },
+        "windowed-harmonic-8": {
+          "white": 51.20623703486865,
+          "black": 41.495438364025226
+        },
+        "weighted-harmonic": {
+          "white": 52.263435244299956,
+          "black": 44.712724602567974
+        },
+        "steeper-gradient": {
+          "white": 72.77568577637051,
+          "black": 71.35302024635854
+        },
+        "caps2-like": {
+          "white": 39.74673687946133,
+          "black": 31.150882508219983
+        }
+      },
+      "evalSource": "stockfish"
+    }
+  ],
+  "statsByPreset": {
+    "baseline": {
+      "n": 1,
+      "maeWhite": 34.80718521421503,
+      "maeBlack": 40.26556036570486,
+      "mae": 37.53637278995994,
+      "rmse": 37.63545864009692,
+      "meanBias": 37.53637278995994,
+      "maxAbs": 40.26556036570486,
+      "pearson": 0.9999999999999999
+    },
+    "windowed-harmonic-8": {
+      "n": 1,
+      "maeWhite": 11.576237034868647,
+      "maeBlack": 9.975438364025226,
+      "mae": 10.775837699446937,
+      "rmse": 10.805522533453223,
+      "meanBias": 10.775837699446937,
+      "maxAbs": 11.576237034868647,
+      "pearson": 1
+    },
+    "weighted-harmonic": {
+      "n": 1,
+      "maeWhite": 12.633435244299953,
+      "maeBlack": 13.192724602567974,
+      "mae": 12.913079923433964,
+      "rmse": 12.916107550479799,
+      "meanBias": 12.913079923433964,
+      "maxAbs": 13.192724602567974,
+      "pearson": 1
+    },
+    "steeper-gradient": {
+      "n": 1,
+      "maeWhite": 33.145685776370506,
+      "maeBlack": 39.833020246358544,
+      "mae": 36.48935301136453,
+      "rmse": 36.642229650586906,
+      "meanBias": 36.48935301136453,
+      "maxAbs": 39.833020246358544,
+      "pearson": 0.9999999999999999
+    },
+    "caps2-like": {
+      "n": 1,
+      "maeWhite": 0.11673687946132816,
+      "maeBlack": 0.36911749178001685,
+      "mae": 0.2429271856206725,
+      "rmse": 0.2737473486303927,
+      "meanBias": -0.12619030615934435,
+      "maxAbs": 0.36911749178001685,
+      "pearson": 1
+    }
+  }
+}
