@@ -2,10 +2,12 @@
 //
 // Tunable parameters for the accuracy pipeline.
 //
-// Defaults reproduce the legacy WintrChess / CAPS-v1 behaviour exactly, so
-// switching call sites to accept `AccuracyParams` is a zero-behaviour-change
-// refactor. Calibration scripts (see `scripts/accuracy-calibration/`) pass
-// non-default values to sweep the parameter space.
+// Defaults are the calibrated winner of the depth-18 grid sweep (see
+// `scripts/accuracy-calibration/sweep.ts` and `docs/accuracy-analysis.md`).
+// On the 53-game balanced corpus they reach MAE 3.97 / r 0.928 against
+// Chess.com CAPS, vs MAE 13.71 for the legacy WintrChess / CAPS-v1
+// defaults. The hold-out script (`calibrate:holdout`) validates that the
+// winner is robust under random splitting.
 
 export type AccuracyAggregator =
   | 'mean'
@@ -28,6 +30,20 @@ export interface AccuracyParams {
 }
 
 export const DEFAULT_ACCURACY_PARAMS: AccuracyParams = {
+  centipawnGradient: 0.003,
+  moveCoefA: 100,
+  moveCoefK: 6.5,
+  moveCoefC: 1.5,
+  aggregator: 'windowed-harmonic',
+  windowSize: 6,
+  volatilityWeightExponent: 1,
+}
+
+/**
+ * Legacy WintrChess / CAPS-v1 defaults. Kept for regression comparisons and
+ * as the baseline row in calibration reports.
+ */
+export const LEGACY_ACCURACY_PARAMS: AccuracyParams = {
   centipawnGradient: 0.0035,
   moveCoefA: 103.16,
   moveCoefK: 4,

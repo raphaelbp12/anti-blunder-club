@@ -17,17 +17,17 @@ describe('getExpectedPoints', () => {
 
   it('returns ~0.80 at +400cp (white perspective)', () => {
     const ev: Evaluation = { type: 'centipawn', value: 400 }
-    // 1 / (1 + e^(-0.0035 * 400)) = 1 / (1 + e^-1.4) ≈ 0.8021
+    // 1 / (1 + e^(-0.003 * 400)) = 1 / (1 + e^-1.2) ≈ 0.7685
     expect(
       getExpectedPoints(ev, { moveColour: PieceColour.WHITE }),
-    ).toBeCloseTo(0.8021, 3)
+    ).toBeCloseTo(0.7685, 3)
   })
 
   it('is symmetric around 0 (cp=-400)', () => {
     const ev: Evaluation = { type: 'centipawn', value: -400 }
     expect(
       getExpectedPoints(ev, { moveColour: PieceColour.WHITE }),
-    ).toBeCloseTo(1 - 0.8021, 3)
+    ).toBeCloseTo(1 - 0.7685, 3)
   })
 
   it('mate value > 0 returns 1 (winning side: white forces mate)', () => {
@@ -66,8 +66,8 @@ describe('getExpectedPointsLoss', () => {
     const previous: Evaluation = { type: 'centipawn', value: 0 }
     const current: Evaluation = { type: 'centipawn', value: -400 }
     const loss = getExpectedPointsLoss(previous, current, PieceColour.WHITE)
-    // 0.5 - 0.1979 ≈ 0.3021
-    expect(loss).toBeCloseTo(0.3021, 3)
+    // 0.5 - 0.2315 ≈ 0.2685
+    expect(loss).toBeCloseTo(0.2685, 3)
   })
 
   it('returns positive loss when black worsens position', () => {
@@ -75,6 +75,6 @@ describe('getExpectedPointsLoss', () => {
     const previous: Evaluation = { type: 'centipawn', value: 0 }
     const current: Evaluation = { type: 'centipawn', value: 400 }
     const loss = getExpectedPointsLoss(previous, current, PieceColour.BLACK)
-    expect(loss).toBeCloseTo(0.3021, 3)
+    expect(loss).toBeCloseTo(0.2685, 3)
   })
 })
