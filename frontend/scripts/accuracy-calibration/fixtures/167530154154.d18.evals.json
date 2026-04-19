@@ -1,0 +1,1178 @@
+{
+  "version": 1,
+  "gameId": "167530154154",
+  "depth": 18,
+  "engine": "stockfish-npm",
+  "positions": [
+    {
+      "ply": 0,
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 49
+      },
+      "depth": 18
+    },
+    {
+      "ply": 1,
+      "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 35
+      },
+      "depth": 18
+    },
+    {
+      "ply": 2,
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 34
+      },
+      "depth": 18
+    },
+    {
+      "ply": 3,
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 33
+      },
+      "depth": 18
+    },
+    {
+      "ply": 4,
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 35
+      },
+      "depth": 18
+    },
+    {
+      "ply": 5,
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq - 0 3",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 22
+      },
+      "depth": 18
+    },
+    {
+      "ply": 6,
+      "fen": "r1bqkbnr/pppp1ppp/2n5/8/3pP3/5N2/PPP2PPP/RNBQKB1R w KQkq - 0 4",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 7
+      },
+      "depth": 18
+    },
+    {
+      "ply": 7,
+      "fen": "r1bqkbnr/pppp1ppp/2n5/8/3NP3/8/PPP2PPP/RNBQKB1R b KQkq - 0 4",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 5
+      },
+      "depth": 18
+    },
+    {
+      "ply": 8,
+      "fen": "r1bqk1nr/pppp1ppp/2n5/2b5/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 1 5",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 30
+      },
+      "depth": 18
+    },
+    {
+      "ply": 9,
+      "fen": "r1bqk1nr/pppp1ppp/2n5/2b5/3NP3/4B3/PPP2PPP/RN1QKB1R b KQkq - 2 5",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 30
+      },
+      "depth": 18
+    },
+    {
+      "ply": 10,
+      "fen": "r1b1k1nr/pppp1ppp/2n2q2/2b5/3NP3/4B3/PPP2PPP/RN1QKB1R w KQkq - 3 6",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 31
+      },
+      "depth": 18
+    },
+    {
+      "ply": 11,
+      "fen": "r1b1k1nr/pppp1ppp/2n2q2/2b5/3NP3/2P1B3/PP3PPP/RN1QKB1R b KQkq - 0 6",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 32
+      },
+      "depth": 18
+    },
+    {
+      "ply": 12,
+      "fen": "r1b1k2r/ppppnppp/2n2q2/2b5/3NP3/2P1B3/PP3PPP/RN1QKB1R w KQkq - 1 7",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 31
+      },
+      "depth": 18
+    },
+    {
+      "ply": 13,
+      "fen": "r1b1k2r/ppppnppp/2n2q2/2b5/3NP3/2P1B1P1/PP3P1P/RN1QKB1R b KQkq - 0 7",
+      "evaluation": {
+        "type": "centipawn",
+        "value": -21
+      },
+      "depth": 18
+    },
+    {
+      "ply": 14,
+      "fen": "r1b2rk1/ppppnppp/2n2q2/2b5/3NP3/2P1B1P1/PP3P1P/RN1QKB1R w KQ - 1 8",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 47
+      },
+      "depth": 18
+    },
+    {
+      "ply": 15,
+      "fen": "r1b2rk1/ppppnppp/2n2q2/2b5/3NP3/2P1B1P1/PP3PBP/RN1QK2R b KQ - 2 8",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 47
+      },
+      "depth": 18
+    },
+    {
+      "ply": 16,
+      "fen": "r1b2rk1/ppp1nppp/2np1q2/2b5/3NP3/2P1B1P1/PP3PBP/RN1QK2R w KQ - 0 9",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 70
+      },
+      "depth": 18
+    },
+    {
+      "ply": 17,
+      "fen": "r1b2rk1/ppp1nppp/2np1q2/2b5/3NP3/2P1B1P1/PP3PBP/RN1Q1RK1 b - - 1 9",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 74
+      },
+      "depth": 18
+    },
+    {
+      "ply": 18,
+      "fen": "r4rk1/pppbnppp/2np1q2/2b5/3NP3/2P1B1P1/PP3PBP/RN1Q1RK1 w - - 2 10",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 67
+      },
+      "depth": 18
+    },
+    {
+      "ply": 19,
+      "fen": "r4rk1/pppbnppp/2Np1q2/2b5/4P3/2P1B1P1/PP3PBP/RN1Q1RK1 b - - 0 10",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 42
+      },
+      "depth": 18
+    },
+    {
+      "ply": 20,
+      "fen": "r4rk1/pppb1ppp/2np1q2/2b5/4P3/2P1B1P1/PP3PBP/RN1Q1RK1 w - - 0 11",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 430
+      },
+      "depth": 18
+    },
+    {
+      "ply": 21,
+      "fen": "r4rk1/pppb1ppp/2np1q2/2B5/4P3/2P3P1/PP3PBP/RN1Q1RK1 b - - 0 11",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 443
+      },
+      "depth": 18
+    },
+    {
+      "ply": 22,
+      "fen": "r4rk1/pppb1ppp/2n2q2/2p5/4P3/2P3P1/PP3PBP/RN1Q1RK1 w - - 0 12",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 438
+      },
+      "depth": 18
+    },
+    {
+      "ply": 23,
+      "fen": "r4rk1/pppQ1ppp/2n2q2/2p5/4P3/2P3P1/PP3PBP/RN3RK1 b - - 0 12",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 424
+      },
+      "depth": 18
+    },
+    {
+      "ply": 24,
+      "fen": "3r1rk1/pppQ1ppp/2n2q2/2p5/4P3/2P3P1/PP3PBP/RN3RK1 w - - 1 13",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 434
+      },
+      "depth": 18
+    },
+    {
+      "ply": 25,
+      "fen": "3r1rk1/ppQ2ppp/2n2q2/2p5/4P3/2P3P1/PP3PBP/RN3RK1 b - - 0 13",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 374
+      },
+      "depth": 18
+    },
+    {
+      "ply": 26,
+      "fen": "3r1rk1/p1Q2ppp/1pn2q2/2p5/4P3/2P3P1/PP3PBP/RN3RK1 w - - 0 14",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 447
+      },
+      "depth": 18
+    },
+    {
+      "ply": 27,
+      "fen": "3r1rk1/p4ppp/1pn2q2/2p5/4PQ2/2P3P1/PP3PBP/RN3RK1 b - - 1 14",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 459
+      },
+      "depth": 18
+    },
+    {
+      "ply": 28,
+      "fen": "3r1rk1/p4ppp/1pn3q1/2p5/4PQ2/2P3P1/PP3PBP/RN3RK1 w - - 2 15",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 489
+      },
+      "depth": 18
+    },
+    {
+      "ply": 29,
+      "fen": "3r1rk1/p4ppp/1pn3q1/2p5/4PQ2/N1P3P1/PP3PBP/R4RK1 b - - 3 15",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 490
+      },
+      "depth": 18
+    },
+    {
+      "ply": 30,
+      "fen": "5rk1/p2r1ppp/1pn3q1/2p5/4PQ2/N1P3P1/PP3PBP/R4RK1 w - - 4 16",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 515
+      },
+      "depth": 18
+    },
+    {
+      "ply": 31,
+      "fen": "5rk1/p2r1ppp/1pn3q1/2p5/4PQ2/N1P3P1/PP3PBP/3R1RK1 b - - 5 16",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 526
+      },
+      "depth": 18
+    },
+    {
+      "ply": 32,
+      "fen": "5rk1/p3rppp/1pn3q1/2p5/4PQ2/N1P3P1/PP3PBP/3R1RK1 w - - 6 17",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 537
+      },
+      "depth": 18
+    },
+    {
+      "ply": 33,
+      "fen": "5rk1/p3rppp/1pnR2q1/2p5/4PQ2/N1P3P1/PP3PBP/5RK1 b - - 7 17",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 506
+      },
+      "depth": 18
+    },
+    {
+      "ply": 34,
+      "fen": "5rk1/p4ppp/1pnRr1q1/2p5/4PQ2/N1P3P1/PP3PBP/5RK1 w - - 8 18",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 498
+      },
+      "depth": 18
+    },
+    {
+      "ply": 35,
+      "fen": "5rk1/p4ppp/1pn1R1q1/2p5/4PQ2/N1P3P1/PP3PBP/5RK1 b - - 0 18",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 499
+      },
+      "depth": 18
+    },
+    {
+      "ply": 36,
+      "fen": "5rk1/p4ppp/1pn1q3/2p5/4PQ2/N1P3P1/PP3PBP/5RK1 w - - 0 19",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 500
+      },
+      "depth": 18
+    },
+    {
+      "ply": 37,
+      "fen": "5rk1/p4ppp/1pn1q3/2p5/4PQ2/NPP3P1/P4PBP/5RK1 b - - 0 19",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 476
+      },
+      "depth": 18
+    },
+    {
+      "ply": 38,
+      "fen": "3r2k1/p4ppp/1pn1q3/2p5/4PQ2/NPP3P1/P4PBP/5RK1 w - - 1 20",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 468
+      },
+      "depth": 18
+    },
+    {
+      "ply": 39,
+      "fen": "3r2k1/p4ppp/1pn1q3/2p5/4P3/NPP1Q1P1/P4PBP/5RK1 b - - 2 20",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 463
+      },
+      "depth": 18
+    },
+    {
+      "ply": 40,
+      "fen": "3r2k1/p4ppp/1p2q3/2p1n3/4P3/NPP1Q1P1/P4PBP/5RK1 w - - 3 21",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 469
+      },
+      "depth": 18
+    },
+    {
+      "ply": 41,
+      "fen": "3r2k1/p4ppp/1p2q3/2p1n3/4P3/NPP3P1/P3QPBP/5RK1 b - - 4 21",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 454
+      },
+      "depth": 18
+    },
+    {
+      "ply": 42,
+      "fen": "3r2k1/p4pp1/1p2q2p/2p1n3/4P3/NPP3P1/P3QPBP/5RK1 w - - 0 22",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 503
+      },
+      "depth": 18
+    },
+    {
+      "ply": 43,
+      "fen": "3r2k1/p4pp1/1p2q2p/2p1n3/4P3/NPP3P1/P3QPBP/3R2K1 b - - 1 22",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 484
+      },
+      "depth": 18
+    },
+    {
+      "ply": 44,
+      "fen": "4r1k1/p4pp1/1p2q2p/2p1n3/4P3/NPP3P1/P3QPBP/3R2K1 w - - 2 23",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 553
+      },
+      "depth": 18
+    },
+    {
+      "ply": 45,
+      "fen": "4r1k1/p4pp1/1p2q2p/2p1n3/2N1P3/1PP3P1/P3QPBP/3R2K1 b - - 3 23",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 515
+      },
+      "depth": 18
+    },
+    {
+      "ply": 46,
+      "fen": "4r1k1/p4pp1/1p2q1np/2p5/2N1P3/1PP3P1/P3QPBP/3R2K1 w - - 4 24",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 543
+      },
+      "depth": 18
+    },
+    {
+      "ply": 47,
+      "fen": "4r1k1/p4pp1/1p2q1np/2p5/2N1P3/1PPQ2P1/P4PBP/3R2K1 b - - 5 24",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 529
+      },
+      "depth": 18
+    },
+    {
+      "ply": 48,
+      "fen": "4r1k1/p4pp1/4q1np/1pp5/2N1P3/1PPQ2P1/P4PBP/3R2K1 w - - 0 25",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 527
+      },
+      "depth": 18
+    },
+    {
+      "ply": 49,
+      "fen": "4r1k1/p4pp1/4q1np/1pp5/4P3/1PPQN1P1/P4PBP/3R2K1 b - - 1 25",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 525
+      },
+      "depth": 18
+    },
+    {
+      "ply": 50,
+      "fen": "4r1k1/p4pp1/4q2p/1pp1n3/4P3/1PPQN1P1/P4PBP/3R2K1 w - - 2 26",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 554
+      },
+      "depth": 18
+    },
+    {
+      "ply": 51,
+      "fen": "4r1k1/p4pp1/4q2p/1Qp1n3/4P3/1PP1N1P1/P4PBP/3R2K1 b - - 0 26",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 546
+      },
+      "depth": 18
+    },
+    {
+      "ply": 52,
+      "fen": "4r1k1/5pp1/p3q2p/1Qp1n3/4P3/1PP1N1P1/P4PBP/3R2K1 w - - 0 27",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 598
+      },
+      "depth": 18
+    },
+    {
+      "ply": 53,
+      "fen": "4r1k1/5pp1/p3q2p/2Q1n3/4P3/1PP1N1P1/P4PBP/3R2K1 b - - 0 27",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 609
+      },
+      "depth": 18
+    },
+    {
+      "ply": 54,
+      "fen": "2r3k1/5pp1/p3q2p/2Q1n3/4P3/1PP1N1P1/P4PBP/3R2K1 w - - 1 28",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 615
+      },
+      "depth": 18
+    },
+    {
+      "ply": 55,
+      "fen": "2r3k1/5pp1/p3q2p/4n3/3QP3/1PP1N1P1/P4PBP/3R2K1 b - - 2 28",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 603
+      },
+      "depth": 18
+    },
+    {
+      "ply": 56,
+      "fen": "2r3k1/5pp1/p1n1q2p/8/3QP3/1PP1N1P1/P4PBP/3R2K1 w - - 3 29",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 644
+      },
+      "depth": 18
+    },
+    {
+      "ply": 57,
+      "fen": "2r3k1/5pp1/p1n1q2p/3Q4/4P3/1PP1N1P1/P4PBP/3R2K1 b - - 4 29",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 615
+      },
+      "depth": 18
+    },
+    {
+      "ply": 58,
+      "fen": "2r1q1k1/5pp1/p1n4p/3Q4/4P3/1PP1N1P1/P4PBP/3R2K1 w - - 5 30",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 652
+      },
+      "depth": 18
+    },
+    {
+      "ply": 59,
+      "fen": "2r1q1k1/5pp1/p1n4p/3Q1N2/4P3/1PP3P1/P4PBP/3R2K1 b - - 6 30",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 660
+      },
+      "depth": 18
+    },
+    {
+      "ply": 60,
+      "fen": "2r1q1k1/5pp1/p6p/3QnN2/4P3/1PP3P1/P4PBP/3R2K1 w - - 7 31",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 810
+      },
+      "depth": 18
+    },
+    {
+      "ply": 61,
+      "fen": "2r1q1k1/5pp1/p6p/3QnN2/2P1P3/1P4P1/P4PBP/3R2K1 b - - 0 31",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 662
+      },
+      "depth": 18
+    },
+    {
+      "ply": 62,
+      "fen": "2r1q3/5ppk/p6p/3QnN2/2P1P3/1P4P1/P4PBP/3R2K1 w - - 1 32",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 823
+      },
+      "depth": 18
+    },
+    {
+      "ply": 63,
+      "fen": "2r1q3/5ppk/p6p/3QnN2/2P1PP2/1P4P1/P5BP/3R2K1 b - - 0 32",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 717
+      },
+      "depth": 18
+    },
+    {
+      "ply": 64,
+      "fen": "2r1q3/5ppk/p6p/3Q1N2/2P1PPn1/1P4P1/P5BP/3R2K1 w - - 1 33",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 788
+      },
+      "depth": 18
+    },
+    {
+      "ply": 65,
+      "fen": "2r1q3/5ppk/p2N3p/3Q4/2P1PPn1/1P4P1/P5BP/3R2K1 b - - 2 33",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 809
+      },
+      "depth": 18
+    },
+    {
+      "ply": 66,
+      "fen": "2r2q2/5ppk/p2N3p/3Q4/2P1PPn1/1P4P1/P5BP/3R2K1 w - - 3 34",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 854
+      },
+      "depth": 18
+    },
+    {
+      "ply": 67,
+      "fen": "2N2q2/5ppk/p6p/3Q4/2P1PPn1/1P4P1/P5BP/3R2K1 b - - 0 34",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 691
+      },
+      "depth": 18
+    },
+    {
+      "ply": 68,
+      "fen": "2N2q2/5ppk/p6p/3Q4/2P1PP2/1P2n1P1/P5BP/3R2K1 w - - 1 35",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 745
+      },
+      "depth": 18
+    },
+    {
+      "ply": 69,
+      "fen": "2N2q2/5ppk/p6p/8/2P1PP2/1P1Qn1P1/P5BP/3R2K1 b - - 2 35",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 737
+      },
+      "depth": 18
+    },
+    {
+      "ply": 70,
+      "fen": "2N2q2/5ppk/p6p/8/2P1PP2/1P1Q2P1/P5BP/3n2K1 w - - 0 36",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 773
+      },
+      "depth": 18
+    },
+    {
+      "ply": 71,
+      "fen": "2N2q2/5ppk/p6p/8/2P1PP2/1P4P1/P5BP/3Q2K1 b - - 0 36",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 692
+      },
+      "depth": 18
+    },
+    {
+      "ply": 72,
+      "fen": "2q5/5ppk/p6p/8/2P1PP2/1P4P1/P5BP/3Q2K1 w - - 0 37",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 707
+      },
+      "depth": 18
+    },
+    {
+      "ply": 73,
+      "fen": "2q5/5ppk/p6p/8/2PQPP2/1P4P1/P5BP/6K1 b - - 1 37",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 654
+      },
+      "depth": 18
+    },
+    {
+      "ply": 74,
+      "fen": "2q5/6pk/p4p1p/8/2PQPP2/1P4P1/P5BP/6K1 w - - 0 38",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 731
+      },
+      "depth": 18
+    },
+    {
+      "ply": 75,
+      "fen": "2q5/6pk/p4p1p/2P5/3QPP2/1P4P1/P5BP/6K1 b - - 0 38",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 729
+      },
+      "depth": 18
+    },
+    {
+      "ply": 76,
+      "fen": "8/6pk/p1q2p1p/2P5/3QPP2/1P4P1/P5BP/6K1 w - - 1 39",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 793
+      },
+      "depth": 18
+    },
+    {
+      "ply": 77,
+      "fen": "8/6pk/p1q2p1p/2P1P3/3Q1P2/1P4P1/P5BP/6K1 b - - 0 39",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 810
+      },
+      "depth": 18
+    },
+    {
+      "ply": 78,
+      "fen": "8/6pk/p4p1p/1qP1P3/3Q1P2/1P4P1/P5BP/6K1 w - - 1 40",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 920
+      },
+      "depth": 18
+    },
+    {
+      "ply": 79,
+      "fen": "8/6pk/p4p1p/1qP1P3/2Q2P2/1P4P1/P5BP/6K1 b - - 2 40",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 788
+      },
+      "depth": 18
+    },
+    {
+      "ply": 80,
+      "fen": "8/3q2pk/p4p1p/2P1P3/2Q2P2/1P4P1/P5BP/6K1 w - - 3 41",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 813
+      },
+      "depth": 18
+    },
+    {
+      "ply": 81,
+      "fen": "8/3q2pk/p4p1p/2P1P3/5P2/1P4P1/P1Q3BP/6K1 b - - 4 41",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 748
+      },
+      "depth": 18
+    },
+    {
+      "ply": 82,
+      "fen": "6k1/3q2p1/p4p1p/2P1P3/5P2/1P4P1/P1Q3BP/6K1 w - - 5 42",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 792
+      },
+      "depth": 18
+    },
+    {
+      "ply": 83,
+      "fen": "6k1/3q2p1/p1P2p1p/4P3/5P2/1P4P1/P1Q3BP/6K1 b - - 0 42",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 830
+      },
+      "depth": 18
+    },
+    {
+      "ply": 84,
+      "fen": "6k1/2q3p1/p1P2p1p/4P3/5P2/1P4P1/P1Q3BP/6K1 w - - 1 43",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 839
+      },
+      "depth": 18
+    },
+    {
+      "ply": 85,
+      "fen": "6k1/2q3p1/p1P2p1p/4P3/2Q2P2/1P4P1/P5BP/6K1 b - - 2 43",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 825
+      },
+      "depth": 18
+    },
+    {
+      "ply": 86,
+      "fen": "7k/2q3p1/p1P2p1p/4P3/2Q2P2/1P4P1/P5BP/6K1 w - - 3 44",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 863
+      },
+      "depth": 18
+    },
+    {
+      "ply": 87,
+      "fen": "7k/2q3p1/p1P2p1p/4P3/2Q2P2/1P4P1/P6P/5BK1 b - - 4 44",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 765
+      },
+      "depth": 18
+    },
+    {
+      "ply": 88,
+      "fen": "7k/2q3p1/p1P4p/4p3/2Q2P2/1P4P1/P6P/5BK1 w - - 0 45",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 806
+      },
+      "depth": 18
+    },
+    {
+      "ply": 89,
+      "fen": "7k/2q3p1/p1P4p/4P3/2Q5/1P4P1/P6P/5BK1 b - - 0 45",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 831
+      },
+      "depth": 18
+    },
+    {
+      "ply": 90,
+      "fen": "7k/2q5/p1P3pp/4P3/2Q5/1P4P1/P6P/5BK1 w - - 0 46",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 847
+      },
+      "depth": 18
+    },
+    {
+      "ply": 91,
+      "fen": "7k/2q5/p1P1P1pp/8/2Q5/1P4P1/P6P/5BK1 b - - 0 46",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 856
+      },
+      "depth": 18
+    },
+    {
+      "ply": 92,
+      "fen": "8/2q3k1/p1P1P1pp/8/2Q5/1P4P1/P6P/5BK1 w - - 1 47",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 949
+      },
+      "depth": 18
+    },
+    {
+      "ply": 93,
+      "fen": "8/2q1P1k1/p1P3pp/8/2Q5/1P4P1/P6P/5BK1 b - - 0 47",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 911
+      },
+      "depth": 18
+    },
+    {
+      "ply": 94,
+      "fen": "8/4q1k1/p1P3pp/8/2Q5/1P4P1/P6P/5BK1 w - - 0 48",
+      "evaluation": {
+        "type": "mate",
+        "value": 13
+      },
+      "depth": 18
+    },
+    {
+      "ply": 95,
+      "fen": "8/2P1q1k1/p5pp/8/2Q5/1P4P1/P6P/5BK1 b - - 0 48",
+      "evaluation": {
+        "type": "mate",
+        "value": 10
+      },
+      "depth": 18
+    },
+    {
+      "ply": 96,
+      "fen": "8/2P3k1/p5pp/8/2Q5/1P2q1P1/P6P/5BK1 w - - 1 49",
+      "evaluation": {
+        "type": "mate",
+        "value": 10
+      },
+      "depth": 18
+    },
+    {
+      "ply": 97,
+      "fen": "8/2P3k1/p5pp/8/2Q5/1P2q1P1/P5KP/5B2 b - - 2 49",
+      "evaluation": {
+        "type": "mate",
+        "value": 9
+      },
+      "depth": 18
+    },
+    {
+      "ply": 98,
+      "fen": "8/2P3k1/p5pp/8/2Q5/1P4P1/P2q2KP/5B2 w - - 3 50",
+      "evaluation": {
+        "type": "mate",
+        "value": 9
+      },
+      "depth": 18
+    },
+    {
+      "ply": 99,
+      "fen": "8/2P3k1/p5pp/8/2Q5/1P4P1/P2qB1KP/8 b - - 4 50",
+      "evaluation": {
+        "type": "mate",
+        "value": 8
+      },
+      "depth": 18
+    },
+    {
+      "ply": 100,
+      "fen": "8/2Pq2k1/p5pp/8/2Q5/1P4P1/P3B1KP/8 w - - 5 51",
+      "evaluation": {
+        "type": "mate",
+        "value": 8
+      },
+      "depth": 18
+    },
+    {
+      "ply": 101,
+      "fen": "2Q5/3q2k1/p5pp/8/2Q5/1P4P1/P3B1KP/8 b - - 0 51",
+      "evaluation": {
+        "type": "mate",
+        "value": 7
+      },
+      "depth": 18
+    },
+    {
+      "ply": 102,
+      "fen": "2q5/6k1/p5pp/8/2Q5/1P4P1/P3B1KP/8 w - - 0 52",
+      "evaluation": {
+        "type": "mate",
+        "value": 7
+      },
+      "depth": 18
+    },
+    {
+      "ply": 103,
+      "fen": "2Q5/6k1/p5pp/8/8/1P4P1/P3B1KP/8 b - - 0 52",
+      "evaluation": {
+        "type": "mate",
+        "value": 6
+      },
+      "depth": 18
+    },
+    {
+      "ply": 104,
+      "fen": "2Q5/8/p4kpp/8/8/1P4P1/P3B1KP/8 w - - 1 53",
+      "evaluation": {
+        "type": "mate",
+        "value": 5
+      },
+      "depth": 18
+    },
+    {
+      "ply": 105,
+      "fen": "8/8/Q4kpp/8/8/1P4P1/P3B1KP/8 b - - 0 53",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 1054
+      },
+      "depth": 18
+    },
+    {
+      "ply": 106,
+      "fen": "8/8/Q5pp/4k3/8/1P4P1/P3B1KP/8 w - - 1 54",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 1369
+      },
+      "depth": 18
+    },
+    {
+      "ply": 107,
+      "fen": "8/8/6pp/4k3/2Q5/1P4P1/P3B1KP/8 b - - 2 54",
+      "evaluation": {
+        "type": "mate",
+        "value": 11
+      },
+      "depth": 18
+    },
+    {
+      "ply": 108,
+      "fen": "8/8/6p1/4k2p/2Q5/1P4P1/P3B1KP/8 w - - 0 55",
+      "evaluation": {
+        "type": "mate",
+        "value": 9
+      },
+      "depth": 18
+    },
+    {
+      "ply": 109,
+      "fen": "8/8/6p1/4k2p/P1Q5/1P4P1/4B1KP/8 b - - 0 55",
+      "evaluation": {
+        "type": "mate",
+        "value": 9
+      },
+      "depth": 18
+    },
+    {
+      "ply": 110,
+      "fen": "8/8/8/4k1pp/P1Q5/1P4P1/4B1KP/8 w - - 0 56",
+      "evaluation": {
+        "type": "mate",
+        "value": 9
+      },
+      "depth": 18
+    },
+    {
+      "ply": 111,
+      "fen": "8/8/8/P3k1pp/2Q5/1P4P1/4B1KP/8 b - - 0 56",
+      "evaluation": {
+        "type": "mate",
+        "value": 10
+      },
+      "depth": 18
+    },
+    {
+      "ply": 112,
+      "fen": "8/8/8/P3k1p1/2Q4p/1P4P1/4B1KP/8 w - - 0 57",
+      "evaluation": {
+        "type": "mate",
+        "value": 10
+      },
+      "depth": 18
+    },
+    {
+      "ply": 113,
+      "fen": "8/8/8/P3k1p1/2Q4P/1P6/4B1KP/8 b - - 0 57",
+      "evaluation": {
+        "type": "mate",
+        "value": 7
+      },
+      "depth": 18
+    },
+    {
+      "ply": 114,
+      "fen": "8/8/8/P3k3/2Q4p/1P6/4B1KP/8 w - - 0 58",
+      "evaluation": {
+        "type": "mate",
+        "value": 7
+      },
+      "depth": 18
+    },
+    {
+      "ply": 115,
+      "fen": "8/8/8/P3k3/2Q4p/1P5P/4B1K1/8 b - - 0 58",
+      "evaluation": {
+        "type": "mate",
+        "value": 6
+      },
+      "depth": 18
+    },
+    {
+      "ply": 116,
+      "fen": "8/8/8/P4k2/2Q4p/1P5P/4B1K1/8 w - - 1 59",
+      "evaluation": {
+        "type": "mate",
+        "value": 6
+      },
+      "depth": 18
+    },
+    {
+      "ply": 117,
+      "fen": "8/8/P7/5k2/2Q4p/1P5P/4B1K1/8 b - - 0 59",
+      "evaluation": {
+        "type": "mate",
+        "value": 5
+      },
+      "depth": 18
+    },
+    {
+      "ply": 118,
+      "fen": "8/8/P7/4k3/2Q4p/1P5P/4B1K1/8 w - - 1 60",
+      "evaluation": {
+        "type": "mate",
+        "value": 5
+      },
+      "depth": 18
+    },
+    {
+      "ply": 119,
+      "fen": "8/P7/8/4k3/2Q4p/1P5P/4B1K1/8 b - - 0 60",
+      "evaluation": {
+        "type": "mate",
+        "value": 4
+      },
+      "depth": 18
+    },
+    {
+      "ply": 120,
+      "fen": "8/P7/8/5k2/2Q4p/1P5P/4B1K1/8 w - - 1 61",
+      "evaluation": {
+        "type": "mate",
+        "value": 4
+      },
+      "depth": 18
+    },
+    {
+      "ply": 121,
+      "fen": "Q7/8/8/5k2/2Q4p/1P5P/4B1K1/8 b - - 0 61",
+      "evaluation": {
+        "type": "mate",
+        "value": 3
+      },
+      "depth": 18
+    },
+    {
+      "ply": 122,
+      "fen": "Q7/8/8/4k3/2Q4p/1P5P/4B1K1/8 w - - 1 62",
+      "evaluation": {
+        "type": "mate",
+        "value": 3
+      },
+      "depth": 18
+    },
+    {
+      "ply": 123,
+      "fen": "8/8/8/4k3/2Q1Q2p/1P5P/4B1K1/8 b - - 2 62",
+      "evaluation": {
+        "type": "mate",
+        "value": 3
+      },
+      "depth": 18
+    },
+    {
+      "ply": 124,
+      "fen": "8/8/5k2/8/2Q1Q2p/1P5P/4B1K1/8 w - - 3 63",
+      "evaluation": {
+        "type": "mate",
+        "value": 2
+      },
+      "depth": 18
+    },
+    {
+      "ply": 125,
+      "fen": "8/8/4Qk2/8/4Q2p/1P5P/4B1K1/8 b - - 4 63",
+      "evaluation": {
+        "type": "mate",
+        "value": 2
+      },
+      "depth": 18
+    },
+    {
+      "ply": 126,
+      "fen": "8/6k1/4Q3/8/4Q2p/1P5P/4B1K1/8 w - - 5 64",
+      "evaluation": {
+        "type": "mate",
+        "value": 2
+      },
+      "depth": 18
+    },
+    {
+      "ply": 127,
+      "fen": "8/6k1/4Q1Q1/8/7p/1P5P/4B1K1/8 b - - 6 64",
+      "evaluation": {
+        "type": "mate",
+        "value": 1
+      },
+      "depth": 18
+    },
+    {
+      "ply": 128,
+      "fen": "5k2/8/4Q1Q1/8/7p/1P5P/4B1K1/8 w - - 7 65",
+      "evaluation": {
+        "type": "mate",
+        "value": 1
+      },
+      "depth": 18
+    },
+    {
+      "ply": 129,
+      "fen": "5k2/5Q2/6Q1/8/7p/1P5P/4B1K1/8 b - - 8 65",
+      "evaluation": {
+        "type": "mate",
+        "value": 0
+      },
+      "depth": 18
+    }
+  ]
+}

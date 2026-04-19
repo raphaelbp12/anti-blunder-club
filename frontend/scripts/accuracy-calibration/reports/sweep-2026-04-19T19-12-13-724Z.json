@@ -1,0 +1,663 @@
+{
+  "generatedAt": "2026-04-19T19:12:13.724Z",
+  "gitSha": "e3f1fb0e3b418ea43a6594de18176304b0d056de",
+  "games": 53,
+  "depths": [
+    18
+  ],
+  "trials": 3402,
+  "baseline": {
+    "params": {
+      "centipawnGradient": 0.0035,
+      "moveCoefA": 103.16,
+      "moveCoefK": 4,
+      "moveCoefC": 3.17,
+      "aggregator": "mean",
+      "windowSize": 8,
+      "volatilityWeightExponent": 1
+    },
+    "mae": 13.711389005032876,
+    "maeWhite": 12.42532702065825,
+    "maeBlack": 14.997450989407492,
+    "rmse": 16.53439405604415,
+    "bias": 13.679007301055362,
+    "pearson": 0.9436058429200037,
+    "score": 17.131140830296715
+  },
+  "topByScore": [
+    {
+      "params": {
+        "centipawnGradient": 0.003,
+        "moveCoefA": 100,
+        "moveCoefK": 6,
+        "moveCoefC": 3.17,
+        "aggregator": "windowed-harmonic",
+        "windowSize": 6,
+        "volatilityWeightExponent": 1
+      },
+      "mae": 4.058710832976084,
+      "maeWhite": 3.8154431409163734,
+      "maeBlack": 4.301978525035796,
+      "rmse": 5.547550794024402,
+      "bias": 0.5563387435368365,
+      "pearson": 0.9228916265957727,
+      "score": 4.197795518860294
+    },
+    {
+      "params": {
+        "centipawnGradient": 0.003,
+        "moveCoefA": 100,
+        "moveCoefK": 6.5,
+        "moveCoefC": 1.5,
+        "aggregator": "windowed-harmonic",
+        "windowSize": 6,
+        "volatilityWeightExponent": 1
+      },
+      "mae": 3.967018996535565,
+      "maeWhite": 3.74830851201963,
+      "maeBlack": 4.185729481051498,
+      "rmse": 5.420046675502431,
+      "bias": 1.0176580004627505,
+      "pearson": 0.9277983689672538,
+      "score": 4.221433496651253
+    },
+    {
+      "params": {
+        "centipawnGradient": 0.003,
+        "moveCoefA": 100,
+        "moveCoefK": 6.5,
+        "moveCoefC": 3.17,
+        "aggregator": "windowed-harmonic",
+        "windowSize": 6,
+        "volatilityWeightExponent": 1
+      },
+      "mae": 4.092711745720127,
+      "maeWhite": 3.8302580370757875,
+      "maeBlack": 4.355165454364465,
+      "rmse": 5.524206633281777,
+      "bias": -0.9839049873323816,
+      "pearson": 0.9244447697600504,
+      "score": 4.338687992553222
+    },
+    {
+      "params": {
+        "centipawnGradient": 0.0035,
+        "moveCoefA": 100,
+        "moveCoefK": 6.5,
+        "moveCoefC": 0,
+        "aggregator": "windowed-harmonic",
+        "windowSize": 6,
+        "volatilityWeightExponent": 1
+      },
+      "mae": 4.103634363770803,
+      "maeWhite": 3.897964347514754,
+      "maeBlack": 4.309304380026854,
+      "rmse": 5.651757006426744,
+      "bias": 0.9448029340316848,
+      "pearson": 0.9204368290378909,
+      "score": 4.3398350972787245
+    },
+    {
+      "params": {
+        "centipawnGradient": 0.0035,
+        "moveCoefA": 100,
+        "moveCoefK": 6,
+        "moveCoefC": 1.5,
+        "aggregator": "windowed-harmonic",
+        "windowSize": 6,
+        "volatilityWeightExponent": 1
+      },
+      "mae": 4.194796166788183,
+      "maeWhite": 3.9392039868985815,
+      "maeBlack": 4.450388346677782,
+      "rmse": 5.765684055090574,
+      "bias": 0.7053115863495633,
+      "pearson": 0.9159799385604678,
+      "score": 4.371124063375573
+    },
+    {
+      "params": {
+        "centipawnGradient": 0.0035,
+        "moveCoefA": 103.16,
+        "moveCoefK": 6.5,
+        "moveCoefC": 3.17,
+        "aggregator": "windowed-harmonic",
+        "windowSize": 6,
+        "volatilityWeightExponent": 1
+      },
+      "mae": 4.2928552387709145,
+      "maeWhite": 4.092199963141117,
+      "maeBlack": 4.493510514400708,
+      "rmse": 5.920056974437359,
+      "bias": -0.5131653524135323,
+      "pearson": 0.9143973494124785,
+      "score": 4.421146576874298
+    },
+    {
+      "params": {
+        "centipawnGradient": 0.0035,
+        "moveCoefA": 100,
+        "moveCoefK": 5.5,
+        "moveCoefC": 3.17,
+        "aggregator": "windowed-harmonic",
+        "windowSize": 6,
+        "volatilityWeightExponent": 1
+      },
+      "mae": 4.333743402185784,
+      "maeWhite": 4.0307045038839115,
+      "maeBlack": 4.636782300487656,
+      "rmse": 5.922136472510295,
+      "bias": 0.3873718850555202,
+      "pearson": 0.9109137408941375,
+      "score": 4.430586373449664
+    },
+    {
+      "params": {
+        "centipawnGradient": 0.0035,
+        "moveCoefA": 100,
+        "moveCoefK": 6.5,
+        "moveCoefC": 1.5,
+        "aggregator": "windowed-harmonic",
+        "windowSize": 6,
+        "volatilityWeightExponent": 1
+      },
+      "mae": 4.264755842905231,
+      "maeWhite": 4.0452213799086065,
+      "maeBlack": 4.484290305901858,
+      "rmse": 5.766903298495883,
+      "bias": -0.8995684914256303,
+      "pearson": 0.9172431132093748,
+      "score": 4.489647965761638
+    },
+    {
+      "params": {
+        "centipawnGradient": 0.0035,
+        "moveCoefA": 103.16,
+        "moveCoefK": 6.5,
+        "moveCoefC": 1.5,
+        "aggregator": "windowed-harmonic",
+        "windowSize": 6,
+        "volatilityWeightExponent": 1
+      },
+      "mae": 4.238730239643311,
+      "maeWhite": 3.9772226411654366,
+      "maeBlack": 4.500237838121186,
+      "rmse": 5.844217383450075,
+      "bias": 1.102939345531297,
+      "pearson": 0.9167498616343339,
+      "score": 4.514465076026135
+    },
+    {
+      "params": {
+        "centipawnGradient": 0.003,
+        "moveCoefA": 103.16,
+        "moveCoefK": 6.5,
+        "moveCoefC": 3.17,
+        "aggregator": "windowed-harmonic",
+        "windowSize": 6,
+        "volatilityWeightExponent": 1
+      },
+      "mae": 4.161461110120338,
+      "maeWhite": 3.9125721378677296,
+      "maeBlack": 4.410350082372943,
+      "rmse": 5.6549415477229985,
+      "bias": 1.4934335830076637,
+      "pearson": 0.9245869527949575,
+      "score": 4.534819505872254
+    },
+    {
+      "params": {
+        "centipawnGradient": 0.004,
+        "moveCoefA": 103.16,
+        "moveCoefK": 6.5,
+        "moveCoefC": 0,
+        "aggregator": "windowed-harmonic",
+        "windowSize": 6,
+        "volatilityWeightExponent": 1
+      },
+      "mae": 4.369344485598104,
+      "maeWhite": 4.11491181392478,
+      "maeBlack": 4.623777157271425,
+      "rmse": 6.1197849733860235,
+      "bias": 0.813162630461888,
+      "pearson": 0.9068226945430974,
+      "score": 4.572635143213576
+    },
+    {
+      "params": {
+        "centipawnGradient": 0.004,
+        "moveCoefA": 100,
+        "moveCoefK": 6,
+        "moveCoefC": 0,
+        "aggregator": "windowed-harmonic",
+        "windowSize": 6,
+        "volatilityWeightExponent": 1
+      },
+      "mae": 4.340046914397773,
+      "maeWhite": 4.096837385718679,
+      "maeBlack": 4.583256443076866,
+      "rmse": 6.07688613146504,
+      "bias": 0.9461816163790233,
+      "pearson": 0.9070118648275796,
+      "score": 4.576592318492528
+    },
+    {
+      "params": {
+        "centipawnGradient": 0.003,
+        "moveCoefA": 100,
+        "moveCoefK": 6.5,
+        "moveCoefC": 1.5,
+        "aggregator": "windowed-harmonic",
+        "windowSize": 8,
+        "volatilityWeightExponent": 1
+      },
+      "mae": 4.534026969604646,
+      "maeWhite": 4.077365441834869,
+      "maeBlack": 4.990688497374428,
+      "rmse": 6.277706275499758,
+      "bias": -0.25829138311705885,
+      "pearson": 0.9049911279876706,
+      "score": 4.598599815383911
+    },
+    {
+      "params": {
+        "centipawnGradient": 0.0035,
+        "moveCoefA": 106,
+        "moveCoefK": 6.5,
+        "moveCoefC": 3.17,
+        "aggregator": "windowed-harmonic",
+        "windowSize": 6,
+        "volatilityWeightExponent": 1
+      },
+      "mae": 4.377413746319268,
+      "maeWhite": 4.100147081053448,
+      "maeBlack": 4.65468041158509,
+      "rmse": 6.028572082050138,
+      "bias": 0.8975642717909016,
+      "pearson": 0.9130330666383644,
+      "score": 4.601804814266994
+    },
+    {
+      "params": {
+        "centipawnGradient": 0.0035,
+        "moveCoefA": 103.16,
+        "moveCoefK": 6,
+        "moveCoefC": 3.17,
+        "aggregator": "windowed-harmonic",
+        "windowSize": 6,
+        "volatilityWeightExponent": 1
+      },
+      "mae": 4.311571619351783,
+      "maeWhite": 4.012213027922096,
+      "maeBlack": 4.610930210781471,
+      "rmse": 5.969649350195519,
+      "bias": 1.1683134641114266,
+      "pearson": 0.9125681711458608,
+      "score": 4.60364998537964
+    }
+  ],
+  "topByMae": [
+    {
+      "params": {
+        "centipawnGradient": 0.003,
+        "moveCoefA": 100,
+        "moveCoefK": 6.5,
+        "moveCoefC": 1.5,
+        "aggregator": "windowed-harmonic",
+        "windowSize": 6,
+        "volatilityWeightExponent": 1
+      },
+      "mae": 3.967018996535565,
+      "maeWhite": 3.74830851201963,
+      "maeBlack": 4.185729481051498,
+      "rmse": 5.420046675502431,
+      "bias": 1.0176580004627505,
+      "pearson": 0.9277983689672538,
+      "score": 4.221433496651253
+    },
+    {
+      "params": {
+        "centipawnGradient": 0.003,
+        "moveCoefA": 100,
+        "moveCoefK": 6,
+        "moveCoefC": 3.17,
+        "aggregator": "windowed-harmonic",
+        "windowSize": 6,
+        "volatilityWeightExponent": 1
+      },
+      "mae": 4.058710832976084,
+      "maeWhite": 3.8154431409163734,
+      "maeBlack": 4.301978525035796,
+      "rmse": 5.547550794024402,
+      "bias": 0.5563387435368365,
+      "pearson": 0.9228916265957727,
+      "score": 4.197795518860294
+    },
+    {
+      "params": {
+        "centipawnGradient": 0.003,
+        "moveCoefA": 100,
+        "moveCoefK": 6.5,
+        "moveCoefC": 3.17,
+        "aggregator": "windowed-harmonic",
+        "windowSize": 6,
+        "volatilityWeightExponent": 1
+      },
+      "mae": 4.092711745720127,
+      "maeWhite": 3.8302580370757875,
+      "maeBlack": 4.355165454364465,
+      "rmse": 5.524206633281777,
+      "bias": -0.9839049873323816,
+      "pearson": 0.9244447697600504,
+      "score": 4.338687992553222
+    },
+    {
+      "params": {
+        "centipawnGradient": 0.0035,
+        "moveCoefA": 100,
+        "moveCoefK": 6.5,
+        "moveCoefC": 0,
+        "aggregator": "windowed-harmonic",
+        "windowSize": 6,
+        "volatilityWeightExponent": 1
+      },
+      "mae": 4.103634363770803,
+      "maeWhite": 3.897964347514754,
+      "maeBlack": 4.309304380026854,
+      "rmse": 5.651757006426744,
+      "bias": 0.9448029340316848,
+      "pearson": 0.9204368290378909,
+      "score": 4.3398350972787245
+    },
+    {
+      "params": {
+        "centipawnGradient": 0.003,
+        "moveCoefA": 103.16,
+        "moveCoefK": 6.5,
+        "moveCoefC": 3.17,
+        "aggregator": "windowed-harmonic",
+        "windowSize": 6,
+        "volatilityWeightExponent": 1
+      },
+      "mae": 4.161461110120338,
+      "maeWhite": 3.9125721378677296,
+      "maeBlack": 4.410350082372943,
+      "rmse": 5.6549415477229985,
+      "bias": 1.4934335830076637,
+      "pearson": 0.9245869527949575,
+      "score": 4.534819505872254
+    },
+    {
+      "params": {
+        "centipawnGradient": 0.0035,
+        "moveCoefA": 100,
+        "moveCoefK": 6,
+        "moveCoefC": 1.5,
+        "aggregator": "windowed-harmonic",
+        "windowSize": 6,
+        "volatilityWeightExponent": 1
+      },
+      "mae": 4.194796166788183,
+      "maeWhite": 3.9392039868985815,
+      "maeBlack": 4.450388346677782,
+      "rmse": 5.765684055090574,
+      "bias": 0.7053115863495633,
+      "pearson": 0.9159799385604678,
+      "score": 4.371124063375573
+    },
+    {
+      "params": {
+        "centipawnGradient": 0.0035,
+        "moveCoefA": 103.16,
+        "moveCoefK": 6.5,
+        "moveCoefC": 1.5,
+        "aggregator": "windowed-harmonic",
+        "windowSize": 6,
+        "volatilityWeightExponent": 1
+      },
+      "mae": 4.238730239643311,
+      "maeWhite": 3.9772226411654366,
+      "maeBlack": 4.500237838121186,
+      "rmse": 5.844217383450075,
+      "bias": 1.102939345531297,
+      "pearson": 0.9167498616343339,
+      "score": 4.514465076026135
+    },
+    {
+      "params": {
+        "centipawnGradient": 0.0035,
+        "moveCoefA": 100,
+        "moveCoefK": 6.5,
+        "moveCoefC": 1.5,
+        "aggregator": "windowed-harmonic",
+        "windowSize": 6,
+        "volatilityWeightExponent": 1
+      },
+      "mae": 4.264755842905231,
+      "maeWhite": 4.0452213799086065,
+      "maeBlack": 4.484290305901858,
+      "rmse": 5.766903298495883,
+      "bias": -0.8995684914256303,
+      "pearson": 0.9172431132093748,
+      "score": 4.489647965761638
+    },
+    {
+      "params": {
+        "centipawnGradient": 0.0035,
+        "moveCoefA": 103.16,
+        "moveCoefK": 6.5,
+        "moveCoefC": 3.17,
+        "aggregator": "windowed-harmonic",
+        "windowSize": 6,
+        "volatilityWeightExponent": 1
+      },
+      "mae": 4.2928552387709145,
+      "maeWhite": 4.092199963141117,
+      "maeBlack": 4.493510514400708,
+      "rmse": 5.920056974437359,
+      "bias": -0.5131653524135323,
+      "pearson": 0.9143973494124785,
+      "score": 4.421146576874298
+    },
+    {
+      "params": {
+        "centipawnGradient": 0.0035,
+        "moveCoefA": 103.16,
+        "moveCoefK": 6,
+        "moveCoefC": 3.17,
+        "aggregator": "windowed-harmonic",
+        "windowSize": 6,
+        "volatilityWeightExponent": 1
+      },
+      "mae": 4.311571619351783,
+      "maeWhite": 4.012213027922096,
+      "maeBlack": 4.610930210781471,
+      "rmse": 5.969649350195519,
+      "bias": 1.1683134641114266,
+      "pearson": 0.9125681711458608,
+      "score": 4.60364998537964
+    }
+  ],
+  "topByR": [
+    {
+      "params": {
+        "centipawnGradient": 0.003,
+        "moveCoefA": 103.16,
+        "moveCoefK": 4,
+        "moveCoefC": 0,
+        "aggregator": "mean",
+        "windowSize": 8,
+        "volatilityWeightExponent": 1
+      },
+      "mae": 16.130598394378932,
+      "maeWhite": 14.854335176041527,
+      "maeBlack": 17.406861612716323,
+      "rmse": 18.764958327475803,
+      "bias": 16.130598394378932,
+      "pearson": 0.9583503790366584,
+      "score": 20.163247992973666
+    },
+    {
+      "params": {
+        "centipawnGradient": 0.003,
+        "moveCoefA": 106,
+        "moveCoefK": 4,
+        "moveCoefC": 3.17,
+        "aggregator": "mean",
+        "windowSize": 8,
+        "volatilityWeightExponent": 1
+      },
+      "mae": 15.707956260465249,
+      "maeWhite": 14.440791752133153,
+      "maeBlack": 16.975120768797346,
+      "rmse": 18.318736881670638,
+      "bias": 15.707956260465249,
+      "pearson": 0.9583469536515214,
+      "score": 19.634945325581562
+    },
+    {
+      "params": {
+        "centipawnGradient": 0.003,
+        "moveCoefA": 106,
+        "moveCoefK": 4.5,
+        "moveCoefC": 1.5,
+        "aggregator": "mean",
+        "windowSize": 8,
+        "volatilityWeightExponent": 1
+      },
+      "mae": 15.574792426227493,
+      "maeWhite": 14.3386387573631,
+      "maeBlack": 16.810946095091868,
+      "rmse": 18.098920871611735,
+      "bias": 15.574792426227493,
+      "pearson": 0.95827984743001,
+      "score": 19.468490532784365
+    },
+    {
+      "params": {
+        "centipawnGradient": 0.003,
+        "moveCoefA": 103.16,
+        "moveCoefK": 4.5,
+        "moveCoefC": 0,
+        "aggregator": "mean",
+        "windowSize": 8,
+        "volatilityWeightExponent": 1
+      },
+      "mae": 15.244620481657824,
+      "maeWhite": 13.992331540959437,
+      "maeBlack": 16.49690942235621,
+      "rmse": 17.82157521109657,
+      "bias": 15.243249052128172,
+      "pearson": 0.9582299518736859,
+      "score": 19.055432744689867
+    },
+    {
+      "params": {
+        "centipawnGradient": 0.003,
+        "moveCoefA": 106,
+        "moveCoefK": 5,
+        "moveCoefC": 1.5,
+        "aggregator": "mean",
+        "windowSize": 8,
+        "volatilityWeightExponent": 1
+      },
+      "mae": 14.723906753171006,
+      "maeWhite": 13.51154709422079,
+      "maeBlack": 15.936266412121231,
+      "rmse": 17.196386252980123,
+      "bias": 14.72084517792363,
+      "pearson": 0.9580285403204212,
+      "score": 18.404118047651913
+    },
+    {
+      "params": {
+        "centipawnGradient": 0.003,
+        "moveCoefA": 106,
+        "moveCoefK": 4.5,
+        "moveCoefC": 3.17,
+        "aggregator": "mean",
+        "windowSize": 8,
+        "volatilityWeightExponent": 1
+      },
+      "mae": 14.795296417890006,
+      "maeWhite": 13.556908723635527,
+      "maeBlack": 16.03368411214448,
+      "rmse": 17.346815202504853,
+      "bias": 14.78972233959459,
+      "pearson": 0.9579805016562578,
+      "score": 18.492727002788655
+    },
+    {
+      "params": {
+        "centipawnGradient": 0.003,
+        "moveCoefA": 103.16,
+        "moveCoefK": 3.5,
+        "moveCoefC": 1.5,
+        "aggregator": "mean",
+        "windowSize": 8,
+        "volatilityWeightExponent": 1
+      },
+      "mae": 16.33015319789016,
+      "maeWhite": 15.022278734886022,
+      "maeBlack": 17.638027660894295,
+      "rmse": 19.069513990067215,
+      "bias": 16.33015319789016,
+      "pearson": 0.9578718811049852,
+      "score": 20.412691497362697
+    },
+    {
+      "params": {
+        "centipawnGradient": 0.003,
+        "moveCoefA": 106,
+        "moveCoefK": 3.5,
+        "moveCoefC": 3.17,
+        "aggregator": "mean",
+        "windowSize": 8,
+        "volatilityWeightExponent": 1
+      },
+      "mae": 16.672881475616347,
+      "maeWhite": 15.37962638984943,
+      "maeBlack": 17.966136561383266,
+      "rmse": 19.354984266082884,
+      "bias": 16.672881475616347,
+      "pearson": 0.9578565326646141,
+      "score": 20.841101844520434
+    },
+    {
+      "params": {
+        "centipawnGradient": 0.003,
+        "moveCoefA": 106,
+        "moveCoefK": 5,
+        "moveCoefC": 0,
+        "aggregator": "mean",
+        "windowSize": 8,
+        "volatilityWeightExponent": 1
+      },
+      "mae": 15.365618546068484,
+      "maeWhite": 14.144244541849202,
+      "maeBlack": 16.586992550287746,
+      "rmse": 17.827309601818147,
+      "bias": 15.365618546068484,
+      "pearson": 0.9577683560977797,
+      "score": 19.207023182585605
+    },
+    {
+      "params": {
+        "centipawnGradient": 0.003,
+        "moveCoefA": 103.16,
+        "moveCoefK": 4,
+        "moveCoefC": 1.5,
+        "aggregator": "mean",
+        "windowSize": 8,
+        "volatilityWeightExponent": 1
+      },
+      "mae": 15.377895122456142,
+      "maeWhite": 14.100529820846006,
+      "maeBlack": 16.655260424066267,
+      "rmse": 18.04996936516486,
+      "bias": 15.373283147225536,
+      "pearson": 0.9577273395484461,
+      "score": 19.221215909262526
+    }
+  ]
+}

@@ -1,0 +1,2403 @@
+{
+  "generatedAt": "2026-04-19T19:12:05.049Z",
+  "gitSha": "e3f1fb0e3b418ea43a6594de18176304b0d056de",
+  "presets": [
+    {
+      "name": "baseline",
+      "description": "Current shipped formula: CAPS-v1 coefficients, arithmetic mean.",
+      "params": {
+        "centipawnGradient": 0.0035,
+        "moveCoefA": 103.16,
+        "moveCoefK": 4,
+        "moveCoefC": 3.17,
+        "aggregator": "mean",
+        "windowSize": 8,
+        "volatilityWeightExponent": 1
+      }
+    },
+    {
+      "name": "windowed-harmonic-8",
+      "description": "CAPS-v1 per-move, sliding-window harmonic mean (size 8) aggregator.",
+      "params": {
+        "centipawnGradient": 0.0035,
+        "moveCoefA": 103.16,
+        "moveCoefK": 4,
+        "moveCoefC": 3.17,
+        "aggregator": "windowed-harmonic",
+        "windowSize": 8,
+        "volatilityWeightExponent": 1
+      }
+    },
+    {
+      "name": "weighted-harmonic",
+      "description": "CAPS-v1 per-move, volatility-weighted harmonic aggregator.",
+      "params": {
+        "centipawnGradient": 0.0035,
+        "moveCoefA": 103.16,
+        "moveCoefK": 4,
+        "moveCoefC": 3.17,
+        "aggregator": "weighted-harmonic",
+        "windowSize": 8,
+        "volatilityWeightExponent": 1.5
+      }
+    },
+    {
+      "name": "steeper-gradient",
+      "description": "Steeper centipawn gradient (0.0045) with arithmetic mean: checks how much EP shape alone matters.",
+      "params": {
+        "centipawnGradient": 0.0045,
+        "moveCoefA": 103.16,
+        "moveCoefK": 4,
+        "moveCoefC": 3.17,
+        "aggregator": "mean",
+        "windowSize": 8,
+        "volatilityWeightExponent": 1
+      }
+    },
+    {
+      "name": "caps2-like",
+      "description": "Combined tweak: steeper gradient + sharper per-move decay + windowed harmonic aggregator.",
+      "params": {
+        "centipawnGradient": 0.0045,
+        "moveCoefA": 100,
+        "moveCoefK": 5.5,
+        "moveCoefC": 0,
+        "aggregator": "windowed-harmonic",
+        "windowSize": 8,
+        "volatilityWeightExponent": 1
+      }
+    }
+  ],
+  "games": [
+    {
+      "gameId": "166151880114",
+      "timeClass": "rapid",
+      "whitePlayer": "Moonraat07",
+      "blackPlayer": "pigor1",
+      "whiteRating": 1733,
+      "blackRating": 1722,
+      "result": "repetition/repetition",
+      "chessComWhite": 76.74,
+      "chessComBlack": 81.58,
+      "oursByPreset": {
+        "baseline": {
+          "white": 89.43758713844352,
+          "black": 91.2136461542339
+        },
+        "windowed-harmonic-8": {
+          "white": 81.52086512632353,
+          "black": 79.6389335791606
+        },
+        "weighted-harmonic": {
+          "white": 73.56890524986389,
+          "black": 67.70687548513365
+        },
+        "steeper-gradient": {
+          "white": 88.13490810357321,
+          "black": 90.16165098301491
+        },
+        "caps2-like": {
+          "white": 71.40019408960408,
+          "black": 68.61431123157321
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "166167752268",
+      "timeClass": "rapid",
+      "whitePlayer": "lama11111",
+      "blackPlayer": "pigor1",
+      "whiteRating": 1727,
+      "blackRating": 1732,
+      "result": "repetition/repetition",
+      "chessComWhite": 81.98,
+      "chessComBlack": 82.97,
+      "oursByPreset": {
+        "baseline": {
+          "white": 93.73568600509576,
+          "black": 93.99158437190377
+        },
+        "windowed-harmonic-8": {
+          "white": 92.33310944336174,
+          "black": 89.22109208641858
+        },
+        "weighted-harmonic": {
+          "white": 83.39560313847434,
+          "black": 75.51053461237339
+        },
+        "steeper-gradient": {
+          "white": 93.1941180782956,
+          "black": 93.64701321200472
+        },
+        "caps2-like": {
+          "white": 88.69985241519933,
+          "black": 83.73301894529943
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "166173470266",
+      "timeClass": "rapid",
+      "whitePlayer": "pigor1",
+      "blackPlayer": "PremjithPM",
+      "whiteRating": 1739,
+      "blackRating": 1739,
+      "result": "agreed/agreed",
+      "chessComWhite": 90.82,
+      "chessComBlack": 100,
+      "oursByPreset": {
+        "baseline": {
+          "white": 94.43370831797736,
+          "black": 96.6763992564457
+        },
+        "windowed-harmonic-8": {
+          "white": 93.98800537577719,
+          "black": 96.4344612881145
+        },
+        "weighted-harmonic": {
+          "white": 93.3579270679375,
+          "black": 94.73724757092796
+        },
+        "steeper-gradient": {
+          "white": 93.01731399129069,
+          "black": 95.82691666110918
+        },
+        "caps2-like": {
+          "white": 89.7561697802786,
+          "black": 93.90518541277592
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "166216731858",
+      "timeClass": "rapid",
+      "whitePlayer": "serioshavazquez",
+      "blackPlayer": "pigor1",
+      "whiteRating": 1730,
+      "blackRating": 1722,
+      "result": "win/checkmated",
+      "chessComWhite": 84.34,
+      "chessComBlack": 68.79,
+      "oursByPreset": {
+        "baseline": {
+          "white": 87.52944892927573,
+          "black": 81.80507555377793
+        },
+        "windowed-harmonic-8": {
+          "white": 85.20286579219702,
+          "black": 60.65490146604713
+        },
+        "weighted-harmonic": {
+          "white": 84.49395857077548,
+          "black": 34.86425171596254
+        },
+        "steeper-gradient": {
+          "white": 84.59775101799698,
+          "black": 79.74430204291818
+        },
+        "caps2-like": {
+          "white": 75.39320601630594,
+          "black": 51.07414235111315
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "166561069516",
+      "timeClass": "rapid",
+      "whitePlayer": "AMSin93",
+      "blackPlayer": "pigor1",
+      "whiteRating": 1789,
+      "blackRating": 1717,
+      "result": "win/resigned",
+      "chessComWhite": 100,
+      "chessComBlack": 69.66,
+      "oursByPreset": {
+        "baseline": {
+          "white": 98.05547787514158,
+          "black": 86.42224149426416
+        },
+        "windowed-harmonic-8": {
+          "white": 97.93436747562822,
+          "black": 72.59656711207667
+        },
+        "weighted-harmonic": {
+          "white": 96.57701016453719,
+          "black": 65.1479622898849
+        },
+        "steeper-gradient": {
+          "white": 97.5378620554201,
+          "black": 84.87578734190558
+        },
+        "caps2-like": {
+          "white": 96.44392956444398,
+          "black": 54.203950967507616
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "166698205444",
+      "timeClass": "rapid",
+      "whitePlayer": "pigor1",
+      "blackPlayer": "BethoFera",
+      "whiteRating": 1701,
+      "blackRating": 1683,
+      "result": "insufficient/insufficient",
+      "chessComWhite": 83.53,
+      "chessComBlack": 83.89,
+      "oursByPreset": {
+        "baseline": {
+          "white": 92.54438384736174,
+          "black": 92.85516552578035
+        },
+        "windowed-harmonic-8": {
+          "white": 90.86373259671456,
+          "black": 90.42317827016227
+        },
+        "weighted-harmonic": {
+          "white": 86.04222976213251,
+          "black": 83.50400181793052
+        },
+        "steeper-gradient": {
+          "white": 91.26871500692789,
+          "black": 91.69618551633594
+        },
+        "caps2-like": {
+          "white": 85.75046384036864,
+          "black": 84.6057829582102
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "166761245258",
+      "timeClass": "rapid",
+      "whitePlayer": "pigor1",
+      "blackPlayer": "Projit_09_King",
+      "whiteRating": 1709,
+      "blackRating": 1679,
+      "result": "win/resigned",
+      "chessComWhite": 96.65,
+      "chessComBlack": 73.48,
+      "oursByPreset": {
+        "baseline": {
+          "white": 97.88363183981014,
+          "black": 85.44490434803508
+        },
+        "windowed-harmonic-8": {
+          "white": 97.69585436986347,
+          "black": 65.65711547541763
+        },
+        "weighted-harmonic": {
+          "white": 95.05954210981807,
+          "black": 56.681285387818434
+        },
+        "steeper-gradient": {
+          "white": 97.33719231766591,
+          "black": 84.29264305683787
+        },
+        "caps2-like": {
+          "white": 96.00946639091802,
+          "black": 48.68342000749027
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "166894794230",
+      "timeClass": "blitz",
+      "whitePlayer": "mrdsims",
+      "blackPlayer": "gaguera",
+      "whiteRating": 429,
+      "blackRating": 393,
+      "result": "win/checkmated",
+      "chessComWhite": 39.63,
+      "chessComBlack": 31.52,
+      "oursByPreset": {
+        "baseline": {
+          "white": 73.729855604272,
+          "black": 71.3745749306298
+        },
+        "windowed-harmonic-8": {
+          "white": 48.97674733003194,
+          "black": 39.310720865905076
+        },
+        "weighted-harmonic": {
+          "white": 53.41137660079518,
+          "black": 44.381610199666255
+        },
+        "steeper-gradient": {
+          "white": 72.4408930102901,
+          "black": 71.24196715039288
+        },
+        "caps2-like": {
+          "white": 35.92716627165878,
+          "black": 27.656767441399403
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "166902205484",
+      "timeClass": "rapid",
+      "whitePlayer": "annacrn1",
+      "blackPlayer": "diogomonte",
+      "whiteRating": 288,
+      "blackRating": 498,
+      "result": "resigned/win",
+      "chessComWhite": 57.51,
+      "chessComBlack": 62.22,
+      "oursByPreset": {
+        "baseline": {
+          "white": 83.26049018093681,
+          "black": 84.49372496875874
+        },
+        "windowed-harmonic-8": {
+          "white": 68.83626331809617,
+          "black": 71.84913268832618
+        },
+        "weighted-harmonic": {
+          "white": 45.35763419897593,
+          "black": 52.486940080652815
+        },
+        "steeper-gradient": {
+          "white": 82.61764706310707,
+          "black": 83.72880662381387
+        },
+        "caps2-like": {
+          "white": 61.55722520309499,
+          "black": 65.19769001137163
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167005529374",
+      "timeClass": "rapid",
+      "whitePlayer": "pigor1",
+      "blackPlayer": "NandoPro1",
+      "whiteRating": 1699,
+      "blackRating": 1780,
+      "result": "agreed/agreed",
+      "chessComWhite": 100,
+      "chessComBlack": 0,
+      "oursByPreset": {
+        "baseline": {
+          "white": 98.91955604931148,
+          "black": 0
+        },
+        "windowed-harmonic-8": {
+          "white": 98.91955604931148,
+          "black": 0
+        },
+        "weighted-harmonic": {
+          "white": 98.91955604931148,
+          "black": 0
+        },
+        "steeper-gradient": {
+          "white": 98.62163548428592,
+          "black": 0
+        },
+        "caps2-like": {
+          "white": 98.18068171568547,
+          "black": 0
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167052490076",
+      "timeClass": "blitz",
+      "whitePlayer": "GMKrikor",
+      "blackPlayer": "osmen4ik77",
+      "whiteRating": 2988,
+      "blackRating": 2894,
+      "result": "timeout/win",
+      "chessComWhite": 57.06,
+      "chessComBlack": 59.24,
+      "oursByPreset": {
+        "baseline": {
+          "white": 83.08643555457891,
+          "black": 82.99423731904257
+        },
+        "windowed-harmonic-8": {
+          "white": 75.73980152421098,
+          "black": 74.60577156508361
+        },
+        "weighted-harmonic": {
+          "white": 67.41958310630031,
+          "black": 43.57737763289802
+        },
+        "steeper-gradient": {
+          "white": 82.12245324977552,
+          "black": 82.37995722685488
+        },
+        "caps2-like": {
+          "white": 64.87600928945443,
+          "black": 63.128564053729555
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167252925256",
+      "timeClass": "blitz",
+      "whitePlayer": "Resentiment18",
+      "blackPlayer": "MagnusCarlsen",
+      "whiteRating": 3051,
+      "blackRating": 3367,
+      "result": "timeout/win",
+      "chessComWhite": 95.42,
+      "chessComBlack": 92.68,
+      "oursByPreset": {
+        "baseline": {
+          "white": 96.25693519493107,
+          "black": 95.23095031313377
+        },
+        "windowed-harmonic-8": {
+          "white": 94.91107310497736,
+          "black": 94.70620640632391
+        },
+        "weighted-harmonic": {
+          "white": 84.19173209224016,
+          "black": 76.3403997231994
+        },
+        "steeper-gradient": {
+          "white": 95.43240612607553,
+          "black": 94.35789421855765
+        },
+        "caps2-like": {
+          "white": 91.16879185182201,
+          "black": 90.82333004120923
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167255361662",
+      "timeClass": "rapid",
+      "whitePlayer": "pigor1",
+      "blackPlayer": "11111bignostril",
+      "whiteRating": 1711,
+      "blackRating": 1724,
+      "result": "insufficient/insufficient",
+      "chessComWhite": 87.96,
+      "chessComBlack": 89.07,
+      "oursByPreset": {
+        "baseline": {
+          "white": 95.12367237531186,
+          "black": 95.48358351524142
+        },
+        "windowed-harmonic-8": {
+          "white": 93.84277175730026,
+          "black": 94.09696400917753
+        },
+        "weighted-harmonic": {
+          "white": 87.37886352671842,
+          "black": 86.01950241872163
+        },
+        "steeper-gradient": {
+          "white": 94.11494839125645,
+          "black": 94.55739491777439
+        },
+        "caps2-like": {
+          "white": 89.77350117912486,
+          "black": 90.04777547720009
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167257825884",
+      "timeClass": "blitz",
+      "whitePlayer": "wonderfultime",
+      "blackPlayer": "MagnusCarlsen",
+      "whiteRating": 3186,
+      "blackRating": 3373,
+      "result": "repetition/repetition",
+      "chessComWhite": 97.83,
+      "chessComBlack": 97.81,
+      "oursByPreset": {
+        "baseline": {
+          "white": 97.78747327696279,
+          "black": 98.12510627051697
+        },
+        "windowed-harmonic-8": {
+          "white": 97.47813340608475,
+          "black": 97.82603332818194
+        },
+        "weighted-harmonic": {
+          "white": 94.89944360322818,
+          "black": 95.3894093431139
+        },
+        "steeper-gradient": {
+          "white": 97.20200749771101,
+          "black": 97.6276828107662
+        },
+        "caps2-like": {
+          "white": 95.66995920844177,
+          "black": 96.2688229286728
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167258446496",
+      "timeClass": "blitz",
+      "whitePlayer": "MagnusCarlsen",
+      "blackPlayer": "wonderfultime",
+      "whiteRating": 3369,
+      "blackRating": 3190,
+      "result": "resigned/win",
+      "chessComWhite": 83.57,
+      "chessComBlack": 87.21,
+      "oursByPreset": {
+        "baseline": {
+          "white": 92.16893008748123,
+          "black": 93.96076630757537
+        },
+        "windowed-harmonic-8": {
+          "white": 90.6998343814743,
+          "black": 91.9990420133515
+        },
+        "weighted-harmonic": {
+          "white": 77.51860061535228,
+          "black": 86.08963124899441
+        },
+        "steeper-gradient": {
+          "white": 90.93824888427703,
+          "black": 92.75633926444826
+        },
+        "caps2-like": {
+          "white": 84.46691578597783,
+          "black": 86.45368261067482
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167258723138",
+      "timeClass": "blitz",
+      "whitePlayer": "wonderfultime",
+      "blackPlayer": "MagnusCarlsen",
+      "whiteRating": 3186,
+      "blackRating": 3373,
+      "result": "resigned/win",
+      "chessComWhite": 90.09,
+      "chessComBlack": 96.68,
+      "oursByPreset": {
+        "baseline": {
+          "white": 93.95220272584112,
+          "black": 97.25567740257267
+        },
+        "windowed-harmonic-8": {
+          "white": 94.94500366491094,
+          "black": 96.64633467867276
+        },
+        "weighted-harmonic": {
+          "white": 68.51329780250572,
+          "black": 93.78636080922195
+        },
+        "steeper-gradient": {
+          "white": 92.90467645125828,
+          "black": 96.53696348533457
+        },
+        "caps2-like": {
+          "white": 91.41449417183331,
+          "black": 94.20241819296584
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167258903064",
+      "timeClass": "blitz",
+      "whitePlayer": "MagnusCarlsen",
+      "blackPlayer": "wonderfultime",
+      "whiteRating": 3377,
+      "blackRating": 3182,
+      "result": "win/checkmated",
+      "chessComWhite": 78.76,
+      "chessComBlack": 79.48,
+      "oursByPreset": {
+        "baseline": {
+          "white": 90.37803895195809,
+          "black": 90.6271291562101
+        },
+        "windowed-harmonic-8": {
+          "white": 82.94608638210222,
+          "black": 77.05822519326361
+        },
+        "weighted-harmonic": {
+          "white": 72.37796178194266,
+          "black": 53.34727033372998
+        },
+        "steeper-gradient": {
+          "white": 89.00000065137841,
+          "black": 89.4088944161273
+        },
+        "caps2-like": {
+          "white": 72.24244420185312,
+          "black": 68.99023163702839
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167268151860",
+      "timeClass": "rapid",
+      "whitePlayer": "arjunpolai",
+      "blackPlayer": "pigor1",
+      "whiteRating": 1716,
+      "blackRating": 1735,
+      "result": "repetition/repetition",
+      "chessComWhite": 81.85,
+      "chessComBlack": 82.13,
+      "oursByPreset": {
+        "baseline": {
+          "white": 90.02498768483328,
+          "black": 89.8786335696567
+        },
+        "windowed-harmonic-8": {
+          "white": 84.81758283531701,
+          "black": 86.10484079134712
+        },
+        "weighted-harmonic": {
+          "white": 74.53041183096903,
+          "black": 75.3607483433091
+        },
+        "steeper-gradient": {
+          "white": 88.4961347322332,
+          "black": 88.27704054653218
+        },
+        "caps2-like": {
+          "white": 74.92607384953052,
+          "black": 77.68763903804984
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167316020086",
+      "timeClass": "rapid",
+      "whitePlayer": "diogomonte",
+      "blackPlayer": "annacrn1",
+      "whiteRating": 497,
+      "blackRating": 291,
+      "result": "stalemate/stalemate",
+      "chessComWhite": 77.55,
+      "chessComBlack": 80.43,
+      "oursByPreset": {
+        "baseline": {
+          "white": 91.30857257492582,
+          "black": 92.09590023050664
+        },
+        "windowed-harmonic-8": {
+          "white": 88.59684837387194,
+          "black": 91.1343167290477
+        },
+        "weighted-harmonic": {
+          "white": 80.42970979400324,
+          "black": 73.97651715095218
+        },
+        "steeper-gradient": {
+          "white": 90.84649002796773,
+          "black": 91.59741403343317
+        },
+        "caps2-like": {
+          "white": 83.44012957395843,
+          "black": 87.14543337969661
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167347495704",
+      "timeClass": "blitz",
+      "whitePlayer": "PatrickA1992",
+      "blackPlayer": "igricart",
+      "whiteRating": 198,
+      "blackRating": 224,
+      "result": "resigned/win",
+      "chessComWhite": 67.86,
+      "chessComBlack": 86.47,
+      "oursByPreset": {
+        "baseline": {
+          "white": 84.92111171759957,
+          "black": 93.71711342154595
+        },
+        "windowed-harmonic-8": {
+          "white": 71.42769942454431,
+          "black": 91.76282052123194
+        },
+        "weighted-harmonic": {
+          "white": 60.43863379572764,
+          "black": 90.39130191744192
+        },
+        "steeper-gradient": {
+          "white": 82.95688636321577,
+          "black": 92.53131392742253
+        },
+        "caps2-like": {
+          "white": 56.374483612344655,
+          "black": 86.07928199201622
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167362881454",
+      "timeClass": "rapid",
+      "whitePlayer": "Phobicsquirrel",
+      "blackPlayer": "22manudt",
+      "whiteRating": 1149,
+      "blackRating": 1117,
+      "result": "win/resigned",
+      "chessComWhite": 77.59,
+      "chessComBlack": 36.83,
+      "oursByPreset": {
+        "baseline": {
+          "white": 85.48783923850011,
+          "black": 70.47562054334537
+        },
+        "windowed-harmonic-8": {
+          "white": 82.12498661295295,
+          "black": 66.96101490725142
+        },
+        "weighted-harmonic": {
+          "white": 86.84175366974466,
+          "black": 66.72382850177054
+        },
+        "steeper-gradient": {
+          "white": 82.12642079860282,
+          "black": 67.37498641892553
+        },
+        "caps2-like": {
+          "white": 71.537349404848,
+          "black": 53.49818305648933
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167372990182",
+      "timeClass": "rapid",
+      "whitePlayer": "pigor1",
+      "blackPlayer": "btpang",
+      "whiteRating": 1719,
+      "blackRating": 1723,
+      "result": "insufficient/insufficient",
+      "chessComWhite": 84.75,
+      "chessComBlack": 84.93,
+      "oursByPreset": {
+        "baseline": {
+          "white": 91.84784914947153,
+          "black": 91.99841677399053
+        },
+        "windowed-harmonic-8": {
+          "white": 89.33388614085756,
+          "black": 88.38206921925813
+        },
+        "weighted-harmonic": {
+          "white": 85.86806532093999,
+          "black": 81.65890212704983
+        },
+        "steeper-gradient": {
+          "white": 90.3789193734245,
+          "black": 90.6626036670478
+        },
+        "caps2-like": {
+          "white": 82.68120018585431,
+          "black": 80.997064885526
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167381463212",
+      "timeClass": "blitz",
+      "whitePlayer": "Hikaru",
+      "blackPlayer": "SuperPower2011",
+      "whiteRating": 3411,
+      "blackRating": 3002,
+      "result": "win/resigned",
+      "chessComWhite": 85.86,
+      "chessComBlack": 80.77,
+      "oursByPreset": {
+        "baseline": {
+          "white": 92.02422428898556,
+          "black": 89.86216645729967
+        },
+        "windowed-harmonic-8": {
+          "white": 90.55668023425677,
+          "black": 85.9987947982743
+        },
+        "weighted-harmonic": {
+          "white": 86.16247668628904,
+          "black": 79.81787050210141
+        },
+        "steeper-gradient": {
+          "white": 90.52098407707128,
+          "black": 88.3048201732954
+        },
+        "caps2-like": {
+          "white": 84.4872914533475,
+          "black": 77.05214799054576
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167381612470",
+      "timeClass": "blitz",
+      "whitePlayer": "SuperPower2011",
+      "blackPlayer": "Hikaru",
+      "whiteRating": 3001,
+      "blackRating": 3412,
+      "result": "resigned/win",
+      "chessComWhite": 82.18,
+      "chessComBlack": 88.57,
+      "oursByPreset": {
+        "baseline": {
+          "white": 90.59752232791271,
+          "black": 93.38501438428648
+        },
+        "windowed-harmonic-8": {
+          "white": 89.28874118280285,
+          "black": 92.02377273844492
+        },
+        "weighted-harmonic": {
+          "white": 85.36770176469314,
+          "black": 88.43510135048012
+        },
+        "steeper-gradient": {
+          "white": 89.13827850751335,
+          "black": 92.11533653504189
+        },
+        "caps2-like": {
+          "white": 82.63244495488215,
+          "black": 86.91499504677724
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167403792010",
+      "timeClass": "rapid",
+      "whitePlayer": "pigor1",
+      "blackPlayer": "khubsugl70",
+      "whiteRating": 1719,
+      "blackRating": 1725,
+      "result": "stalemate/stalemate",
+      "chessComWhite": 71.45,
+      "chessComBlack": 68.91,
+      "oursByPreset": {
+        "baseline": {
+          "white": 87.44074443414831,
+          "black": 87.1189894786878
+        },
+        "windowed-harmonic-8": {
+          "white": 82.61416220498391,
+          "black": 79.84787562398905
+        },
+        "weighted-harmonic": {
+          "white": 67.48094673042266,
+          "black": 69.9365298735644
+        },
+        "steeper-gradient": {
+          "white": 86.30924292629274,
+          "black": 86.04733774936857
+        },
+        "caps2-like": {
+          "white": 74.55564840685523,
+          "black": 70.2601743625237
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167407241012",
+      "timeClass": "rapid",
+      "whitePlayer": "Gyardian0",
+      "blackPlayer": "Artenio",
+      "whiteRating": 2067,
+      "blackRating": 2047,
+      "result": "timeout/win",
+      "chessComWhite": 79.98,
+      "chessComBlack": 84.62,
+      "oursByPreset": {
+        "baseline": {
+          "white": 88.28950124664247,
+          "black": 91.09505760137188
+        },
+        "windowed-harmonic-8": {
+          "white": 81.5894899596242,
+          "black": 85.16586332299387
+        },
+        "weighted-harmonic": {
+          "white": 75.22156138234683,
+          "black": 76.61314692721677
+        },
+        "steeper-gradient": {
+          "white": 86.6616478980648,
+          "black": 89.81850075064669
+        },
+        "caps2-like": {
+          "white": 70.85643735066327,
+          "black": 76.24606106333421
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167407515936",
+      "timeClass": "rapid",
+      "whitePlayer": "Enginagva",
+      "blackPlayer": "pigor1",
+      "whiteRating": 1729,
+      "blackRating": 1712,
+      "result": "win/resigned",
+      "chessComWhite": 84.21,
+      "chessComBlack": 75.98,
+      "oursByPreset": {
+        "baseline": {
+          "white": 92.24643395100544,
+          "black": 89.78787056985969
+        },
+        "windowed-harmonic-8": {
+          "white": 88.48502285875153,
+          "black": 85.76501937998516
+        },
+        "weighted-harmonic": {
+          "white": 79.82810786935514,
+          "black": 78.81248734495607
+        },
+        "steeper-gradient": {
+          "white": 91.99830982420653,
+          "black": 89.54138933934507
+        },
+        "caps2-like": {
+          "white": 83.0793549955524,
+          "black": 79.16449589864767
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167411082330",
+      "timeClass": "rapid",
+      "whitePlayer": "aamir_78",
+      "blackPlayer": "pigor1",
+      "whiteRating": 1721,
+      "blackRating": 1712,
+      "result": "repetition/repetition",
+      "chessComWhite": 90.33,
+      "chessComBlack": 90.68,
+      "oursByPreset": {
+        "baseline": {
+          "white": 94.63427349798512,
+          "black": 94.4043205155922
+        },
+        "windowed-harmonic-8": {
+          "white": 93.23533491069726,
+          "black": 92.65975955078805
+        },
+        "weighted-harmonic": {
+          "white": 84.93376874333643,
+          "black": 85.94085362071161
+        },
+        "steeper-gradient": {
+          "white": 93.62558582614024,
+          "black": 93.36323424124609
+        },
+        "caps2-like": {
+          "white": 89.11446255162497,
+          "black": 87.8089517414648
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167414348270",
+      "timeClass": "blitz",
+      "whitePlayer": "HanniaMatt",
+      "blackPlayer": "gushiro",
+      "whiteRating": 1477,
+      "blackRating": 1360,
+      "result": "checkmated/win",
+      "chessComWhite": 64.35,
+      "chessComBlack": 69.23,
+      "oursByPreset": {
+        "baseline": {
+          "white": 83.56026820855068,
+          "black": 87.26511380114833
+        },
+        "windowed-harmonic-8": {
+          "white": 65.43557886426196,
+          "black": 68.8880623347801
+        },
+        "weighted-harmonic": {
+          "white": 44.038792641098496,
+          "black": 57.01253839394625
+        },
+        "steeper-gradient": {
+          "white": 82.46319258687814,
+          "black": 86.40321865821146
+        },
+        "caps2-like": {
+          "white": 55.04248073668815,
+          "black": 56.27449414866138
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167437712720",
+      "timeClass": "blitz",
+      "whitePlayer": "diogomonte",
+      "blackPlayer": "Santhosh_Kumar7",
+      "whiteRating": 216,
+      "blackRating": 200,
+      "result": "win/checkmated",
+      "chessComWhite": 68.9,
+      "chessComBlack": 44,
+      "oursByPreset": {
+        "baseline": {
+          "white": 86.88688301648972,
+          "black": 77.70339246790871
+        },
+        "windowed-harmonic-8": {
+          "white": 83.12204812287297,
+          "black": 75.50910281851404
+        },
+        "weighted-harmonic": {
+          "white": 79.16295137163209,
+          "black": 76.03888255820289
+        },
+        "steeper-gradient": {
+          "white": 86.11132173029341,
+          "black": 77.14455873173063
+        },
+        "caps2-like": {
+          "white": 75.46377002609454,
+          "black": 66.06404123739308
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167440533178",
+      "timeClass": "rapid",
+      "whitePlayer": "Antokaber",
+      "blackPlayer": "pigor1",
+      "whiteRating": 1678,
+      "blackRating": 1716,
+      "result": "checkmated/win",
+      "chessComWhite": 63.51,
+      "chessComBlack": 72.13,
+      "oursByPreset": {
+        "baseline": {
+          "white": 81.76313123772836,
+          "black": 86.29894873002222
+        },
+        "windowed-harmonic-8": {
+          "white": 74.08344843578472,
+          "black": 79.1068766511434
+        },
+        "weighted-harmonic": {
+          "white": 67.82604444427434,
+          "black": 75.44826619581613
+        },
+        "steeper-gradient": {
+          "white": 79.96813488911253,
+          "black": 84.38597072346337
+        },
+        "caps2-like": {
+          "white": 59.19846281731703,
+          "black": 66.88739407548407
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167445349360",
+      "timeClass": "blitz",
+      "whitePlayer": "mihailMizinov",
+      "blackPlayer": "pigor1",
+      "whiteRating": 1307,
+      "blackRating": 1290,
+      "result": "win/resigned",
+      "chessComWhite": 87.82,
+      "chessComBlack": 65.8,
+      "oursByPreset": {
+        "baseline": {
+          "white": 92.5139766463184,
+          "black": 84.28596821816768
+        },
+        "windowed-harmonic-8": {
+          "white": 88.9219015174386,
+          "black": 81.64710906165712
+        },
+        "weighted-harmonic": {
+          "white": 87.92095118221263,
+          "black": 76.5382338453108
+        },
+        "steeper-gradient": {
+          "white": 90.82293884580432,
+          "black": 82.57122073160367
+        },
+        "caps2-like": {
+          "white": 81.50637839095293,
+          "black": 71.03397496188283
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167450569206",
+      "timeClass": "blitz",
+      "whitePlayer": "igricart",
+      "blackPlayer": "Mhoch3Ma",
+      "whiteRating": 217,
+      "blackRating": 229,
+      "result": "repetition/repetition",
+      "chessComWhite": 59.59,
+      "chessComBlack": 62.54,
+      "oursByPreset": {
+        "baseline": {
+          "white": 85.46728531254308,
+          "black": 86.68116822610247
+        },
+        "windowed-harmonic-8": {
+          "white": 76.77776340259503,
+          "black": 83.68750826827608
+        },
+        "weighted-harmonic": {
+          "white": 67.51383278706167,
+          "black": 77.26312801794427
+        },
+        "steeper-gradient": {
+          "white": 85.13610147594133,
+          "black": 86.34787029543585
+        },
+        "caps2-like": {
+          "white": 66.11303395208377,
+          "black": 75.89506721943629
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167452826780",
+      "timeClass": "blitz",
+      "whitePlayer": "HarumikaId",
+      "blackPlayer": "pigor1",
+      "whiteRating": 1312,
+      "blackRating": 1281,
+      "result": "win/checkmated",
+      "chessComWhite": 82.78,
+      "chessComBlack": 62.88,
+      "oursByPreset": {
+        "baseline": {
+          "white": 91.18737138628448,
+          "black": 87.48707909262633
+        },
+        "windowed-harmonic-8": {
+          "white": 86.4161366015661,
+          "black": 62.892721571306026
+        },
+        "weighted-harmonic": {
+          "white": 80.50819461145167,
+          "black": 42.030970112746076
+        },
+        "steeper-gradient": {
+          "white": 89.51477744794913,
+          "black": 87.84628926633212
+        },
+        "caps2-like": {
+          "white": 77.45465667329492,
+          "black": 53.00713744713926
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167454505792",
+      "timeClass": "blitz",
+      "whitePlayer": "GMKrikor",
+      "blackPlayer": "Emilio_Profili",
+      "whiteRating": 2939,
+      "blackRating": 2827,
+      "result": "win/timeout",
+      "chessComWhite": 94.3,
+      "chessComBlack": 94.31,
+      "oursByPreset": {
+        "baseline": {
+          "white": 96.77953304998185,
+          "black": 96.69564936120322
+        },
+        "windowed-harmonic-8": {
+          "white": 96.26405417683014,
+          "black": 96.21351619636647
+        },
+        "weighted-harmonic": {
+          "white": 91.07668527551971,
+          "black": 92.88213771741059
+        },
+        "steeper-gradient": {
+          "white": 96.01076039884225,
+          "black": 95.89568800866653
+        },
+        "caps2-like": {
+          "white": 93.60926562921837,
+          "black": 93.61650447024479
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167454749096",
+      "timeClass": "blitz",
+      "whitePlayer": "GMKrikor",
+      "blackPlayer": "Keranke",
+      "whiteRating": 2932,
+      "blackRating": 2984,
+      "result": "resigned/win",
+      "chessComWhite": 75.3,
+      "chessComBlack": 80.67,
+      "oursByPreset": {
+        "baseline": {
+          "white": 88.79981396879857,
+          "black": 91.36406223346562
+        },
+        "windowed-harmonic-8": {
+          "white": 88.18992076096153,
+          "black": 90.54672888271237
+        },
+        "weighted-harmonic": {
+          "white": 72.1305096742299,
+          "black": 86.77232054982446
+        },
+        "steeper-gradient": {
+          "white": 86.65354454352588,
+          "black": 89.39151840342643
+        },
+        "caps2-like": {
+          "white": 80.45528650209573,
+          "black": 84.22448691509473
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167456013828",
+      "timeClass": "blitz",
+      "whitePlayer": "gaguera",
+      "blackPlayer": "bentencity",
+      "whiteRating": 516,
+      "blackRating": 485,
+      "result": "win/checkmated",
+      "chessComWhite": 86.89,
+      "chessComBlack": 72.39,
+      "oursByPreset": {
+        "baseline": {
+          "white": 92.91901162348645,
+          "black": 87.30708075836512
+        },
+        "windowed-harmonic-8": {
+          "white": 91.08603596915964,
+          "black": 77.18654560052369
+        },
+        "weighted-harmonic": {
+          "white": 89.66649768714956,
+          "black": 55.1142280125495
+        },
+        "steeper-gradient": {
+          "white": 91.48053947156757,
+          "black": 86.52149661053933
+        },
+        "caps2-like": {
+          "white": 85.62674392865823,
+          "black": 62.8314949326594
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167458303530",
+      "timeClass": "rapid",
+      "whitePlayer": "22manudt",
+      "blackPlayer": "cowboy_777",
+      "whiteRating": 1084,
+      "blackRating": 1105,
+      "result": "repetition/repetition",
+      "chessComWhite": 56.14,
+      "chessComBlack": 54.43,
+      "oursByPreset": {
+        "baseline": {
+          "white": 82.17648347268899,
+          "black": 80.09866991004336
+        },
+        "windowed-harmonic-8": {
+          "white": 61.282627353494995,
+          "black": 60.57986248014003
+        },
+        "weighted-harmonic": {
+          "white": 57.71156434667011,
+          "black": 57.366247940379
+        },
+        "steeper-gradient": {
+          "white": 80.39444293929827,
+          "black": 78.23881812610726
+        },
+        "caps2-like": {
+          "white": 45.599796382731334,
+          "black": 43.38357364342401
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167462892366",
+      "timeClass": "bullet",
+      "whitePlayer": "gushiro",
+      "blackPlayer": "32payne32",
+      "whiteRating": 1286,
+      "blackRating": 1297,
+      "result": "resigned/win",
+      "chessComWhite": 74.37,
+      "chessComBlack": 96.01,
+      "oursByPreset": {
+        "baseline": {
+          "white": 90.24678881322656,
+          "black": 96.83656606462579
+        },
+        "windowed-harmonic-8": {
+          "white": 82.90985937204663,
+          "black": 95.48346511015285
+        },
+        "weighted-harmonic": {
+          "white": 73.82722369124014,
+          "black": 89.21493339612056
+        },
+        "steeper-gradient": {
+          "white": 90.01597097847191,
+          "black": 96.27697333257208
+        },
+        "caps2-like": {
+          "white": 73.26700147922355,
+          "black": 92.34810469332604
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167462962852",
+      "timeClass": "bullet",
+      "whitePlayer": "TheseGoTo11",
+      "blackPlayer": "gushiro",
+      "whiteRating": 1297,
+      "blackRating": 1302,
+      "result": "timeout/win",
+      "chessComWhite": 75.33,
+      "chessComBlack": 85.8,
+      "oursByPreset": {
+        "baseline": {
+          "white": 90.13107419112136,
+          "black": 94.75484212860037
+        },
+        "windowed-harmonic-8": {
+          "white": 88.84935527023151,
+          "black": 94.18712198207552
+        },
+        "weighted-harmonic": {
+          "white": 84.10378933222277,
+          "black": 89.47428374740878
+        },
+        "steeper-gradient": {
+          "white": 89.50787735636214,
+          "black": 94.49310019480355
+        },
+        "caps2-like": {
+          "white": 83.52892273866016,
+          "black": 91.2043909721778
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167479959684",
+      "timeClass": "rapid",
+      "whitePlayer": "22manudt",
+      "blackPlayer": "Keladon",
+      "whiteRating": 1075,
+      "blackRating": 1113,
+      "result": "resigned/win",
+      "chessComWhite": 67.45,
+      "chessComBlack": 74.65,
+      "oursByPreset": {
+        "baseline": {
+          "white": 82.90197271244662,
+          "black": 87.86084489948333
+        },
+        "windowed-harmonic-8": {
+          "white": 78.43532844298869,
+          "black": 83.4686138650027
+        },
+        "weighted-harmonic": {
+          "white": 74.08492705054391,
+          "black": 78.13723018003643
+        },
+        "steeper-gradient": {
+          "white": 80.85255757914402,
+          "black": 86.06660352791963
+        },
+        "caps2-like": {
+          "white": 67.74526824540084,
+          "black": 75.01081183011064
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167482988582",
+      "timeClass": "rapid",
+      "whitePlayer": "dalton6421",
+      "blackPlayer": "gushiro",
+      "whiteRating": 1496,
+      "blackRating": 1500,
+      "result": "resigned/win",
+      "chessComWhite": 78.51,
+      "chessComBlack": 84.25,
+      "oursByPreset": {
+        "baseline": {
+          "white": 89.86534758147221,
+          "black": 93.15591166690571
+        },
+        "windowed-harmonic-8": {
+          "white": 81.9613933933452,
+          "black": 89.91649064133104
+        },
+        "weighted-harmonic": {
+          "white": 69.04545676720826,
+          "black": 82.51176599026817
+        },
+        "steeper-gradient": {
+          "white": 89.45173790806733,
+          "black": 92.54265796125642
+        },
+        "caps2-like": {
+          "white": 73.36131971366979,
+          "black": 84.85774551403162
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167483399572",
+      "timeClass": "rapid",
+      "whitePlayer": "Alexandre13011",
+      "blackPlayer": "danilorogg1",
+      "whiteRating": 953,
+      "blackRating": 933,
+      "result": "win/resigned",
+      "chessComWhite": 69.9,
+      "chessComBlack": 72.53,
+      "oursByPreset": {
+        "baseline": {
+          "white": 87.87428736916743,
+          "black": 89.26884126966785
+        },
+        "windowed-harmonic-8": {
+          "white": 87.89197051759172,
+          "black": 87.25206309482114
+        },
+        "weighted-harmonic": {
+          "white": 63.9410206066005,
+          "black": 84.91982692424658
+        },
+        "steeper-gradient": {
+          "white": 86.2442191877912,
+          "black": 87.42433774403614
+        },
+        "caps2-like": {
+          "white": 80.1590240870086,
+          "black": 79.41850433302828
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167497403616",
+      "timeClass": "rapid",
+      "whitePlayer": "annacrn1",
+      "blackPlayer": "diogomonte",
+      "whiteRating": 310,
+      "blackRating": 497,
+      "result": "win/checkmated",
+      "chessComWhite": 95.17,
+      "chessComBlack": 79.65,
+      "oursByPreset": {
+        "baseline": {
+          "white": 96.73565300923029,
+          "black": 92.09452643011429
+        },
+        "windowed-harmonic-8": {
+          "white": 96.78953023610137,
+          "black": 85.3315225976839
+        },
+        "weighted-harmonic": {
+          "white": 91.72913108081045,
+          "black": 76.12279665088815
+        },
+        "steeper-gradient": {
+          "white": 96.0538027908561,
+          "black": 91.63724013325061
+        },
+        "caps2-like": {
+          "white": 94.77167293200677,
+          "black": 77.57249630582749
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167507886356",
+      "timeClass": "rapid",
+      "whitePlayer": "danilorogg1",
+      "blackPlayer": "LuanAlison",
+      "whiteRating": 949,
+      "blackRating": 945,
+      "result": "win/checkmated",
+      "chessComWhite": 96.91,
+      "chessComBlack": 32.75,
+      "oursByPreset": {
+        "baseline": {
+          "white": 99.40488419017375,
+          "black": 83.45242348269447
+        },
+        "windowed-harmonic-8": {
+          "white": 99.62480946493153,
+          "black": 73.40641645121518
+        },
+        "weighted-harmonic": {
+          "white": 98.58519322093736,
+          "black": 70.53772808866829
+        },
+        "steeper-gradient": {
+          "white": 99.24505796746247,
+          "black": 82.93093910370465
+        },
+        "caps2-like": {
+          "white": 99.36971211584208,
+          "black": 66.6249944917167
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167516098900",
+      "timeClass": "blitz",
+      "whitePlayer": "gaguera",
+      "blackPlayer": "negans211",
+      "whiteRating": 580,
+      "blackRating": 552,
+      "result": "win/abandoned",
+      "chessComWhite": 77.92,
+      "chessComBlack": 72.42,
+      "oursByPreset": {
+        "baseline": {
+          "white": 87.6597396299244,
+          "black": 87.61212101554881
+        },
+        "windowed-harmonic-8": {
+          "white": 85.96584341296463,
+          "black": 85.77309153344471
+        },
+        "weighted-harmonic": {
+          "white": 83.3767721539447,
+          "black": 86.30342305495586
+        },
+        "steeper-gradient": {
+          "white": 84.78856671691783,
+          "black": 84.76257139299697
+        },
+        "caps2-like": {
+          "white": 76.6513351328988,
+          "black": 76.48841831357312
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167517068016",
+      "timeClass": "blitz",
+      "whitePlayer": "igricart",
+      "blackPlayer": "rubadilip",
+      "whiteRating": 249,
+      "blackRating": 234,
+      "result": "win/checkmated",
+      "chessComWhite": 68.49,
+      "chessComBlack": 60.48,
+      "oursByPreset": {
+        "baseline": {
+          "white": 87.03451922173727,
+          "black": 85.18681229248931
+        },
+        "windowed-harmonic-8": {
+          "white": 77.46313743935475,
+          "black": 54.08578384410569
+        },
+        "weighted-harmonic": {
+          "white": 71.25275716023961,
+          "black": 44.06310593854202
+        },
+        "steeper-gradient": {
+          "white": 85.42243710896817,
+          "black": 84.26603226654606
+        },
+        "caps2-like": {
+          "white": 64.53805806162316,
+          "black": 43.49324235053762
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167519748942",
+      "timeClass": "blitz",
+      "whitePlayer": "Nycos999",
+      "blackPlayer": "igricart",
+      "whiteRating": 278,
+      "blackRating": 242,
+      "result": "win/timeout",
+      "chessComWhite": 80.53,
+      "chessComBlack": 74.32,
+      "oursByPreset": {
+        "baseline": {
+          "white": 92.99098472577882,
+          "black": 91.24660981546864
+        },
+        "windowed-harmonic-8": {
+          "white": 92.72790731393982,
+          "black": 85.37085863389899
+        },
+        "weighted-harmonic": {
+          "white": 90.25086141104096,
+          "black": 72.51923671969254
+        },
+        "steeper-gradient": {
+          "white": 93.54277273631212,
+          "black": 91.65080848279521
+        },
+        "caps2-like": {
+          "white": 90.6097706479761,
+          "black": 80.27367142870048
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167520258582",
+      "timeClass": "blitz",
+      "whitePlayer": "safrin07",
+      "blackPlayer": "igricart",
+      "whiteRating": 274,
+      "blackRating": 234,
+      "result": "win/timeout",
+      "chessComWhite": 60.4,
+      "chessComBlack": 62.48,
+      "oursByPreset": {
+        "baseline": {
+          "white": 86.18885737072753,
+          "black": 87.41442967107088
+        },
+        "windowed-harmonic-8": {
+          "white": 82.52352011791301,
+          "black": 68.37051239933996
+        },
+        "weighted-harmonic": {
+          "white": 81.63608031635192,
+          "black": 35.8044229378898
+        },
+        "steeper-gradient": {
+          "white": 86.20417785124364,
+          "black": 87.8025769550986
+        },
+        "caps2-like": {
+          "white": 78.10871003031448,
+          "black": 65.97516518221879
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167520669676",
+      "timeClass": "blitz",
+      "whitePlayer": "vataziger",
+      "blackPlayer": "gaguera",
+      "whiteRating": 582,
+      "blackRating": 580,
+      "result": "win/checkmated",
+      "chessComWhite": 68.26,
+      "chessComBlack": 58.76,
+      "oursByPreset": {
+        "baseline": {
+          "white": 86.45873302662982,
+          "black": 83.94901222153288
+        },
+        "windowed-harmonic-8": {
+          "white": 72.76086687913458,
+          "black": 65.32322652900527
+        },
+        "weighted-harmonic": {
+          "white": 64.35856248368142,
+          "black": 59.93608118027431
+        },
+        "steeper-gradient": {
+          "white": 85.46526462015068,
+          "black": 83.80229099182687
+        },
+        "caps2-like": {
+          "white": 61.271534931483885,
+          "black": 50.07005004146277
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167520997326",
+      "timeClass": "blitz",
+      "whitePlayer": "gaguera",
+      "blackPlayer": "Himanshu8236",
+      "whiteRating": 588,
+      "blackRating": 572,
+      "result": "win/timeout",
+      "chessComWhite": 79.67,
+      "chessComBlack": 82.22,
+      "oursByPreset": {
+        "baseline": {
+          "white": 89.96393153346271,
+          "black": 91.87681621619724
+        },
+        "windowed-harmonic-8": {
+          "white": 84.53454277098606,
+          "black": 87.5507911568015
+        },
+        "weighted-harmonic": {
+          "white": 71.06002967921347,
+          "black": 77.86013436238665
+        },
+        "steeper-gradient": {
+          "white": 88.90275835524326,
+          "black": 90.86146077530448
+        },
+        "caps2-like": {
+          "white": 75.55293734958008,
+          "black": 79.89003831144682
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167521348152",
+      "timeClass": "rapid",
+      "whitePlayer": "HeatziHugz",
+      "blackPlayer": "22manudt",
+      "whiteRating": 1096,
+      "blackRating": 1058,
+      "result": "win/resigned",
+      "chessComWhite": 71.24,
+      "chessComBlack": 58,
+      "oursByPreset": {
+        "baseline": {
+          "white": 89.05706811700543,
+          "black": 84.10305250727838
+        },
+        "windowed-harmonic-8": {
+          "white": 83.09022979127047,
+          "black": 76.36272342947025
+        },
+        "weighted-harmonic": {
+          "white": 74.97191615803047,
+          "black": 69.49067430543002
+        },
+        "steeper-gradient": {
+          "white": 87.71900998896551,
+          "black": 82.66011626411566
+        },
+        "caps2-like": {
+          "white": 72.41191615969124,
+          "black": 62.367166908325125
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167523024236",
+      "timeClass": "blitz",
+      "whitePlayer": "diogomonte",
+      "blackPlayer": "1710Oleksii",
+      "whiteRating": 241,
+      "blackRating": 223,
+      "result": "win/abandoned",
+      "chessComWhite": 59.18,
+      "chessComBlack": 56.15,
+      "oursByPreset": {
+        "baseline": {
+          "white": 80.87435925361885,
+          "black": 79.66864568126827
+        },
+        "windowed-harmonic-8": {
+          "white": 67.798376046101,
+          "black": 62.659089682029354
+        },
+        "weighted-harmonic": {
+          "white": 63.002287031012145,
+          "black": 52.83166979814432
+        },
+        "steeper-gradient": {
+          "white": 78.58321564231133,
+          "black": 77.90430717598254
+        },
+        "caps2-like": {
+          "white": 52.98392608535955,
+          "black": 46.369317363181146
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167529012904",
+      "timeClass": "rapid",
+      "whitePlayer": "pigor1",
+      "blackPlayer": "hhghjgfujhfyjh",
+      "whiteRating": 1724,
+      "blackRating": 1706,
+      "result": "win/resigned",
+      "chessComWhite": 80.24,
+      "chessComBlack": 66.9,
+      "oursByPreset": {
+        "baseline": {
+          "white": 91.64906741493577,
+          "black": 86.33358900835084
+        },
+        "windowed-harmonic-8": {
+          "white": 89.31398615923649,
+          "black": 82.54541691015886
+        },
+        "weighted-harmonic": {
+          "white": 88.82500492920707,
+          "black": 83.07495077789092
+        },
+        "steeper-gradient": {
+          "white": 90.53113543413903,
+          "black": 84.96360234788362
+        },
+        "caps2-like": {
+          "white": 83.40802733149233,
+          "black": 73.2832876464751
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167529560374",
+      "timeClass": "rapid",
+      "whitePlayer": "pigor1",
+      "blackPlayer": "1mou2yun3kai",
+      "whiteRating": 1716,
+      "blackRating": 1736,
+      "result": "resigned/win",
+      "chessComWhite": 69.22,
+      "chessComBlack": 82.36,
+      "oursByPreset": {
+        "baseline": {
+          "white": 85.92120238272744,
+          "black": 92.71497809710331
+        },
+        "windowed-harmonic-8": {
+          "white": 82.31474190854114,
+          "black": 88.2975802252854
+        },
+        "weighted-harmonic": {
+          "white": 62.198441492120104,
+          "black": 88.2556639831548
+        },
+        "steeper-gradient": {
+          "white": 84.33300206914589,
+          "black": 91.29415415425531
+        },
+        "caps2-like": {
+          "white": 72.03786743173592,
+          "black": 81.46348757719034
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167530154154",
+      "timeClass": "rapid",
+      "whitePlayer": "pigor1",
+      "blackPlayer": "isabellaramani",
+      "whiteRating": 1716,
+      "blackRating": 1721,
+      "result": "win/checkmated",
+      "chessComWhite": 88.46,
+      "chessComBlack": 84.26,
+      "oursByPreset": {
+        "baseline": {
+          "white": 97.42263699008053,
+          "black": 95.38601340107168
+        },
+        "windowed-harmonic-8": {
+          "white": 97.12735080017333,
+          "black": 93.11599489982305
+        },
+        "weighted-harmonic": {
+          "white": 95.50560697013275,
+          "black": 80.27997190704636
+        },
+        "steeper-gradient": {
+          "white": 97.83908043017678,
+          "black": 95.95151089884648
+        },
+        "caps2-like": {
+          "white": 96.89142993822739,
+          "black": 90.95540611393771
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167531502024",
+      "timeClass": "blitz",
+      "whitePlayer": "Hikaru",
+      "blackPlayer": "Milady-de-Winter",
+      "whiteRating": 3413,
+      "blackRating": 2964,
+      "result": "win/resigned",
+      "chessComWhite": 86.72,
+      "chessComBlack": 81.41,
+      "oursByPreset": {
+        "baseline": {
+          "white": 93.13994828434132,
+          "black": 90.37564316078208
+        },
+        "windowed-harmonic-8": {
+          "white": 90.91879157976075,
+          "black": 88.33554147044391
+        },
+        "weighted-harmonic": {
+          "white": 82.0367562204087,
+          "black": 77.62981103578214
+        },
+        "steeper-gradient": {
+          "white": 91.98542800247849,
+          "black": 89.00878814479609
+        },
+        "caps2-like": {
+          "white": 84.78660738724973,
+          "black": 81.34168068527993
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167533679860",
+      "timeClass": "blitz",
+      "whitePlayer": "gaguera",
+      "blackPlayer": "octobasse",
+      "whiteRating": 580,
+      "blackRating": 604,
+      "result": "checkmated/win",
+      "chessComWhite": 68.27,
+      "chessComBlack": 71.06,
+      "oursByPreset": {
+        "baseline": {
+          "white": 86.40442179440181,
+          "black": 87.99736885080183
+        },
+        "windowed-harmonic-8": {
+          "white": 77.0615045378716,
+          "black": 80.3622226468875
+        },
+        "weighted-harmonic": {
+          "white": 63.61991343988703,
+          "black": 70.27057079411979
+        },
+        "steeper-gradient": {
+          "white": 84.946097411199,
+          "black": 86.22337221923199
+        },
+        "caps2-like": {
+          "white": 66.24685326109055,
+          "black": 69.2940097644607
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167533988310",
+      "timeClass": "blitz",
+      "whitePlayer": "TrimitziosP7",
+      "blackPlayer": "GMKrikor",
+      "whiteRating": 2925,
+      "blackRating": 2959,
+      "result": "resigned/win",
+      "chessComWhite": 82.96,
+      "chessComBlack": 88.73,
+      "oursByPreset": {
+        "baseline": {
+          "white": 91.83375667952639,
+          "black": 94.6307978789789
+        },
+        "windowed-harmonic-8": {
+          "white": 90.21326242944583,
+          "black": 93.03688137920693
+        },
+        "weighted-harmonic": {
+          "white": 79.95471705074219,
+          "black": 89.13400050669382
+        },
+        "steeper-gradient": {
+          "white": 90.55478692343004,
+          "black": 93.5174925886661
+        },
+        "caps2-like": {
+          "white": 83.71190545690807,
+          "black": 88.48123356648391
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167534710036",
+      "timeClass": "blitz",
+      "whitePlayer": "GMKrikor",
+      "blackPlayer": "Formidable_1207",
+      "whiteRating": 2964,
+      "blackRating": 2816,
+      "result": "win/resigned",
+      "chessComWhite": 92.65,
+      "chessComBlack": 84.74,
+      "oursByPreset": {
+        "baseline": {
+          "white": 96.44201994905336,
+          "black": 93.30524793599984
+        },
+        "windowed-harmonic-8": {
+          "white": 96.32687403606853,
+          "black": 93.00319164743055
+        },
+        "weighted-harmonic": {
+          "white": 92.64934629762215,
+          "black": 89.0592228194871
+        },
+        "steeper-gradient": {
+          "white": 95.97968918452204,
+          "black": 92.54665003892235
+        },
+        "caps2-like": {
+          "white": 94.30483768471808,
+          "black": 89.16841326182588
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "167538573192",
+      "timeClass": "rapid",
+      "whitePlayer": "pigor1",
+      "blackPlayer": "urethera",
+      "whiteRating": 1724,
+      "blackRating": 1720,
+      "result": "win/timeout",
+      "chessComWhite": 85.57,
+      "chessComBlack": 73.81,
+      "oursByPreset": {
+        "baseline": {
+          "white": 91.8347813673873,
+          "black": 86.96480242259153
+        },
+        "windowed-harmonic-8": {
+          "white": 88.85715051655643,
+          "black": 84.6299296208645
+        },
+        "weighted-harmonic": {
+          "white": 83.18157379106509,
+          "black": 78.48617933190044
+        },
+        "steeper-gradient": {
+          "white": 90.48023927711417,
+          "black": 84.96542721225465
+        },
+        "caps2-like": {
+          "white": 81.20853124594,
+          "black": 75.77380882103357
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "170685050935",
+      "timeClass": "blitz",
+      "whitePlayer": "GMKrikor",
+      "blackPlayer": "LSChess",
+      "whiteRating": 2942,
+      "blackRating": 2769,
+      "result": "resigned/win",
+      "chessComWhite": 81.49,
+      "chessComBlack": 85.62,
+      "oursByPreset": {
+        "baseline": {
+          "white": 93.21237705208347,
+          "black": 94.53430741322217
+        },
+        "windowed-harmonic-8": {
+          "white": 89.03438283874318,
+          "black": 91.17119932552791
+        },
+        "weighted-harmonic": {
+          "white": 72.21097033466347,
+          "black": 73.83373984011382
+        },
+        "steeper-gradient": {
+          "white": 92.85459135393417,
+          "black": 94.26229699244332
+        },
+        "caps2-like": {
+          "white": 83.98902519512178,
+          "black": 86.85924892260729
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "170686248743",
+      "timeClass": "blitz",
+      "whitePlayer": "GMKrikor",
+      "blackPlayer": "karinachess1",
+      "whiteRating": 2935,
+      "blackRating": 2774,
+      "result": "timeout/win",
+      "chessComWhite": 70.94,
+      "chessComBlack": 72.47,
+      "oursByPreset": {
+        "baseline": {
+          "white": 90.77906210177052,
+          "black": 91.03463972123389
+        },
+        "windowed-harmonic-8": {
+          "white": 83.49987266377116,
+          "black": 83.68492636705996
+        },
+        "weighted-harmonic": {
+          "white": 68.21969558119997,
+          "black": 68.24365810917668
+        },
+        "steeper-gradient": {
+          "white": 89.41810432419985,
+          "black": 89.72780201832646
+        },
+        "caps2-like": {
+          "white": 73.47503089757052,
+          "black": 73.90204601498115
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "170848826059",
+      "timeClass": "rapid",
+      "whitePlayer": "Artenio",
+      "blackPlayer": "Nepo_Sp",
+      "whiteRating": 2039,
+      "blackRating": 1202,
+      "result": "win/resigned",
+      "chessComWhite": 93.58,
+      "chessComBlack": 86.6,
+      "oursByPreset": {
+        "baseline": {
+          "white": 95.1444973487208,
+          "black": 92.6764436332076
+        },
+        "windowed-harmonic-8": {
+          "white": 94.27857397411425,
+          "black": 89.38672615657961
+        },
+        "weighted-harmonic": {
+          "white": 91.7812204271201,
+          "black": 81.34392093404784
+        },
+        "steeper-gradient": {
+          "white": 93.95582370569754,
+          "black": 91.40416277352402
+        },
+        "caps2-like": {
+          "white": 90.38186817057758,
+          "black": 82.12172050062809
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "170850023507",
+      "timeClass": "rapid",
+      "whitePlayer": "Junior_Araujo_Chess",
+      "blackPlayer": "Artenio",
+      "whiteRating": 1415,
+      "blackRating": 2023,
+      "result": "win/resigned",
+      "chessComWhite": 97.46,
+      "chessComBlack": 80.65,
+      "oursByPreset": {
+        "baseline": {
+          "white": 95.85234452224014,
+          "black": 88.8996631236094
+        },
+        "windowed-harmonic-8": {
+          "white": 93.86626364734485,
+          "black": 85.54007621844477
+        },
+        "weighted-harmonic": {
+          "white": 90.01863589714118,
+          "black": 76.49896380530468
+        },
+        "steeper-gradient": {
+          "white": 94.89753799619321,
+          "black": 87.6954830785548
+        },
+        "caps2-like": {
+          "white": 89.35630671158997,
+          "black": 76.54943234362227
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "170852427953",
+      "timeClass": "rapid",
+      "whitePlayer": "MuriloBBarbosa",
+      "blackPlayer": "Artenio",
+      "whiteRating": 1167,
+      "blackRating": 2016,
+      "result": "resigned/win",
+      "chessComWhite": 64.18,
+      "chessComBlack": 71.29,
+      "oursByPreset": {
+        "baseline": {
+          "white": 84.4134354717349,
+          "black": 87.43312479001126
+        },
+        "windowed-harmonic-8": {
+          "white": 76.01712199944312,
+          "black": 83.32265579509554
+        },
+        "weighted-harmonic": {
+          "white": 71.69169078993107,
+          "black": 80.12363610044898
+        },
+        "steeper-gradient": {
+          "white": 82.6071910935824,
+          "black": 86.08166465369861
+        },
+        "caps2-like": {
+          "white": 63.32022986107071,
+          "black": 73.8003947186759
+        }
+      },
+      "evalSource": "stockfish"
+    },
+    {
+      "gameId": "170853625709",
+      "timeClass": "rapid",
+      "whitePlayer": "olivmaicon33",
+      "blackPlayer": "Artenio",
+      "whiteRating": 2315,
+      "blackRating": 2013,
+      "result": "win/checkmated",
+      "chessComWhite": 93.16,
+      "chessComBlack": 71.44,
+      "oursByPreset": {
+        "baseline": {
+          "white": 93.09395188998899,
+          "black": 85.28398092523855
+        },
+        "windowed-harmonic-8": {
+          "white": 90.91508568870206,
+          "black": 81.57764312595843
+        },
+        "weighted-harmonic": {
+          "white": 86.85381167648835,
+          "black": 77.2431680497167
+        },
+        "steeper-gradient": {
+          "white": 91.5639445197607,
+          "black": 84.05424925283053
+        },
+        "caps2-like": {
+          "white": 84.39101336101245,
+          "black": 72.00218727479563
+        }
+      },
+      "evalSource": "stockfish"
+    }
+  ],
+  "statsByPreset": {
+    "baseline": {
+      "n": 67,
+      "maeWhite": 11.341260130701457,
+      "maeBlack": 14.072690454411578,
+      "mae": 12.706975292556518,
+      "rmse": 15.456666919740409,
+      "meanBias": 12.586605186139963,
+      "maxAbs": 50.70242348269447,
+      "pearson": 0.838509510819628
+    },
+    "windowed-harmonic-8": {
+      "n": 67,
+      "maeWhite": 6.864726799202512,
+      "maeBlack": 8.10322466079746,
+      "mae": 7.483975729999988,
+      "rmse": 9.75245129622636,
+      "meanBias": 6.871613973906904,
+      "maxAbs": 40.65641645121518,
+      "pearson": 0.8918676712924619
+    },
+    "weighted-harmonic": {
+      "n": 67,
+      "maeWhite": 5.597200709828605,
+      "maeBlack": 8.815793120098943,
+      "mae": 7.206496914963772,
+      "rmse": 10.164189829675102,
+      "meanBias": -1.0602578131746654,
+      "maxAbs": 37.78772808866829,
+      "pearson": 0.7798958833392408
+    },
+    "steeper-gradient": {
+      "n": 67,
+      "maeWhite": 10.298321424949716,
+      "maeBlack": 13.077710039224504,
+      "mae": 11.68801573208711,
+      "rmse": 14.589022399828321,
+      "meanBias": 11.492113500901747,
+      "maxAbs": 50.180939103704645,
+      "pearson": 0.835372418376079
+    },
+    "caps2-like": {
+      "n": 67,
+      "maeWhite": 4.449322097368299,
+      "maeBlack": 5.963231842149334,
+      "mae": 5.206276969758817,
+      "rmse": 7.373156826998712,
+      "meanBias": -0.7847161714471613,
+      "maxAbs": 33.874994491716706,
+      "pearson": 0.886336307087824
+    }
+  }
+}

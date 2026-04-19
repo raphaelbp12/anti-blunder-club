@@ -1,0 +1,947 @@
+{
+  "generatedAt": "2026-04-19T19:59:29.265Z",
+  "gitSha": "39169146f653c742c9f320d76b5bb15377fb06b9",
+  "winner": {
+    "centipawnGradient": 0.003,
+    "moveCoefA": 100,
+    "moveCoefK": 6.5,
+    "moveCoefC": 1.5,
+    "aggregator": "windowed-harmonic",
+    "windowSize": 6,
+    "volatilityWeightExponent": 1
+  },
+  "fullCorpus": {
+    "params": {
+      "centipawnGradient": 0.003,
+      "moveCoefA": 100,
+      "moveCoefK": 6.5,
+      "moveCoefC": 1.5,
+      "aggregator": "windowed-harmonic",
+      "windowSize": 6,
+      "volatilityWeightExponent": 1
+    },
+    "mae": 3.967018996535565,
+    "maeWhite": 3.74830851201963,
+    "maeBlack": 4.185729481051498,
+    "rmse": 5.420046675502431,
+    "bias": 1.0176580004627505,
+    "pearson": 0.9277983689672538,
+    "score": 4.221433496651253
+  },
+  "random7030": {
+    "train": 41,
+    "test": 12,
+    "winnerTrainRank": 2,
+    "winnerTestRank": 1,
+    "winnerTest": {
+      "params": {
+        "centipawnGradient": 0.003,
+        "moveCoefA": 100,
+        "moveCoefK": 6.5,
+        "moveCoefC": 1.5,
+        "aggregator": "windowed-harmonic",
+        "windowSize": 6,
+        "volatilityWeightExponent": 1
+      },
+      "mae": 2.794597523040485,
+      "maeWhite": 2.3820366886536863,
+      "maeBlack": 3.207158357427284,
+      "rmse": 4.13642958984863,
+      "bias": 0.2681572738838464,
+      "pearson": 0.9651600832580458,
+      "score": 2.8616368415114466,
+      "rank": 1
+    },
+    "spearmanRho": 0.5529411764705883
+  },
+  "leaveOneUserOut": [
+    {
+      "user": "22manudt",
+      "nTest": 4,
+      "top3": [
+        {
+          "params": {
+            "centipawnGradient": 0.003,
+            "moveCoefA": 100,
+            "moveCoefK": 6.5,
+            "moveCoefC": 1.5,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 5.081151318866069,
+          "maeWhite": 2.854823206740388,
+          "maeBlack": 7.30747943099175,
+          "rmse": 7.7422522887047736,
+          "bias": 2.903412866192668,
+          "pearson": 0.8259420823233804,
+          "score": 5.807004535414236
+        },
+        {
+          "params": {
+            "centipawnGradient": 0.003,
+            "moveCoefA": 100,
+            "moveCoefK": 6,
+            "moveCoefC": 3.17,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 5.285426874277814,
+          "maeWhite": 2.992242346669217,
+          "maeBlack": 7.578611401886411,
+          "rmse": 8.05889442954834,
+          "bias": 3.013225278622542,
+          "pearson": 0.8073584594969968,
+          "score": 6.038733193933449
+        },
+        {
+          "params": {
+            "centipawnGradient": 0.003,
+            "moveCoefA": 100,
+            "moveCoefK": 6.5,
+            "moveCoefC": 3.17,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 5.2751079597917565,
+          "maeWhite": 3.0743263917354646,
+          "maeBlack": 7.475889527848048,
+          "rmse": 7.425446120593536,
+          "bias": 0.6762049167035817,
+          "pearson": 0.8091638757806313,
+          "score": 5.444159188967652
+        }
+      ],
+      "winnerRank": 17,
+      "winnerMae": 5.081151318866069,
+      "foldBestMae": 4.821492081816758
+    },
+    {
+      "user": "annacrn1",
+      "nTest": 3,
+      "top3": [
+        {
+          "params": {
+            "centipawnGradient": 0.003,
+            "moveCoefA": 100,
+            "moveCoefK": 6.5,
+            "moveCoefC": 1.5,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 3.291034515018785,
+          "maeWhite": 3.3399318676727767,
+          "maeBlack": 3.2421371623647937,
+          "rmse": 3.670593580276108,
+          "bias": 2.5727437711200465,
+          "pearson": 0.9819339927170353,
+          "score": 3.934220457798797
+        },
+        {
+          "params": {
+            "centipawnGradient": 0.003,
+            "moveCoefA": 100,
+            "moveCoefK": 6,
+            "moveCoefC": 3.17,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 3.2568002675039316,
+          "maeWhite": 3.575405565348646,
+          "maeBlack": 2.9381949696592167,
+          "rmse": 3.4246677751154415,
+          "bias": 1.968549651491119,
+          "pearson": 0.9817396450817666,
+          "score": 3.748937680376711
+        },
+        {
+          "params": {
+            "centipawnGradient": 0.0035,
+            "moveCoefA": 100,
+            "moveCoefK": 6.5,
+            "moveCoefC": 0,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 3.619241635764998,
+          "maeWhite": 3.5666544905495385,
+          "maeBlack": 3.6718287809804573,
+          "rmse": 4.255082275154864,
+          "bias": 3.2650830954261685,
+          "pearson": 0.9791134698690169,
+          "score": 4.43551240962154
+        }
+      ],
+      "winnerRank": 238,
+      "winnerMae": 3.291034515018785,
+      "foldBestMae": 1.951588143881222
+    },
+    {
+      "user": "artenio",
+      "nTest": 5,
+      "top3": [
+        {
+          "params": {
+            "centipawnGradient": 0.003,
+            "moveCoefA": 100,
+            "moveCoefK": 6.5,
+            "moveCoefC": 1.5,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 3.909963432924877,
+          "maeWhite": 4.75609140784641,
+          "maeBlack": 3.063835458003345,
+          "rmse": 4.435869205360113,
+          "bias": -2.5720503314183842,
+          "pearson": 0.9660531453585742,
+          "score": 4.552976015779473
+        },
+        {
+          "params": {
+            "centipawnGradient": 0.003,
+            "moveCoefA": 100,
+            "moveCoefK": 6.5,
+            "moveCoefC": 3.17,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 4.849001135119524,
+          "maeWhite": 5.792697269389507,
+          "maeBlack": 3.9053050008495402,
+          "rmse": 5.675963564189874,
+          "bias": -4.435200747831563,
+          "pearson": 0.9652195021499264,
+          "score": 5.957801322077414
+        },
+        {
+          "params": {
+            "centipawnGradient": 0.003,
+            "moveCoefA": 100,
+            "moveCoefK": 6,
+            "moveCoefC": 3.17,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 4.378120331906276,
+          "maeWhite": 5.43233022805112,
+          "maeBlack": 3.323910435761431,
+          "rmse": 4.928283976251442,
+          "bias": -2.9575760056517835,
+          "pearson": 0.9655209493466005,
+          "score": 5.117514333319222
+        }
+      ],
+      "winnerRank": 215,
+      "winnerMae": 3.909963432924877,
+      "foldBestMae": 2.8805068212853397
+    },
+    {
+      "user": "danilorogg1",
+      "nTest": 2,
+      "top3": [
+        {
+          "params": {
+            "centipawnGradient": 0.003,
+            "moveCoefA": 100,
+            "moveCoefK": 6.5,
+            "moveCoefC": 1.5,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 8.931098718078095,
+          "maeWhite": 6.746830859808647,
+          "maeBlack": 11.115366576347544,
+          "rmse": 10.295002392561607,
+          "bias": 8.931098718078095,
+          "pearson": 0.992970599941554,
+          "score": 11.16387339759762
+        },
+        {
+          "params": {
+            "centipawnGradient": 0.0035,
+            "moveCoefA": 100,
+            "moveCoefK": 6.5,
+            "moveCoefC": 0,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 10.071172157089233,
+          "maeWhite": 7.240864374092496,
+          "maeBlack": 12.90147994008597,
+          "rmse": 11.820006842125578,
+          "bias": 10.071172157089233,
+          "pearson": 0.9955841260836833,
+          "score": 12.588965196361542
+        },
+        {
+          "params": {
+            "centipawnGradient": 0.003,
+            "moveCoefA": 100,
+            "moveCoefK": 6,
+            "moveCoefC": 3.17,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 8.768648760016264,
+          "maeWhite": 5.999524137532916,
+          "maeBlack": 11.537773382499612,
+          "rmse": 10.4676086313813,
+          "bias": 8.576414099628566,
+          "pearson": 0.9926767403052114,
+          "score": 10.912752284923405
+        }
+      ],
+      "winnerRank": 126,
+      "winnerMae": 8.931098718078095,
+      "foldBestMae": 5.89131461226267
+    },
+    {
+      "user": "diogomonte",
+      "nTest": 5,
+      "top3": [
+        {
+          "params": {
+            "centipawnGradient": 0.003,
+            "moveCoefA": 100,
+            "moveCoefK": 6.5,
+            "moveCoefC": 1.5,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 4.992529529971209,
+          "maeWhite": 3.2458056682126566,
+          "maeBlack": 6.739253391729763,
+          "rmse": 7.120281943221057,
+          "bias": 3.3724326268582594,
+          "pearson": 0.8994196660103565,
+          "score": 5.835637686685774
+        },
+        {
+          "params": {
+            "centipawnGradient": 0.003,
+            "moveCoefA": 100,
+            "moveCoefK": 6,
+            "moveCoefC": 3.17,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 5.045656630349546,
+          "maeWhite": 3.3878872942372995,
+          "maeBlack": 6.703425966461792,
+          "rmse": 7.22125797809337,
+          "bias": 3.0688648427657603,
+          "pearson": 0.8904831167903126,
+          "score": 5.812872841040986
+        },
+        {
+          "params": {
+            "centipawnGradient": 0.0035,
+            "moveCoefA": 100,
+            "moveCoefK": 6.5,
+            "moveCoefC": 0,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 5.417902440445797,
+          "maeWhite": 3.6688030072488074,
+          "maeBlack": 7.1670018736427865,
+          "rmse": 7.324727997470252,
+          "bias": 3.4221658978097844,
+          "pearson": 0.8935412600548219,
+          "score": 6.273443914898243
+        }
+      ],
+      "winnerRank": 2,
+      "winnerMae": 4.992529529971209,
+      "foldBestMae": 4.8509565232278025
+    },
+    {
+      "user": "gaguera",
+      "nTest": 6,
+      "top3": [
+        {
+          "params": {
+            "centipawnGradient": 0.003,
+            "moveCoefA": 100,
+            "moveCoefK": 6.5,
+            "moveCoefC": 1.5,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 3.1119001554873122,
+          "maeWhite": 2.658176402108429,
+          "maeBlack": 3.5656239088661965,
+          "rmse": 4.036015522988172,
+          "bias": -0.9692304384482778,
+          "pearson": 0.9707444601980213,
+          "score": 3.354207765099382
+        },
+        {
+          "params": {
+            "centipawnGradient": 0.003,
+            "moveCoefA": 100,
+            "moveCoefK": 6.5,
+            "moveCoefC": 3.17,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 4.1468410014476005,
+          "maeWhite": 3.760675623486486,
+          "maeBlack": 4.533006379408716,
+          "rmse": 5.492149057950321,
+          "bias": -3.3572333007629287,
+          "pearson": 0.9655659008430872,
+          "score": 4.9861493266383325
+        },
+        {
+          "params": {
+            "centipawnGradient": 0.003,
+            "moveCoefA": 100,
+            "moveCoefK": 6,
+            "moveCoefC": 3.17,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 3.173157680013825,
+          "maeWhite": 2.7387349347978875,
+          "maeBlack": 3.6075804252297625,
+          "rmse": 4.045361466565359,
+          "bias": -1.2095344476859753,
+          "pearson": 0.971121021878228,
+          "score": 3.475541291935319
+        }
+      ],
+      "winnerRank": 149,
+      "winnerMae": 3.1119001554873122,
+      "foldBestMae": 1.540166553725303
+    },
+    {
+      "user": "gmkrikor",
+      "nTest": 7,
+      "top3": [
+        {
+          "params": {
+            "centipawnGradient": 0.003,
+            "moveCoefA": 100,
+            "moveCoefK": 6.5,
+            "moveCoefC": 1.5,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 3.2963926654910196,
+          "maeWhite": 3.778178553815345,
+          "maeBlack": 2.814606777166694,
+          "rmse": 4.138302156313647,
+          "bias": 3.0698447443271286,
+          "pearson": 0.9871494108996393,
+          "score": 4.0638538515728015
+        },
+        {
+          "params": {
+            "centipawnGradient": 0.003,
+            "moveCoefA": 100,
+            "moveCoefK": 6,
+            "moveCoefC": 3.17,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 3.127398323223409,
+          "maeWhite": 3.6625644406894873,
+          "maeBlack": 2.59223220575733,
+          "rmse": 3.9651817241659395,
+          "bias": 2.373149001997806,
+          "pearson": 0.9864475962943192,
+          "score": 3.7206855737228604
+        },
+        {
+          "params": {
+            "centipawnGradient": 0.003,
+            "moveCoefA": 103.16,
+            "moveCoefK": 6.5,
+            "moveCoefC": 3.17,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 3.848632180714396,
+          "maeWhite": 4.3128213772442825,
+          "maeBlack": 3.38444298418451,
+          "rmse": 4.5592112897700705,
+          "bias": 3.848632180714396,
+          "pearson": 0.9866707412629274,
+          "score": 4.810790225892995
+        }
+      ],
+      "winnerRank": 565,
+      "winnerMae": 3.2963926654910196,
+      "foldBestMae": 1.4825791989037274
+    },
+    {
+      "user": "gushiro",
+      "nTest": 4,
+      "top3": [
+        {
+          "params": {
+            "centipawnGradient": 0.003,
+            "moveCoefA": 100,
+            "moveCoefK": 6.5,
+            "moveCoefC": 1.5,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 5.413568228762827,
+          "maeWhite": 5.0310858997024575,
+          "maeBlack": 5.796050557823197,
+          "rmse": 6.8168062641248905,
+          "bias": -1.9186473914116746,
+          "pearson": 0.8920790201792121,
+          "score": 5.893230076615746
+        },
+        {
+          "params": {
+            "centipawnGradient": 0.003,
+            "moveCoefA": 100,
+            "moveCoefK": 6.5,
+            "moveCoefC": 3.17,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 6.081964558456325,
+          "maeWhite": 5.376547435747739,
+          "maeBlack": 6.787381681164911,
+          "rmse": 8.17898036655723,
+          "bias": -4.053983841263986,
+          "pearson": 0.8827328557841676,
+          "score": 7.095460518772321
+        },
+        {
+          "params": {
+            "centipawnGradient": 0.003,
+            "moveCoefA": 100,
+            "moveCoefK": 6,
+            "moveCoefC": 3.17,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 5.360176401840341,
+          "maeWhite": 4.899119393913477,
+          "maeBlack": 5.8212334097672045,
+          "rmse": 6.9128768415928725,
+          "bias": -2.4647381335836007,
+          "pearson": 0.883811862679795,
+          "score": 5.976360935236241
+        }
+      ],
+      "winnerRank": 467,
+      "winnerMae": 5.413568228762827,
+      "foldBestMae": 3.7665368215558654
+    },
+    {
+      "user": "hikaru",
+      "nTest": 3,
+      "top3": [
+        {
+          "params": {
+            "centipawnGradient": 0.003,
+            "moveCoefA": 100,
+            "moveCoefK": 6.5,
+            "moveCoefC": 1.5,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 1.0125817511216866,
+          "maeWhite": 0.9853664485831075,
+          "maeBlack": 1.0397970536602656,
+          "rmse": 1.1115122798257873,
+          "bias": -0.2707673801485555,
+          "pearson": 0.9323494275591706,
+          "score": 1.0802735961588255
+        },
+        {
+          "params": {
+            "centipawnGradient": 0.003,
+            "moveCoefA": 100,
+            "moveCoefK": 6.5,
+            "moveCoefC": 3.17,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 2.037889432805175,
+          "maeWhite": 1.6819626139212762,
+          "maeBlack": 2.393816251689074,
+          "rmse": 2.3105684104698714,
+          "bias": -2.037889432805175,
+          "pearson": 0.9300098683086622,
+          "score": 2.5473617910064688
+        },
+        {
+          "params": {
+            "centipawnGradient": 0.003,
+            "moveCoefA": 100,
+            "moveCoefK": 6,
+            "moveCoefC": 3.17,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 1.2470117845048325,
+          "maeWhite": 1.2593578517215132,
+          "maeBlack": 1.234665717288152,
+          "rmse": 1.420087259632084,
+          "bias": -0.8922650369129528,
+          "pearson": 0.9342947140356103,
+          "score": 1.4700780437330707
+        }
+      ],
+      "winnerRank": 58,
+      "winnerMae": 1.0125817511216866,
+      "foldBestMae": 0.6559202533255567
+    },
+    {
+      "user": "igricart",
+      "nTest": 5,
+      "top3": [
+        {
+          "params": {
+            "centipawnGradient": 0.003,
+            "moveCoefA": 100,
+            "moveCoefK": 6.5,
+            "moveCoefC": 1.5,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 5.216280006381682,
+          "maeWhite": 6.212436412774984,
+          "maeBlack": 4.220123599988381,
+          "rmse": 6.431846748938257,
+          "bias": 3.1484969960021933,
+          "pearson": 0.8129776998887963,
+          "score": 6.003404255382231
+        },
+        {
+          "params": {
+            "centipawnGradient": 0.0035,
+            "moveCoefA": 100,
+            "moveCoefK": 6.5,
+            "moveCoefC": 0,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 6.1576442411157375,
+          "maeWhite": 7.119292972465071,
+          "maeBlack": 5.195995509766403,
+          "rmse": 7.367611280215402,
+          "bias": 3.604087194204658,
+          "pearson": 0.7741252021504885,
+          "score": 7.058666039666902
+        },
+        {
+          "params": {
+            "centipawnGradient": 0.003,
+            "moveCoefA": 100,
+            "moveCoefK": 6,
+            "moveCoefC": 3.17,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 5.140117517914269,
+          "maeWhite": 6.059621695648707,
+          "maeBlack": 4.220613340179831,
+          "rmse": 6.3850936658185855,
+          "bias": 2.9324824913286713,
+          "pearson": 0.8025635372034848,
+          "score": 5.8732381407464365
+        }
+      ],
+      "winnerRank": 3,
+      "winnerMae": 5.216280006381682,
+      "foldBestMae": 4.519344708359764
+    },
+    {
+      "user": "magnuscarlsen",
+      "nTest": 5,
+      "top3": [
+        {
+          "params": {
+            "centipawnGradient": 0.003,
+            "moveCoefA": 100,
+            "moveCoefK": 6.5,
+            "moveCoefC": 1.5,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 2.820109763181287,
+          "maeWhite": 2.466323361266839,
+          "maeBlack": 3.173896165095735,
+          "rmse": 3.5099607247137405,
+          "bias": -2.1016391515499464,
+          "pearson": 0.9362277563623619,
+          "score": 3.3455195510687736
+        },
+        {
+          "params": {
+            "centipawnGradient": 0.003,
+            "moveCoefA": 100,
+            "moveCoefK": 6.5,
+            "moveCoefC": 3.17,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 3.936450964844016,
+          "maeWhite": 3.1716554048169057,
+          "maeBlack": 4.701246524871126,
+          "rmse": 4.905618130007887,
+          "bias": -3.936450964844016,
+          "pearson": 0.9354477963346549,
+          "score": 4.92056370605502
+        },
+        {
+          "params": {
+            "centipawnGradient": 0.003,
+            "moveCoefA": 100,
+            "moveCoefK": 6,
+            "moveCoefC": 3.17,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 3.3119937543289852,
+          "maeWhite": 2.6517997580309527,
+          "maeBlack": 3.9721877506270173,
+          "rmse": 4.18970065025664,
+          "bias": -3.1227444442756065,
+          "pearson": 0.9301732924432936,
+          "score": 4.092679865397887
+        }
+      ],
+      "winnerRank": 575,
+      "winnerMae": 2.820109763181287,
+      "foldBestMae": 1.8461530415225098
+    },
+    {
+      "user": "pigor1",
+      "nTest": 7,
+      "top3": [
+        {
+          "params": {
+            "centipawnGradient": 0.003,
+            "moveCoefA": 100,
+            "moveCoefK": 6.5,
+            "moveCoefC": 1.5,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 2.99037466895597,
+          "maeWhite": 3.5524801580057033,
+          "maeBlack": 2.428269179906237,
+          "rmse": 3.332003647800131,
+          "bias": 1.1481693643757747,
+          "pearson": 0.930897249987998,
+          "score": 3.2774170100499136
+        },
+        {
+          "params": {
+            "centipawnGradient": 0.003,
+            "moveCoefA": 100,
+            "moveCoefK": 6,
+            "moveCoefC": 3.17,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 2.9915360935100934,
+          "maeWhite": 3.5924803003646497,
+          "maeBlack": 2.3905918866555376,
+          "rmse": 3.2277721628588725,
+          "bias": 0.5508572842963281,
+          "pearson": 0.9286747954991204,
+          "score": 3.1292504145841753
+        },
+        {
+          "params": {
+            "centipawnGradient": 0.0035,
+            "moveCoefA": 100,
+            "moveCoefK": 6.5,
+            "moveCoefC": 0,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 3.0579989440944857,
+          "maeWhite": 3.81279655342497,
+          "maeBlack": 2.3032013347640015,
+          "rmse": 3.6194731732650123,
+          "bias": 1.3299109392475228,
+          "pearson": 0.9200965810943026,
+          "score": 3.3904766789063663
+        }
+      ],
+      "winnerRank": 6,
+      "winnerMae": 2.99037466895597,
+      "foldBestMae": 2.7598654367738824
+    },
+    {
+      "user": "superpower2011",
+      "nTest": 2,
+      "top3": [
+        {
+          "params": {
+            "centipawnGradient": 0.003,
+            "moveCoefA": 100,
+            "moveCoefK": 6.5,
+            "moveCoefC": 1.5,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 1.0628977500866803,
+          "maeWhite": 0.8882778160533107,
+          "maeBlack": 1.23751768412005,
+          "rmse": 1.183874943690064,
+          "bias": -0.27235408999733224,
+          "pearson": 0.9268006186814279,
+          "score": 1.1309862725860134
+        },
+        {
+          "params": {
+            "centipawnGradient": 0.003,
+            "moveCoefA": 100,
+            "moveCoefK": 6,
+            "moveCoefC": 3.17,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 1.3764922351507103,
+          "maeWhite": 0.9445598779387296,
+          "maeBlack": 1.808424592362691,
+          "rmse": 1.4598069843132178,
+          "bias": -0.8879460973324278,
+          "pearson": 0.9273907924047424,
+          "score": 1.5984787594838172
+        },
+        {
+          "params": {
+            "centipawnGradient": 0.003,
+            "moveCoefA": 100,
+            "moveCoefK": 6.5,
+            "moveCoefC": 3.17,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 2.0228147828868934,
+          "maeWhite": 1.03621150214326,
+          "maeBlack": 3.0094180636305268,
+          "rmse": 2.336621332967715,
+          "bias": -2.0228147828868934,
+          "pearson": 0.9248178936951257,
+          "score": 2.528518478608617
+        }
+      ],
+      "winnerRank": 121,
+      "winnerMae": 1.0628977500866803,
+      "foldBestMae": 0.6542740167951244
+    },
+    {
+      "user": "wonderfultime",
+      "nTest": 4,
+      "top3": [
+        {
+          "params": {
+            "centipawnGradient": 0.003,
+            "moveCoefA": 100,
+            "moveCoefK": 6.5,
+            "moveCoefC": 1.5,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 2.8448429858468387,
+          "maeWhite": 2.1343814808707577,
+          "maeBlack": 3.5553044908229197,
+          "rmse": 3.64153722348356,
+          "bias": -1.9467547213076628,
+          "pearson": 0.9371970092135545,
+          "score": 3.3315316661737544
+        },
+        {
+          "params": {
+            "centipawnGradient": 0.003,
+            "moveCoefA": 100,
+            "moveCoefK": 6.5,
+            "moveCoefC": 3.17,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 3.8023721414056215,
+          "maeWhite": 2.582424723061955,
+          "maeBlack": 5.022319559749288,
+          "rmse": 4.980087084368821,
+          "bias": -3.8023721414056215,
+          "pearson": 0.9363381783718919,
+          "score": 4.7529651767570265
+        },
+        {
+          "params": {
+            "centipawnGradient": 0.003,
+            "moveCoefA": 100,
+            "moveCoefK": 6,
+            "moveCoefC": 3.17,
+            "aggregator": "windowed-harmonic",
+            "windowSize": 6,
+            "volatilityWeightExponent": 1
+          },
+          "mae": 3.1762067443363513,
+          "maeWhite": 2.079132281487638,
+          "maeBlack": 4.2732812071850645,
+          "rmse": 4.234488090164446,
+          "bias": -2.9396451067696283,
+          "pearson": 0.9305431780879156,
+          "score": 3.9111180210287584
+        }
+      ],
+      "winnerRank": 327,
+      "winnerMae": 2.8448429858468387,
+      "foldBestMae": 2.037596985057357
+    }
+  ],
+  "leaveOneUserOutSummary": {
+    "meanGap": 1.0226021636915328,
+    "worstGap": 3.039784105815425,
+    "withinOneFolds": 8,
+    "top10FoldCount": 3
+  }
+}
