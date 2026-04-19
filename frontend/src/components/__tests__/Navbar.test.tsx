@@ -91,4 +91,17 @@ describe('Navbar', () => {
       new_theme: 'light',
     })
   })
+
+  it('always renders an About link pointing to /about', () => {
+    renderNavbar()
+    const link = screen.getByRole('link', { name: /about/i })
+    expect(link).toHaveAttribute('href', '/about')
+  })
+
+  it('fires about_nav_clicked when About link is clicked', async () => {
+    renderNavbar()
+    const user = userEvent.setup()
+    await user.click(screen.getByRole('link', { name: /about/i }))
+    expect(trackEvent).toHaveBeenCalledWith('about_nav_clicked', undefined)
+  })
 })

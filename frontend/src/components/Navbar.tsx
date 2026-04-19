@@ -75,6 +75,13 @@ export function Navbar({ username }: NavbarProps) {
             Dashboard
           </TrackedLink>
         )}
+        <TrackedLink
+          to="/about"
+          eventName="about_nav_clicked"
+          className="text-accent hover:text-accent-hover font-medium"
+        >
+          About
+        </TrackedLink>
       </div>
       <div className="ml-auto">
         <TrackedButton
