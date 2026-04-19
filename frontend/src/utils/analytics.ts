@@ -17,6 +17,11 @@ export type AnalyticsEvent =
   | 'analysis_viewed'
   | 'tab_switched'
   | 'game_filter_applied'
+  | 'about_nav_clicked'
+  | 'about_discord_clicked'
+  | 'about_feedback_link_clicked'
+  | 'about_source_clicked'
+  | 'about_wintrchess_clicked'
 
 export function trackEvent(
   eventName: AnalyticsEvent,

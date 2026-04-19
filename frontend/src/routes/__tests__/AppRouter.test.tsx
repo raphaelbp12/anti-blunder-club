@@ -94,4 +94,15 @@ describe('AppRouter', () => {
     )
     expect(screen.getByText(/page not found/i)).toBeInTheDocument()
   })
+
+  it('renders the about page on /about', () => {
+    render(
+      <MemoryRouter initialEntries={['/about']}>
+        <AppRouter />
+      </MemoryRouter>,
+    )
+    expect(
+      screen.getByRole('heading', { level: 1, name: /about/i }),
+    ).toBeInTheDocument()
+  })
 })
