@@ -12,11 +12,16 @@
     "ANTHROPIC_AUTH_TOKEN": "${localEnv:ANTHROPIC_AUTH_TOKEN}",
     "ANTHROPIC_BASE_URL": "${localEnv:ANTHROPIC_BASE_URL}"
   },
+  "initializeCommand": [
+    "node",
+    "-e",
+    "const fs=require('fs'),p=require('path'),os=require('os');const f=p.join(os.homedir(),'.gitconfig');if(!fs.existsSync(f))fs.closeSync(fs.openSync(f,'a'));"
+  ],
   "mounts": [
-    "source=${localEnv:HOME}/.gitconfig,target=/home/node/.gitconfig,type=bind,consistency=cached",
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.gitconfig,target=/home/node/.gitconfig,type=bind,consistency=cached",
     "source=devcontainer-bashhistory,target=/commandhistory,type=volume"
   ],
-  "postCreateCommand": "mkdir -p ~/.claude && cp .devcontainer/claude-settings.json ~/.claude/settings.json && npm install -g @anthropic-ai/claude-code",
+  "postCreateCommand": "mkdir -p ~/.claude && cp .devcontainer/claude-settings.json ~/.claude/settings.json && npm install -g @anthropic-ai/claude-code && git config --global --add safe.directory /workspaces/anti-blunder-club",
   "postStartCommand": "git fetch --all --prune 2>/dev/null || true",
   "remoteUser": "node",
   "customizations": {
