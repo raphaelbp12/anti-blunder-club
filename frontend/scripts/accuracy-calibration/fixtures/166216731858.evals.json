@@ -1,0 +1,188 @@
+{
+  "version": 1,
+  "gameId": "166216731858",
+  "depth": 14,
+  "engine": "stockfish-npm",
+  "positions": [
+    {
+      "ply": 0,
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 48
+      },
+      "depth": 14
+    },
+    {
+      "ply": 1,
+      "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 45
+      },
+      "depth": 14
+    },
+    {
+      "ply": 2,
+      "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 52
+      },
+      "depth": 14
+    },
+    {
+      "ply": 3,
+      "fen": "rnbqkbnr/pp1ppppp/8/2p5/1P2P3/8/P1PP1PPP/RNBQKBNR b KQkq - 0 2",
+      "evaluation": {
+        "type": "centipawn",
+        "value": -34
+      },
+      "depth": 14
+    },
+    {
+      "ply": 4,
+      "fen": "rnbqkbnr/pp1ppppp/8/8/1p2P3/8/P1PP1PPP/RNBQKBNR w KQkq - 0 3",
+      "evaluation": {
+        "type": "centipawn",
+        "value": -35
+      },
+      "depth": 14
+    },
+    {
+      "ply": 5,
+      "fen": "rnbqkbnr/pp1ppppp/8/8/1p1PP3/8/P1P2PPP/RNBQKBNR b KQkq - 0 3",
+      "evaluation": {
+        "type": "centipawn",
+        "value": -59
+      },
+      "depth": 14
+    },
+    {
+      "ply": 6,
+      "fen": "rnbqkbnr/pp2pppp/8/3p4/1p1PP3/8/P1P2PPP/RNBQKBNR w KQkq - 0 4",
+      "evaluation": {
+        "type": "centipawn",
+        "value": -52
+      },
+      "depth": 14
+    },
+    {
+      "ply": 7,
+      "fen": "rnbqkbnr/pp2pppp/8/3pP3/1p1P4/8/P1P2PPP/RNBQKBNR b KQkq - 0 4",
+      "evaluation": {
+        "type": "centipawn",
+        "value": -85
+      },
+      "depth": 14
+    },
+    {
+      "ply": 8,
+      "fen": "rnbqkbnr/pp3ppp/4p3/3pP3/1p1P4/8/P1P2PPP/RNBQKBNR w KQkq - 0 5",
+      "evaluation": {
+        "type": "centipawn",
+        "value": -19
+      },
+      "depth": 14
+    },
+    {
+      "ply": 9,
+      "fen": "rnbqkbnr/pp3ppp/4p3/3pP3/1p1P4/P7/2P2PPP/RNBQKBNR b KQkq - 0 5",
+      "evaluation": {
+        "type": "centipawn",
+        "value": -27
+      },
+      "depth": 14
+    },
+    {
+      "ply": 10,
+      "fen": "rnbqkbnr/pp3ppp/4p3/3pP3/3P4/p7/2P2PPP/RNBQKBNR w KQkq - 0 6",
+      "evaluation": {
+        "type": "centipawn",
+        "value": -4
+      },
+      "depth": 14
+    },
+    {
+      "ply": 11,
+      "fen": "rnbqkbnr/pp3ppp/4p3/3pP3/3P4/N7/2P2PPP/R1BQKBNR b KQkq - 0 6",
+      "evaluation": {
+        "type": "centipawn",
+        "value": -43
+      },
+      "depth": 14
+    },
+    {
+      "ply": 12,
+      "fen": "r1bqkbnr/pp3ppp/2n1p3/3pP3/3P4/N7/2P2PPP/R1BQKBNR w KQkq - 1 7",
+      "evaluation": {
+        "type": "centipawn",
+        "value": -4
+      },
+      "depth": 14
+    },
+    {
+      "ply": 13,
+      "fen": "r1bqkbnr/pp3ppp/2n1p3/3pP3/3P4/N1P5/5PPP/R1BQKBNR b KQkq - 0 7",
+      "evaluation": {
+        "type": "centipawn",
+        "value": -10
+      },
+      "depth": 14
+    },
+    {
+      "ply": 14,
+      "fen": "r1bqkb1r/pp2nppp/2n1p3/3pP3/3P4/N1P5/5PPP/R1BQKBNR w KQkq - 1 8",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 50
+      },
+      "depth": 14
+    },
+    {
+      "ply": 15,
+      "fen": "r1bqkb1r/pp2nppp/2n1p3/3pP3/Q2P4/N1P5/5PPP/R1B1KBNR b KQkq - 2 8",
+      "evaluation": {
+        "type": "centipawn",
+        "value": -59
+      },
+      "depth": 14
+    },
+    {
+      "ply": 16,
+      "fen": "r2qkb1r/pp1bnppp/2n1p3/3pP3/Q2P4/N1P5/5PPP/R1B1KBNR w KQkq - 3 9",
+      "evaluation": {
+        "type": "centipawn",
+        "value": -52
+      },
+      "depth": 14
+    },
+    {
+      "ply": 17,
+      "fen": "r2qkb1r/pp1bnppp/2n1p3/1N1pP3/Q2P4/2P5/5PPP/R1B1KBNR b KQkq - 4 9",
+      "evaluation": {
+        "type": "centipawn",
+        "value": -140
+      },
+      "depth": 14
+    },
+    {
+      "ply": 18,
+      "fen": "r2qkb1r/pp1bnppp/4p3/1N1pn3/Q2P4/2P5/5PPP/R1B1KBNR w KQkq - 0 10",
+      "evaluation": {
+        "type": "mate",
+        "value": 1
+      },
+      "depth": 14
+    },
+    {
+      "ply": 19,
+      "fen": "r2qkb1r/pp1bnppp/3Np3/3pn3/Q2P4/2P5/5PPP/R1B1KBNR b KQkq - 1 10",
+      "evaluation": {
+        "type": "mate",
+        "value": 0
+      },
+      "depth": 14
+    }
+  ]
+}

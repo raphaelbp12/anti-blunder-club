@@ -1,0 +1,32 @@
+{
+  "url": "https://www.chess.com/game/live/167407515936",
+  "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2026.04.16\"]\n[Round \"-\"]\n[White \"Enginagva\"]\n[Black \"pigor1\"]\n[Result \"1-0\"]\n[CurrentPosition \"7Q/4b1Q1/4k3/4pp2/8/3K4/8/8 b - - 0 62\"]\n[Timezone \"UTC\"]\n[ECO \"B45\"]\n[ECOUrl \"https://www.chess.com/openings/Sicilian-Defense-Taimanov-Variation-5.Nc3\"]\n[UTCDate \"2026.04.16\"]\n[UTCTime \"19:52:47\"]\n[WhiteElo \"1729\"]\n[BlackElo \"1712\"]\n[TimeControl \"600\"]\n[Termination \"Enginagva won by resignation\"]\n[StartTime \"19:52:47\"]\n[EndDate \"2026.04.16\"]\n[EndTime \"20:09:26\"]\n[Link \"https://www.chess.com/game/live/167407515936\"]\n\n1. e4 {[%clk 0:09:57.5]} 1... c5 {[%clk 0:09:59.3]} 2. Nf3 {[%clk 0:09:55.8]} 2... Nc6 {[%clk 0:09:58]} 3. d4 {[%clk 0:09:54.9]} 3... cxd4 {[%clk 0:09:56.5]} 4. Nxd4 {[%clk 0:09:54.6]} 4... e6 {[%clk 0:09:55.9]} 5. Nc3 {[%clk 0:09:53.2]} 5... Be7 {[%clk 0:09:48.3]} 6. g3 {[%clk 0:09:49.6]} 6... Qb6 {[%clk 0:09:44.7]} 7. Be3 {[%clk 0:09:47.2]} 7... Qxb2 {[%clk 0:09:43.1]} 8. Ndb5 {[%clk 0:09:39.8]} 8... Bf6 {[%clk 0:08:56.5]} 9. Bd2 {[%clk 0:09:31.5]} 9... a6 {[%clk 0:08:44.3]} 10. Rb1 {[%clk 0:09:29.2]} 10... Qxb1 {[%clk 0:08:23.3]} 11. Qxb1 {[%clk 0:09:24.3]} 11... axb5 {[%clk 0:08:21.8]} 12. Nxb5 {[%clk 0:09:22.4]} 12... Ra4 {[%clk 0:07:59.4]} 13. Nc7+ {[%clk 0:09:18.1]} 13... Kd8 {[%clk 0:07:57]} 14. Qb6 {[%clk 0:09:10.2]} 14... Rxe4+ {[%clk 0:07:44.9]} 15. Be2 {[%clk 0:09:07]} 15... Ke7 {[%clk 0:07:02.1]} 16. f3 {[%clk 0:09:01.6]} 16... Ra4 {[%clk 0:06:06]} 17. a3 {[%clk 0:08:12.2]} 17... Nh6 {[%clk 0:04:43.9]} 18. Bb4+ {[%clk 0:07:49.9]} 18... Nxb4 {[%clk 0:04:41.8]} 19. axb4 {[%clk 0:07:48.7]} 19... Ra1+ {[%clk 0:04:29.3]} 20. Bd1 {[%clk 0:07:45.3]} 20... Nf5 {[%clk 0:04:10.5]} 21. Nb5 {[%clk 0:07:26.1]} 21... Ra6 {[%clk 0:03:25]} 22. Qc5+ {[%clk 0:07:01.1]} 22... Nd6 {[%clk 0:03:16.9]} 23. Nxd6 {[%clk 0:06:49.8]} 23... Rxd6 {[%clk 0:03:14.8]} 24. c3 {[%clk 0:06:16.9]} 24... b6 {[%clk 0:03:11.7]} 25. Qe3 {[%clk 0:06:06.4]} 25... Ba6 {[%clk 0:02:56.8]} 26. Be2 {[%clk 0:05:56.2]} 26... Bxe2 {[%clk 0:02:53]} 27. Kxe2 {[%clk 0:05:54.2]} 27... Rc8 {[%clk 0:02:50.8]} 28. Rc1 {[%clk 0:05:50.9]} 28... Rdc6 {[%clk 0:02:37.9]} 29. c4 {[%clk 0:05:46.5]} 29... Rxc4 {[%clk 0:02:26.1]} 30. Rxc4 {[%clk 0:05:45.1]} 30... Rxc4 {[%clk 0:02:26]} 31. Qxb6 {[%clk 0:05:43.1]} 31... Rc2+ {[%clk 0:02:21.5]} 32. Kd3 {[%clk 0:05:38.9]} 32... Rc3+ {[%clk 0:02:15.6]} 33. Kd2 {[%clk 0:05:34.5]} 33... Rxf3 {[%clk 0:02:08.4]} 34. Qc5+ {[%clk 0:05:29.3]} 34... Ke8 {[%clk 0:01:50.6]} 35. b5 {[%clk 0:05:26.6]} 35... Rf5 {[%clk 0:01:43.7]} 36. Qc8+ {[%clk 0:05:24.3]} 36... Bd8 {[%clk 0:01:41.4]} 37. b6 {[%clk 0:05:21.9]} 37... Rb5 {[%clk 0:01:32]} 38. b7 {[%clk 0:05:20.1]} 38... Rxb7 {[%clk 0:01:16.1]} 39. Qxb7 {[%clk 0:05:17.4]} 39... d5 {[%clk 0:01:13.8]} 40. Kd3 {[%clk 0:05:09.4]} 40... Bf6 {[%clk 0:01:07.6]} 41. h3 {[%clk 0:05:02.7]} 41... d4 {[%clk 0:00:59.5]} 42. g4 {[%clk 0:05:00.7]} 42... e5 {[%clk 0:00:56.3]} 43. Ke4 {[%clk 0:04:51.6]} 43... g6 {[%clk 0:00:53.9]} 44. Qc6+ {[%clk 0:04:44.7]} 44... Ke7 {[%clk 0:00:52.2]} 45. Qc7+ {[%clk 0:04:37.4]} 45... Kf8 {[%clk 0:00:49]} 46. Qc8+ {[%clk 0:04:34.3]} 46... Ke7 {[%clk 0:00:46.3]} 47. Qb7+ {[%clk 0:04:30.8]} 47... Kf8 {[%clk 0:00:45.2]} 48. Qd7 {[%clk 0:04:27.8]} 48... Kg7 {[%clk 0:00:41.3]} 49. Qe8 {[%clk 0:04:14.4]} 49... h5 {[%clk 0:00:35.3]} 50. gxh5 {[%clk 0:04:12]} 50... gxh5 {[%clk 0:00:33.4]} 51. Qd7 {[%clk 0:04:08.8]} 51... Kg6 {[%clk 0:00:31.7]} 52. Qf5+ {[%clk 0:04:05.9]} 52... Kg7 {[%clk 0:00:30.5]} 53. Qxh5 {[%clk 0:04:03.9]} 53... Kg8 {[%clk 0:00:28.3]} 54. Qf5 {[%clk 0:04:00]} 54... Kg7 {[%clk 0:00:27.4]} 55. h4 {[%clk 0:03:57.4]} 55... d3 {[%clk 0:00:26.6]} 56. Qg4+ {[%clk 0:03:55.1]} 56... Kf8 {[%clk 0:00:23.4]} 57. Kxd3 {[%clk 0:03:53.9]} 57... Be7 {[%clk 0:00:22.2]} 58. h5 {[%clk 0:03:51.6]} 58... f6 {[%clk 0:00:20.1]} 59. h6 {[%clk 0:03:50]} 59... Kf7 {[%clk 0:00:18.8]} 60. Qg7+ {[%clk 0:03:47.9]} 60... Ke6 {[%clk 0:00:17.2]} 61. h7 {[%clk 0:03:44.2]} 61... f5 {[%clk 0:00:16.7]} 62. h8=Q {[%clk 0:03:35.8]} 1-0\n",
+  "time_control": "600",
+  "end_time": 1776370166,
+  "rated": true,
+  "accuracies": {
+    "white": 84.21,
+    "black": 75.98
+  },
+  "tcn": "mCYIgv5QlBIBvB0Sbs90ow7PcuPjBH0TulWOabjbdbOHsH4yHY87bPyCfm70nvCyiq!VlzQzqzyamdVLYHaOPILRHRORksXPIu6OdmOmem?6hcRQsAQAcA6AuPAkmtkstlsvPI08zHvLI6T7HPLHPXHX6XZJlt7TpxJBwESKtC2UXQ80QY09Y6906X09XZ92Z83NENUN8Z2UZLU2LN2!NL!2xFBtLE29CtT0FN1TNV91E21SV3TL3~",
+  "uuid": "d7ba0fa7-39cd-11f1-85c3-06d8cc01000f",
+  "initial_setup": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "fen": "7Q/4b1Q1/4k3/4pp2/8/3K4/8/8 b - - 0 62",
+  "time_class": "rapid",
+  "rules": "chess",
+  "white": {
+    "rating": 1729,
+    "result": "win",
+    "@id": "https://api.chess.com/pub/player/enginagva",
+    "username": "Enginagva",
+    "uuid": "6c1d3f94-1088-11ea-967e-fb1c90da82db"
+  },
+  "black": {
+    "rating": 1712,
+    "result": "resigned",
+    "@id": "https://api.chess.com/pub/player/pigor1",
+    "username": "pigor1",
+    "uuid": "87e2e49a-accd-11ea-99fb-5318f231855e"
+  },
+  "eco": "https://www.chess.com/openings/Sicilian-Defense-Taimanov-Variation-5.Nc3"
+}

@@ -1,0 +1,32 @@
+{
+  "url": "https://www.chess.com/game/live/167005529374",
+  "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2026.04.07\"]\n[Round \"-\"]\n[White \"pigor1\"]\n[Black \"NandoPro1\"]\n[Result \"1/2-1/2\"]\n[CurrentPosition \"rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1\"]\n[Timezone \"UTC\"]\n[ECO \"B00\"]\n[ECOUrl \"https://www.chess.com/openings/Kings-Pawn-Opening\"]\n[UTCDate \"2026.04.07\"]\n[UTCTime \"22:59:47\"]\n[WhiteElo \"1699\"]\n[BlackElo \"1780\"]\n[TimeControl \"600\"]\n[Termination \"Game drawn by agreement\"]\n[StartTime \"22:59:47\"]\n[EndDate \"2026.04.07\"]\n[EndTime \"23:00:21\"]\n[Link \"https://www.chess.com/game/live/167005529374\"]\n\n1. e4 {[%clk 0:09:59.9]} 1/2-1/2\n",
+  "time_control": "600",
+  "end_time": 1775602821,
+  "rated": true,
+  "accuracies": {
+    "white": 100,
+    "black": 0
+  },
+  "tcn": "mC",
+  "uuid": "79d87e28-32d5-11f1-b755-ca11e201000f",
+  "initial_setup": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1",
+  "time_class": "rapid",
+  "rules": "chess",
+  "white": {
+    "rating": 1699,
+    "result": "agreed",
+    "@id": "https://api.chess.com/pub/player/pigor1",
+    "username": "pigor1",
+    "uuid": "87e2e49a-accd-11ea-99fb-5318f231855e"
+  },
+  "black": {
+    "rating": 1780,
+    "result": "agreed",
+    "@id": "https://api.chess.com/pub/player/nandopro1",
+    "username": "NandoPro1",
+    "uuid": "0aac8764-641b-11f0-a556-db35216248c2"
+  },
+  "eco": "https://www.chess.com/openings/Kings-Pawn-Opening"
+}

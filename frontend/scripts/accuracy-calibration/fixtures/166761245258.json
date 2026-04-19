@@ -1,0 +1,32 @@
+{
+  "url": "https://www.chess.com/game/live/166761245258",
+  "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2026.04.02\"]\n[Round \"-\"]\n[White \"pigor1\"]\n[Black \"Projit_09_King\"]\n[Result \"1-0\"]\n[CurrentPosition \"r2qkbnr/pp2pppp/8/1BPpN3/8/2P5/PP3PPP/RNBbK2R b KQkq - 1 8\"]\n[Timezone \"UTC\"]\n[ECO \"B12\"]\n[ECOUrl \"https://www.chess.com/openings/Caro-Kann-Defense-Advance-Botvinnik-Carls-Defense-4.dxc5-Nc6-5.Nf3-Bg4-6.c3\"]\n[UTCDate \"2026.04.02\"]\n[UTCTime \"12:34:54\"]\n[WhiteElo \"1709\"]\n[BlackElo \"1679\"]\n[TimeControl \"600\"]\n[Termination \"pigor1 won by resignation\"]\n[StartTime \"12:34:54\"]\n[EndDate \"2026.04.02\"]\n[EndTime \"12:36:49\"]\n[Link \"https://www.chess.com/game/live/166761245258\"]\n\n1. e4 {[%clk 0:09:59.7]} 1... c6 {[%clk 0:09:57.7]} 2. d4 {[%clk 0:09:57.4]} 2... d5 {[%clk 0:09:56.9]} 3. e5 {[%clk 0:09:56.8]} 3... c5 {[%clk 0:09:56.2]} 4. Nf3 {[%clk 0:09:55.4]} 4... Bg4 {[%clk 0:09:52.2]} 5. c3 {[%clk 0:09:40.3]} 5... Nc6 {[%clk 0:09:50.3]} 6. dxc5 {[%clk 0:09:29.7]} 6... Nxe5 {[%clk 0:09:44.9]} 7. Nxe5 {[%clk 0:09:13.3]} 7... Bxd1 {[%clk 0:09:41.7]} 8. Bb5+ {[%clk 0:09:12.2]} 1-0\n",
+  "time_control": "600",
+  "end_time": 1775133409,
+  "rated": true,
+  "accuracies": {
+    "white": 96.65,
+    "black": 73.48
+  },
+  "tcn": "mCYQlBZJCKQIgv6Eks5QBIQKvKEdfH",
+  "uuid": "5a0aee7b-2e90-11f1-8741-31d7cd01000f",
+  "initial_setup": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "fen": "r2qkbnr/pp2pppp/8/1BPpN3/8/2P5/PP3PPP/RNBbK2R b KQkq - 1 8",
+  "time_class": "rapid",
+  "rules": "chess",
+  "white": {
+    "rating": 1709,
+    "result": "win",
+    "@id": "https://api.chess.com/pub/player/pigor1",
+    "username": "pigor1",
+    "uuid": "87e2e49a-accd-11ea-99fb-5318f231855e"
+  },
+  "black": {
+    "rating": 1679,
+    "result": "resigned",
+    "@id": "https://api.chess.com/pub/player/projit_09_king",
+    "username": "Projit_09_King",
+    "uuid": "2ae09e18-ca63-11eb-858f-ad49c4fb3529"
+  },
+  "eco": "https://www.chess.com/openings/Caro-Kann-Defense-Advance-Botvinnik-Carls-Defense-4.dxc5-Nc6-5.Nf3-Bg4-6.c3"
+}

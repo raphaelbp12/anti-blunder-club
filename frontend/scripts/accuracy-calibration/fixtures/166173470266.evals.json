@@ -1,0 +1,107 @@
+{
+  "version": 1,
+  "gameId": "166173470266",
+  "depth": 14,
+  "engine": "stockfish-npm",
+  "positions": [
+    {
+      "ply": 0,
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 48
+      },
+      "depth": 14
+    },
+    {
+      "ply": 1,
+      "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 45
+      },
+      "depth": 14
+    },
+    {
+      "ply": 2,
+      "fen": "rnbqkbnr/ppp1pppp/3p4/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 55
+      },
+      "depth": 14
+    },
+    {
+      "ply": 3,
+      "fen": "rnbqkbnr/ppp1pppp/3p4/8/3PP3/8/PPP2PPP/RNBQKBNR b KQkq - 0 2",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 55
+      },
+      "depth": 14
+    },
+    {
+      "ply": 4,
+      "fen": "rnbqkb1r/ppp1pppp/3p1n2/8/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 1 3",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 56
+      },
+      "depth": 14
+    },
+    {
+      "ply": 5,
+      "fen": "rnbqkb1r/ppp1pppp/3p1n2/8/3PP3/2N5/PPP2PPP/R1BQKBNR b KQkq - 2 3",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 56
+      },
+      "depth": 14
+    },
+    {
+      "ply": 6,
+      "fen": "rnbqkb1r/pp2pppp/2pp1n2/8/3PP3/2N5/PPP2PPP/R1BQKBNR w KQkq - 0 4",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 93
+      },
+      "depth": 14
+    },
+    {
+      "ply": 7,
+      "fen": "rnbqkb1r/pp2pppp/2pp1n2/8/3PP3/2NB4/PPP2PPP/R1BQK1NR b KQkq - 1 4",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 55
+      },
+      "depth": 14
+    },
+    {
+      "ply": 8,
+      "fen": "rnbqkb1r/pp3ppp/2pp1n2/4p3/3PP3/2NB4/PPP2PPP/R1BQK1NR w KQkq - 0 5",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 48
+      },
+      "depth": 14
+    },
+    {
+      "ply": 9,
+      "fen": "rnbqkb1r/pp3ppp/2pp1n2/4P3/4P3/2NB4/PPP2PPP/R1BQK1NR b KQkq - 0 5",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 6
+      },
+      "depth": 14
+    },
+    {
+      "ply": 10,
+      "fen": "rnbqkb1r/pp3ppp/2p2n2/4p3/4P3/2NB4/PPP2PPP/R1BQK1NR w KQkq - 0 6",
+      "evaluation": {
+        "type": "centipawn",
+        "value": 7
+      },
+      "depth": 14
+    }
+  ]
+}

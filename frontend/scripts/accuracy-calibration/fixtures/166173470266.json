@@ -1,0 +1,32 @@
+{
+  "url": "https://www.chess.com/game/live/166173470266",
+  "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2026.03.19\"]\n[Round \"-\"]\n[White \"pigor1\"]\n[Black \"PremjithPM\"]\n[Result \"1/2-1/2\"]\n[CurrentPosition \"rnbqkb1r/pp3ppp/2p2n2/4p3/4P3/2NB4/PPP2PPP/R1BQK1NR w KQkq - 0 6\"]\n[Timezone \"UTC\"]\n[ECO \"B07\"]\n[ECOUrl \"https://www.chess.com/openings/Pirc-Defense-Czech-Defense\"]\n[UTCDate \"2026.03.19\"]\n[UTCTime \"22:49:19\"]\n[WhiteElo \"1739\"]\n[BlackElo \"1739\"]\n[TimeControl \"600\"]\n[Termination \"Game drawn by agreement\"]\n[StartTime \"22:49:19\"]\n[EndDate \"2026.03.19\"]\n[EndTime \"22:50:49\"]\n[Link \"https://www.chess.com/game/live/166173470266\"]\n\n1. e4 {[%clk 0:09:59.9]} 1... d6 {[%clk 0:09:59]} 2. d4 {[%clk 0:09:58.9]} 2... Nf6 {[%clk 0:09:58.5]} 3. Nc3 {[%clk 0:09:48.6]} 3... c6 {[%clk 0:09:57.2]} 4. Bd3 {[%clk 0:09:38]} 4... e5 {[%clk 0:09:52.8]} 5. dxe5 {[%clk 0:09:33.8]} 5... dxe5 {[%clk 0:09:52.7]} 1/2-1/2\n",
+  "time_control": "600",
+  "end_time": 1773960649,
+  "rated": true,
+  "accuracies": {
+    "white": 90.82,
+    "black": 100
+  },
+  "tcn": "mCZRlB!TbsYQft0KBKRK",
+  "uuid": "dd6f2eb2-23e5-11f1-9341-525d3d01000f",
+  "initial_setup": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "fen": "rnbqkb1r/pp3ppp/2p2n2/4p3/4P3/2NB4/PPP2PPP/R1BQK1NR w KQkq - 0 6",
+  "time_class": "rapid",
+  "rules": "chess",
+  "white": {
+    "rating": 1739,
+    "result": "agreed",
+    "@id": "https://api.chess.com/pub/player/pigor1",
+    "username": "pigor1",
+    "uuid": "87e2e49a-accd-11ea-99fb-5318f231855e"
+  },
+  "black": {
+    "rating": 1739,
+    "result": "agreed",
+    "@id": "https://api.chess.com/pub/player/premjithpm",
+    "username": "PremjithPM",
+    "uuid": "45ba1b2c-186c-11e7-8000-000000000000"
+  },
+  "eco": "https://www.chess.com/openings/Pirc-Defense-Czech-Defense"
+}
