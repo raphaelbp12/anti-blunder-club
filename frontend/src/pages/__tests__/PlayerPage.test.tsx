@@ -11,13 +11,17 @@ vi.mock('../../utils/analytics', () => ({
   trackEvent: vi.fn(),
 }))
 
+// Use recent timestamps so games fall within the default "Last 3 months"
+// date filter window. Exact values don't matter — only relative recency.
+const NOW_SEC = Math.floor(Date.now() / 1000)
+
 const mockGames: chessComApi.ChessGame[] = [
   {
     url: 'https://www.chess.com/game/live/111',
     white: { username: 'hikaru', rating: 3200, result: 'win' },
     black: { username: 'opponent', rating: 3100, result: 'loss' },
     timeClass: 'bullet',
-    endTime: 1711900000,
+    endTime: NOW_SEC - 120,
     accuracies: { white: 90.0, black: 75.0 },
   },
   {
@@ -25,7 +29,7 @@ const mockGames: chessComApi.ChessGame[] = [
     white: { username: 'hikaru', rating: 3200, result: 'loss' },
     black: { username: 'rival', rating: 3300, result: 'win' },
     timeClass: 'blitz',
-    endTime: 1711900100,
+    endTime: NOW_SEC - 60,
     accuracies: { white: 70.0, black: 85.0 },
   },
 ]
@@ -158,6 +162,85 @@ describe('PlayerPage', () => {
     await user.click(screen.getByRole('tab', { name: 'Games' }))
     expect(screen.getAllByRole('listitem')).toHaveLength(1)
     expect(screen.getByText(/opponent/)).toBeInTheDocument()
+  })
+
+  it('defaults the date filter to "Last 3 months"', async () => {
+    vi.spyOn(chessComApi, 'fetchPlayerGames').mockResolvedValue(mockGames)
+    renderPlayerPage()
+
+    await waitFor(() => {
+      expect(screen.getByText(/2 games analyzed/i)).toBeInTheDocument()
+    })
+
+    expect(screen.getByRole('button', { name: 'Last 3 months' })).toHaveClass(
+      'bg-accent',
+    )
+  })
+
+  it('filters out games older than the selected date preset', async () => {
+    // One recent game + one ancient game (well outside any preset).
+    const gamesWithAncient: chessComApi.ChessGame[] = [
+      mockGames[0],
+      {
+        ...mockGames[1],
+        url: 'https://www.chess.com/game/live/333',
+        endTime: NOW_SEC - 365 * 24 * 60 * 60, // one year ago
+      },
+    ]
+    vi.spyOn(chessComApi, 'fetchPlayerGames').mockResolvedValue(
+      gamesWithAncient,
+    )
+    renderPlayerPage('hikaru', '?tab=games')
+
+    // Default "Last 3 months" should include only the recent game.
+    await waitFor(() => {
+      expect(screen.getAllByRole('listitem')).toHaveLength(1)
+    })
+    expect(screen.getByText(/opponent/)).toBeInTheDocument()
+  })
+
+  it('narrows the accuracy analysis when switching to "Today"', async () => {
+    // Put the second game far enough back that "Today" excludes it but
+    // "Last 3 months" (the default) includes it.
+    const games: chessComApi.ChessGame[] = [
+      mockGames[0], // very recent — within "Today"
+      {
+        ...mockGames[1],
+        endTime: NOW_SEC - 3 * 24 * 60 * 60, // 3 days ago
+      },
+    ]
+    vi.spyOn(chessComApi, 'fetchPlayerGames').mockResolvedValue(games)
+    const user = userEvent.setup()
+    renderPlayerPage()
+
+    // Default: both games → mean = (90 + 70) / 2 = 80
+    await waitFor(() => {
+      expect(screen.getByText(/80\.0/)).toBeInTheDocument()
+      expect(screen.getByText(/2 games analyzed/i)).toBeInTheDocument()
+    })
+
+    // Switch to "Today" → only the very recent 90% game remains.
+    await user.click(screen.getByRole('button', { name: 'Today' }))
+
+    expect(screen.getByText(/90\.0/)).toBeInTheDocument()
+    expect(screen.getByText(/1 games analyzed/i)).toBeInTheDocument()
+  })
+
+  it('tracks game_filter_applied with filter_name on date filter change', async () => {
+    vi.spyOn(chessComApi, 'fetchPlayerGames').mockResolvedValue(mockGames)
+    const user = userEvent.setup()
+    renderPlayerPage()
+
+    await waitFor(() => {
+      expect(screen.getByText(/2 games analyzed/i)).toBeInTheDocument()
+    })
+
+    await user.click(screen.getByRole('button', { name: 'Today' }))
+
+    expect(trackEvent).toHaveBeenCalledWith('game_filter_applied', {
+      filter_name: 'date',
+      filter_value: 'today',
+    })
   })
 
   it('shows loading state while fetching', () => {

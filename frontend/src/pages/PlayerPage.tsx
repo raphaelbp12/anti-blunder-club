@@ -13,6 +13,12 @@ import {
 import { usePlayerGamesStore } from '../stores/usePlayerGamesStore'
 import { useSearchHistoryStore } from '../stores/useSearchHistoryStore'
 import { trackEvent } from '../utils/analytics'
+import {
+  DATE_FILTER_OPTIONS,
+  DEFAULT_DATE_FILTER,
+  filterGamesByDate,
+  type DateFilterValue,
+} from '../utils/dateFilter'
 
 const TABS = [
   { key: 'accuracy', label: 'Accuracy' },
@@ -32,6 +38,8 @@ export function PlayerPage() {
   const [searchParams, setSearchParams] = useSearchParams()
   const activeTab = searchParams.get('tab') ?? 'accuracy'
   const [timeClassFilter, setTimeClassFilter] = useState('all')
+  const [dateFilter, setDateFilter] =
+    useState<DateFilterValue>(DEFAULT_DATE_FILTER)
 
   const { gamesByUsername, isLoading, error, fetchGames } =
     usePlayerGamesStore()
@@ -43,10 +51,11 @@ export function PlayerPage() {
   }, [username, fetchGames])
 
   const games = username ? (gamesByUsername[username] ?? []) : []
-  const filteredGames =
+  const gamesByTimeClass =
     timeClassFilter === 'all'
       ? games
       : games.filter((g) => g.timeClass === timeClassFilter)
+  const filteredGames = filterGamesByDate(gamesByTimeClass, dateFilter)
 
   const addPlayer = useSearchHistoryStore((s) => s.addPlayer)
   const profileFetchedFor = useRef<string | null>(null)
@@ -115,8 +124,19 @@ export function PlayerPage() {
   function handleFilterChange(value: string) {
     setTimeClassFilter(value)
     if (value !== 'all') {
-      trackEvent('game_filter_applied', { filter_value: value })
+      trackEvent('game_filter_applied', {
+        filter_name: 'time_class',
+        filter_value: value,
+      })
     }
+  }
+
+  function handleDateFilterChange(value: string) {
+    setDateFilter(value as DateFilterValue)
+    trackEvent('game_filter_applied', {
+      filter_name: 'date',
+      filter_value: value,
+    })
   }
 
   if (isLoading) {
@@ -146,6 +166,11 @@ export function PlayerPage() {
             options={TIME_CLASS_OPTIONS}
             activeValue={timeClassFilter}
             onChange={handleFilterChange}
+          />
+          <FilterChips
+            options={DATE_FILTER_OPTIONS}
+            activeValue={dateFilter}
+            onChange={handleDateFilterChange}
           />
           {activeTab === 'accuracy' && (
             <AccuracyTabContent
