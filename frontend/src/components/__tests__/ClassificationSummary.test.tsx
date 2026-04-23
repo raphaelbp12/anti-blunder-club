@@ -108,5 +108,16 @@ describe('<ClassificationSummary>', () => {
       expect(screen.getAllByText('Blunder').length).toBe(2)
       expect(screen.getAllByText('Best').length).toBe(2)
     })
+
+    it('does not render the Theory row (openings database not shipped yet)', () => {
+      render(
+        <ClassificationSummary
+          variant="column"
+          white={emptyClassificationCounts()}
+          black={emptyClassificationCounts()}
+        />,
+      )
+      expect(screen.queryByText('Theory')).not.toBeInTheDocument()
+    })
   })
 })

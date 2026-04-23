@@ -101,6 +101,10 @@ export const MISTAKE_CLASSIFICATIONS = [
 /**
  * Full classification ladder in the order we show in the Match-page
  * side-by-side column (best-first → worst-last, with neutrals last).
+ *
+ * `THEORY` is intentionally omitted: the openings database is not
+ * shipped yet (see `reporter/utils/opening.ts`), so it would always be
+ * zero. Add it back here once openings.json is wired up.
  */
 export const FULL_CLASSIFICATION_ORDER = [
   Classification.BRILLIANT,
@@ -112,7 +116,6 @@ export const FULL_CLASSIFICATION_ORDER = [
   Classification.RISKY,
   Classification.MISTAKE,
   Classification.BLUNDER,
-  Classification.THEORY,
   Classification.FORCED,
 ] as const
 

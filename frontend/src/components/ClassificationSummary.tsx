@@ -44,13 +44,11 @@ function RowVariant({ counts }: { counts: ClassificationCounts }) {
       {entries.map((c) => (
         <li
           key={c}
-          className="flex items-baseline gap-1"
+          className={`flex items-baseline gap-1 font-semibold ${classificationMeta[c].colorClass}`}
           aria-label={`${counts[c]} ${classificationMeta[c].label}`}
         >
-          <span className={`font-semibold ${classificationMeta[c].colorClass}`}>
-            {counts[c]}
-          </span>
-          <span className="text-secondary">{classificationMeta[c].label}</span>
+          <span>{counts[c]}</span>
+          <span>{classificationMeta[c].label}</span>
         </li>
       ))}
     </ul>
@@ -94,17 +92,20 @@ function Column({
         {(FULL_CLASSIFICATION_ORDER as readonly Classification[]).map((c) => {
           const meta = classificationMeta[c]
           return (
-            <li key={c} className="flex items-center justify-between">
+            <li
+              key={c}
+              className={`flex items-center justify-between font-semibold ${meta.colorClass}`}
+            >
               <span className="flex items-center gap-2">
                 <span
                   aria-hidden="true"
-                  className={`inline-block w-5 text-center font-semibold ${meta.colorClass}`}
+                  className="inline-block w-5 text-center"
                 >
                   {meta.icon}
                 </span>
                 <span>{meta.label}</span>
               </span>
-              <span className="font-semibold tabular-nums">{counts[c]}</span>
+              <span className="tabular-nums">{counts[c]}</span>
             </li>
           )
         })}

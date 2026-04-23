@@ -1,8 +1,13 @@
 import { render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
+import { afterEach } from 'vitest'
 import type { ChessGame } from '../../services/chessComApi'
 import { trackEvent } from '../../utils/analytics'
 import { AccuracyTabContent } from '../AccuracyTabContent'
+import type { AnalyzedMove } from '../../services/analysis/analyzeGame'
+import { Classification } from '../../services/analysis/constants/Classification'
+import { PieceColour } from '../../services/analysis/constants/PieceColour'
+import { useAnalysisStore } from '../../stores/useAnalysisStore'
 
 vi.mock('../../utils/analytics', () => ({
   trackEvent: vi.fn(),
@@ -110,5 +115,60 @@ describe('AccuracyTabContent', () => {
     const belowAvgItem = screen.getAllByRole('listitem')[0]
     expect(belowAvgItem).toHaveTextContent('L')
     expect(belowAvgItem.querySelector('[aria-label="Defeat"]')).not.toBeNull()
+  })
+
+  describe('classification summary', () => {
+    afterEach(() => {
+      useAnalysisStore.setState({ byGameId: {} })
+    })
+
+    function move(
+      colour: PieceColour,
+      classification: Classification,
+    ): AnalyzedMove {
+      return {
+        san: 'e4',
+        uci: 'e2e4',
+        fen: '',
+        moveColour: colour,
+        classification,
+      }
+    }
+
+    it('shows a mistake-summary row on a below-average card when analysis is done', () => {
+      // Below-average game is gameId=333 (alice playing White, 70% accuracy).
+      useAnalysisStore.setState({
+        byGameId: {
+          '333': {
+            status: 'done',
+            durationMs: 0,
+            result: {
+              moves: [
+                move(PieceColour.WHITE, Classification.BLUNDER),
+                move(PieceColour.WHITE, Classification.INACCURACY),
+                move(PieceColour.BLACK, Classification.BLUNDER),
+              ],
+              accuracy: { white: 70, black: 95 },
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              analysis: {} as any,
+            },
+          },
+        },
+      })
+      renderAccuracyTab()
+      const belowAvgItem = screen.getAllByRole('listitem')[0]
+      expect(
+        belowAvgItem.querySelector('[aria-label="1 Blunder"]'),
+      ).not.toBeNull()
+      expect(
+        belowAvgItem.querySelector('[aria-label="1 Inaccuracy"]'),
+      ).not.toBeNull()
+    })
+
+    it('omits the summary row when no analysis exists for the game', () => {
+      renderAccuracyTab()
+      const belowAvgItem = screen.getAllByRole('listitem')[0]
+      expect(belowAvgItem.querySelector('[aria-label$="Blunder"]')).toBeNull()
+    })
   })
 })

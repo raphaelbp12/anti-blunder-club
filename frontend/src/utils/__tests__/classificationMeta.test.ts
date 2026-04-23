@@ -41,9 +41,11 @@ describe('classificationMeta', () => {
     expect(isMistake(Classification.THEORY)).toBe(false)
   })
 
-  it('full order lists every Classification exactly once', () => {
-    const set = new Set(FULL_CLASSIFICATION_ORDER)
+  it('full order lists every displayable Classification exactly once, excluding THEORY', () => {
+    const set: Set<Classification> = new Set(FULL_CLASSIFICATION_ORDER)
     expect(set.size).toBe(FULL_CLASSIFICATION_ORDER.length)
-    expect(set.size).toBe(Object.values(Classification).length)
+    // THEORY is intentionally excluded (openings database not shipped yet).
+    expect(set.has(Classification.THEORY)).toBe(false)
+    expect(set.size).toBe(Object.values(Classification).length - 1)
   })
 })
