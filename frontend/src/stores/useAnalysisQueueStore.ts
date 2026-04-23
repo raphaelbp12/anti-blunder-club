@@ -25,6 +25,14 @@ import { useAnalysisStore } from './useAnalysisStore'
 
 export const ANALYSIS_QUEUE_DEFAULT_CONCURRENCY = 1
 
+/**
+ * Tracks running gameIds whose analysis was cancelled by the user. The
+ * `.finally()` handler in `drain()` consults this set so cancelled runs
+ * are removed from the batch (batchTotal already decremented) rather
+ * than incrementing batchDone.
+ */
+const cancelledRunning = new Set<string>()
+
 export interface QueueItem {
   gameId: string
   pgn: string
@@ -79,12 +87,16 @@ export const useAnalysisQueueStore = create<QueueState>((set, get) => ({
   },
 
   cancel: (gameId) => {
-    const wasPending = get().pending.some((p) => p.gameId === gameId)
+    const { pending, running } = get()
+    const wasPending = pending.some((p) => p.gameId === gameId)
+    const wasRunning = running.includes(gameId)
+    if (!wasPending && !wasRunning) return
     set((s) => ({
       pending: s.pending.filter((p) => p.gameId !== gameId),
-      batchDone: wasPending ? s.batchDone + 1 : s.batchDone,
+      batchTotal: Math.max(0, s.batchTotal - 1),
     }))
-    if (get().running.includes(gameId)) {
+    if (wasRunning) {
+      cancelledRunning.add(gameId)
       useAnalysisStore.getState().cancelAnalysis(gameId)
     }
     maybeResetCounters()
@@ -94,9 +106,10 @@ export const useAnalysisQueueStore = create<QueueState>((set, get) => ({
     const { pending, running } = get()
     set((s) => ({
       pending: [],
-      batchDone: s.batchDone + pending.length,
+      batchTotal: Math.max(0, s.batchTotal - pending.length - running.length),
     }))
     for (const gameId of running) {
+      cancelledRunning.add(gameId)
       useAnalysisStore.getState().cancelAnalysis(gameId)
     }
     maybeResetCounters()
@@ -132,9 +145,10 @@ function drain() {
         providerFactory: next.providerFactory,
       })
       .finally(() => {
+        const wasCancelled = cancelledRunning.delete(next.gameId)
         useAnalysisQueueStore.setState((s) => ({
           running: s.running.filter((g) => g !== next.gameId),
-          batchDone: s.batchDone + 1,
+          batchDone: wasCancelled ? s.batchDone : s.batchDone + 1,
         }))
         maybeResetCounters()
         drain()

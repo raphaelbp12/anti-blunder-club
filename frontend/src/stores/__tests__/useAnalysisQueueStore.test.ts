@@ -260,6 +260,78 @@ describe('useAnalysisQueueStore', () => {
         expect(useAnalysisQueueStore.getState().running).toEqual([])
       })
     })
+
+    it('repeated enqueue/cancel of a pending item does not inflate counters', async () => {
+      const p1 = makePendingProviderFactory()
+
+      // Keep a long-running task occupying the single slot so follow-ups stay pending.
+      useAnalysisQueueStore.getState().enqueue({
+        gameId: 'occupant',
+        pgn: PGN,
+        game: makeGame('occupant'),
+        providerFactory: p1.factory,
+      })
+      await vi.waitFor(() => {
+        expect(useAnalysisQueueStore.getState().running).toContain('occupant')
+      })
+
+      const baseTotal = useAnalysisQueueStore.getState().batchTotal
+      const baseDone = useAnalysisQueueStore.getState().batchDone
+
+      for (let i = 0; i < 10; i++) {
+        useAnalysisQueueStore.getState().enqueue({
+          gameId: 'flapping',
+          pgn: PGN,
+          game: makeGame('flapping'),
+          providerFactory: makeFastProviderFactory(),
+        })
+        useAnalysisQueueStore.getState().cancel('flapping')
+      }
+
+      expect(useAnalysisQueueStore.getState().batchTotal).toBe(baseTotal)
+      expect(useAnalysisQueueStore.getState().batchDone).toBe(baseDone)
+      expect(useAnalysisQueueStore.getState().pending).toEqual([])
+
+      p1.release()
+      await vi.waitFor(() => {
+        expect(useAnalysisQueueStore.getState().running).toEqual([])
+      })
+      expect(useAnalysisQueueStore.getState().batchTotal).toBe(0)
+      expect(useAnalysisQueueStore.getState().batchDone).toBe(0)
+    })
+
+    it('cancelling a running item does not count it as done in the batch', async () => {
+      const p1 = makePendingProviderFactory()
+      const f2 = makeFastProviderFactory()
+
+      useAnalysisQueueStore.getState().enqueue({
+        gameId: 'r',
+        pgn: PGN,
+        game: makeGame('r'),
+        providerFactory: p1.factory,
+      })
+      useAnalysisQueueStore.getState().enqueue({
+        gameId: 's',
+        pgn: PGN,
+        game: makeGame('s'),
+        providerFactory: f2,
+      })
+      await vi.waitFor(() => {
+        expect(useAnalysisQueueStore.getState().running).toContain('r')
+      })
+      expect(useAnalysisQueueStore.getState().batchTotal).toBe(2)
+
+      useAnalysisQueueStore.getState().cancel('r')
+      p1.release()
+
+      await vi.waitFor(() => {
+        expect(useAnalysisQueueStore.getState().running).toEqual([])
+        expect(useAnalysisStore.getState().byGameId['s']?.status).toBe('done')
+      })
+      // After drain, counters must reset to 0/0.
+      expect(useAnalysisQueueStore.getState().batchTotal).toBe(0)
+      expect(useAnalysisQueueStore.getState().batchDone).toBe(0)
+    })
   })
 
   describe('isActive', () => {
