@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useParams, useSearchParams } from 'react-router-dom'
 import { AccuracyTabContent } from '../components/AccuracyTabContent'
 import { AnalysedTabContent } from '../components/AnalysedTabContent'
+import { BatchAnalysisProgress } from '../components/BatchAnalysisProgress'
 import { FilterChips } from '../components/FilterChips'
 import { GamesTabContent } from '../components/GamesTabContent'
 import { SEOHelmet } from '../components/SEOHelmet'
@@ -164,6 +165,7 @@ export function PlayerPage() {
             activeTab={activeTab}
             onTabChange={handleTabChange}
           />
+          <BatchAnalysisProgress />
           {activeTab !== 'analysed' && (
             <>
               <FilterChips

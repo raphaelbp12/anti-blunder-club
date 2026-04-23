@@ -6,6 +6,7 @@ import { useAnalysisStore } from '../stores/useAnalysisStore'
 import { analyzeAccuracy } from '../utils/accuracyAnalysis'
 import { trackEvent } from '../utils/analytics'
 import { getPlayerResult } from '../utils/playerResult'
+import { AnalyzeButton } from './AnalyzeButton'
 import { ClassificationSummary } from './ClassificationSummary'
 import { ResultBadge } from './ResultBadge'
 import { TrackedLink } from './TrackedLink'
@@ -98,10 +99,11 @@ export function AccuracyTabContent({
                       )}
                     </div>
                   </div>
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-3">
                     <span className="text-lg font-bold text-danger">
                       {accuracy.toFixed(1)}%
                     </span>
+                    <AnalyzeButton gameId={gameId} pgn={game.pgn} game={game} />
                     <TrackedLink
                       to={`/player/${username}/match/${gameId}`}
                       state={game}

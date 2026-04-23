@@ -3,6 +3,7 @@ import { extractGameId } from '../services/chessComApi'
 import { PieceColour } from '../services/analysis/constants/PieceColour'
 import { useAnalysisStore } from '../stores/useAnalysisStore'
 import { getPlayerResult } from '../utils/playerResult'
+import { AnalyzeButton } from './AnalyzeButton'
 import { ClassificationSummary } from './ClassificationSummary'
 import { ResultBadge } from './ResultBadge'
 import { TrackedLink } from './TrackedLink'
@@ -61,15 +62,18 @@ export function MatchList({ games, username }: MatchListProps) {
                 )}
               </div>
             </div>
-            <TrackedLink
-              to={`/player/${username}/match/${gameId}`}
-              state={game}
-              eventName="match_view"
-              eventParams={{ username, game_id: gameId }}
-              className="text-accent hover:underline"
-            >
-              View
-            </TrackedLink>
+            <div className="flex items-center gap-3">
+              <AnalyzeButton gameId={gameId} pgn={game.pgn} game={game} />
+              <TrackedLink
+                to={`/player/${username}/match/${gameId}`}
+                state={game}
+                eventName="match_view"
+                eventParams={{ username, game_id: gameId }}
+                className="text-accent hover:underline"
+              >
+                View
+              </TrackedLink>
+            </div>
           </li>
         )
       })}
