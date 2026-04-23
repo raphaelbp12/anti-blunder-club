@@ -19,6 +19,8 @@ export type AnalyticsEvent =
   | 'game_filter_applied'
   | 'about_nav_clicked'
   | 'about_discord_clicked'
+  | 'navbar_discord_clicked'
+  | 'navbar_menu_discord_clicked'
   | 'about_feedback_link_clicked'
   | 'about_source_clicked'
   | 'about_wintrchess_clicked'

@@ -17,6 +17,12 @@ function renderNavbar(username?: string) {
   )
 }
 
+async function openMenu() {
+  const user = userEvent.setup()
+  await user.click(screen.getByRole('button', { name: /open menu/i }))
+  return user
+}
+
 describe('Navbar', () => {
   beforeEach(() => {
     vi.clearAllMocks()
@@ -47,19 +53,37 @@ describe('Navbar', () => {
     ).not.toBeInTheDocument()
   })
 
-  it('renders a theme toggle button', () => {
+  it('renders a burger menu button', () => {
     renderNavbar()
     expect(
-      screen.getByRole('button', { name: /toggle theme/i }),
+      screen.getByRole('button', { name: /open menu/i }),
     ).toBeInTheDocument()
   })
 
-  it('clicking toggle flips isDark in the store', async () => {
+  it('does not render menu items until the menu is opened', () => {
     renderNavbar()
-    const user = userEvent.setup()
+    expect(
+      screen.queryByRole('button', { name: /toggle theme/i }),
+    ).not.toBeInTheDocument()
+    expect(
+      screen.queryByRole('link', { name: /about/i }),
+    ).not.toBeInTheDocument()
+  })
+
+  it('renders theme toggle inside the menu when opened', async () => {
+    renderNavbar()
+    await openMenu()
+    expect(
+      screen.getByRole('menuitem', { name: /toggle theme/i }),
+    ).toBeInTheDocument()
+  })
+
+  it('clicking theme toggle in the menu flips isDark in the store', async () => {
+    renderNavbar()
+    const user = await openMenu()
 
     expect(useThemeStore.getState().isDark).toBe(true)
-    await user.click(screen.getByRole('button', { name: /toggle theme/i }))
+    await user.click(screen.getByRole('menuitem', { name: /toggle theme/i }))
     expect(useThemeStore.getState().isDark).toBe(false)
   })
 
@@ -85,23 +109,56 @@ describe('Navbar', () => {
 
   it('fires theme_toggle event with new_theme param', async () => {
     renderNavbar()
-    const user = userEvent.setup()
-    await user.click(screen.getByRole('button', { name: /toggle theme/i }))
+    const user = await openMenu()
+    await user.click(screen.getByRole('menuitem', { name: /toggle theme/i }))
     expect(trackEvent).toHaveBeenCalledWith('theme_toggle', {
       new_theme: 'light',
     })
   })
 
-  it('always renders an About link pointing to /about', () => {
+  it('renders an About link inside the menu pointing to /about', async () => {
     renderNavbar()
-    const link = screen.getByRole('link', { name: /about/i })
+    await openMenu()
+    const link = screen.getByRole('menuitem', { name: /about/i })
     expect(link).toHaveAttribute('href', '/about')
   })
 
-  it('fires about_nav_clicked when About link is clicked', async () => {
+  it('fires about_nav_clicked when About menu item is clicked', async () => {
+    renderNavbar()
+    const user = await openMenu()
+    await user.click(screen.getByRole('menuitem', { name: /about/i }))
+    expect(trackEvent).toHaveBeenCalledWith('about_nav_clicked', undefined)
+  })
+
+  it('renders a Join Discord link in the navbar pointing to the Discord invite', () => {
+    renderNavbar()
+    const link = screen.getByRole('link', { name: /join discord/i })
+    expect(link).toHaveAttribute('href', 'https://discord.gg/qfrXu8WQhu')
+    expect(link).toHaveAttribute('target', '_blank')
+    expect(link).toHaveAttribute('rel', expect.stringContaining('noopener'))
+  })
+
+  it('fires navbar_discord_clicked when navbar Join Discord is clicked', async () => {
     renderNavbar()
     const user = userEvent.setup()
-    await user.click(screen.getByRole('link', { name: /about/i }))
-    expect(trackEvent).toHaveBeenCalledWith('about_nav_clicked', undefined)
+    await user.click(screen.getByRole('link', { name: /join discord/i }))
+    expect(trackEvent).toHaveBeenCalledWith('navbar_discord_clicked', undefined)
+  })
+
+  it('renders a Join Discord entry at the top of the menu', async () => {
+    renderNavbar()
+    await openMenu()
+    const menuDiscord = screen.getByRole('menuitem', { name: /join discord/i })
+    expect(menuDiscord).toHaveAttribute('href', 'https://discord.gg/qfrXu8WQhu')
+  })
+
+  it('fires navbar_menu_discord_clicked when the menu Join Discord is clicked', async () => {
+    renderNavbar()
+    const user = await openMenu()
+    await user.click(screen.getByRole('menuitem', { name: /join discord/i }))
+    expect(trackEvent).toHaveBeenCalledWith(
+      'navbar_menu_discord_clicked',
+      undefined,
+    )
   })
 })
