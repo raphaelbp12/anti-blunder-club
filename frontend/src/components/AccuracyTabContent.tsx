@@ -3,6 +3,8 @@ import type { ChessGame } from '../services/chessComApi'
 import { extractGameId } from '../services/chessComApi'
 import { analyzeAccuracy } from '../utils/accuracyAnalysis'
 import { trackEvent } from '../utils/analytics'
+import { getPlayerResult } from '../utils/playerResult'
+import { ResultBadge } from './ResultBadge'
 import { TrackedLink } from './TrackedLink'
 
 interface AccuracyTabContentProps {
@@ -56,18 +58,22 @@ export function AccuracyTabContent({
                 game.white.username.toLowerCase() === username.toLowerCase()
                   ? game.black
                   : game.white
+              const result = getPlayerResult(game, username)
               return (
                 <li
                   key={game.url}
-                  className="flex items-center justify-between rounded-lg border border-border p-4"
+                  className="flex items-center justify-between gap-4 rounded-lg border border-border p-4"
                 >
-                  <div className="flex flex-col gap-1">
-                    <span className="font-semibold">
-                      vs {opponent.username} ({opponent.rating})
-                    </span>
-                    <span className="text-sm capitalize text-secondary">
-                      {game.timeClass}
-                    </span>
+                  <div className="flex items-center gap-4">
+                    <ResultBadge result={result} />
+                    <div className="flex flex-col gap-1">
+                      <span className="font-semibold">
+                        vs {opponent.username} ({opponent.rating})
+                      </span>
+                      <span className="text-sm capitalize text-secondary">
+                        {game.timeClass}
+                      </span>
+                    </div>
                   </div>
                   <div className="flex items-center gap-4">
                     <span className="text-lg font-bold text-danger">

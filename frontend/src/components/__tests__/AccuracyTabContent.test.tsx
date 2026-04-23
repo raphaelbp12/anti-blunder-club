@@ -28,7 +28,7 @@ const mockGames: ChessGame[] = [
   },
   {
     url: 'https://www.chess.com/game/live/333',
-    white: { username: 'alice', rating: 1520, result: 'loss' },
+    white: { username: 'alice', rating: 1520, result: 'checkmated' },
     black: { username: 'dan', rating: 1700, result: 'win' },
     timeClass: 'bullet',
     endTime: 1711900200,
@@ -101,5 +101,14 @@ describe('AccuracyTabContent', () => {
       games_analyzed: 3,
       mean_accuracy: 80,
     })
+  })
+
+  it('shows a result badge (W/L/D) on each below-average game card', () => {
+    renderAccuracyTab()
+
+    // The single below-average game is the 70% bullet game where alice lost.
+    const belowAvgItem = screen.getAllByRole('listitem')[0]
+    expect(belowAvgItem).toHaveTextContent('L')
+    expect(belowAvgItem.querySelector('[aria-label="Defeat"]')).not.toBeNull()
   })
 })
