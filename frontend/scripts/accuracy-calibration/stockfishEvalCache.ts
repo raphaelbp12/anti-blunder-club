@@ -33,7 +33,7 @@ import { EngineVersion } from '../../src/services/analysis/constants/EngineVersi
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const FIXTURES_DIR = resolve(__dirname, 'fixtures')
 const DEFAULT_DEPTH = 18
-const ENGINE_VERSION = EngineVersion.STOCKFISH_17_LITE // any value — we only need evaluation, not SAN source metadata
+const ENGINE_VERSION = EngineVersion.STOCKFISH_18_LITE // any value — we only need evaluation, not SAN source metadata
 
 interface CachedPosition {
   ply: number

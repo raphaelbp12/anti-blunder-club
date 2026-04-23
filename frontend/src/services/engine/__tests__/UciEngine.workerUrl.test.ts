@@ -44,10 +44,10 @@ describe('UciEngine default worker URL', () => {
     vi.stubEnv('BASE_URL', '/')
     const { UciEngine } = await import('../UciEngine')
 
-    new UciEngine({ version: EngineVersion.STOCKFISH_17_LITE })
+    new UciEngine({ version: EngineVersion.STOCKFISH_18_LITE })
 
     expect(FakeWorker.lastUrl).toBe(
-      `/engines/${EngineVersion.STOCKFISH_17_LITE}`,
+      `/engines/${EngineVersion.STOCKFISH_18_LITE}`,
     )
   })
 
@@ -55,10 +55,10 @@ describe('UciEngine default worker URL', () => {
     vi.stubEnv('BASE_URL', '/anti-blunder-club/')
     const { UciEngine } = await import('../UciEngine')
 
-    new UciEngine({ version: EngineVersion.STOCKFISH_17_LITE })
+    new UciEngine({ version: EngineVersion.STOCKFISH_18_LITE })
 
     expect(FakeWorker.lastUrl).toBe(
-      `/anti-blunder-club/engines/${EngineVersion.STOCKFISH_17_LITE}`,
+      `/anti-blunder-club/engines/${EngineVersion.STOCKFISH_18_LITE}`,
     )
   })
 
@@ -67,12 +67,12 @@ describe('UciEngine default worker URL', () => {
     const { UciEngine } = await import('../UciEngine')
 
     new UciEngine({
-      version: EngineVersion.STOCKFISH_17_LITE,
+      version: EngineVersion.STOCKFISH_18_LITE,
       enginePathPrefix: '/custom/',
     })
 
     expect(FakeWorker.lastUrl).toBe(
-      `/custom/${EngineVersion.STOCKFISH_17_LITE}`,
+      `/custom/${EngineVersion.STOCKFISH_18_LITE}`,
     )
   })
 })

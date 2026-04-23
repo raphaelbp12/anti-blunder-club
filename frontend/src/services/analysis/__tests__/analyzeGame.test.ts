@@ -24,7 +24,7 @@ function engineLine(
     depth: 20,
     index,
     evaluation,
-    source: EngineVersion.STOCKFISH_17_LITE,
+    source: EngineVersion.STOCKFISH_18_LITE,
     moves: [{ uci: move.lan, san: move.san }],
   }
 }
