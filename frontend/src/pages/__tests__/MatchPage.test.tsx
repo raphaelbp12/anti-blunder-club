@@ -191,6 +191,23 @@ describe('MatchPage', () => {
       ).toBeInTheDocument()
     })
 
+    it('shows the White/Black classification summary columns when done', () => {
+      useAnalysisStore.setState({
+        byGameId: {
+          '456': { status: 'done', result: doneResult, durationMs: 1234 },
+        },
+      })
+      renderMatchPage(gameWithPgn)
+
+      const white = screen.getByTestId('classification-column-white')
+      const black = screen.getByTestId('classification-column-black')
+      expect(white).toBeInTheDocument()
+      expect(black).toBeInTheDocument()
+      // White played one BEST move, Black played one EXCELLENT move.
+      expect(white).toHaveTextContent('Best')
+      expect(black).toHaveTextContent('Excellent')
+    })
+
     it('shows an error and Retry button when failed', async () => {
       useAnalysisStore.setState({
         byGameId: { '456': { status: 'error', error: 'engine crashed' } },

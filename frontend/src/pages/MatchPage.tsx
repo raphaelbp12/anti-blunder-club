@@ -1,9 +1,11 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useLocation, useParams } from 'react-router-dom'
+import { ClassificationSummary } from '../components/ClassificationSummary'
 import { SEOHelmet } from '../components/SEOHelmet'
 import { TrackedButton } from '../components/TrackedButton'
 import { TrackedExternalLink } from '../components/TrackedExternalLink'
 import { fetchPlayerGame, type ChessGame } from '../services/chessComApi'
+import { summarizeClassifications } from '../services/analysis/summarizeClassifications'
 import { useAnalysisStore } from '../stores/useAnalysisStore'
 import { trackEvent } from '../utils/analytics'
 
@@ -48,6 +50,11 @@ export function MatchPage() {
       null,
       2,
     )
+  }, [entry])
+
+  const classificationSummary = useMemo(() => {
+    if (entry?.status !== 'done') return null
+    return summarizeClassifications(entry.result.moves)
   }, [entry])
 
   if (isLoading) {
@@ -176,6 +183,13 @@ export function MatchPage() {
                   {entry.result.accuracy.black.toFixed(1)}
                 </span>
               </p>
+              {classificationSummary && (
+                <ClassificationSummary
+                  variant="column"
+                  white={classificationSummary.white}
+                  black={classificationSummary.black}
+                />
+              )}
               <button
                 type="button"
                 onClick={() => setShowDetails((v) => !v)}
