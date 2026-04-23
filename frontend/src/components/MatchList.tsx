@@ -1,7 +1,6 @@
 import type { ChessGame } from '../services/chessComApi'
 import { extractGameId } from '../services/chessComApi'
 import { PieceColour } from '../services/analysis/constants/PieceColour'
-import { summarizeClassifications } from '../services/analysis/summarizeClassifications'
 import { useAnalysisStore } from '../stores/useAnalysisStore'
 import { getPlayerResult } from '../utils/playerResult'
 import { ClassificationSummary } from './ClassificationSummary'
@@ -36,7 +35,7 @@ export function MatchList({ games, username }: MatchListProps) {
               : null
         const playerCounts =
           entry?.status === 'done' && playerColour
-            ? summarizeClassifications(entry.result.moves)[playerColour]
+            ? entry.summary[playerColour]
             : null
         return (
           <li

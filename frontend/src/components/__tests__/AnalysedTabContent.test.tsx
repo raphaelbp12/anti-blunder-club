@@ -7,14 +7,44 @@ import { AnalysedTabContent } from '../AnalysedTabContent'
 import type { AnalyzedMove } from '../../services/analysis/analyzeGame'
 import { Classification } from '../../services/analysis/constants/Classification'
 import { PieceColour } from '../../services/analysis/constants/PieceColour'
+import {
+  emptyClassificationCounts,
+  summarizeClassifications,
+  type ClassificationSummary,
+} from '../../services/analysis/summarizeClassifications'
 import type { ChessGame } from '../../services/chessComApi'
-import { useAnalysisStore } from '../../stores/useAnalysisStore'
+import {
+  useAnalysisStore,
+  type AnalysisEntry,
+} from '../../stores/useAnalysisStore'
 
 function move(
   colour: PieceColour,
   classification: Classification,
 ): AnalyzedMove {
   return { san: 'e4', uci: 'e2e4', fen: '', moveColour: colour, classification }
+}
+
+function done(params: {
+  analysedAt: number
+  game?: ChessGame
+  moves?: AnalyzedMove[]
+  accuracy?: { white: number; black: number }
+}): Extract<AnalysisEntry, { status: 'done' }> {
+  const summary: ClassificationSummary = params.moves
+    ? summarizeClassifications(params.moves)
+    : {
+        white: emptyClassificationCounts(),
+        black: emptyClassificationCounts(),
+      }
+  return {
+    status: 'done',
+    durationMs: 0,
+    analysedAt: params.analysedAt,
+    summary,
+    accuracy: params.accuracy ?? { white: 0, black: 0 },
+    game: params.game,
+  }
 }
 
 const gameA: ChessGame = {
@@ -55,30 +85,18 @@ describe('<AnalysedTabContent>', () => {
   it('lists a card per done analysis, most recent first', () => {
     useAnalysisStore.setState({
       byGameId: {
-        '111': {
-          status: 'done',
-          durationMs: 1000,
+        '111': done({
           analysedAt: 1_000_000,
           game: gameA,
-          result: {
-            moves: [move(PieceColour.WHITE, Classification.BLUNDER)],
-            accuracy: { white: 80, black: 90 },
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            analysis: {} as any,
-          },
-        },
-        '222': {
-          status: 'done',
-          durationMs: 1000,
+          moves: [move(PieceColour.WHITE, Classification.BLUNDER)],
+          accuracy: { white: 80, black: 90 },
+        }),
+        '222': done({
           analysedAt: 2_000_000,
           game: gameB,
-          result: {
-            moves: [move(PieceColour.BLACK, Classification.MISTAKE)],
-            accuracy: { white: 70, black: 75 },
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            analysis: {} as any,
-          },
-        },
+          moves: [move(PieceColour.BLACK, Classification.MISTAKE)],
+          accuracy: { white: 70, black: 75 },
+        }),
       },
     })
     renderTab()
@@ -92,18 +110,7 @@ describe('<AnalysedTabContent>', () => {
   it('excludes running, idle, and error entries', () => {
     useAnalysisStore.setState({
       byGameId: {
-        '111': {
-          status: 'done',
-          durationMs: 0,
-          analysedAt: 1,
-          game: gameA,
-          result: {
-            moves: [],
-            accuracy: { white: 0, black: 0 },
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            analysis: {} as any,
-          },
-        },
+        '111': done({ analysedAt: 1, game: gameA }),
         '222': { status: 'running', progress: 0.3 },
         '333': { status: 'error', error: 'oops' },
       },
@@ -116,18 +123,7 @@ describe('<AnalysedTabContent>', () => {
   it('omits done entries missing ChessGame metadata (no card to render)', () => {
     useAnalysisStore.setState({
       byGameId: {
-        '111': {
-          status: 'done',
-          durationMs: 0,
-          analysedAt: 1,
-          // no `game` field
-          result: {
-            moves: [],
-            accuracy: { white: 0, black: 0 },
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            analysis: {} as any,
-          },
-        },
+        '111': done({ analysedAt: 1 }),
       },
     })
     renderTab()
@@ -137,22 +133,16 @@ describe('<AnalysedTabContent>', () => {
   it('renders accuracies and per-colour mistake summaries on each card', () => {
     useAnalysisStore.setState({
       byGameId: {
-        '111': {
-          status: 'done',
-          durationMs: 0,
+        '111': done({
           analysedAt: 1,
           game: gameA,
-          result: {
-            moves: [
-              move(PieceColour.WHITE, Classification.BLUNDER),
-              move(PieceColour.BLACK, Classification.MISTAKE),
-              move(PieceColour.BLACK, Classification.MISTAKE),
-            ],
-            accuracy: { white: 95.5, black: 88.2 },
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            analysis: {} as any,
-          },
-        },
+          moves: [
+            move(PieceColour.WHITE, Classification.BLUNDER),
+            move(PieceColour.BLACK, Classification.MISTAKE),
+            move(PieceColour.BLACK, Classification.MISTAKE),
+          ],
+          accuracy: { white: 95.5, black: 88.2 },
+        }),
       },
     })
     renderTab()
@@ -166,18 +156,7 @@ describe('<AnalysedTabContent>', () => {
   it("links to the Match page using the white player's profile", () => {
     useAnalysisStore.setState({
       byGameId: {
-        '111': {
-          status: 'done',
-          durationMs: 0,
-          analysedAt: 1,
-          game: gameA,
-          result: {
-            moves: [],
-            accuracy: { white: 0, black: 0 },
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            analysis: {} as any,
-          },
-        },
+        '111': done({ analysedAt: 1, game: gameA }),
       },
     })
     renderTab()

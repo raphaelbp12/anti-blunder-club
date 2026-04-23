@@ -8,6 +8,7 @@ import type { ChessGame } from '../../services/chessComApi'
 import { Classification } from '../../services/analysis/constants/Classification'
 import { PieceColour } from '../../services/analysis/constants/PieceColour'
 import type { AnalyzedMove } from '../../services/analysis/analyzeGame'
+import { summarizeClassifications } from '../../services/analysis/summarizeClassifications'
 import { useAnalysisStore } from '../../stores/useAnalysisStore'
 
 vi.mock('../../utils/analytics', () => ({
@@ -129,18 +130,21 @@ describe('MatchList', () => {
 
     it('shows a mistake-summary row when the store has a done analysis for the queried player', () => {
       // alice plays White in game 111.
+      const moves = [
+        move(PieceColour.WHITE, Classification.BLUNDER),
+        move(PieceColour.WHITE, Classification.MISTAKE),
+        move(PieceColour.BLACK, Classification.BLUNDER),
+      ]
       useAnalysisStore.setState({
         byGameId: {
           '111': {
             status: 'done',
             durationMs: 0,
             analysedAt: 1,
+            summary: summarizeClassifications(moves),
+            accuracy: { white: 50, black: 50 },
             result: {
-              moves: [
-                move(PieceColour.WHITE, Classification.BLUNDER),
-                move(PieceColour.WHITE, Classification.MISTAKE),
-                move(PieceColour.BLACK, Classification.BLUNDER),
-              ],
+              moves,
               accuracy: { white: 50, black: 50 },
               // eslint-disable-next-line @typescript-eslint/no-explicit-any
               analysis: {} as any,

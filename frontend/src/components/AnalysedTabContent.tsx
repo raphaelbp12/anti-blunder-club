@@ -8,7 +8,7 @@
 import type { ChessGame } from '../services/chessComApi'
 import { extractGameId } from '../services/chessComApi'
 import { PieceColour } from '../services/analysis/constants/PieceColour'
-import { summarizeClassifications } from '../services/analysis/summarizeClassifications'
+import type { ClassificationCounts } from '../services/analysis/summarizeClassifications'
 import {
   useAnalysisStore,
   type AnalysisEntry,
@@ -35,7 +35,7 @@ export function AnalysedTabContent() {
       {entries.map((entry) => {
         const { game } = entry
         const gameId = extractGameId(game.url)
-        const summary = summarizeClassifications(entry.result.moves)
+        const { summary } = entry
         return (
           <li
             key={game.url}
@@ -52,8 +52,8 @@ export function AnalysedTabContent() {
                   {game.timeClass}
                 </span>
                 <span className="text-sm text-muted">
-                  Accuracy: {entry.result.accuracy.white.toFixed(1)} /{' '}
-                  {entry.result.accuracy.black.toFixed(1)}
+                  Accuracy: {entry.accuracy.white.toFixed(1)} /{' '}
+                  {entry.accuracy.black.toFixed(1)}
                 </span>
               </div>
               <TrackedLink
@@ -91,7 +91,7 @@ function PlayerSummary({
   counts,
 }: {
   label: string
-  counts: ReturnType<typeof summarizeClassifications>['white']
+  counts: ClassificationCounts
 }) {
   return (
     <div className="flex flex-col gap-1">

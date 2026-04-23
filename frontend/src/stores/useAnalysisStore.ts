@@ -12,10 +12,11 @@
 // `startAnalysis(gameId, pgn, { providerFactory })`.
 //
 // Persistence: only `done` entries are persisted to localStorage under
-// ANALYSIS_STORE_KEY. The `result.analysis` StateTree is stripped before
-// serialization because it's a cyclic parent↔children graph that
-// JSON.stringify can't handle. No UI reads that tree today; if a future
-// consumer needs it, it'll have to re-run analyzeGame.
+// ANALYSIS_STORE_KEY. The persisted shape is deliberately slim:
+// `summary` (per-colour classification counts) + `accuracy` + game
+// metadata with PGN stripped. The full `result` (moves[] and the
+// cyclic StateTree) is session-only — after a reload the user can
+// re-analyse the game on demand if they want the per-move details.
 
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
@@ -29,6 +30,10 @@ import { LocalEngineProvider } from '../services/analysis/LocalEngineProvider'
 import { EngineScheduler } from '../services/engine/EngineScheduler'
 import { UciEngine } from '../services/engine/UciEngine'
 import { EngineVersion } from '../services/analysis/constants/EngineVersion'
+import {
+  summarizeClassifications,
+  type ClassificationSummary,
+} from '../services/analysis/summarizeClassifications'
 import type { ChessGame } from '../services/chessComApi'
 
 const DEFAULT_DEPTH = 16
@@ -40,12 +45,16 @@ export type AnalysisEntry =
   | { status: 'running'; progress: number }
   | {
       status: 'done'
-      result: AnalyzeGameResult
+      /** Per-colour classification counts. Always present (persisted). */
+      summary: ClassificationSummary
+      /** Per-colour game accuracy. Always present (persisted). */
+      accuracy: { white: number; black: number }
       durationMs: number
       analysedAt: number
-      /** Source game metadata — present when available so the "Analysed"
-       *  tab can render a card without re-fetching. */
+      /** Source game metadata — persisted with PGN stripped. */
       game?: ChessGame
+      /** Full analysis result. Session-only; absent after reload. */
+      result?: AnalyzeGameResult
     }
   | { status: 'error'; error: string }
 
@@ -85,11 +94,11 @@ export const useAnalysisStore = create<AnalysisState>()(
 
       startAnalysis: async (gameId, pgn, options) => {
         const existing = get().byGameId[gameId]
-        if (
-          existing &&
-          (existing.status === 'running' || existing.status === 'done')
-        ) {
-          return
+        // Allow re-running a done entry whose full result has been
+        // dropped at persistence boundary (hydrated on reload).
+        if (existing) {
+          if (existing.status === 'running') return
+          if (existing.status === 'done' && existing.result) return
         }
 
         const controller = new AbortController()
@@ -136,6 +145,8 @@ export const useAnalysisStore = create<AnalysisState>()(
               ...state.byGameId,
               [gameId]: {
                 status: 'done',
+                summary: summarizeClassifications(result.moves),
+                accuracy: result.accuracy,
                 result,
                 durationMs: Date.now() - startedAt,
                 analysedAt: Date.now(),
@@ -181,19 +192,27 @@ export const useAnalysisStore = create<AnalysisState>()(
     }),
     {
       name: ANALYSIS_STORE_KEY,
-      // Only keep done entries, and strip the cyclic `analysis` tree
-      // before serialization. Live state is untouched.
+      // Only keep done entries, and strip the heavy / cyclic bits of the
+      // result plus the PGN. Live state is untouched.
       partialize: (state) => {
         const persistedByGameId: Record<string, AnalysisEntry> = {}
         for (const [id, entry] of Object.entries(state.byGameId)) {
           if (entry.status !== 'done') continue
+          const gameWithoutPgn = entry.game
+            ? (() => {
+                const rest = { ...entry.game }
+                delete rest.pgn
+                return rest as ChessGame
+              })()
+            : undefined
           persistedByGameId[id] = {
-            ...entry,
-            result: {
-              moves: entry.result.moves,
-              accuracy: entry.result.accuracy,
-              // `analysis` intentionally omitted — cyclic tree.
-            } as AnalyzeGameResult,
+            status: 'done',
+            summary: entry.summary,
+            accuracy: entry.accuracy,
+            durationMs: entry.durationMs,
+            analysedAt: entry.analysedAt,
+            game: gameWithoutPgn,
+            // `result` intentionally omitted — session-only.
           }
         }
         return { byGameId: persistedByGameId }

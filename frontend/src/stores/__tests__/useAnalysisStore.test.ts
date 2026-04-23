@@ -62,7 +62,9 @@ describe('useAnalysisStore', () => {
     const entry = useAnalysisStore.getState().byGameId['g1']
     expect(entry?.status).toBe('done')
     if (entry?.status !== 'done') throw new Error('not done')
-    expect(entry.result.moves.length).toBeGreaterThan(0)
+    expect(entry.result?.moves.length).toBeGreaterThan(0)
+    expect(entry.summary).toBeDefined()
+    expect(entry.accuracy).toBeDefined()
     expect(entry.durationMs).toBeGreaterThanOrEqual(0)
     expect(dispose).toHaveBeenCalledTimes(1)
   })
@@ -175,11 +177,12 @@ describe('useAnalysisStore', () => {
       expect(entry.analysedAt).toBeGreaterThanOrEqual(before)
     })
 
-    it('persists done entries to localStorage without the circular analysis tree', async () => {
+    it('persists only summary + accuracy + game (no pgn, no result)', async () => {
       const { providerFactory } = makeAlwaysBestFactory()
+      const gameWithPgn = { ...stubGame, pgn: '1. e4 e5' }
       await useAnalysisStore
         .getState()
-        .startAnalysis('g1', PGN, { providerFactory, game: stubGame })
+        .startAnalysis('g1', PGN, { providerFactory, game: gameWithPgn })
 
       const raw = localStorage.getItem(ANALYSIS_STORE_KEY)
       expect(raw).not.toBeNull()
@@ -188,11 +191,16 @@ describe('useAnalysisStore', () => {
       }
       const persisted = parsed.state.byGameId['g1'] as {
         status: string
-        result: { analysis?: unknown; moves: unknown[] }
+        summary?: unknown
+        accuracy?: { white: number; black: number }
+        result?: unknown
+        game?: { pgn?: string }
       }
       expect(persisted.status).toBe('done')
-      expect(persisted.result.analysis).toBeUndefined()
-      expect(persisted.result.moves.length).toBeGreaterThan(0)
+      expect(persisted.summary).toBeDefined()
+      expect(persisted.accuracy).toBeDefined()
+      expect(persisted.result).toBeUndefined()
+      expect(persisted.game?.pgn).toBeUndefined()
     })
 
     it('does not persist running or error entries', async () => {

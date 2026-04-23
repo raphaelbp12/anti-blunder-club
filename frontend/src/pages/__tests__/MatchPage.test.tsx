@@ -8,6 +8,7 @@ import { useAnalysisStore } from '../../stores/useAnalysisStore'
 import type { AnalyzeGameResult } from '../../services/analysis/analyzeGame'
 import { Classification } from '../../services/analysis/constants/Classification'
 import { PieceColour } from '../../services/analysis/constants/PieceColour'
+import { summarizeClassifications } from '../../services/analysis/summarizeClassifications'
 
 const mockGame: ChessGame = {
   url: 'https://www.chess.com/game/live/456',
@@ -176,6 +177,8 @@ describe('MatchPage', () => {
           '456': {
             status: 'done',
             result: doneResult,
+            summary: summarizeClassifications(doneResult.moves),
+            accuracy: doneResult.accuracy,
             durationMs: 1234,
             analysedAt: 1,
           },
@@ -202,6 +205,8 @@ describe('MatchPage', () => {
           '456': {
             status: 'done',
             result: doneResult,
+            summary: summarizeClassifications(doneResult.moves),
+            accuracy: doneResult.accuracy,
             durationMs: 1234,
             analysedAt: 1,
           },

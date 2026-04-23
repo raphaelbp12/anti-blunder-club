@@ -2,7 +2,6 @@ import { useEffect, useRef } from 'react'
 import type { ChessGame } from '../services/chessComApi'
 import { extractGameId } from '../services/chessComApi'
 import { PieceColour } from '../services/analysis/constants/PieceColour'
-import { summarizeClassifications } from '../services/analysis/summarizeClassifications'
 import { useAnalysisStore } from '../stores/useAnalysisStore'
 import { analyzeAccuracy } from '../utils/accuracyAnalysis'
 import { trackEvent } from '../utils/analytics'
@@ -75,7 +74,7 @@ export function AccuracyTabContent({
                     : null
               const playerCounts =
                 entry?.status === 'done' && playerColour
-                  ? summarizeClassifications(entry.result.moves)[playerColour]
+                  ? entry.summary[playerColour]
                   : null
               return (
                 <li
