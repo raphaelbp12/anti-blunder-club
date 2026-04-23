@@ -42,11 +42,11 @@ export function AccuracyTabContent({
 
   return (
     <>
-      <div className="w-full max-w-2xl rounded-lg border border-border p-6 text-center">
-        <p className="text-3xl font-bold">
+      <div className="w-full max-w-2xl rounded-lg border border-border px-4 py-3 text-center sm:p-6">
+        <p className="text-2xl font-bold sm:text-3xl">
           {analysis.meanAccuracy.toFixed(1)}%
         </p>
-        <p className="text-sm text-secondary">
+        <p className="text-xs text-secondary sm:text-sm">
           Mean Accuracy ({analysis.gamesAnalyzed} games analyzed)
         </p>
       </div>
@@ -80,15 +80,15 @@ export function AccuracyTabContent({
               return (
                 <li
                   key={game.url}
-                  className="flex items-center justify-between gap-4 rounded-lg border border-border p-4"
+                  className="flex flex-col gap-3 rounded-lg border border-border p-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:p-4"
                 >
-                  <div className="flex items-center gap-4">
+                  <div className="flex min-w-0 items-center gap-3 sm:gap-4">
                     <ResultBadge result={result} />
-                    <div className="flex flex-col gap-1">
-                      <span className="font-semibold">
+                    <div className="flex min-w-0 flex-col gap-1">
+                      <span className="truncate text-sm font-semibold sm:text-base">
                         vs {opponent.username} ({opponent.rating})
                       </span>
-                      <span className="text-sm capitalize text-secondary">
+                      <span className="text-xs capitalize text-secondary sm:text-sm">
                         {game.timeClass}
                       </span>
                       {playerCounts && (
@@ -99,8 +99,8 @@ export function AccuracyTabContent({
                       )}
                     </div>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <span className="text-lg font-bold text-danger">
+                  <div className="flex flex-wrap items-center justify-end gap-3 sm:shrink-0">
+                    <span className="text-base font-bold text-danger sm:text-lg">
                       {accuracy.toFixed(1)}%
                     </span>
                     <AnalyzeButton gameId={gameId} pgn={game.pgn} game={game} />

@@ -105,10 +105,14 @@ export const MISTAKE_CLASSIFICATIONS = [
  * `THEORY` is intentionally omitted: the openings database is not
  * shipped yet (see `reporter/utils/opening.ts`), so it would always be
  * zero. Add it back here once openings.json is wired up.
+ *
+ * `BRILLIANT` and `CRITICAL` are also omitted: `analyzeGame` is
+ * currently invoked with `includeBrilliant: false` and
+ * `includeCritical: false` (see `stores/useAnalysisStore.ts`), so
+ * these classifiers never fire and would always render as zero. Add
+ * them back once the detectors are enabled and calibrated.
  */
 export const FULL_CLASSIFICATION_ORDER = [
-  Classification.BRILLIANT,
-  Classification.CRITICAL,
   Classification.BEST,
   Classification.EXCELLENT,
   Classification.OKAY,

@@ -41,11 +41,16 @@ describe('classificationMeta', () => {
     expect(isMistake(Classification.THEORY)).toBe(false)
   })
 
-  it('full order lists every displayable Classification exactly once, excluding THEORY', () => {
+  it('full order lists every displayable Classification exactly once, excluding THEORY, BRILLIANT, and CRITICAL', () => {
     const set: Set<Classification> = new Set(FULL_CLASSIFICATION_ORDER)
     expect(set.size).toBe(FULL_CLASSIFICATION_ORDER.length)
     // THEORY is intentionally excluded (openings database not shipped yet).
     expect(set.has(Classification.THEORY)).toBe(false)
-    expect(set.size).toBe(Object.values(Classification).length - 1)
+    // BRILLIANT and CRITICAL are excluded until the detectors are
+    // enabled in analyzeGame (currently includeBrilliant/includeCritical
+    // default to false, so they would always render as zero).
+    expect(set.has(Classification.BRILLIANT)).toBe(false)
+    expect(set.has(Classification.CRITICAL)).toBe(false)
+    expect(set.size).toBe(Object.values(Classification).length - 3)
   })
 })

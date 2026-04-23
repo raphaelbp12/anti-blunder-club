@@ -15,7 +15,10 @@ export function FilterChips({
   onChange,
 }: FilterChipsProps) {
   return (
-    <div className="flex gap-2 overflow-x-auto" role="group">
+    <div
+      className="flex w-full max-w-2xl gap-2 overflow-x-auto px-1 pb-1 [scrollbar-width:thin]"
+      role="group"
+    >
       {options.map((option) => {
         const isActive = option.value === activeValue
         return (

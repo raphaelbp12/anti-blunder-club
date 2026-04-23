@@ -41,19 +41,22 @@ export function MatchList({ games, username }: MatchListProps) {
         return (
           <li
             key={game.url}
-            className="flex items-center justify-between gap-4 rounded-lg border border-border p-4"
+            className="flex flex-col gap-3 rounded-lg border border-border p-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:p-4"
           >
-            <div className="flex items-center gap-4">
+            <div className="flex min-w-0 items-center gap-3 sm:gap-4">
               <ResultBadge result={result} />
-              <div className="flex flex-col gap-1">
-                <span>
-                  {game.white.username} ({game.white.rating}) vs{' '}
-                  {game.black.username} ({game.black.rating})
+              <div className="flex min-w-0 flex-col gap-1">
+                <span className="truncate text-sm sm:text-base">
+                  <span className="font-medium">{game.white.username}</span>
+                  <span className="text-secondary"> ({game.white.rating})</span>
+                  <span className="text-secondary"> vs </span>
+                  <span className="font-medium">{game.black.username}</span>
+                  <span className="text-secondary"> ({game.black.rating})</span>
                 </span>
-                <span className="text-sm capitalize text-secondary">
+                <span className="text-xs capitalize text-secondary sm:text-sm">
                   {game.timeClass}
                 </span>
-                <span className="text-sm text-muted">
+                <span className="text-xs text-muted sm:text-sm">
                   Accuracy: {game.accuracies?.white.toFixed(1) ?? '—'} /{' '}
                   {game.accuracies?.black.toFixed(1) ?? '—'}
                 </span>
@@ -62,7 +65,7 @@ export function MatchList({ games, username }: MatchListProps) {
                 )}
               </div>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center justify-end gap-3 sm:shrink-0">
               <AnalyzeButton gameId={gameId} pgn={game.pgn} game={game} />
               <TrackedLink
                 to={`/player/${username}/match/${gameId}`}
