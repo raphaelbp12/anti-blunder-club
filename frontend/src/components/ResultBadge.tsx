@@ -56,15 +56,21 @@ const STYLES: Record<NormalizedResult, BadgeStyle> = {
 export function ResultBadge({ result, size = 'md' }: ResultBadgeProps) {
   const style = STYLES[result]
   const pillSize = size === 'sm' ? 'h-9 w-9 text-base' : 'h-12 w-12 text-xl'
+  // Fixed column width so the tagline (which varies per result — e.g. "GG!"
+  // vs "Rough one") doesn't shove the rest of the card row left or right.
+  const columnWidth = size === 'sm' ? 'w-16' : 'w-20'
 
   return (
-    <div className="flex flex-col items-center gap-1" aria-label={style.label}>
+    <div
+      className={`flex ${columnWidth} shrink-0 flex-col items-center gap-1`}
+      aria-label={style.label}
+    >
       <span
         className={`flex ${pillSize} items-center justify-center rounded-xl font-black ring-2 ring-inset shadow-md transition-transform hover:-rotate-3 hover:scale-105 ${style.classes}`}
       >
         {style.letter}
       </span>
-      <span className="text-[10px] font-semibold uppercase tracking-wider text-secondary">
+      <span className="w-full truncate text-center text-[10px] font-semibold uppercase tracking-wider text-secondary">
         {style.tagline}
       </span>
     </div>
