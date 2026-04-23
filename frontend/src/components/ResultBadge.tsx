@@ -9,8 +9,7 @@ interface ResultBadgeProps {
 interface BadgeStyle {
   letter: string
   label: string
-  tagline: string
-  /** Tailwind classes applied to the pill. */
+  /** Tailwind classes applied to the pill (border + text color). */
   classes: string
 }
 
@@ -18,61 +17,39 @@ const STYLES: Record<NormalizedResult, BadgeStyle> = {
   win: {
     letter: 'W',
     label: 'Victory',
-    tagline: 'GG!',
-    classes:
-      'bg-gradient-to-br from-emerald-400 to-emerald-600 text-white ' +
-      'shadow-emerald-500/30 ring-emerald-400/60',
+    classes: 'border-emerald-500 text-emerald-600 dark:text-emerald-400',
   },
   loss: {
     letter: 'L',
     label: 'Defeat',
-    tagline: 'Rough one',
-    classes:
-      'bg-gradient-to-br from-rose-400 to-rose-600 text-white ' +
-      'shadow-rose-500/30 ring-rose-400/60',
+    classes: 'border-rose-500 text-rose-600 dark:text-rose-400',
   },
   draw: {
     letter: 'D',
     label: 'Draw',
-    tagline: 'Stalemate',
-    classes:
-      'bg-gradient-to-br from-amber-300 to-amber-500 text-amber-950 ' +
-      'shadow-amber-500/30 ring-amber-400/60',
+    classes: 'border-amber-500 text-amber-600 dark:text-amber-400',
   },
   unknown: {
     letter: '?',
     label: 'Unknown result',
-    tagline: '—',
-    classes:
-      'bg-gradient-to-br from-gray-300 to-gray-500 text-white ' +
-      'shadow-gray-500/20 ring-gray-400/40',
+    classes: 'border-gray-400 text-gray-500 dark:text-gray-400',
   },
 }
 
 /**
- * Bold, color-coded W/L/D pill with a playful tagline. Built to stand out on
- * the accuracy card without competing with the accuracy number for attention.
+ * Outlined W/L/D badge. Transparent background, colored border + letter —
+ * quietly informative without competing with the accuracy number.
  */
 export function ResultBadge({ result, size = 'md' }: ResultBadgeProps) {
   const style = STYLES[result]
-  const pillSize = size === 'sm' ? 'h-9 w-9 text-base' : 'h-12 w-12 text-xl'
-  // Fixed column width so the tagline (which varies per result — e.g. "GG!"
-  // vs "Rough one") doesn't shove the rest of the card row left or right.
-  const columnWidth = size === 'sm' ? 'w-16' : 'w-20'
+  const pillSize = size === 'sm' ? 'h-9 w-9 text-base' : 'h-10 w-10 text-lg'
 
   return (
-    <div
-      className={`flex ${columnWidth} shrink-0 flex-col items-center gap-1`}
+    <span
       aria-label={style.label}
+      className={`flex ${pillSize} shrink-0 items-center justify-center rounded-lg border-2 bg-transparent font-black ${style.classes}`}
     >
-      <span
-        className={`flex ${pillSize} items-center justify-center rounded-xl font-black ring-2 ring-inset shadow-md transition-transform hover:-rotate-3 hover:scale-105 ${style.classes}`}
-      >
-        {style.letter}
-      </span>
-      <span className="w-full truncate text-center text-[10px] font-semibold uppercase tracking-wider text-secondary">
-        {style.tagline}
-      </span>
-    </div>
+      {style.letter}
+    </span>
   )
 }
