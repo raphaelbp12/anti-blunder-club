@@ -192,6 +192,30 @@ export const useAnalysisStore = create<AnalysisState>()(
     }),
     {
       name: ANALYSIS_STORE_KEY,
+      // Bump when the persisted shape of AnalysisEntry changes. v1 was
+      // the initial release that persisted the full `result`. v2 persists
+      // summary + accuracy at the top level; `result` is session-only.
+      version: 2,
+      migrate: (persisted: unknown, version: number) => {
+        // Any pre-v2 payload is discarded: the old shape stored `result`
+        // but not top-level `summary`/`accuracy`, so there's nothing
+        // useful to recover without re-running the engine.
+        if (version < 2) return { byGameId: {} }
+        return persisted as { byGameId: Record<string, AnalysisEntry> }
+      },
+      // Defensive: on load, drop any done entry missing summary/accuracy
+      // (e.g. a manually-edited localStorage or a partial write).
+      onRehydrateStorage: () => (state) => {
+        if (!state) return
+        const cleaned: Record<string, AnalysisEntry> = {}
+        for (const [id, entry] of Object.entries(state.byGameId)) {
+          if (entry.status === 'done' && (!entry.summary || !entry.accuracy)) {
+            continue
+          }
+          cleaned[id] = entry
+        }
+        state.byGameId = cleaned
+      },
       // Only keep done entries, and strip the heavy / cyclic bits of the
       // result plus the PGN. Live state is untouched.
       partialize: (state) => {

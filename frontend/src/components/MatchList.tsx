@@ -34,7 +34,7 @@ export function MatchList({ games, username }: MatchListProps) {
               ? PieceColour.BLACK
               : null
         const playerCounts =
-          entry?.status === 'done' && playerColour
+          entry?.status === 'done' && entry.summary && playerColour
             ? entry.summary[playerColour]
             : null
         return (

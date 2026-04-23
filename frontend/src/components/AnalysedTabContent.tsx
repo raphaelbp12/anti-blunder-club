@@ -23,7 +23,10 @@ export function AnalysedTabContent() {
   const byGameId = useAnalysisStore((s) => s.byGameId)
 
   const entries: DoneWithGame[] = Object.values(byGameId)
-    .filter((e): e is DoneWithGame => e.status === 'done' && !!e.game)
+    .filter(
+      (e): e is DoneWithGame =>
+        e.status === 'done' && !!e.game && !!e.summary && !!e.accuracy,
+    )
     .sort((a, b) => b.analysedAt - a.analysedAt)
 
   if (entries.length === 0) {
