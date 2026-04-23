@@ -3,7 +3,7 @@ import { describe, it, expect } from 'vitest'
 import { parseInfoLine } from '../UciEngine'
 import { EngineVersion } from '../../analysis/constants/EngineVersion'
 
-const SF = EngineVersion.STOCKFISH_17_LITE
+const SF = EngineVersion.STOCKFISH_18_LITE
 const STARTING_FEN = 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1'
 // After 1.e4 — Black to move.
 const AFTER_E4_FEN =

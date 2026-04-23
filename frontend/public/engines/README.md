@@ -1,18 +1,18 @@
 # Stockfish engine binaries
 
-This folder ships **Stockfish 17 Lite** (single-threaded) as a Web Worker
+This folder ships **Stockfish 18 Lite** (single-threaded) as a Web Worker
 build, so the analysis engine can run entirely in the user's browser.
 
 ## Files
 
 | File                            | Purpose                                 |
 | ------------------------------- | --------------------------------------- |
-| `stockfish-17-lite-single.js`   | Web Worker entry point (UCI driver).    |
-| `stockfish-17-lite-single.wasm` | WebAssembly binary (the engine itself). |
+| `stockfish-18-lite-single.js`   | Web Worker entry point (UCI driver).    |
+| `stockfish-18-lite-single.wasm` | WebAssembly binary (the engine itself). |
 
 These are served verbatim from `public/`; the runtime loader at
 [frontend/src/services/engine/UciEngine.ts](../../src/services/engine/UciEngine.ts)
-spawns a `Worker("/engines/stockfish-17-lite-single.js")`.
+spawns a `Worker("/engines/stockfish-18-lite-single.js")`.
 
 ## License and attribution
 
@@ -25,9 +25,11 @@ Stockfish binaries here compatible.
 - Source code: https://github.com/official-stockfish/Stockfish
 - License: https://github.com/official-stockfish/Stockfish/blob/master/Copying.txt
 
-These binaries were sourced via
-[WintrChess](https://github.com/WintrCat/wintrchess) (also GPL-3.0),
-which publishes a tested WebAssembly build of Stockfish 17 Lite.
+These binaries were sourced from the
+[`stockfish` npm package](https://www.npmjs.com/package/stockfish) (v18.0.7),
+a WASM build by Nathan Rugg
+([nmrugg/stockfish.js](https://github.com/nmrugg/stockfish.js), GPL-3.0),
+sponsored by Chess.com.
 
 If you distribute a modified build of this project, you must continue to
 provide the corresponding source of Stockfish, either by bundling it or by

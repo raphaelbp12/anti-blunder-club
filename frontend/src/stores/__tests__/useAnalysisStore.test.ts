@@ -9,7 +9,7 @@ const PGN = '1. e4 e5 2. Nf3'
 
 function engineLine(san: string): EngineLine {
   return {
-    source: EngineVersion.STOCKFISH_17_LITE,
+    source: EngineVersion.STOCKFISH_18_LITE,
     depth: 20,
     index: 1,
     evaluation: { type: 'centipawn', value: 20 },

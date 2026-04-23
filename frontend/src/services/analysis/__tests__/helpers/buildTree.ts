@@ -22,7 +22,7 @@ export function buildEngineLine(
   const move = board.move(san)
   return {
     evaluation,
-    source: EngineVersion.STOCKFISH_17,
+    source: EngineVersion.STOCKFISH_18,
     depth: options.depth ?? 20,
     index: options.index ?? 1,
     moves: [{ san: move.san, uci: move.lan }],

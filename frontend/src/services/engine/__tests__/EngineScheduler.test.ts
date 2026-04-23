@@ -9,7 +9,7 @@ function makeLine(label: string, depth = 20, index = 1): EngineLine {
     depth,
     index,
     evaluation: { type: 'centipawn', value: 0 },
-    source: EngineVersion.STOCKFISH_17_LITE,
+    source: EngineVersion.STOCKFISH_18_LITE,
     moves: [{ uci: label, san: label }],
   }
 }

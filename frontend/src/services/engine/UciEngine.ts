@@ -84,7 +84,7 @@ export function parseInfoLine(
 const DEFAULT_ENGINE_PATH_PREFIX = `${import.meta.env.BASE_URL}engines/`
 
 export interface UciEngineOptions {
-  /** Stockfish build filename (e.g. `stockfish-17-lite-single.js`). */
+  /** Stockfish build filename (e.g. `stockfish-18-lite-single.js`). */
   version: EngineVersion
   /** Override `new Worker(...)` — used by tests. */
   createWorker?: (version: EngineVersion) => Worker

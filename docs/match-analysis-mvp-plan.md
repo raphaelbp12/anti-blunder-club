@@ -22,7 +22,7 @@ These apply to every phase.
 - **TDD.** Red → green → refactor for every pure module. Use fakes for `PositionProvider` so orchestrator tests don't need a real engine.
 - **Parallelization is documented, not built.** `analyzeGame` takes a `PositionProvider`; later we share one `EngineScheduler` across multiple `analyzeGame` calls. MVP runs one game, `poolSize = 1`.
 - **No visuals yet.** MVP output: two numbers (White/Black accuracy) + details toggle showing per-move JSON.
-- **Engine settings (MVP):** Stockfish 17 Lite single-threaded, **depth 16**, **MultiPV 1**. MultiPV 2 is required for brilliant/critical — deferred.
+- **Engine settings (MVP):** Stockfish 18 Lite single-threaded, **depth 16**, **MultiPV 1**. MultiPV 2 is required for brilliant/critical — deferred.
 - **Commit policy:** one PR per phase, each one shippable on its own via `/ship`.
 
 ---

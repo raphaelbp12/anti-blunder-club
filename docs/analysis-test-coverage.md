@@ -74,7 +74,7 @@ does two things:
 
 - `buildEngineLine(fen, san, evaluation)` — produces a one-move
   `EngineLine` with a realistic UCI derived from `chess.js`, stamped as
-  Stockfish 17 depth 20 by default.
+  Stockfish 18 depth 20 by default.
 - `buildLinearTree(startFen, rootBestLine, moves[])` — builds a linear
   chain of nodes where each move is a `{ san, bestLine }` spec (+ optional
   `secondLine` for brilliant/critical tests). Each node has its FEN, played

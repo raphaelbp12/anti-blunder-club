@@ -52,7 +52,7 @@ function defaultProviderFactory(): PositionProvider {
   const scheduler = new EngineScheduler({
     poolSize: 1,
     engineFactory: () =>
-      new UciEngine({ version: EngineVersion.STOCKFISH_17_LITE }),
+      new UciEngine({ version: EngineVersion.STOCKFISH_18_LITE }),
   })
   return new LocalEngineProvider(scheduler)
 }
