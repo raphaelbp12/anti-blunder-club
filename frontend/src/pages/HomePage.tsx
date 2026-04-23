@@ -26,7 +26,7 @@ export function HomePage() {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center gap-6 p-8">
+    <main className="flex min-h-screen flex-col items-center justify-center gap-4 px-4 py-6 sm:gap-6 sm:p-8">
       <SEOHelmet
         title="Anti-Blunder Club — Free Chess Game Analysis"
         description="Analyze your Chess.com games for free. Find blunders, review accuracy, and improve your chess skills with Anti-Blunder Club."

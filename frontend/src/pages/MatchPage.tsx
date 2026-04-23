@@ -95,7 +95,7 @@ export function MatchPage() {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-start gap-6 p-8">
+    <main className="flex min-h-screen flex-col items-center justify-start gap-4 px-4 py-4 sm:gap-6 sm:p-8">
       <SEOHelmet
         title={`Game Analysis — ${game.white.username} vs ${game.black.username}`}
         description={`Chess game analysis: ${game.white.username} (${game.white.rating}) vs ${game.black.username} (${game.black.rating}). ${game.timeClass} game review.`}

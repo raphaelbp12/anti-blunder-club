@@ -151,7 +151,7 @@ export function PlayerPage() {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-start gap-6 p-8">
+    <main className="flex min-h-screen flex-col items-center justify-start gap-4 px-4 py-4 sm:gap-6 sm:p-8">
       <SEOHelmet
         title={`${username}'s Chess Dashboard`}
         description={`View recent Chess.com games and accuracy stats for ${username}. Analyze blunders and improve your chess.`}
