@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useParams, useSearchParams } from 'react-router-dom'
 import { AccuracyTabContent } from '../components/AccuracyTabContent'
+import { AnalysedTabContent } from '../components/AnalysedTabContent'
 import { FilterChips } from '../components/FilterChips'
 import { GamesTabContent } from '../components/GamesTabContent'
 import { SEOHelmet } from '../components/SEOHelmet'
@@ -23,6 +24,7 @@ import {
 const TABS = [
   { key: 'accuracy', label: 'Accuracy' },
   { key: 'games', label: 'Games' },
+  { key: 'analysed', label: 'Analysed' },
 ]
 
 const TIME_CLASS_OPTIONS = [
@@ -162,16 +164,20 @@ export function PlayerPage() {
             activeTab={activeTab}
             onTabChange={handleTabChange}
           />
-          <FilterChips
-            options={TIME_CLASS_OPTIONS}
-            activeValue={timeClassFilter}
-            onChange={handleFilterChange}
-          />
-          <FilterChips
-            options={DATE_FILTER_OPTIONS}
-            activeValue={dateFilter}
-            onChange={handleDateFilterChange}
-          />
+          {activeTab !== 'analysed' && (
+            <>
+              <FilterChips
+                options={TIME_CLASS_OPTIONS}
+                activeValue={timeClassFilter}
+                onChange={handleFilterChange}
+              />
+              <FilterChips
+                options={DATE_FILTER_OPTIONS}
+                activeValue={dateFilter}
+                onChange={handleDateFilterChange}
+              />
+            </>
+          )}
           {activeTab === 'accuracy' && (
             <AccuracyTabContent
               games={filteredGames}
@@ -181,6 +187,7 @@ export function PlayerPage() {
           {activeTab === 'games' && (
             <GamesTabContent games={filteredGames} username={username ?? ''} />
           )}
+          {activeTab === 'analysed' && <AnalysedTabContent />}
         </>
       )}
     </main>

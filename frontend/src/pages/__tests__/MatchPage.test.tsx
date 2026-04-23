@@ -8,6 +8,7 @@ import { useAnalysisStore } from '../../stores/useAnalysisStore'
 import type { AnalyzeGameResult } from '../../services/analysis/analyzeGame'
 import { Classification } from '../../services/analysis/constants/Classification'
 import { PieceColour } from '../../services/analysis/constants/PieceColour'
+import { summarizeClassifications } from '../../services/analysis/summarizeClassifications'
 
 const mockGame: ChessGame = {
   url: 'https://www.chess.com/game/live/456',
@@ -173,7 +174,14 @@ describe('MatchPage', () => {
     it('shows accuracies and a details toggle when done', async () => {
       useAnalysisStore.setState({
         byGameId: {
-          '456': { status: 'done', result: doneResult, durationMs: 1234 },
+          '456': {
+            status: 'done',
+            result: doneResult,
+            summary: summarizeClassifications(doneResult.moves),
+            accuracy: doneResult.accuracy,
+            durationMs: 1234,
+            analysedAt: 1,
+          },
         },
       })
       renderMatchPage(gameWithPgn)
@@ -189,6 +197,30 @@ describe('MatchPage', () => {
       expect(
         screen.getByRole('button', { name: /hide details/i }),
       ).toBeInTheDocument()
+    })
+
+    it('shows the White/Black classification summary columns when done', () => {
+      useAnalysisStore.setState({
+        byGameId: {
+          '456': {
+            status: 'done',
+            result: doneResult,
+            summary: summarizeClassifications(doneResult.moves),
+            accuracy: doneResult.accuracy,
+            durationMs: 1234,
+            analysedAt: 1,
+          },
+        },
+      })
+      renderMatchPage(gameWithPgn)
+
+      const white = screen.getByTestId('classification-column-white')
+      const black = screen.getByTestId('classification-column-black')
+      expect(white).toBeInTheDocument()
+      expect(black).toBeInTheDocument()
+      // White played one BEST move, Black played one EXCELLENT move.
+      expect(white).toHaveTextContent('Best')
+      expect(black).toHaveTextContent('Excellent')
     })
 
     it('shows an error and Retry button when failed', async () => {
@@ -215,7 +247,9 @@ describe('MatchPage', () => {
         screen.getByRole('button', { name: /analyze game/i }),
       )
 
-      expect(startSpy).toHaveBeenCalledWith('456', gameWithPgn.pgn)
+      expect(startSpy).toHaveBeenCalledWith('456', gameWithPgn.pgn, {
+        game: gameWithPgn,
+      })
     })
   })
 })

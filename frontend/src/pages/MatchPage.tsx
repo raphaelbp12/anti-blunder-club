@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useLocation, useParams } from 'react-router-dom'
+import { ClassificationSummary } from '../components/ClassificationSummary'
 import { SEOHelmet } from '../components/SEOHelmet'
 import { TrackedButton } from '../components/TrackedButton'
 import { TrackedExternalLink } from '../components/TrackedExternalLink'
@@ -38,7 +39,7 @@ export function MatchPage() {
   }, [stateGame, username, gameId])
 
   const detailsJson = useMemo(() => {
-    if (entry?.status !== 'done') return null
+    if (entry?.status !== 'done' || !entry.result) return null
     return JSON.stringify(
       entry.result.moves.map((m) => ({
         san: m.san,
@@ -48,6 +49,11 @@ export function MatchPage() {
       null,
       2,
     )
+  }, [entry])
+
+  const classificationSummary = useMemo(() => {
+    if (entry?.status !== 'done') return null
+    return entry.summary
   }, [entry])
 
   if (isLoading) {
@@ -69,12 +75,12 @@ export function MatchPage() {
   const runAnalysis = () => {
     if (!game.pgn || !gameId) return
     const pgn = game.pgn
-    void startAnalysis(gameId, pgn).then(() => {
+    void startAnalysis(gameId, pgn, { game }).then(() => {
       const latest = useAnalysisStore.getState().byGameId[gameId]
       if (latest?.status === 'done') {
         trackEvent('analysis_run_completed', {
           durationMs: latest.durationMs,
-          moveCount: latest.result.moves.length,
+          moveCount: latest.result?.moves.length ?? 0,
         })
       } else if (latest?.status === 'error') {
         trackEvent('analysis_run_failed', { reason: latest.error })
@@ -169,24 +175,45 @@ export function MatchPage() {
               <p className="text-sm">
                 White accuracy:{' '}
                 <span className="font-semibold">
-                  {entry.result.accuracy.white.toFixed(1)}
+                  {entry.accuracy.white.toFixed(1)}
                 </span>{' '}
                 · Black accuracy:{' '}
                 <span className="font-semibold">
-                  {entry.result.accuracy.black.toFixed(1)}
+                  {entry.accuracy.black.toFixed(1)}
                 </span>
               </p>
-              <button
-                type="button"
-                onClick={() => setShowDetails((v) => !v)}
-                className="text-sm text-accent hover:underline"
-              >
-                {showDetails ? 'Hide details ▴' : 'Show details ▾'}
-              </button>
-              {showDetails && detailsJson && (
-                <pre className="max-h-96 overflow-auto rounded bg-surface p-3 text-xs">
-                  {detailsJson}
-                </pre>
+              {classificationSummary && (
+                <ClassificationSummary
+                  variant="column"
+                  white={classificationSummary.white}
+                  black={classificationSummary.black}
+                />
+              )}
+              {detailsJson ? (
+                <>
+                  <button
+                    type="button"
+                    onClick={() => setShowDetails((v) => !v)}
+                    className="text-sm text-accent hover:underline"
+                  >
+                    {showDetails ? 'Hide details ▴' : 'Show details ▾'}
+                  </button>
+                  {showDetails && (
+                    <pre className="max-h-96 overflow-auto rounded bg-surface p-3 text-xs">
+                      {detailsJson}
+                    </pre>
+                  )}
+                </>
+              ) : (
+                game.pgn && (
+                  <TrackedButton
+                    onClick={handleRetry}
+                    eventName="analysis_run_requested"
+                    className="rounded border border-border px-3 py-1 text-sm hover:bg-surface"
+                  >
+                    Re-analyse for per-move details
+                  </TrackedButton>
+                )
               )}
             </div>
           )}
