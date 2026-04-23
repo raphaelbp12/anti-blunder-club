@@ -78,8 +78,10 @@ export function parseInfoLine(
   }
 }
 
-/** Path prefix for the Stockfish worker files served from `public/engines/`. */
-const DEFAULT_ENGINE_PATH_PREFIX = '/engines/'
+/** Path prefix for the Stockfish worker files served from `public/engines/`.
+ *  Uses Vite's `BASE_URL` so it works both locally (`/`) and when the app is
+ *  deployed under a sub-path (e.g. GitHub Pages `/anti-blunder-club/`). */
+const DEFAULT_ENGINE_PATH_PREFIX = `${import.meta.env.BASE_URL}engines/`
 
 export interface UciEngineOptions {
   /** Stockfish build filename (e.g. `stockfish-17-lite-single.js`). */
