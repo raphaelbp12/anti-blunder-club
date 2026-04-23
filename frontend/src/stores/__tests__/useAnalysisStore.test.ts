@@ -1,9 +1,10 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import { useAnalysisStore } from '../useAnalysisStore'
+import { useAnalysisStore, ANALYSIS_STORE_KEY } from '../useAnalysisStore'
 import type { PositionProvider } from '../../services/analysis/PositionProvider'
 import type { EngineLine } from '../../services/analysis/types/EngineLine'
 import { EngineVersion } from '../../services/analysis/constants/EngineVersion'
+import type { ChessGame } from '../../services/chessComApi'
 
 const PGN = '1. e4 e5 2. Nf3'
 
@@ -43,6 +44,7 @@ function makeAlwaysBestFactory() {
 describe('useAnalysisStore', () => {
   beforeEach(() => {
     useAnalysisStore.setState({ byGameId: {} })
+    localStorage.removeItem(ANALYSIS_STORE_KEY)
     vi.restoreAllMocks()
   })
 
@@ -147,5 +149,70 @@ describe('useAnalysisStore', () => {
 
     useAnalysisStore.getState().reset('g1')
     expect(useAnalysisStore.getState().byGameId['g1']).toBeUndefined()
+  })
+
+  describe('persistence', () => {
+    const stubGame: ChessGame = {
+      url: 'https://www.chess.com/game/live/999',
+      white: { username: 'alice', rating: 1500, result: 'win' },
+      black: { username: 'bob', rating: 1400, result: 'checkmated' },
+      timeClass: 'blitz',
+      endTime: 1711900000,
+      accuracies: { white: 95.5, black: 88.2 },
+    }
+
+    it('stores the ChessGame and analysedAt timestamp on done entries', async () => {
+      const { providerFactory } = makeAlwaysBestFactory()
+      const before = Date.now()
+
+      await useAnalysisStore
+        .getState()
+        .startAnalysis('g1', PGN, { providerFactory, game: stubGame })
+
+      const entry = useAnalysisStore.getState().byGameId['g1']
+      if (entry?.status !== 'done') throw new Error('expected done')
+      expect(entry.game).toEqual(stubGame)
+      expect(entry.analysedAt).toBeGreaterThanOrEqual(before)
+    })
+
+    it('persists done entries to localStorage without the circular analysis tree', async () => {
+      const { providerFactory } = makeAlwaysBestFactory()
+      await useAnalysisStore
+        .getState()
+        .startAnalysis('g1', PGN, { providerFactory, game: stubGame })
+
+      const raw = localStorage.getItem(ANALYSIS_STORE_KEY)
+      expect(raw).not.toBeNull()
+      const parsed = JSON.parse(raw!) as {
+        state: { byGameId: Record<string, unknown> }
+      }
+      const persisted = parsed.state.byGameId['g1'] as {
+        status: string
+        result: { analysis?: unknown; moves: unknown[] }
+      }
+      expect(persisted.status).toBe('done')
+      expect(persisted.result.analysis).toBeUndefined()
+      expect(persisted.result.moves.length).toBeGreaterThan(0)
+    })
+
+    it('does not persist running or error entries', async () => {
+      const evaluate = vi.fn(async () => {
+        throw new Error('boom')
+      })
+      const provider: PositionProvider = { evaluate, dispose: vi.fn() }
+
+      await useAnalysisStore
+        .getState()
+        .startAnalysis('g1', PGN, { providerFactory: () => provider })
+
+      const raw = localStorage.getItem(ANALYSIS_STORE_KEY)
+      // Either the key is absent or the errored entry is absent from it.
+      if (raw) {
+        const parsed = JSON.parse(raw) as {
+          state: { byGameId: Record<string, unknown> }
+        }
+        expect(parsed.state.byGameId['g1']).toBeUndefined()
+      }
+    })
   })
 })

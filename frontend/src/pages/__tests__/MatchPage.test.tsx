@@ -173,7 +173,12 @@ describe('MatchPage', () => {
     it('shows accuracies and a details toggle when done', async () => {
       useAnalysisStore.setState({
         byGameId: {
-          '456': { status: 'done', result: doneResult, durationMs: 1234 },
+          '456': {
+            status: 'done',
+            result: doneResult,
+            durationMs: 1234,
+            analysedAt: 1,
+          },
         },
       })
       renderMatchPage(gameWithPgn)
@@ -194,7 +199,12 @@ describe('MatchPage', () => {
     it('shows the White/Black classification summary columns when done', () => {
       useAnalysisStore.setState({
         byGameId: {
-          '456': { status: 'done', result: doneResult, durationMs: 1234 },
+          '456': {
+            status: 'done',
+            result: doneResult,
+            durationMs: 1234,
+            analysedAt: 1,
+          },
         },
       })
       renderMatchPage(gameWithPgn)
@@ -232,7 +242,9 @@ describe('MatchPage', () => {
         screen.getByRole('button', { name: /analyze game/i }),
       )
 
-      expect(startSpy).toHaveBeenCalledWith('456', gameWithPgn.pgn)
+      expect(startSpy).toHaveBeenCalledWith('456', gameWithPgn.pgn, {
+        game: gameWithPgn,
+      })
     })
   })
 })

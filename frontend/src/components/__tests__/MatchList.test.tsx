@@ -134,6 +134,7 @@ describe('MatchList', () => {
           '111': {
             status: 'done',
             durationMs: 0,
+            analysedAt: 1,
             result: {
               moves: [
                 move(PieceColour.WHITE, Classification.BLUNDER),

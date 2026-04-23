@@ -76,7 +76,7 @@ export function MatchPage() {
   const runAnalysis = () => {
     if (!game.pgn || !gameId) return
     const pgn = game.pgn
-    void startAnalysis(gameId, pgn).then(() => {
+    void startAnalysis(gameId, pgn, { game }).then(() => {
       const latest = useAnalysisStore.getState().byGameId[gameId]
       if (latest?.status === 'done') {
         trackEvent('analysis_run_completed', {
