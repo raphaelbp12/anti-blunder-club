@@ -73,13 +73,17 @@ export function AnalyzeButton({ gameId, pgn, game }: AnalyzeButtonProps) {
   }
 
   // `done` without result (hydrated from localStorage) or idle → offer a run.
+  const isReanalyze = entry?.status === 'done'
+  const className = isReanalyze
+    ? 'rounded border border-accent bg-transparent px-2 py-1 text-xs font-semibold text-accent hover:bg-accent/10'
+    : 'rounded bg-accent px-2 py-1 text-xs font-semibold text-white hover:opacity-90'
   return (
     <TrackedButton
       onClick={() => enqueue({ gameId, pgn, game })}
       eventName="analysis_run_requested"
-      className="rounded bg-accent px-2 py-1 text-xs font-semibold text-background hover:opacity-90"
+      className={className}
     >
-      {entry?.status === 'done' ? 'Re-analyze' : 'Analyze'}
+      {isReanalyze ? 'Re-analyze' : 'Analyze'}
     </TrackedButton>
   )
 }
